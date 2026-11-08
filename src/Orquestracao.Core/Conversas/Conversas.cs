@@ -23,6 +23,11 @@ public sealed class OpcoesConversas
     public Func<string, string>? Template { get; init; }
     /// <summary>Grava o .md que a persona de saída gerou.</summary>
     public Action<string, string, string>? GravarSaida { get; init; }
+    /// <summary>
+    /// O feedback da persona humana sobre quem ela respondeu (conversa, persona, bom): Aprovar é bom, Pedir
+    /// mudança é ruim. O orquestrador por template ajusta o peso do template com ele (R05).
+    /// </summary>
+    public Action<string, string, bool>? AoFeedbackHumano { get; init; }
 }
 
 /// <summary>
@@ -284,6 +289,8 @@ public sealed partial class Conversas(OpcoesConversas opts)
             if (v.Dados.Status == "aguardando") v.Dados.Status = "rodando";
         }
         Emitir(v.Dados, Base("fim"));
+        if (!r.Venceu && r.Acao is "aprovar" or "mudar")
+            foreach (var p in respondendoA.Where(x => x != "usuario")) opts.AoFeedbackHumano?.Invoke(v.Dados.Id, p, r.Acao == "aprovar");
         if (r.Acao == "encerrar")
         {
             if (!r.Venceu)

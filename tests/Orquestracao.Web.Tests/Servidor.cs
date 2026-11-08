@@ -21,11 +21,13 @@ public sealed class Servidor : IDisposable
     public HttpClient Cliente { get; }
 
     /// <param name="servicos">Troca serviços do app (ex.: um motor falso no lugar do da API da Anthropic).</param>
-    public Servidor(string? arquivoAntigo = null, Action<IServiceCollection>? servicos = null)
+    /// <param name="diagramaDaFigura">Cria o diagrama da Figura 1 na partida (desligado: a lista começa só com "Meu diagrama").</param>
+    public Servidor(string? arquivoAntigo = null, Action<IServiceCollection>? servicos = null, bool diagramaDaFigura = false)
     {
         _fabrica = new WebApplicationFactory<Program>().WithWebHostBuilder(b =>
         {
             b.UseSetting("Diagramas:Pasta", Diagramas);
+            b.UseSetting("Orquestrador:DiagramaDaFigura", diagramaDaFigura ? "true" : "false");
             if (arquivoAntigo is not null) b.UseSetting("Diagramas:ArquivoAntigo", arquivoAntigo);
             if (servicos is not null) b.ConfigureTestServices(servicos);
         });

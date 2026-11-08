@@ -164,13 +164,13 @@ templates/   os papéis da paleta          examples/   diagramas prontos para im
 - [x] README reescrito para a versão C#
 
 **F5 — Orquestrador por template (o TCC)**
-- [ ] R01 · Parser (Claude Haiku): pergunta → estrutura + slots → chave
-- [ ] R02 · Motor: decide entre template existente e chave nova
-- [ ] R03 · Fonte de fatos local e preenchimento dos slots
-- [ ] R04 · Fallback no LLM, extração do template e gravação com peso 0,5 (SQLite)
-- [ ] R05 · Feedback: média móvel do peso, reenvio até o limite, descarte abaixo do limiar
-- [ ] R06 · Orquestrador exposto pelo MCP e usado pelo Claude Code
-- [ ] R07 · Contagem de chamadas, tokens e custo do LLM
+- [x] R01 · Parser: pergunta → estrutura + slots → chave (heurístico; Claude Haiku no modo `llm` ou `hibrido`)
+- [x] R02 · Motor: decide entre template existente e chave nova
+- [x] R03 · Fonte de fatos local e preenchimento dos slots
+- [x] R04 · Fallback no LLM, extração do template e gravação com peso 0,5 (SQLite)
+- [x] R05 · Feedback: média móvel do peso, reenvio até o limite, descarte abaixo do limiar
+- [x] R06 · Orquestrador exposto pelo MCP e usado pelo Claude Code
+- [x] R07 · Contagem de chamadas, tokens e custo do LLM
 
 **F6 — Visualização do fluxo**
 - [ ] Diagrama "Orquestrador por template" com os blocos da figura

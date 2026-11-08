@@ -18,8 +18,11 @@ public sealed class EspacoIa
 
     private readonly ConcurrentDictionary<string, Conversas> _conversas = new();
 
-    public EspacoIa(Workspace ws, RegistroDeMotores motores, string pastaTemplates)
+    private readonly Orquestracao.Templates.MotorTemplate? _template;
+
+    public EspacoIa(Workspace ws, RegistroDeMotores motores, string pastaTemplates, Orquestracao.Templates.MotorTemplate? template = null)
     {
+        _template = template;
         Ws = ws;
         Motores = motores;
         PastaTemplates = pastaTemplates;
@@ -71,6 +74,8 @@ public sealed class EspacoIa
                     a.Transmitir(ev);
                 },
                 Template = personas.LerTemplate,
+                // Aprovar / Pedir mudança na vez humana é o feedback do orquestrador por template (R05).
+                AoFeedbackHumano = (conversa, persona, bom) => _template?.RegistrarFeedback(conversa, persona, bom),
                 GravarSaida = (conversa, arquivo, texto) =>
                 {
                     var dir = Path.Combine(pasta, "saidas", conversa);

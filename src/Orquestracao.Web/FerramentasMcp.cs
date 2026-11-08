@@ -13,7 +13,7 @@ namespace Orquestracao.Web;
 /// responde como a persona (<c>responder</c>). Personas de outros motores falam sozinhas.
 /// </summary>
 [McpServerToolType]
-public sealed class FerramentasMcp(EspacoIa ia, MotorMcp mcp)
+public sealed class FerramentasMcp(EspacoIa ia, MotorMcp mcp, Orquestracao.Templates.Orquestrador orquestrador, RegistroDeMotores motores, OrquestradorAoVivo aoVivo)
 {
     private static readonly JsonSerializerOptions Saida = new(Conversa.JsonOpcoes) { WriteIndented = true };
 
@@ -122,6 +122,32 @@ public sealed class FerramentasMcp(EspacoIa ia, MotorMcp mcp)
             id = c.Id, assunto = c.Assunto, modo = c.Modo, status = c.Status, resposta = c.Resposta,
             mensagens = c.Mensagens.Select(m => new { nome = m.Nome, tipo = m.Tipo, persona = m.Persona, texto = m.Texto, detalhe = m.Detalhe }),
         });
+    }
+
+    // ---- o orquestrador por template (R06) ----------------------------------
+
+    [McpServerTool(Name = "perguntar_orquestrador"), Description("Faz uma pergunta factual ao orquestrador por template: se a estrutura já é conhecida, a resposta sai do template + base de fatos, sem chamar o LLM; senão, o LLM (motor: api, ollama) responde e o template é extraído. Devolve o texto, o caminho (template ou llm), a chave, o template e o peso.")]
+    public async Task<string> PerguntarOrquestrador(string pergunta, [Description("api (padrão) ou ollama: quem responde às chaves novas")] string? motor = null, CancellationToken ct = default)
+    {
+        mcp.Tocar();
+        if (motor == "mcp") throw new OpError(400, "Pelo MCP, use motor api ou ollama (o mcp seria você mesmo respondendo).");
+        var r = await ApiOrquestrador.Perguntar(orquestrador, motores, aoVivo, pergunta, motor, ct);
+        return Json(new { r.Texto, r.Caminho, r.Chave, r.Entidade, r.Template, r.Peso, r.TemplateSalvo, r.Motivo, r.ChamadasGeracao, r.ChamadasParser });
+    }
+
+    [McpServerTool(Name = "avaliar_resposta"), Description("O feedback sobre uma resposta do orquestrador (pela chave): bom sobe o peso do template, ruim desce; abaixo do limiar, o template é descartado.")]
+    public string AvaliarResposta(string chave, bool bom)
+    {
+        mcp.Tocar();
+        var t = ApiOrquestrador.Feedback(orquestrador, aoVivo, chave, bom);
+        return Json(new { template = t, descartado = t is null });
+    }
+
+    [McpServerTool(Name = "ver_orquestrador"), Description("As estatísticas do orquestrador (perguntas, acertos de template, chamadas ao LLM, tokens, custo, latência) e os templates guardados com o peso.")]
+    public string VerOrquestrador()
+    {
+        mcp.Tocar();
+        return Json(ApiOrquestrador.Estado(orquestrador));
     }
 
     [McpServerTool(Name = "sintetizar"), Description("Pede a resposta final polida agora (depois da vez em andamento).")]

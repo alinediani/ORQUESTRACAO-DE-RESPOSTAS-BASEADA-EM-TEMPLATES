@@ -80,7 +80,7 @@ public class PersonasTests
     public void MotorTemplate_TemFallbackPadraoNaApi()
     {
         var p = Personas.Ler("n1", Md("motor: template"), "Orquestrador");
-        Assert.Equal(("template", "api", "claude-haiku-5-5"), (p.Motor, p.Fallback, p.Modelo));
+        Assert.Equal(("template", "api", "claude-sonnet-5-5"), (p.Motor, p.Fallback, p.Modelo));
         Assert.Equal("ollama", Personas.Ler("n1", Md("motor: template\nfallback: ollama"), "x").Fallback);
         Assert.Contains("fallback: api", Personas.Escrever(p));
     }

@@ -88,7 +88,8 @@ public static partial class Personas
         ["mcp"] = "claude-opus-5-5",
         ["ollama"] = "qwen2.5:3b",
         ["api"] = "claude-opus-5-5",
-        ["template"] = "claude-haiku-5-5",
+        // O orquestrador do TCC: o modelo é o do LLM de geração (fallback); o do parser é configurado à parte.
+        ["template"] = "claude-sonnet-5-5",
     };
 
     public const string MemoriaPadrao = "# Memória\n\n## Decisões\n\n## Fatos\n\n## Hipóteses\n\n## Pendências\n\n## Preferências do usuário\n";
