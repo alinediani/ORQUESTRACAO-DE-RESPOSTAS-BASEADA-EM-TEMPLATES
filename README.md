@@ -44,9 +44,9 @@ O caminho escolhido:
 - [x] `dotnet build` e `dotnet test` passando com a solução vazia
 
 **F1 — Núcleo do diagrama**
-- [ ] Modelo do diagrama e leitura/geração do código Mermaid em C#
-- [ ] Operações granulares (criar, alterar, remover retângulos e setas) e seus eventos
-- [ ] Testes de `ops` portados para xUnit
+- [x] Modelo do diagrama e leitura/geração do código Mermaid em C#
+- [x] Operações granulares (criar, alterar, remover retângulos e setas) e seus eventos
+- [x] Testes de `ops` portados para xUnit
 
 **F2 — API, SSE e front**
 - [ ] API REST com as mesmas rotas, cabeçalho `X-Rev` e eventos SSE (ASP.NET Minimal API)
