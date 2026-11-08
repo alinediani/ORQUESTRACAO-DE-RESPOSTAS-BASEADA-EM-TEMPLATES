@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Orquestracao.Core/Orquestracao.Core.csproj" />
+    <Project Path="src/Orquestracao.Experimento/Orquestracao.Experimento.csproj" />
+    <Project Path="src/Orquestracao.Motores/Orquestracao.Motores.csproj" />
+    <Project Path="src/Orquestracao.Templates/Orquestracao.Templates.csproj" />
+    <Project Path="src/Orquestracao.Web/Orquestracao.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Orquestracao.Core.Tests/Orquestracao.Core.Tests.csproj" />
+    <Project Path="tests/Orquestracao.E2E.Tests/Orquestracao.E2E.Tests.csproj" />
+    <Project Path="tests/Orquestracao.Templates.Tests/Orquestracao.Templates.Tests.csproj" />
+    <Project Path="tests/Orquestracao.Web.Tests/Orquestracao.Web.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,657 @@
+{
+  "descricao": "Base de fatos local e controlada do protótipo (a 'fonte externa' do TCC). Cada entidade tem um tipo, o artigo (para 'da/do/na/no') e os atributos que preenchem os slots dos templates.",
+  "entidades": [
+    {
+      "nome": "França",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Paris",
+        "moeda": "euro",
+        "idioma": "francês",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Japão",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Tóquio",
+        "moeda": "iene",
+        "idioma": "japonês",
+        "continente": "Ásia"
+      }
+    },
+    {
+      "nome": "Brasil",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Brasília",
+        "moeda": "real",
+        "idioma": "português",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "Portugal",
+      "tipo": "pais",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Lisboa",
+        "moeda": "euro",
+        "idioma": "português",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Alemanha",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Berlim",
+        "moeda": "euro",
+        "idioma": "alemão",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Itália",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Roma",
+        "moeda": "euro",
+        "idioma": "italiano",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Espanha",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Madri",
+        "moeda": "euro",
+        "idioma": "espanhol",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Grécia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Atenas",
+        "moeda": "euro",
+        "idioma": "grego",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Irlanda",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Dublin",
+        "moeda": "euro",
+        "idioma": "inglês e irlandês",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Suécia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Estocolmo",
+        "moeda": "coroa sueca",
+        "idioma": "sueco",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Noruega",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Oslo",
+        "moeda": "coroa norueguesa",
+        "idioma": "norueguês",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Polônia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [
+        "Polonia"
+      ],
+      "atributos": {
+        "capital": "Varsóvia",
+        "moeda": "złoty",
+        "idioma": "polonês",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Reino Unido",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Londres",
+        "moeda": "libra esterlina",
+        "idioma": "inglês",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Rússia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Moscou",
+        "moeda": "rublo",
+        "idioma": "russo",
+        "continente": "Europa"
+      }
+    },
+    {
+      "nome": "Argentina",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Buenos Aires",
+        "moeda": "peso argentino",
+        "idioma": "espanhol",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "Chile",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Santiago",
+        "moeda": "peso chileno",
+        "idioma": "espanhol",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "Peru",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Lima",
+        "moeda": "sol",
+        "idioma": "espanhol",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "Colômbia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Bogotá",
+        "moeda": "peso colombiano",
+        "idioma": "espanhol",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "Uruguai",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Montevidéu",
+        "moeda": "peso uruguaio",
+        "idioma": "espanhol",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "Paraguai",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Assunção",
+        "moeda": "guarani",
+        "idioma": "espanhol e guarani",
+        "continente": "América do Sul"
+      }
+    },
+    {
+      "nome": "México",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Cidade do México",
+        "moeda": "peso mexicano",
+        "idioma": "espanhol",
+        "continente": "América do Norte"
+      }
+    },
+    {
+      "nome": "Canadá",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Ottawa",
+        "moeda": "dólar canadense",
+        "idioma": "inglês e francês",
+        "continente": "América do Norte"
+      }
+    },
+    {
+      "nome": "Estados Unidos",
+      "tipo": "pais",
+      "artigo": "os",
+      "apelidos": [
+        "EUA"
+      ],
+      "atributos": {
+        "capital": "Washington, D.C.",
+        "moeda": "dólar americano",
+        "idioma": "inglês",
+        "continente": "América do Norte"
+      }
+    },
+    {
+      "nome": "China",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Pequim",
+        "moeda": "yuan",
+        "idioma": "mandarim",
+        "continente": "Ásia"
+      }
+    },
+    {
+      "nome": "Índia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [
+        "India"
+      ],
+      "atributos": {
+        "capital": "Nova Délhi",
+        "moeda": "rupia indiana",
+        "idioma": "hindi e inglês",
+        "continente": "Ásia"
+      }
+    },
+    {
+      "nome": "Coreia do Sul",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Seul",
+        "moeda": "won sul-coreano",
+        "idioma": "coreano",
+        "continente": "Ásia"
+      }
+    },
+    {
+      "nome": "Vietnã",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Hanói",
+        "moeda": "dong",
+        "idioma": "vietnamita",
+        "continente": "Ásia"
+      }
+    },
+    {
+      "nome": "Tailândia",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Bangkok",
+        "moeda": "baht",
+        "idioma": "tailandês",
+        "continente": "Ásia"
+      }
+    },
+    {
+      "nome": "Egito",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Cairo",
+        "moeda": "libra egípcia",
+        "idioma": "árabe",
+        "continente": "África"
+      }
+    },
+    {
+      "nome": "Marrocos",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Rabat",
+        "moeda": "dirham marroquino",
+        "idioma": "árabe e berbere",
+        "continente": "África"
+      }
+    },
+    {
+      "nome": "Nigéria",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Abuja",
+        "moeda": "naira",
+        "idioma": "inglês",
+        "continente": "África"
+      }
+    },
+    {
+      "nome": "Quênia",
+      "tipo": "pais",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Nairóbi",
+        "moeda": "xelim queniano",
+        "idioma": "suaíli e inglês",
+        "continente": "África"
+      }
+    },
+    {
+      "nome": "Austrália",
+      "tipo": "pais",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "capital": "Camberra",
+        "moeda": "dólar australiano",
+        "idioma": "inglês",
+        "continente": "Oceania"
+      }
+    },
+    {
+      "nome": "ferro",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Fe",
+        "numero_atomico": "26"
+      }
+    },
+    {
+      "nome": "ouro",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Au",
+        "numero_atomico": "79"
+      }
+    },
+    {
+      "nome": "prata",
+      "tipo": "elemento",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Ag",
+        "numero_atomico": "47"
+      }
+    },
+    {
+      "nome": "oxigênio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "O",
+        "numero_atomico": "8"
+      }
+    },
+    {
+      "nome": "hidrogênio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "H",
+        "numero_atomico": "1"
+      }
+    },
+    {
+      "nome": "carbono",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "C",
+        "numero_atomico": "6"
+      }
+    },
+    {
+      "nome": "nitrogênio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "N",
+        "numero_atomico": "7"
+      }
+    },
+    {
+      "nome": "sódio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Na",
+        "numero_atomico": "11"
+      }
+    },
+    {
+      "nome": "potássio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "K",
+        "numero_atomico": "19"
+      }
+    },
+    {
+      "nome": "cálcio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Ca",
+        "numero_atomico": "20"
+      }
+    },
+    {
+      "nome": "cobre",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Cu",
+        "numero_atomico": "29"
+      }
+    },
+    {
+      "nome": "zinco",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Zn",
+        "numero_atomico": "30"
+      }
+    },
+    {
+      "nome": "chumbo",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Pb",
+        "numero_atomico": "82"
+      }
+    },
+    {
+      "nome": "mercúrio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Hg",
+        "numero_atomico": "80"
+      }
+    },
+    {
+      "nome": "hélio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "He",
+        "numero_atomico": "2"
+      }
+    },
+    {
+      "nome": "neônio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Ne",
+        "numero_atomico": "10"
+      }
+    },
+    {
+      "nome": "enxofre",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "S",
+        "numero_atomico": "16"
+      }
+    },
+    {
+      "nome": "fósforo",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "P",
+        "numero_atomico": "15"
+      }
+    },
+    {
+      "nome": "cloro",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Cl",
+        "numero_atomico": "17"
+      }
+    },
+    {
+      "nome": "alumínio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Al",
+        "numero_atomico": "13"
+      }
+    },
+    {
+      "nome": "silício",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Si",
+        "numero_atomico": "14"
+      }
+    },
+    {
+      "nome": "magnésio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Mg",
+        "numero_atomico": "12"
+      }
+    },
+    {
+      "nome": "urânio",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "U",
+        "numero_atomico": "92"
+      }
+    },
+    {
+      "nome": "estanho",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Sn",
+        "numero_atomico": "50"
+      }
+    },
+    {
+      "nome": "níquel",
+      "tipo": "elemento",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "simbolo": "Ni",
+        "numero_atomico": "28"
+      }
+    }
+  ]
+}

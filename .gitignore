@@ -1,6 +1,9 @@
-node_modules
-dist
 *.log
 diagram.mmd
 diagram.json
-/diagrams/
+diagrams/
+bin/
+obj/
+*.user
+.vs/
+TestResults/
