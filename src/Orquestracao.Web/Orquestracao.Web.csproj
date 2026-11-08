@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Orquestracao.Core\Orquestracao.Core.csproj" />
+    <ProjectReference Include="..\Orquestracao.Motores\Orquestracao.Motores.csproj" />
+    <ProjectReference Include="..\Orquestracao.Templates\Orquestracao.Templates.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>

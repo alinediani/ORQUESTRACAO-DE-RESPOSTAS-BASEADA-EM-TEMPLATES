@@ -700,7 +700,7 @@ export function diagramApi(dir = 'diagrams', legacyFile = 'diagram.json'): Plugi
   let root = '';
   // A pasta só é aberta quando um servidor sobe (não ao carregar a config, ex.: no vitest).
   let diagrams: ReturnType<typeof createDiagrams> | undefined;
-  const abrir = () => (diagrams ??= createDiagrams(path.resolve(root, dir), { legacyFile: path.resolve(root, legacyFile), templatesDir: path.resolve(root, 'templates') }));
+  const abrir = () => (diagrams ??= createDiagrams(path.resolve(root, dir), { legacyFile: path.resolve(root, legacyFile), templatesDir: path.resolve(root, '..', 'templates') }));
   const handler: Connect.NextHandleFunction = (req, res, next) => abrir().handler(req, res, next);
   const mcp: Connect.NextHandleFunction = (req, res, next) => abrir().mcpHandler(req, res, next);
   return {

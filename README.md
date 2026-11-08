@@ -38,10 +38,10 @@ O caminho escolhido:
 ## Próximos passos
 
 **F0 — Preparação**
-- [ ] Branch `migracao-csharp` e .NET 10 SDK
-- [ ] Solução `OrquestracaoTemplates.slnx`: `Core`, `Motores`, `Templates`, `Web` e os projetos de teste xUnit
-- [ ] App TypeScript movido para `legado/` (referência até a paridade)
-- [ ] `dotnet build` e `dotnet test` passando com a solução vazia
+- [x] Branch `migracao-csharp` e .NET 10 SDK
+- [x] Solução `OrquestracaoTemplates.slnx`: `Core`, `Motores`, `Templates`, `Web` e os projetos de teste xUnit
+- [x] App TypeScript movido para `legado/` (referência até a paridade)
+- [x] `dotnet build` e `dotnet test` passando com a solução vazia
 
 **F1 — Núcleo do diagrama**
 - [ ] Modelo do diagrama e leitura/geração do código Mermaid em C#

@@ -4,3 +4,8 @@ dist
 diagram.mmd
 diagram.json
 /diagrams/
+bin/
+obj/
+*.user
+.vs/
+TestResults/
