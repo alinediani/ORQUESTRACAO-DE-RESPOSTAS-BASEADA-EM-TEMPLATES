@@ -1,0 +1,399 @@
+import { Canvas, DND_TYPE } from './canvas.js';
+import { ChatPanel } from './chat.js';
+import { API, DIAGRAM } from './diagrams.js';
+import { PalacioDialog } from './palaciopanel.js';
+import { PersonaPanel } from './personapanel.js';
+import { downloadPng, downloadSvg } from './export.js';
+import { DiagramMenu } from './menu.js';
+import { Store } from './store.js';
+import { ServerSync } from './sync.js';
+
+// O Mermaid vem de lib/mermaid.min.js (um <script> no index.html), sem bundler.
+const mermaid = window.mermaid;
+
+const $ = (sel) => document.querySelector(sel);
+const codeEl = $('#code');
+const errorsEl = $('#errors');
+const previewEl = $('#preview');
+const hintEl = $('#hint');
+
+// Começa vazio: o snapshot do servidor (SSE) traz o diagrama.
+const store = new Store({ nodes: [], edges: [] });
+const canvas = new Canvas($('#canvas'), store);
+
+// ---- barra do canvas: selecionar/mão, zoom, ver tudo e zoom no selecionado ----
+
+const toolButtons = document.querySelectorAll('[data-canvas-tool]');
+const zoomLabel = $('#ct-zoom-reset');
+const focusButton = $('#ct-focus');
+canvas.onView = () => {
+  for (const b of toolButtons) b.setAttribute('aria-pressed', String(b.dataset.canvasTool === canvas.tool));
+  zoomLabel.textContent = `${Math.round(canvas.zoom * 100)}%`;
+  focusButton.disabled = !canvas.hasSelection;
+};
+for (const b of toolButtons) b.addEventListener('click', () => canvas.setTool(b.dataset.canvasTool));
+$('#ct-zoom-out').addEventListener('click', () => canvas.zoomBy(1 / 1.25));
+$('#ct-zoom-in').addEventListener('click', () => canvas.zoomBy(1.25));
+zoomLabel.addEventListener('click', () => canvas.resetZoom());
+$('#ct-fit').addEventListener('click', () => canvas.fitAll());
+focusButton.addEventListener('click', () => canvas.zoomToSelection());
+canvas.onView();
+
+mermaid.initialize({
+  startOnLoad: false,
+  theme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
+  flowchart: { htmlLabels: true },
+});
+
+let renderSeq = 0;
+async function renderPreview(code) {
+  const seq = ++renderSeq;
+  try {
+    const { svg } = await mermaid.render(`preview-${seq}`, code);
+    if (seq === renderSeq) previewEl.innerHTML = svg;
+  } catch (err) {
+    if (seq === renderSeq) previewEl.textContent = `Erro no Mermaid: ${err.message}`;
+  }
+}
+
+function debounce(fn, ms) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = window.setTimeout(() => fn(...args), ms);
+  };
+}
+
+const schedulePreview = debounce(renderPreview, 200);
+
+function updateHint() {
+  hintEl.textContent = canvas.connecting
+    ? 'Clique (ou solte) sobre o retângulo de destino. Esc cancela.'
+    : store.mode === 'arrow'
+      ? 'Modo seta: arraste de um retângulo até outro. Esc volta ao modo seleção.'
+      : store.selection?.kind === 'edge'
+        ? 'Seta selecionada: M liga/desliga a animação, P manda uma mensagem por ela, duplo clique edita o texto, Delete remove.'
+        : 'Arraste os componentes para o canvas. Duplo clique edita o texto. A bolinha à esquerda (ou a tecla A) ativa/inativa. R define quem cuida da etapa. Delete remove. Arraste o fundo (ou segure Espaço) para mover a vista; Ctrl+roda dá zoom, F mostra tudo e Z dá zoom no selecionado.';
+  document.querySelector('[data-tool="arrow"]').classList.toggle('active', store.mode === 'arrow');
+}
+
+// ---- personas: cada retângulo é uma (cor e selo no canvas, painel à direita) ----
+
+const personas = new Map();
+const MOTOR_CURTO = { mcp: 'MCP', ollama: 'Ollama', api: 'API' };
+/** "claude-opus-5-5" → "opus 5.5"; "qwen2.5:3b" fica como está. */
+const modeloCurto = (m) =>
+  m
+    .replace(/^claude-/, '')
+    .replace(/-(\d+)-(\d+)$/, ' $1.$2')
+    .replace(/-(\d+)$/, ' $1');
+canvas.personaDe = (id) => {
+  const p = personas.get(id);
+  const selo = p?.humana
+    ? 'Você · humana'
+    : p?.memoria
+      ? `Memória · ${itensMemoria} ${itensMemoria === 1 ? 'item' : 'itens'}`
+      : p?.saida
+        ? `Saída · ${p.arquivo}`
+        : p && `${MOTOR_CURTO[p.motor]} · ${modeloCurto(p.modelo)}`;
+  return p && { cor: p.cor, selo: selo, inicio: p.inicio, saida: p.saida, humana: p.humana, memoria: p.memoria };
+};
+const atualizarPersona = (p) => {
+  personas.set(p.id, p);
+  canvas.redesenhar(p.id);
+  personaPanel.atualizada(p);
+};
+async function carregarPersonas() {
+  try {
+    const lista = await fetch(`${API}/personas`).then((r) => r.json());
+    personas.clear();
+    for (const p of lista) personas.set(p.id, p);
+    canvas.renderAll();
+  } catch {}
+}
+// O palácio da memória e quantos itens ela tem (aparece no selo da persona de memória).
+let itensMemoria = 0;
+const palacio = new PalacioDialog(API, (n) => {
+  itensMemoria = n;
+  canvas.renderAll();
+});
+const contarMemoria = debounce(
+  () =>
+    void fetch(`${API}/memoria`)
+      .then((r) => r.json())
+      .then((j) => {
+        itensMemoria = j.existe ? j.itens : 0;
+        canvas.renderAll();
+      })
+      .catch(() => {}),
+  300,
+);
+contarMemoria();
+const personaPanel = new PersonaPanel(
+  API,
+  store,
+  (p) => atualizarPersona(p),
+  () => void palacio.abrir(),
+);
+// Retângulo novo (de outra aba, do código ou da paleta): busca a persona dele.
+store.subscribe((change) => {
+  if (change.source !== 'view' && change.event && ['node.added', 'diagram.replaced'].includes(change.event.type)) void carregarPersonasLogo();
+});
+const carregarPersonasLogo = debounce(() => void carregarPersonas(), 250);
+
+const chat = new ChatPanel({
+  api: API,
+  personas: () =>
+    store.diagram.nodes.map((n) => {
+      const p = personas.get(n.id);
+      return { id: n.id, nome: n.text, cor: p?.cor ?? '#64748b', motor: p?.motor ?? 'mcp', modelo: p?.modelo ?? '' };
+    }),
+  falando: (id, on) => canvas.setFalando(id, on),
+  pulso: (aresta, rotulo) => canvas.pulseEdge(aresta, rotulo),
+});
+
+// ---- sincronização com o servidor (API em server/api.ts) -------------------
+
+const sync = new ServerSync(
+  store,
+  (msg) => canvas.pulseEdge(msg.id, msg.label),
+  (msg) => {
+    if (msg.type === 'persona.atualizada') atualizarPersona(msg.persona);
+    else {
+      chat.receber(msg);
+      // A memória mudou (atualização gravada ou proposta aceita): o selo mostra o novo total.
+      if ((msg.type === 'chat.mensagem' || msg.type === 'chat.mensagem.atualizada') && msg.mensagem?.tipo === 'memoria') contarMemoria();
+    }
+  },
+);
+void carregarPersonas();
+new DiagramMenu();
+
+/** O código Mermaid é lido e gerado só no servidor (C#): POST /api/mermaid/gerar e /api/mermaid/ler. */
+async function mermaidApi(acao, corpo) {
+  const res = await fetch(`/api/mermaid/${acao}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(corpo),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return acao === 'gerar' ? (await res.text()).trimEnd() : res.json();
+}
+
+let derivedSeq = 0;
+/** Atualiza o que depende do diagrama inteiro: painel de código e preview. */
+const refreshDerived = debounce(async (fromCode) => {
+  const seq = ++derivedSeq;
+  let code;
+  try {
+    code = await mermaidApi('gerar', store.diagram);
+  } catch {
+    return; // servidor fora do ar: o painel fica como está
+  }
+  if (seq !== derivedSeq) return;
+  if (!fromCode) {
+    codeEl.value = code;
+    errorsEl.replaceChildren();
+  }
+  schedulePreview(code);
+}, 120);
+
+// Sem nada desenhado não há o que exportar.
+function updateExportButtons() {
+  for (const id of ['#btn-svg', '#btn-png']) $(id).disabled = !store.diagram.nodes.length;
+}
+
+store.subscribe((change) => {
+  updateHint();
+  if (change.source !== 'view') {
+    refreshDerived(change.source === 'code');
+    updateExportButtons();
+  }
+});
+
+// ---- código → canvas -----------------------------------------------------
+
+codeEl.addEventListener(
+  'input',
+  debounce(async () => {
+    let lido;
+    try {
+      lido = await mermaidApi('ler', { code: codeEl.value, previous: store.diagram });
+    } catch (err) {
+      errorsEl.replaceChildren(Object.assign(document.createElement('div'), { textContent: `Servidor indisponível: ${err.message}` }));
+      return;
+    }
+    const { diagram, errors } = lido;
+    errorsEl.replaceChildren(...errors.map((msg) => Object.assign(document.createElement('div'), { textContent: msg })));
+    if (!errors.length) store.replace(diagram, 'code');
+  }, 300),
+);
+
+// ---- paleta ----------------------------------------------------------------
+
+for (const tool of document.querySelectorAll('[data-tool]')) {
+  const kind = tool.dataset.tool;
+  tool.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData(DND_TYPE, kind);
+    e.dataTransfer.effectAllowed = 'copy';
+  });
+  const activate = () => {
+    if (kind === 'arrow') {
+      store.setMode(store.mode === 'arrow' ? 'select' : 'arrow');
+    } else {
+      const r = $('#canvas').getBoundingClientRect();
+      const n = store.addNode(r.width / 2 + (Math.random() - 0.5) * 80, r.height / 2 + (Math.random() - 0.5) * 80);
+      canvas.edit('node', n.id);
+    }
+  };
+  tool.addEventListener('click', activate);
+  tool.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      activate();
+    }
+  });
+}
+
+// ---- abas da esquerda: Chat | Componentes -----------------------------------
+
+for (const b of document.querySelectorAll('[data-left-tab]')) {
+  b.addEventListener('click', () => {
+    for (const x of document.querySelectorAll('[data-left-tab]')) x.classList.toggle('active', x === b);
+    for (const pane of document.querySelectorAll('[data-pane]')) pane.hidden = pane.dataset.pane !== b.dataset.leftTab;
+  });
+}
+
+// ---- personas da paleta: o mesmo papel em cada motor ----------------------------
+
+async function criarDoTemplate(motor, papel, at) {
+  const r = $('#canvas').getBoundingClientRect();
+  const pos = at ?? { x: r.width / 2 + (Math.random() - 0.5) * 120, y: r.height / 2 + (Math.random() - 0.5) * 120 };
+  const res = await fetch(`${API}/templates/${encodeURIComponent(papel)}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Client-Id': sync.clientId },
+    body: JSON.stringify({ motor, x: Math.round(pos.x), y: Math.round(pos.y) }),
+  });
+  const json = await res.json();
+  if (!res.ok) return void (hintEl.textContent = json.error ?? 'Não consegui criar a persona.');
+  personas.set(json.persona.id, json.persona);
+  // O SSE desse retângulo vem marcado com o nosso clientId e é ignorado (como se já o tivéssemos
+  // aplicado), então ele entra no desenho por aqui, a partir da resposta.
+  const id = json.node.id;
+  if (!store.node(id)) store.applyRemote({ type: 'node.added', node: json.node });
+  store.select({ kind: 'node', id });
+}
+canvas.onTemplate = (motor, papel, at) => void criarDoTemplate(motor, papel, at);
+
+fetch('/api/templates')
+  .then((r) => r.json())
+  .then((t) => {
+    const host = $('#templates');
+    /** Um item da paleta: arrastar ou clicar cria o retângulo com a persona daquele papel, no motor dado. */
+    const item = (motor, papel, dica) => {
+      const tool = Object.assign(document.createElement('div'), { className: 'tool template', role: 'button', tabIndex: 0, draggable: true, title: dica });
+      tool.style.setProperty('--cor', papel.cor);
+      tool.innerHTML = '<span class="tpl-cor"></span><span class="tool-label"></span>';
+      tool.querySelector('.tool-label').textContent = papel.titulo;
+      tool.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData(DND_TYPE, `tpl:${motor}:${papel.nome}`);
+        e.dataTransfer.effectAllowed = 'copy';
+      });
+      tool.addEventListener('click', () => void criarDoTemplate(motor, papel.nome));
+      tool.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          void criarDoTemplate(motor, papel.nome);
+        }
+      });
+      return tool;
+    };
+    // Especiais: memória, você (humana) e saída. Nascem no MCP; o motor muda no painel.
+    if (t.especiais?.length) {
+      const grupo = Object.assign(document.createElement('details'), { className: 'tpl-grupo', open: true });
+      grupo.append(
+        Object.assign(document.createElement('summary'), { textContent: 'Especiais', title: 'Personas com função própria: memória, você (humana) e saída' }),
+      );
+      for (const e of t.especiais) grupo.append(item('mcp', e, `${e.descricao}\nNasce no MCP: troque o motor no painel.`));
+      host.append(grupo);
+    }
+    for (const m of t.motores) {
+      const grupo = Object.assign(document.createElement('details'), { className: 'tpl-grupo', open: m.nome === 'mcp' });
+      grupo.append(Object.assign(document.createElement('summary'), { textContent: m.titulo, title: m.descricao }));
+      for (const papel of t.papeis) grupo.append(item(m.nome, papel, `${papel.descricao}\n${m.titulo} · ${papel.modelos[m.nome]}`));
+      host.append(grupo);
+    }
+  })
+  .catch(() => ($('#templates').textContent = 'Templates indisponíveis (servidor fora do ar).'));
+
+// ---- teclado e barra superior ----------------------------------------------
+
+document.addEventListener('keydown', (e) => {
+  const t = e.target;
+  if (t.matches('input, textarea, select')) return;
+  if (e.key === 'Delete' || e.key === 'Backspace') {
+    e.preventDefault();
+    store.removeSelected();
+  } else if (e.key.toLowerCase() === 'm' && store.selection?.kind === 'edge' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    store.toggleAnimated(store.selection.id);
+  } else if (e.key.toLowerCase() === 'p' && store.selection?.kind === 'edge' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    // O pulso passa pelo servidor: todas as abas abertas veem a mensagem.
+    if (!sync.pulse(store.selection.id)) canvas.pulseEdge(store.selection.id);
+  } else if (e.key.toLowerCase() === 'a' && store.selection?.kind === 'node' && !e.ctrlKey && !e.metaKey) {
+    store.toggleActive(store.selection.id);
+  } else if (e.key.toLowerCase() === 'i' && store.selection?.kind === 'node' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    // Bloco de início: a conversa começa por esta persona.
+    personaPanel.alternarInicio();
+  } else if (e.key.toLowerCase() === 'r' && store.selection?.kind === 'node' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    e.preventDefault(); // senão a letra cairia no campo que acabou de abrir
+    canvas.edit('owner', store.selection.id);
+  } else if (!e.ctrlKey && !e.metaKey && !e.altKey && ['v', 'h', 'f', 'z', '+', '=', '-'].includes(e.key.toLowerCase())) {
+    // Câmera: V seleciona, H mão, F ver tudo, Z zoom no selecionado, + e − zoom.
+    const k = e.key.toLowerCase();
+    if (k === 'v') canvas.setTool('select');
+    else if (k === 'h') canvas.setTool('pan');
+    else if (k === 'f') canvas.fitAll();
+    else if (k === 'z') canvas.zoomToSelection();
+    else canvas.zoomBy(k === '-' ? 1 / 1.25 : 1.25);
+  } else if (e.key === 'Escape') {
+    if (canvas.connecting) canvas.cancel();
+    else if (store.mode === 'arrow') store.setMode('select');
+    else store.select(null);
+  }
+});
+
+$('#btn-copy').addEventListener('click', async () => {
+  const btn = $('#btn-copy');
+  try {
+    await navigator.clipboard.writeText(codeEl.value);
+    btn.textContent = 'Copiado!';
+  } catch {
+    codeEl.select();
+    btn.textContent = 'Selecionado — Ctrl+C';
+  }
+  setTimeout(() => (btn.textContent = 'Copiar código'), 1500);
+});
+
+$('#btn-svg').addEventListener('click', () => {
+  const out = canvas.exportSvg();
+  if (out) downloadSvg(out.svg);
+});
+
+$('#btn-png').addEventListener('click', async () => {
+  const out = canvas.exportSvg();
+  if (!out) return;
+  try {
+    await downloadPng(out.svg, out.width, out.height);
+  } catch (err) {
+    alert(`Não foi possível exportar o PNG: ${err.message}`);
+  }
+});
+
+$('#btn-clear').addEventListener('click', () => {
+  if (store.diagram.nodes.length && !confirm('Apagar todo o diagrama?')) return;
+  store.replace({ nodes: [], edges: [] }, 'local');
+});
+
+updateHint();
+updateExportButtons();
+refreshDerived(false);

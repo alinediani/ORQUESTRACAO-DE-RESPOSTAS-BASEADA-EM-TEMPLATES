@@ -7,6 +7,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Orquestracao.Core.Tests/Orquestracao.Core.Tests.csproj" />
+    <Project Path="tests/Orquestracao.E2E.Tests/Orquestracao.E2E.Tests.csproj" />
     <Project Path="tests/Orquestracao.Templates.Tests/Orquestracao.Templates.Tests.csproj" />
     <Project Path="tests/Orquestracao.Web.Tests/Orquestracao.Web.Tests.csproj" />
   </Folder>

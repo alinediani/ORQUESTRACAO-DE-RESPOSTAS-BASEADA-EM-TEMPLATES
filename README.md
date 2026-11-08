@@ -49,11 +49,12 @@ O caminho escolhido:
 - [x] Testes de `ops` portados para xUnit
 
 **F2 — API, SSE e front**
-- [ ] API REST com as mesmas rotas, cabeçalho `X-Rev` e eventos SSE (ASP.NET Minimal API)
-- [ ] Front convertido de TypeScript para JavaScript puro em `wwwroot/`, com o Mermaid em `wwwroot/lib/`
-- [ ] Front sem parser Mermaid próprio: o código vem do servidor (`/api/diagram`)
-- [ ] Testes de API portados (xUnit + `WebApplicationFactory`)
-- [ ] Marco: o canvas funciona inteiro com `dotnet run`
+- [x] API REST com as mesmas rotas, cabeçalho `X-Rev` e eventos SSE (ASP.NET Minimal API)
+- [x] Front convertido de TypeScript para JavaScript puro em `wwwroot/`, com o Mermaid em `wwwroot/lib/`
+- [x] Front sem parser Mermaid próprio: o painel de código usa `POST /api/mermaid/ler` e `/gerar` (C#)
+- [x] Testes de API portados (xUnit + `WebApplicationFactory`)
+- [x] Marco: o canvas funciona inteiro com `dotnet run`
+- [x] Testes de navegador com Playwright para .NET (editor, SSE, código, preview, menu e câmera)
 
 **F3 — Personas, conversa e motores**
 - [ ] Personas (`.md` + yaml), turnos e conversa (debate, resposta, tarefa)

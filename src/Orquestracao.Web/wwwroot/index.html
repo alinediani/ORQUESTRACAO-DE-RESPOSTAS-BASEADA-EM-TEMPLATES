@@ -1,11 +1,263 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orquestração por templates</title>
-</head>
-<body>
-  <p>Orquestração de respostas baseada em templates: migração para C# em andamento (F0).</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orquestração por templates</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <button id="btn-menu" type="button" class="menu-btn" aria-label="Diagramas" aria-controls="menu" title="Diagramas">☰</button>
+        <h1><span id="diagram-name"></span><small>mermaid-ai-draw</small></h1>
+      </div>
+      <div class="actions">
+        <button id="btn-svg" type="button" title="Baixa o desenho do canvas como SVG">Exportar SVG</button>
+        <button id="btn-png" type="button" title="Baixa o desenho do canvas como PNG">Exportar PNG</button>
+        <button id="btn-copy" type="button">Copiar código</button>
+        <button id="btn-clear" type="button">Limpar</button>
+      </div>
+    </header>
+    <main class="layout">
+      <aside class="palette">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-left-tab="chat" role="tab">Chat</button>
+          <button type="button" class="tab" data-left-tab="componentes" role="tab">Componentes</button>
+        </div>
+        <section class="left-pane chat" data-pane="chat">
+          <div class="chat-motores" id="chat-motores" aria-label="Motores"></div>
+          <div class="chat-head">
+            <select id="chat-historico" title="Conversas deste diagrama" aria-label="Conversas"></select>
+            <span class="chat-custo" id="chat-custo" title="Custo desta conversa (motor API)"></span>
+          </div>
+          <div class="chat-mensagens" id="chat-mensagens" aria-live="polite"></div>
+          <form class="chat-espera" id="chat-espera" hidden>
+            <div class="ce-titulo" id="ce-titulo">Sua vez</div>
+            <div class="ce-pedido" id="ce-pedido"></div>
+            <textarea id="ce-texto" rows="2" placeholder="Sua resposta (opcional ao aprovar)…" aria-label="Sua resposta"></textarea>
+            <div class="chat-opcoes">
+              <button type="button" class="danger" data-acao="encerrar" title="Encerra a conversa aqui">Encerrar</button>
+              <button type="button" data-acao="mudar" title="Quem falou antes refaz, considerando o seu pedido">Pedir mudança</button>
+              <button type="submit" class="primary" data-acao="aprovar">Aprovar</button>
+            </div>
+          </form>
+          <form class="chat-novo" id="chat-novo">
+            <textarea id="chat-assunto" rows="3" placeholder="Assunto, pergunta ou tarefa para as personas…" aria-label="Assunto"></textarea>
+            <div class="chat-opcoes">
+              <select id="chat-modo" aria-label="Modo">
+                <option value="debate">Debater</option>
+                <option value="resposta">Debater e responder</option>
+                <option value="tarefa">Tarefa (delegar)</option>
+              </select>
+              <label title="Rodadas do debate">rodadas <input id="chat-rodadas" type="number" min="1" max="10" value="2" /></label>
+              <button type="submit" class="primary">Começar</button>
+            </div>
+          </form>
+          <form class="chat-intervir" id="chat-intervir" hidden>
+            <div class="chat-sugestoes" id="chat-sugestoes" hidden></div>
+            <textarea id="chat-texto" rows="2" placeholder="Fale com o grupo (@nome chama alguém)…" aria-label="Mensagem"></textarea>
+            <div class="chat-opcoes">
+              <button type="button" id="chat-nova" title="Começar outra conversa">Nova</button>
+              <button type="button" id="chat-sintetizar" title="Pedir a resposta final polida agora">Sintetizar</button>
+              <button type="button" id="chat-parar" class="danger">Parar</button>
+              <button type="submit" class="primary">Enviar</button>
+            </div>
+          </form>
+        </section>
+        <section class="left-pane" data-pane="componentes" hidden>
+          <div class="panel-title">Componentes</div>
+          <div class="tool" role="button" tabindex="0" draggable="true" data-tool="rect" title="Arraste para o canvas">
+            <svg viewBox="0 0 40 24" aria-hidden="true"><rect x="2" y="3" width="36" height="18" rx="6" /></svg>
+            <span>Retângulo</span>
+          </div>
+          <div class="tool" role="button" tabindex="0" draggable="true" data-tool="arrow" title="Arraste até um retângulo ou clique para o modo seta">
+            <svg viewBox="0 0 40 24" aria-hidden="true"><line x1="4" y1="12" x2="30" y2="12" /><path d="M28 6 L37 12 L28 18 Z" /></svg>
+            <span>Seta</span>
+          </div>
+          <div class="panel-title palette-section">Personas</div>
+          <div id="templates" class="templates"></div>
+          <p class="hint" id="hint"></p>
+        </section>
+      </aside>
+      <section class="canvas" id="canvas">
+          <div class="canvas-tools" role="toolbar" aria-label="Ferramentas do canvas">
+            <div class="ct-group">
+              <button type="button" data-canvas-tool="select" aria-pressed="true" title="Selecionar (V): clicar, arrastar e ligar os retângulos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3l7 17 2.5-7.5L21 10z"/><path d="M13.5 13.5l6 6"/></svg></button>
+              <button type="button" data-canvas-tool="pan" aria-pressed="false" title="Mover a vista (H, ou segure Espaço): arraste para ver o resto do fluxo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.3l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15"/></svg></button>
+            </div>
+            <div class="ct-group">
+              <button type="button" id="ct-zoom-out" title="Diminuir o zoom (−)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+              <button type="button" id="ct-zoom-reset" class="ct-zoom" title="Voltar a 100%">100%</button>
+              <button type="button" id="ct-zoom-in" title="Aumentar o zoom (+)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+            </div>
+            <div class="ct-group">
+              <button type="button" id="ct-fit" title="Ver o fluxo inteiro (F)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8V5a2 2 0 0 1 2-2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><rect x="7.5" y="9" width="9" height="6" rx="1.5"/></svg></button>
+              <button type="button" id="ct-focus" title="Zoom no selecionado (Z)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8V5a2 2 0 0 1 2-2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="11" cy="11" r="3.5"/><path d="M13.6 13.6L16.5 16.5"/></svg></button>
+            </div>
+          </div>
+        </section>
+      <aside class="side">
+        <div class="panel persona-panel" id="persona-panel" hidden>
+          <div class="panel-title" id="pp-titulo">Persona</div>
+          <label class="pp-inicio" title="A rodada começa por ela (num ciclo, é quem abre a conversa). Tecla I com o retângulo selecionado.">
+            <input type="checkbox" id="pp-inicio" /> Começa a conversa (bloco de início) <kbd>I</kbd>
+          </label>
+          <label class="pp-inicio" title="Não fala nas rodadas: quando todas terminam, ela roda uma vez, preenche o template e gera um .md para baixar no chat.">
+            <input type="checkbox" id="pp-saida" /> Persona de saída (roda no fim e gera um .md)
+          </label>
+          <label class="pp-inicio" title="É você: na vez dela, a conversa pausa e espera a sua resposta no chat (Aprovar, Pedir mudança ou Encerrar). Não usa motor.">
+            <input type="checkbox" id="pp-humana" /> Persona humana (a conversa espera você)
+          </label>
+          <label class="pp-inicio" title="Não fala nas rodadas: escuta as personas marcadas abaixo (sem setas) e mantém o memoria.md do diagrama, reaproveitado nas próximas conversas.">
+            <input type="checkbox" id="pp-memoria" /> Persona de memória (escuta e guarda)
+          </label>
+          <div class="pp-depois" id="pp-memoria-box" hidden>
+            <div class="pp-escuta-titulo">Escuta:</div>
+            <div class="pp-escuta" id="pp-escuta"></div>
+            <div class="pp-escuta-titulo" title="Na primeira vez de cada uma na conversa, recebe as Decisões e Pendências da memória. As outras só consultam com RECORDAR.">Resumo no início para:</div>
+            <div class="pp-escuta" id="pp-resumo"></div>
+            <div class="pp-saida">
+              <label>Atualiza
+                <select id="pp-quando">
+                  <option value="rodada">no fim de cada rodada</option>
+                  <option value="fala">depois de cada fala</option>
+                </select>
+              </label>
+              <label>Tamanho (caracteres) <input id="pp-limite" type="number" min="200" step="100" value="4000" /></label>
+            </div>
+            <label class="pp-inicio" title="Cada atualização vira uma proposta no chat, para você aceitar ou descartar antes de gravar.">
+              <input type="checkbox" id="pp-curadoria" /> Curadoria (eu aprovo antes de gravar)
+            </label>
+            <button type="button" id="pp-palacio">Abrir palácio da memória</button>
+          </div>
+          <div class="pp-saida" id="pp-humana-box" hidden>
+            <label>Prazo (min) <input id="pp-prazo" type="number" min="1" step="1" placeholder="sem prazo" /></label>
+            <label>Ao vencer
+              <select id="pp-aovencer">
+                <option value="seguir">seguir</option>
+                <option value="encerrar">encerrar</option>
+              </select>
+            </label>
+          </div>
+          <div class="pp-saida" id="pp-saida-box" hidden>
+            <label>Arquivo gerado <input id="pp-arquivo" spellcheck="false" placeholder="README.md" /></label>
+            <button type="button" id="pp-template">Editar template</button>
+          </div>
+          <div class="pp-depois" id="pp-depois-box" hidden>
+            <label>Ao terminar, iniciar (pós-fluxo)
+              <select id="pp-depois"><option value="">— nada —</option></select>
+            </label>
+            <div class="pp-saida">
+              <label>Modo
+                <select id="pp-depois-modo">
+                  <option value="debate">debate</option>
+                  <option value="resposta">resposta</option>
+                  <option value="tarefa">tarefa</option>
+                </select>
+              </label>
+              <label>Rodadas <input id="pp-depois-rodadas" type="number" min="1" max="10" value="2" /></label>
+            </div>
+          </div>
+          <div class="pp-grid">
+            <label>Motor
+              <select id="pp-motor">
+                <option value="mcp">MCP · Claude Code</option>
+                <option value="ollama">Ollama · local</option>
+                <option value="api">API · Claude</option>
+              </select>
+            </label>
+            <label>Modelo <input id="pp-modelo" list="pp-modelos" spellcheck="false" /></label>
+            <datalist id="pp-modelos"></datalist>
+            <label>Papel
+              <select id="pp-papel">
+                <option value="debatedora">debatedora</option>
+                <option value="moderadora">moderadora (sintetiza)</option>
+                <option value="orquestradora">orquestradora (delega)</option>
+                <option value="executora">executora</option>
+              </select>
+            </label>
+            <label>Esforço
+              <select id="pp-esforco">
+                <option>low</option><option>medium</option><option>high</option><option>xhigh</option><option>max</option>
+              </select>
+            </label>
+            <label class="pp-cor">Cor <input id="pp-cor" type="color" /></label>
+          </div>
+          <label class="pp-prompt">Prompt (quem ela é)
+            <textarea id="pp-prompt" rows="6" spellcheck="false"></textarea>
+          </label>
+          <div class="pp-status" id="pp-status"></div>
+        </div>
+        <dialog class="template-dialog" id="template-dialog" aria-labelledby="td-titulo">
+          <div class="td-topo">
+            <div class="panel-title" id="td-titulo">Template de saída</div>
+            <span class="pp-status" id="td-status"></span>
+            <button type="button" id="td-fechar">Fechar</button>
+          </div>
+          <p class="td-ajuda">A persona de saída preenche este markdown no fim da conversa. Troque cada <code>{{marcação}}</code> pelo que ela deve escrever. Só o template é gravado: a persona não muda.</p>
+          <textarea id="td-texto" spellcheck="false" aria-label="Template de saída"></textarea>
+        </dialog>
+        <dialog class="template-dialog palacio" id="palacio-dialog" aria-labelledby="pa-titulo">
+          <div class="td-topo">
+            <div class="panel-title" id="pa-titulo">Palácio da memória</div>
+            <span class="pp-status" id="pa-status"></span>
+            <button type="button" id="pa-fechar">Fechar</button>
+          </div>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab active" data-pa-aba="salas" role="tab">Salas</button>
+            <button type="button" class="tab" data-pa-aba="historico" role="tab">Histórico</button>
+            <button type="button" class="tab" data-pa-aba="markdown" role="tab">Markdown</button>
+          </div>
+          <div class="pa-pane" data-pa-pane="salas">
+            <div class="pa-filtros">
+              <input id="pa-busca" type="search" placeholder="Buscar na memória…" aria-label="Buscar" />
+              <select id="pa-persona" aria-label="Persona"><option value="">todas as personas</option></select>
+              <select id="pa-conversa" aria-label="Conversa"><option value="">todas as conversas</option></select>
+            </div>
+            <div class="pa-salas" id="pa-salas"></div>
+          </div>
+          <div class="pa-pane" data-pa-pane="historico" hidden>
+            <div class="pa-historico">
+              <ul id="pa-versoes"></ul>
+              <pre id="pa-versao"></pre>
+            </div>
+          </div>
+          <div class="pa-pane" data-pa-pane="markdown" hidden>
+            <textarea id="pa-md" spellcheck="false" aria-label="memoria.md"></textarea>
+            <div class="chat-opcoes">
+              <button type="button" class="danger" id="pa-zerar">Zerar memória</button>
+              <button type="button" class="primary" id="pa-salvar">Salvar</button>
+            </div>
+          </div>
+        </dialog>
+        <div class="panel">
+          <div class="panel-title">Código Mermaid</div>
+          <textarea id="code" spellcheck="false" aria-label="Código Mermaid"></textarea>
+          <div id="errors" class="errors"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Preview</div>
+          <div id="preview" class="preview"></div>
+        </div>
+      </aside>
+    </main>
+    <div id="menu-backdrop" class="menu-backdrop" hidden></div>
+    <aside id="menu" class="menu" hidden aria-label="Diagramas">
+      <div class="menu-head">
+        <div class="panel-title">Diagramas</div>
+        <button id="menu-close" type="button" class="icon" title="Fechar (Esc)">✕</button>
+      </div>
+      <input id="menu-search" class="menu-search" type="search" placeholder="Buscar diagrama…" spellcheck="false" />
+      <div class="menu-tools">
+        <button id="menu-new" type="button" class="primary">+ Novo</button>
+        <button id="menu-import" type="button" title="Importa um .zip exportado por este menu ou um .mmd">Importar</button>
+        <input id="menu-file" type="file" accept=".zip,.mmd,application/zip,text/plain" hidden />
+      </div>
+      <ul id="menu-list" class="menu-list"></ul>
+    </aside>
+    <!-- Sem bundler: o Mermaid (12.2.0) é um script global e o app são ES modules servidos pelo ASP.NET. -->
+    <script src="lib/mermaid.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
