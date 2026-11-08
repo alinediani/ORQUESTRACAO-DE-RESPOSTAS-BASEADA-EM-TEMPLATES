@@ -1,3 +1,4 @@
+using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using Microsoft.Playwright;
 using static Microsoft.Playwright.Assertions;
@@ -137,5 +138,31 @@ public class OrquestradorPainelTests(App app)
         await page.Locator("#link-orquestrador").ClickAsync();
         await Expect(page).ToHaveURLAsync(new Regex("orquestrador\\.html$"));
         await Expect(page.Locator("body[data-pronto=true]")).ToHaveCountAsync(1);
+    }
+
+    [Fact]
+    public async Task Painel_ComMcp_APerguntaEsperaOClaudeCode_ERespondePeloMcp()
+    {
+        await Limpar();
+        var page = await AbrirPainel();
+        await page.Locator("#motor").SelectOptionAsync("mcp");
+        await Expect(page.Locator("#aviso-mcp")).ToBeVisibleAsync();
+        await Perguntar(page, "Qual a moeda do Peru?");
+        await Expect(page.Locator("#r-texto")).ToContainTextAsync("esperando o Claude Code");
+
+        // O Claude Code busca o turno pendente e responde, como no experimento real.
+        JsonNode turnos = null!;
+        for (var i = 0; i < 50; i++)
+        {
+            turnos = (await app.Mcp("proxima_vez", new { diagrama = "orquestrador", aguardar_s = 1 }))["turnos"]!;
+            if (turnos.AsArray().Count > 0) break;
+        }
+        Assert.Equal("Qual a moeda do Peru?", (string?)turnos[0]!["contexto"]);
+        await app.Mcp("responder", new { turno = (string)turnos[0]!["turno"]!, texto = "A moeda do Peru é o sol." });
+
+        await Expect(page.Locator("#r-caminho")).ToHaveTextAsync("LLM padrão");
+        await Expect(page.Locator("#r-texto")).ToHaveTextAsync("A moeda do Peru é o sol.");
+        await Expect(page.Locator("#r-template")).ToHaveTextAsync("A moeda {de_entidade} é o {moeda}.");
+        await page.Locator("#motor").SelectOptionAsync("api"); // devolve o padrão para os outros testes
     }
 }

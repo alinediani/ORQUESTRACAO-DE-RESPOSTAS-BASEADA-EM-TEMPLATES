@@ -67,6 +67,10 @@ function mostrarResultado(r) {
 async function perguntar(pergunta) {
   if (!pergunta.trim()) return;
   esperando = true;
+  if (motor.value === 'mcp') {
+    $('#resultado').hidden = false;
+    $('#r-texto').textContent = 'Se a estrutura for nova, esperando o Claude Code responder pelo /mcp…';
+  }
   try {
     mostrarResultado(await api('/api/orquestrador/perguntar', { method: 'POST', body: { pergunta, motor: $('#motor').value } }));
   } catch (err) {
@@ -216,6 +220,19 @@ $('#form-pergunta').addEventListener('submit', (e) => {
   e.preventDefault();
   void perguntar($('#pergunta').value);
 });
+// O LLM das chaves novas: com MCP, a resposta espera o Claude Code atender pelo /mcp.
+const motor = $('#motor');
+try {
+  motor.value = localStorage.getItem('orquestrador:motor') ?? motor.value;
+} catch {}
+const avisoMcp = () => ($('#aviso-mcp').hidden = motor.value !== 'mcp');
+motor.addEventListener('change', () => {
+  avisoMcp();
+  try {
+    localStorage.setItem('orquestrador:motor', motor.value);
+  } catch {}
+});
+avisoMcp();
 $('#bom').addEventListener('click', () => void avaliar(true));
 $('#ruim').addEventListener('click', () => void avaliar(false));
 $('#limpar').addEventListener('click', async () => {

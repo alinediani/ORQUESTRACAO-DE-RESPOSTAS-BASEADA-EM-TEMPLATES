@@ -23,7 +23,8 @@ builder.Services.AddSingleton<IMotor>(_ => new MotorApi());
 var cfg = builder.Configuration;
 var fatos = FonteDeFatosJson.Achar(cfg["Orquestrador:Fatos"], builder.Environment.ContentRootPath);
 builder.Services.AddSingleton<IFonteDeFatos>(_ => FonteDeFatosJson.Ler(fatos));
-builder.Services.AddSingleton<ITemplateStore>(_ => new TemplateStoreSqlite(cfg["Orquestrador:Banco"] ?? Path.Combine(pasta, "orquestrador.db")));
+// A base fica em dados/orquestrador.db (no repositório: é a prova do uso do protótipo), ao lado da base de fatos.
+builder.Services.AddSingleton<ITemplateStore>(_ => new TemplateStoreSqlite(cfg["Orquestrador:Banco"] ?? Path.Combine(Path.GetDirectoryName(fatos)!, "orquestrador.db")));
 builder.Services.AddSingleton<IParser>(sp =>
 {
     var fonte = sp.GetRequiredService<IFonteDeFatos>();

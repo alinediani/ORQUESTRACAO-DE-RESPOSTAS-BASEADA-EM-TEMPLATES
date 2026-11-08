@@ -207,9 +207,10 @@ public static class Experimento
     public static async Task<ResultadoExperimento> Rodar(
         IFonteDeFatos fonte, List<PerguntaTeste> conjunto, ILlm llmPrototipo, ILlm llmLinhaDeBase, IJuiz juiz,
         string modo, int semente, double taxaErroLlm, double latenciaLlmMs, ConfiguracaoOrquestrador? cfg = null, IParser? parser = null, CancellationToken ct = default,
-        int concorrenciaLinhaDeBase = 1)
+        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null)
     {
-        var orq = new Orquestrador(parser ?? new ParserHeuristico(fonte), new TemplateStoreMemoria(), fonte, cfg);
+        // Com uma base SQLite, as perguntas e os feedbacks do protótipo ficam gravados (a prova do experimento).
+        var orq = new Orquestrador(parser ?? new ParserHeuristico(fonte), store ?? new TemplateStoreMemoria(), fonte, cfg);
         var proto = new List<RespostaTeste>();
         var chaves = new Dictionary<string, HashSet<string>>();
         foreach (var p in conjunto)

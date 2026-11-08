@@ -36,8 +36,26 @@ public sealed class TemplateStoreMemoria : ITemplateStore
     public IReadOnlyList<TemplateResposta> Listar() => _t.Values.OrderBy(t => t.Chave, StringComparer.Ordinal).ToList();
 }
 
-/// <summary>A base em SQLite (o app): um arquivo, uma tabela <c>templates</c>.</summary>
-public sealed class TemplateStoreSqlite : ITemplateStore
+/// <summary>Os totais gravados, para recompor as estatísticas (R07) depois de reiniciar.</summary>
+public sealed record TotaisRegistrados(
+    int Perguntas, int AcertosTemplate, int ChamadasGeracao, int ChamadasParser, long TokensEntrada, long TokensSaida,
+    double Custo, double LatenciaTotalMs, int TemplatesSalvos, int FeedbacksBons, int FeedbacksRuins, int TemplatesDescartados);
+
+/// <summary>O histórico do orquestrador: cada pergunta respondida e cada feedback (a prova do experimento).</summary>
+public interface IRegistroDePerguntas
+{
+    void Registrar(ResultadoOrquestrador r);
+
+    void RegistrarFeedback(string chave, bool bom, double? pesoNovo, bool descartou);
+
+    TotaisRegistrados Totais();
+}
+
+/// <summary>
+/// A base em SQLite (o app): um arquivo com a tabela <c>templates</c> (a base chave-valor) e o histórico,
+/// <c>perguntas</c> e <c>feedbacks</c>, de onde as estatísticas são recompostas ao reiniciar.
+/// </summary>
+public sealed class TemplateStoreSqlite : ITemplateStore, IRegistroDePerguntas
 {
     private readonly string _conexao;
 
@@ -55,6 +73,33 @@ public sealed class TemplateStoreSqlite : ITemplateStore
                 ruins INTEGER NOT NULL DEFAULT 0,
                 criado_em TEXT NOT NULL,
                 atualizado_em TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS perguntas (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                em TEXT NOT NULL,
+                pergunta TEXT NOT NULL,
+                resposta TEXT NOT NULL,
+                caminho TEXT NOT NULL,
+                chave TEXT NOT NULL,
+                entidade TEXT,
+                template TEXT,
+                peso REAL,
+                motivo TEXT,
+                template_salvo INTEGER NOT NULL,
+                chamadas_geracao INTEGER NOT NULL,
+                chamadas_parser INTEGER NOT NULL,
+                tokens_entrada INTEGER NOT NULL,
+                tokens_saida INTEGER NOT NULL,
+                custo REAL NOT NULL,
+                latencia_ms REAL NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS feedbacks (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                em TEXT NOT NULL,
+                chave TEXT NOT NULL,
+                bom INTEGER NOT NULL,
+                peso_novo REAL,
+                descartado INTEGER NOT NULL
             )
             """);
     }
@@ -66,12 +111,12 @@ public sealed class TemplateStoreSqlite : ITemplateStore
         return c;
     }
 
-    private void Executar(string sql, params (string Nome, object Valor)[] parametros)
+    private void Executar(string sql, params (string Nome, object? Valor)[] parametros)
     {
         using var c = Abrir();
         using var cmd = c.CreateCommand();
         cmd.CommandText = sql;
-        foreach (var (nome, valor) in parametros) cmd.Parameters.AddWithValue(nome, valor);
+        foreach (var (nome, valor) in parametros) cmd.Parameters.AddWithValue(nome, valor ?? DBNull.Value);
         cmd.ExecuteNonQuery();
     }
 
@@ -110,5 +155,36 @@ public sealed class TemplateStoreSqlite : ITemplateStore
         var lista = new List<TemplateResposta>();
         while (r.Read()) lista.Add(Ler(r));
         return lista;
+    }
+
+    // ---- o histórico (IRegistroDePerguntas) -----------------------------------
+
+    public void Registrar(ResultadoOrquestrador r) => Executar(
+        "INSERT INTO perguntas (em, pergunta, resposta, caminho, chave, entidade, template, peso, motivo, template_salvo, chamadas_geracao, chamadas_parser, tokens_entrada, tokens_saida, custo, latencia_ms) " +
+        "VALUES ($em, $pergunta, $resposta, $caminho, $chave, $entidade, $template, $peso, $motivo, $salvo, $geracao, $parser, $entrada, $saida, $custo, $latencia)",
+        ("$em", Agora.Iso()), ("$pergunta", r.Pergunta), ("$resposta", r.Texto), ("$caminho", r.Caminho), ("$chave", r.Chave), ("$entidade", r.Entidade),
+        ("$template", r.Template), ("$peso", r.Peso), ("$motivo", r.Motivo), ("$salvo", r.TemplateSalvo ? 1 : 0), ("$geracao", r.ChamadasGeracao),
+        ("$parser", r.ChamadasParser), ("$entrada", r.TokensEntrada), ("$saida", r.TokensSaida), ("$custo", r.Custo), ("$latencia", r.LatenciaMs));
+
+    public void RegistrarFeedback(string chave, bool bom, double? pesoNovo, bool descartou) => Executar(
+        "INSERT INTO feedbacks (em, chave, bom, peso_novo, descartado) VALUES ($em, $chave, $bom, $peso, $descartado)",
+        ("$em", Agora.Iso()), ("$chave", chave), ("$bom", bom ? 1 : 0), ("$peso", pesoNovo), ("$descartado", descartou ? 1 : 0));
+
+    public TotaisRegistrados Totais()
+    {
+        using var c = Abrir();
+        using var cmd = c.CreateCommand();
+        cmd.CommandText = """
+            SELECT COUNT(*), COALESCE(SUM(caminho = 'template'), 0), COALESCE(SUM(chamadas_geracao), 0), COALESCE(SUM(chamadas_parser), 0),
+                   COALESCE(SUM(tokens_entrada), 0), COALESCE(SUM(tokens_saida), 0), COALESCE(SUM(custo), 0), COALESCE(SUM(latencia_ms), 0),
+                   COALESCE(SUM(template_salvo), 0),
+                   (SELECT COALESCE(SUM(bom), 0) FROM feedbacks), (SELECT COALESCE(SUM(1 - bom), 0) FROM feedbacks),
+                   (SELECT COALESCE(SUM(descartado), 0) FROM feedbacks)
+            FROM perguntas
+            """;
+        using var r = cmd.ExecuteReader();
+        r.Read();
+        return new TotaisRegistrados(r.GetInt32(0), r.GetInt32(1), r.GetInt32(2), r.GetInt32(3), r.GetInt64(4), r.GetInt64(5),
+            r.GetDouble(6), r.GetDouble(7), r.GetInt32(8), r.GetInt32(9), r.GetInt32(10), r.GetInt32(11));
     }
 }

@@ -5,6 +5,8 @@
 //   dotnet run --project src/Orquestracao.Experimento -- --erro 0.1        # o LLM simulado erra 10% das vezes
 //   dotnet run --project src/Orquestracao.Experimento -- --llm api         # Claude Sonnet 5.5 na geração e Claude Opus 5.5 como juiz
 //   dotnet run --project src/Orquestracao.Experimento -- --llm api --parser hibrido   # e o Claude Haiku 5.5 no parser
+//   dotnet run --project src/Orquestracao.Experimento -- --llm gravado --respostas docs/experimento/resultados-mcp.json --banco docs/experimento/experimento-mcp.db
+//       reproduz um experimento a partir das respostas gravadas do LLM (ex.: o do Claude via MCP) e grava a base SQLite
 using System.Globalization;
 using System.Text.Json;
 using Orquestracao.Core.Conversas;
@@ -52,14 +54,49 @@ else if (modo == "api")
     }
     erro = 0;
 }
+else if (modo == "gravado")
+{
+    // As respostas que o LLM deu, gravadas no resultados-*.json: o protótipo reaproveita as do caminho "llm", e a
+    // linha de base, as dela. O fluxo é determinístico, então a reprodução tem de bater com o experimento original.
+    var arquivo = opcoes.GetValueOrDefault("respostas") ?? throw new ArgumentException("--respostas <resultados-*.json>");
+    using var doc = JsonDocument.Parse(File.ReadAllText(arquivo));
+    var proto = new Dictionary<string, string>();
+    var baseR = new Dictionary<string, string>();
+    foreach (var x in doc.RootElement.GetProperty("respostas").EnumerateArray())
+    {
+        var pergunta = x.GetProperty("pergunta").GetString()!;
+        var rp = x.GetProperty("prototipo");
+        if (rp.GetProperty("caminho").GetString() == "llm") proto.TryAdd(pergunta, rp.GetProperty("texto").GetString()!);
+        baseR.TryAdd(pergunta, x.GetProperty("linhaDeBase").GetProperty("texto").GetString()!);
+    }
+    ILlm Gravado(Dictionary<string, string> d) => new LlmComEstimativa(new LlmSimulado((_, pergunta) =>
+        d.TryGetValue(pergunta, out var t) ? t : throw new InvalidOperationException($"sem resposta gravada para: {pergunta}"), 0, 0), 4, 20);
+    llmProto = Gravado(proto);
+    llmBase = Gravado(baseR);
+    juiz = new JuizPorGabarito();
+    erro = 0;
+}
 else
 {
-    Console.Error.WriteLine($"--llm deve ser simulado ou api (veio {modo}).");
+    Console.Error.WriteLine($"--llm deve ser simulado, api ou gravado (veio {modo}).");
     return 1;
 }
 
 Console.WriteLine($"Experimento: {conjunto.Count} perguntas, LLM {modo}{(modo == "simulado" ? $" (erro {erro:P0})" : "")}, semente {semente}…");
-var r = await Experimento.Rodar(fonte, conjunto, llmProto, llmBase, juiz, modo, semente, erro, latencia, parser: parser);
+ITemplateStore? store = null;
+if (opcoes.GetValueOrDefault("banco") is { } banco)
+{
+    if (File.Exists(banco)) File.Delete(banco);
+    store = new TemplateStoreSqlite(banco);
+}
+var r = await Experimento.Rodar(fonte, conjunto, llmProto, llmBase, juiz, modo, semente, erro, latencia, parser: parser, store: store);
+if (modo == "gravado")
+{
+    // Só a base: o relatório do experimento original já está gravado.
+    Console.WriteLine($"Reprodução: protótipo {r.Prototipo.ChamadasGeracao} chamadas, {r.Prototipo.AcertosTemplate} pelo template, {r.Prototipo.Corretas} corretas · linha de base {r.LinhaDeBase.ChamadasGeracao}.");
+    Console.WriteLine($"Base gravada: {opcoes["banco"]}");
+    return 0;
+}
 
 Directory.CreateDirectory(saida);
 var json = new JsonSerializerOptions(JsonSerializerDefaults.Web)

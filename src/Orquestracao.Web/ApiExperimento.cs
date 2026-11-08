@@ -79,8 +79,12 @@ public static class ApiExperimento
                     var persona = Personas.Padrao("experimento", "Experimento") with { Motor = llm, Modelo = "claude-opus-5-5", Esforco = "low" };
                     ILlm Novo() => new LlmComEstimativa(new LlmPorMotor(motor, persona), 4, 20);
                     var conjunto = Experimento.GerarConjunto(fonte, semente, total);
-                    var r = await Experimento.Rodar(fonte, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0, concorrenciaLinhaDeBase: conjunto.Count);
+                    // A base do experimento (templates, perguntas e feedbacks do protótipo) fica gravada ao lado do relatório.
                     Directory.CreateDirectory(saida);
+                    var banco = Path.Combine(saida, $"experimento-{llm}.db");
+                    if (File.Exists(banco)) File.Delete(banco);
+                    var r = await Experimento.Rodar(fonte, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
+                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco));
                     var opcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
                     {
                         WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping, IncludeFields = true,
@@ -108,6 +112,7 @@ public static class ApiExperimento
                         Atual.Status = "concluido";
                         Atual.Resumo = new { prototipo = r.Prototipo, linhaDeBase = r.LinhaDeBase, comparacao = r.Comparacao, r.ChavesPorFamilia, r.TemplatesSalvos };
                         Atual.Arquivos.AddRange(arquivos.Keys.Select(k => Path.Combine(saida, k)));
+                        Atual.Arquivos.Add(banco);
                     }
                 }
                 catch (Exception e)

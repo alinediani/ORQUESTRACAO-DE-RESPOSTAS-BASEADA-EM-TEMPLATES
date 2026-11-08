@@ -17,7 +17,10 @@ namespace Orquestracao.Templates;
 public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeFatos fonte, ConfiguracaoOrquestrador? configuracao = null)
 {
     public ConfiguracaoOrquestrador Configuracao { get; } = configuracao ?? new();
-    public Estatisticas Estatisticas { get; } = new();
+    /// <summary>Onde cada pergunta e cada feedback ficam gravados (o SQLite), quando a base suporta.</summary>
+    private readonly IRegistroDePerguntas? _registro = store as IRegistroDePerguntas;
+
+    public Estatisticas Estatisticas { get; } = Estatisticas.De(store as IRegistroDePerguntas);
     public ITemplateStore Store => store;
     public IFonteDeFatos Fonte => fonte;
 
@@ -115,6 +118,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
     {
         var final = r with { LatenciaMs = relogio.Elapsed.TotalMilliseconds };
         Estatisticas.Registrar(final);
+        _registro?.Registrar(final);
         Respondido?.Invoke(final);
         return final;
     }
@@ -130,6 +134,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         if (t is null)
         {
             Estatisticas.RegistrarFeedback(bom, descartou: false);
+            _registro?.RegistrarFeedback(chave, bom, null, false);
             Etapa?.Invoke(bom ? new EtapaFluxo("feedback", "fim", "bom") : new EtapaFluxo("feedback", "llm", "ruim"));
             return null;
         }
@@ -137,6 +142,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         var peso = Math.Round(a * (bom ? 1 : 0) + (1 - a) * t.Peso, 6);
         var descartou = peso < Configuracao.Limiar;
         Estatisticas.RegistrarFeedback(bom, descartou);
+        _registro?.RegistrarFeedback(chave, bom, peso, descartou);
         if (descartou)
         {
             store.Remover(chave);

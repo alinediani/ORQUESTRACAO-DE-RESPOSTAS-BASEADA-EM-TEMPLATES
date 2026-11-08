@@ -83,6 +83,17 @@ public sealed class Estatisticas
     public double TaxaAcertoTemplate => Perguntas == 0 ? 0 : (double)AcertosTemplate / Perguntas;
     public double LatenciaMediaMs => Perguntas == 0 ? 0 : LatenciaTotalMs / Perguntas;
 
+    /// <summary>Começa a partir dos totais já gravados (o SQLite), para as estatísticas sobreviverem ao reinício.</summary>
+    public static Estatisticas De(IRegistroDePerguntas? registro)
+    {
+        var e = new Estatisticas();
+        if (registro?.Totais() is not { } t) return e;
+        (e.Perguntas, e.AcertosTemplate, e.ChamadasGeracao, e.ChamadasParser) = (t.Perguntas, t.AcertosTemplate, t.ChamadasGeracao, t.ChamadasParser);
+        (e.TokensEntrada, e.TokensSaida, e.Custo, e.LatenciaTotalMs) = (t.TokensEntrada, t.TokensSaida, t.Custo, t.LatenciaTotalMs);
+        (e.TemplatesSalvos, e.FeedbacksBons, e.FeedbacksRuins, e.TemplatesDescartados) = (t.TemplatesSalvos, t.FeedbacksBons, t.FeedbacksRuins, t.TemplatesDescartados);
+        return e;
+    }
+
     public void Registrar(ResultadoOrquestrador r)
     {
         lock (_trava)

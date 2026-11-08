@@ -43,6 +43,23 @@ Pelo gabarito, as duas estratégias empataram nas 150 perguntas. Mas **33 das 14
 - normalizar a pontuação no fim do preenchimento;
 - usar o feedback humano (Pedir mudança) para descartar o template mal formado: o mecanismo de peso já faz isso, desde que o avaliador marque a resposta como ruim.
 
+## A base SQLite do experimento (a prova)
+
+[`experimento-mcp.db`](experimento-mcp.db) guarda o estado do protótipo ao fim do experimento:
+- **`templates`:** os 6 templates, com o peso e os usos.
+- **`perguntas`:** as 150 perguntas, com a resposta, o caminho, a chave, as chamadas, os tokens e o custo.
+- **`feedbacks`:** os 150 feedbacks simulados.
+
+A base foi gerada reproduzindo as respostas que o Claude deu no experimento, gravadas em `resultados-mcp.json`:
+
+```bash
+dotnet run --project src/Orquestracao.Experimento -- --llm gravado --respostas docs/experimento/resultados-mcp.json --banco docs/experimento/experimento-mcp.db
+```
+
+O fluxo do protótipo é determinístico, e a reprodução bate com o experimento original nas 150 respostas. A base abre em qualquer leitor de SQLite (por exemplo, o DB Browser for SQLite).
+
+Ela também mostra um efeito do feedback simulado. Como ele é "bom" sempre que o dado confere com o gabarito, os pesos de todos os templates subiram para perto de 1,0, inclusive o da moeda, com o artigo errado. Um feedback que só olha o dado não pune erro de forma, e esse é mais um motivo para a avaliação humana.
+
 ## Para a avaliação humana
 
 As respostas estão em [`avaliacao-humana.csv`](avaliacao-humana.csv), em pares A/B sorteados. Veja as instruções em [`AVALIACAO-HUMANA.md`](AVALIACAO-HUMANA.md).

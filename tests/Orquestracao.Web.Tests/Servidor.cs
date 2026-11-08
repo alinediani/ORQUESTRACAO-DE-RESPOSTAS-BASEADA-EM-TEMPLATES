@@ -28,6 +28,8 @@ public sealed class Servidor : IDisposable
         {
             foreach (var (k, v) in configuracoes ?? []) b.UseSetting(k, v);
             b.UseSetting("Diagramas:Pasta", Diagramas);
+            // Cada teste com a sua base: a de dados/orquestrador.db é a prova do TCC e não pode receber dados de teste.
+            b.UseSetting("Orquestrador:Banco", Path.Combine(Dir, "orquestrador.db"));
             b.UseSetting("Orquestrador:DiagramaDaFigura", diagramaDaFigura ? "true" : "false");
             if (arquivoAntigo is not null) b.UseSetting("Diagramas:ArquivoAntigo", arquivoAntigo);
             if (servicos is not null) b.ConfigureTestServices(servicos);

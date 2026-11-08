@@ -127,11 +127,13 @@ O código fica em `src/Orquestracao.Templates`, e cada parte do fluxo está atr�
 | R04 | `Extrator.cs`, `TemplateStore.cs` | o template é extraído da resposta do LLM sem outra chamada (os valores da fonte viram slots: `A capital {de_entidade} é {capital}.`) e salvo em SQLite com peso 0,5; resposta sem dado da fonte não vira template |
 | R05 | `Orquestrador.Feedback` | peso = α·nota + (1 − α)·peso (α = 0,3); abaixo de 0,2 o template é descartado; depois de um feedback ruim a resposta volta ao LLM, até 2 tentativas |
 | R06 | `/mcp` | `perguntar_orquestrador`, `avaliar_resposta` e `ver_orquestrador`, além da persona com `motor: template` nas conversas |
-| R07 | `Estatisticas` | perguntas, acertos de template, chamadas ao LLM de geração e ao parser, tokens, custo e latência (`GET /api/orquestrador`) |
+| R07 | `Estatisticas`, `TemplateStoreSqlite` | perguntas, acertos de template, chamadas ao LLM de geração e ao parser, tokens, custo e latência (`GET /api/orquestrador`), gravados no SQLite a cada pergunta |
 
 **Usar:** arraste o papel **Respondedor** do grupo **Template · orquestrador** na paleta (ou dê `motor: template` e `fallback: api | ollama | mcp` a qualquer persona) e ligue a ele uma persona humana (**Você**): **Aprovar** é feedback bom e **Pedir mudança** é ruim. O painel **Orquestrador** (`/orquestrador.html`) pergunta direto, mostra a chave, o template, o peso e as chamadas, recebe 👍/👎 e desenha a Figura 1 com o caminho destacado; o diagrama **Orquestrador por template** mostra cada etapa percorrendo a seta no canvas.
 
-**Configurar** (`appsettings.json` ou variáveis `Orquestrador__…`): `Parser` (`heuristico` · `llm` · `hibrido`), `ModeloParser` (padrão `claude-haiku-5-5`), `Banco` (o arquivo SQLite), `Fatos` (a base de fatos) e `Peso:PesoInicial`, `Peso:Alfa`, `Peso:Limiar`, `Peso:LimiteTentativas`.
+**A base fica no repositório:** `dados/orquestrador.db` (SQLite) guarda os templates com o peso e o histórico de cada pergunta respondida e de cada feedback. As estatísticas do painel são recompostas dela ao reiniciar. É a prova do uso do protótipo; os testes usam bases temporárias e não mexem nela. A base do experimento real está em `docs/experimento/experimento-mcp.db`.
+
+**Configurar** (`appsettings.json` ou variáveis `Orquestrador__…`): `Parser` (`heuristico` · `llm` · `hibrido`), `ModeloParser` (padrão `claude-haiku-5-5`), `Banco` (o arquivo SQLite; padrão `dados/orquestrador.db`), `Fatos` (a base de fatos) e `Peso:PesoInicial`, `Peso:Alfa`, `Peso:Limiar`, `Peso:LimiteTentativas`.
 
 ## O experimento
 

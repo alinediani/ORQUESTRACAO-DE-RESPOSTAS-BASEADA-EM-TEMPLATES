@@ -26,9 +26,14 @@
           <select id="motor" aria-label="LLM das chaves novas" title="Quem responde quando a estrutura é nova">
             <option value="api">API · Claude</option>
             <option value="ollama">Ollama · local</option>
+            <option value="mcp">MCP · Claude Code</option>
           </select>
           <button type="submit" class="primary">Perguntar</button>
         </form>
+        <p id="aviso-mcp" class="legenda" hidden>
+          Com MCP, a pergunta de estrutura nova espera o Claude Code responder: no Claude Code aberto na pasta do projeto,
+          peça para atender os turnos com <code>proxima_vez</code> (diagrama <code>orquestrador</code>) e <code>responder</code>.
+        </p>
         <div id="exemplos" class="exemplos" aria-label="Exemplos"></div>
 
         <div id="resultado" class="resultado" hidden aria-live="polite">

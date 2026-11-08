@@ -171,7 +171,7 @@ public class OrquestradorApiTests : IDisposable
         }
         Assert.Equal("concluido", (string?)st["status"]);
         Assert.Equal(12, (int)st["resumo"]!["linhaDeBase"]!["chamadasGeracao"]!);
-        foreach (var f in new[] { "resultados-api.md", "resultados-api.json", "avaliacao-humana.csv", "avaliacao-humana-chave.csv" })
+        foreach (var f in new[] { "resultados-api.md", "resultados-api.json", "avaliacao-humana.csv", "avaliacao-humana-chave.csv", "experimento-api.db" })
             Assert.True(File.Exists(Path.Combine(saida, f)), f);
     }
 

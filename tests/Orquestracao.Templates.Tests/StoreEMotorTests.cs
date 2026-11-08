@@ -38,6 +38,43 @@ public class StoreEMotorTests
         }
     }
 
+    [Fact]
+    public async Task Sqlite_GuardaCadaPerguntaEFeedback_EAsEstatisticasSobrevivemAoReinicio()
+    {
+        var dir = Directory.CreateTempSubdirectory("hist-").FullName;
+        try
+        {
+            var banco = Path.Combine(dir, "orq.db");
+            var orq = Orquestrador(new TemplateStoreSqlite(banco));
+            await orq.Responder("Qual é a capital da França?", Llm());
+            await orq.Responder("Qual é a capital do Japão?", Llm());
+            await orq.Responder("Qual o símbolo químico do ferro?", Llm());
+            orq.Feedback("capital {pais}", bom: true);
+            orq.Feedback("capital {pais}", bom: false);
+
+            // "Reinício": outro orquestrador sobre o mesmo arquivo.
+            var s = Orquestrador(new TemplateStoreSqlite(banco)).Estatisticas;
+            Assert.Equal((3, 1, 2, 2), (s.Perguntas, s.AcertosTemplate, s.ChamadasGeracao, s.TemplatesSalvos));
+            Assert.Equal((1, 1), (s.FeedbacksBons, s.FeedbacksRuins));
+            Assert.Equal(orq.Estatisticas.TokensEntrada, s.TokensEntrada);
+            Assert.Equal(Math.Round(orq.Estatisticas.Custo, 9), Math.Round(s.Custo, 9));
+
+            // O histórico fica legível no próprio SQLite.
+            using var c = new Microsoft.Data.Sqlite.SqliteConnection($"Data Source={banco};Pooling=False");
+            c.Open();
+            using var cmd = c.CreateCommand();
+            cmd.CommandText = "SELECT pergunta, caminho, resposta FROM perguntas ORDER BY id";
+            using var r = cmd.ExecuteReader();
+            var linhas = new List<(string, string, string)>();
+            while (r.Read()) linhas.Add((r.GetString(0), r.GetString(1), r.GetString(2)));
+            Assert.Equal(("Qual é a capital do Japão?", "template", "A capital do Japão é Tóquio."), linhas[1]);
+        }
+        finally
+        {
+            Directory.Delete(dir, true);
+        }
+    }
+
     private sealed class Fallback(string nome) : IMotor
     {
         public ConcurrentQueue<Pedido> Pedidos { get; } = new();

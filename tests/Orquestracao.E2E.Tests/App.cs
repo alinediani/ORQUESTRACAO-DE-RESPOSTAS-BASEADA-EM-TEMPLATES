@@ -30,6 +30,7 @@ public sealed class App : IAsyncLifetime
         _fabrica = new WebApplicationFactory<Program>().WithWebHostBuilder(b =>
         {
             b.UseSetting("Diagramas:Pasta", Path.Combine(Dir, "diagrams"));
+            b.UseSetting("Orquestrador:Banco", Path.Combine(Dir, "orquestrador.db")); // a base do repositório fica intacta
             // A API da Anthropic é trocada por um motor falso: os testes não usam rede nem chave.
             b.ConfigureTestServices(s => s.AddSingleton<IMotor>(new ApiFalsa()));
         });
@@ -68,6 +69,22 @@ public sealed class App : IAsyncLifetime
         var res = await Api.PostAsJsonAsync("/api/diagrams", new { name = $"{nome} {Guid.NewGuid().ToString("N")[..6]}" });
         res.EnsureSuccessStatusCode();
         return (string)(await res.Content.ReadFromJsonAsync<JsonObject>())!["slug"]!;
+    }
+
+    /// <summary>Chama uma ferramenta do /mcp (JSON-RPC), como o Claude Code faria.</summary>
+    public async Task<JsonNode> Mcp(string ferramenta, object argumentos)
+    {
+        var corpo = new JsonObject
+        {
+            ["jsonrpc"] = "2.0", ["id"] = 1, ["method"] = "tools/call",
+            ["params"] = new JsonObject { ["name"] = ferramenta, ["arguments"] = System.Text.Json.JsonSerializer.SerializeToNode(argumentos) },
+        };
+        var req = new HttpRequestMessage(HttpMethod.Post, "/mcp") { Content = new StringContent(corpo.ToJsonString(), System.Text.Encoding.UTF8, "application/json") };
+        req.Headers.Accept.ParseAdd("application/json");
+        req.Headers.Accept.ParseAdd("text/event-stream");
+        var texto = await (await Api.SendAsync(req)).Content.ReadAsStringAsync();
+        var json = texto.TrimStart().StartsWith('{') ? texto : texto.Split('\n').Last(l => l.StartsWith("data: "))["data: ".Length..];
+        return JsonNode.Parse((string)JsonNode.Parse(json)!["result"]!["content"]![0]!["text"]!)!;
     }
 
     public async Task<JsonNode> Get(string rota) => (await Api.GetFromJsonAsync<JsonNode>(rota))!;
