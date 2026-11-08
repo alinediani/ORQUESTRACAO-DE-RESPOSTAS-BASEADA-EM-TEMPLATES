@@ -1,0 +1,104 @@
+{
+  "modo": "simulado",
+  "semente": 2026,
+  "taxaErroLlm": 0.05,
+  "latenciaLlmMs": 1200,
+  "prototipo": {
+    "estrategia": "Protótipo (templates)",
+    "perguntas": 150,
+    "chamadasGeracao": 6,
+    "chamadasParser": 0,
+    "acertosTemplate": 144,
+    "taxaAcertoTemplate": 0.96,
+    "tokens": 413,
+    "custo": 0.001242,
+    "latenciaMediaMs": 49.3411166666667,
+    "corretas": 150,
+    "taxaCorretas": 1
+  },
+  "linhaDeBase": {
+    "estrategia": "Linha de base (LLM puro)",
+    "perguntas": 150,
+    "chamadasGeracao": 150,
+    "chamadasParser": 0,
+    "acertosTemplate": 0,
+    "taxaAcertoTemplate": 0,
+    "tokens": 10212,
+    "custo": 0.03027200000000001,
+    "latenciaMediaMs": 1200.9747426666663,
+    "corretas": 141,
+    "taxaCorretas": 0.94
+  },
+  "comparacao": {
+    "vitoriasPrototipo": 9,
+    "vitoriasLinhaDeBase": 0,
+    "empates": 141
+  },
+  "chavesPorFamilia": {
+    "capital": 1,
+    "idioma": 1,
+    "simbolo": 1,
+    "continente": 1,
+    "moeda": 1,
+    "numero": 1
+  },
+  "porFamilia": {
+    "capital": {
+      "perguntas": 51,
+      "template": 50
+    },
+    "idioma": {
+      "perguntas": 15,
+      "template": 14
+    },
+    "simbolo": {
+      "perguntas": 24,
+      "template": 23
+    },
+    "continente": {
+      "perguntas": 15,
+      "template": 14
+    },
+    "moeda": {
+      "perguntas": 26,
+      "template": 25
+    },
+    "numero": {
+      "perguntas": 19,
+      "template": 18
+    }
+  },
+  "templatesSalvos": 6,
+  "quadro2": [
+    {
+      "teste": "T01",
+      "obtido": "6 famílias, uma chave por família (capital: 1, idioma: 1, simbolo: 1, continente: 1, moeda: 1, numero: 1)",
+      "situacao": "Aprovado"
+    },
+    {
+      "teste": "T02",
+      "obtido": "A primeira pergunta de cada família foi ao LLM e gerou template com peso 0,5 (6 templates salvos para 6 famílias)",
+      "situacao": "Aprovado"
+    },
+    {
+      "teste": "T03",
+      "obtido": "144 de 150 perguntas (96,0%) montadas pelo template, sem o LLM de geração",
+      "situacao": "Aprovado"
+    },
+    {
+      "teste": "T04",
+      "obtido": "Coberto pelos testes automatizados (OrquestradorTests.T04): o peso cai 0,50 → 0,35 → 0,245 e o template é descartado no 3º feedback ruim (0,17 < 0,20); a pergunta seguinte volta ao LLM",
+      "situacao": "Aprovado"
+    },
+    {
+      "teste": "T05",
+      "obtido": "6 chamadas ao LLM no protótipo contra 150 na linha de base (redução de 96,0%)",
+      "situacao": "Aprovado"
+    },
+    {
+      "teste": "T06",
+      "obtido": "Comparação cega: protótipo melhor em 9, linha de base em 0, empate em 141; corretas: 100,0% × 94,0%",
+      "situacao": "Aprovado"
+    }
+  ]
+}

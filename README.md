@@ -112,7 +112,37 @@ curl -X POST $D/conversas/<id>/humano -d '{"acao":"aprovar"}' # aprovar · mudar
 | `/api/mermaid/ler`, `/api/mermaid/gerar` | o código Mermaid, sem estado (o painel de código do front usa) |
 | `/api/templates`, `/api/motores`, `/api/d/{slug}/templates/{papel}`, `/personas[/{id}[/saida]]` | papéis, motores e personas |
 | `/api/d/{slug}/conversas[/{id}[/mensagens\|sintetizar\|parar\|humano\|saidas/{arquivo}]]` | as conversas |
+| `/api/orquestrador`, `/api/orquestrador/perguntar\|feedback\|templates\|events` | o orquestrador por template: estatísticas, perguntar, feedback, templates e o SSE das etapas |
 | `/mcp` | o servidor MCP (Streamable HTTP) |
+
+## O orquestrador por template (o TCC)
+
+O código fica em `src/Orquestracao.Templates`, e cada parte do fluxo está atrás de uma interface (o LLM, a base chave-valor e a fonte externa), para os testes trocarem por simulados e contarem as chamadas com exatidão.
+
+| Requisito | Onde | O que faz |
+|---|---|---|
+| R01 | `Parser.cs` | `ParserHeuristico` acha a entidade na fonte e normaliza o resto: "Qual é a capital da França?" e "Me diga a capital do Japão" geram a chave `capital {pais}`. `ParserLlm` pede a estrutura ao Claude Haiku; `ParserHibrido` só chama o LLM quando a heurística não acha a entidade |
+| R02 | `Orquestrador.cs` | consulta a chave: template existente (e peso acima do limiar) ou chave nova |
+| R03 | `FonteDeFatos.cs`, `Extrator.cs` | a fonte externa é `dados/fatos.json` (33 países e 25 elementos); o template é preenchido com o dado atual e com a preposição certa ("da França", "do Japão", "dos Estados Unidos") |
+| R04 | `Extrator.cs`, `TemplateStore.cs` | o template é extraído da resposta do LLM sem outra chamada (os valores da fonte viram slots: `A capital {de_entidade} é {capital}.`) e salvo em SQLite com peso 0,5; resposta sem dado da fonte não vira template |
+| R05 | `Orquestrador.Feedback` | peso = α·nota + (1 − α)·peso (α = 0,3); abaixo de 0,2 o template é descartado; depois de um feedback ruim a resposta volta ao LLM, até 2 tentativas |
+| R06 | `/mcp` | `perguntar_orquestrador`, `avaliar_resposta` e `ver_orquestrador`, além da persona com `motor: template` nas conversas |
+| R07 | `Estatisticas` | perguntas, acertos de template, chamadas ao LLM de geração e ao parser, tokens, custo e latência (`GET /api/orquestrador`) |
+
+**Usar:** arraste o papel **Respondedor** do grupo **Template · orquestrador** na paleta (ou dê `motor: template` e `fallback: api | ollama | mcp` a qualquer persona) e ligue a ele uma persona humana (**Você**): **Aprovar** é feedback bom e **Pedir mudança** é ruim. O painel **Orquestrador** (`/orquestrador.html`) pergunta direto, mostra a chave, o template, o peso e as chamadas, recebe 👍/👎 e desenha a Figura 1 com o caminho destacado; o diagrama **Orquestrador por template** mostra cada etapa percorrendo a seta no canvas.
+
+**Configurar** (`appsettings.json` ou variáveis `Orquestrador__…`): `Parser` (`heuristico` · `llm` · `hibrido`), `ModeloParser` (padrão `claude-haiku-5-5`), `Banco` (o arquivo SQLite), `Fatos` (a base de fatos) e `Peso:PesoInicial`, `Peso:Alfa`, `Peso:Limiar`, `Peso:LimiteTentativas`.
+
+## O experimento
+
+```bash
+dotnet run --project src/Orquestracao.Experimento                  # LLM simulado: reprodutível e sem custo
+dotnet run --project src/Orquestracao.Experimento -- --llm api     # Claude Sonnet 5.5 na geração, Claude Opus 5.5 como juiz
+```
+
+O conjunto tem 150 perguntas sorteadas (semente 2026) em seis famílias de mesma estrutura (capital, moeda, idioma, continente, símbolo químico e número atômico), com mais perguntas nas famílias "em alta". O protótipo e a linha de base (o LLM responde todas) recebem o mesmo conjunto; o relatório compara chamadas ao LLM, tokens, custo, latência, respostas corretas pelo gabarito e uma comparação cega. O resultado fica em [`docs/experimento/`](docs/experimento/resultados.md), junto com o conjunto.
+
+Com o LLM simulado (que erra 5% das vezes): **6 chamadas ao LLM de geração contra 150 (−96%)**, 96% das perguntas montadas pelo template, 100% de respostas corretas contra 94% da linha de base e, na comparação cega, o protótipo melhor em 9 e empate em 141. São números de simulação; a rodada com o modelo real (`--llm api`) grava `resultados-api.md` ao lado.
 
 ## Estrutura
 
@@ -122,13 +152,14 @@ src/
                             Conversas/ (personas, turnos, conversas, contrato dos motores)
   Orquestracao.Motores/     MotorApi (SDK da Anthropic), MotorOllama, MotorMcp
   Orquestracao.Templates/   o orquestrador do TCC
-  Orquestracao.Web/         ASP.NET Core: API, SSE, MCP e o front em wwwroot/ (js/, css/, lib/mermaid)
+  Orquestracao.Web/         ASP.NET Core: API, SSE, MCP e o front em wwwroot/ (js/, css/, lib/mermaid, orquestrador.html)
+  Orquestracao.Experimento/ o experimento do TCC (console): docs/experimento/
 tests/
   Orquestracao.Core.Tests/       xUnit: diagrama, Mermaid, operações, personas, turnos, conversas
-  Orquestracao.Templates.Tests/  xUnit: o orquestrador (R01–R07, T01–T06)
+  Orquestracao.Templates.Tests/  xUnit: o orquestrador (R01–R07) e o experimento (T01–T06)
   Orquestracao.Web.Tests/        xUnit + WebApplicationFactory: API, SSE, motores, MCP
   Orquestracao.E2E.Tests/        xUnit + Playwright: o app no Chromium (e os testes de front em js/*.spec.js)
-templates/   os papéis da paleta          examples/   diagramas prontos para importar (menu ☰)
+templates/   os papéis da paleta    dados/   a base de fatos    docs/experimento/   resultados    examples/   diagramas para importar
 ```
 
 ## Próximos passos
@@ -179,10 +210,10 @@ templates/   os papéis da paleta          examples/   diagramas prontos para im
 - [x] Testes de ponta a ponta com Playwright para .NET
 
 **F7 — Experimento**
-- [ ] Conjunto de 100 a 200 perguntas em famílias de mesma estrutura
-- [ ] T01–T06: protótipo vs. linha de base (LLM puro), com LLM simulado e real
-- [ ] Relatório: taxa de acerto de template, chamadas, tokens, custo, latência e qualidade
-- [ ] Resultados levados ao texto do TCC
+- [x] Conjunto de 150 perguntas em seis famílias de mesma estrutura (`docs/experimento/conjunto.json`)
+- [x] T01–T06: protótipo vs. linha de base (LLM puro), com LLM simulado (o real: `--llm api`)
+- [x] Relatório: taxa de acerto de template, chamadas, tokens, custo, latência e qualidade
+- [x] Resultados levados ao texto do TCC (Resumo, Quadro 2 e seção 5.1)
 
 Fora do escopo do TCC: persona de memória (palácio, curadoria, RECORDAR) e pós-fluxo entre diagramas.
 

@@ -1,0 +1,1202 @@
+[
+  {
+    "n": 1,
+    "pergunta": "Qual a capital da Argentina?",
+    "familia": "capital",
+    "entidade": "Argentina",
+    "atributo": "capital",
+    "gabarito": "Buenos Aires"
+  },
+  {
+    "n": 2,
+    "pergunta": "Qual é a capital da Alemanha?",
+    "familia": "capital",
+    "entidade": "Alemanha",
+    "atributo": "capital",
+    "gabarito": "Berlim"
+  },
+  {
+    "n": 3,
+    "pergunta": "Que língua se fala no México?",
+    "familia": "idioma",
+    "entidade": "México",
+    "atributo": "idioma",
+    "gabarito": "espanhol"
+  },
+  {
+    "n": 4,
+    "pergunta": "Qual é o símbolo químico do oxigênio?",
+    "familia": "simbolo",
+    "entidade": "oxigênio",
+    "atributo": "simbolo",
+    "gabarito": "O"
+  },
+  {
+    "n": 5,
+    "pergunta": "Me diga a capital da Polônia.",
+    "familia": "capital",
+    "entidade": "Polônia",
+    "atributo": "capital",
+    "gabarito": "Varsóvia"
+  },
+  {
+    "n": 6,
+    "pergunta": "Em que continente fica a Colômbia?",
+    "familia": "continente",
+    "entidade": "Colômbia",
+    "atributo": "continente",
+    "gabarito": "América do Sul"
+  },
+  {
+    "n": 7,
+    "pergunta": "Qual o símbolo químico da prata?",
+    "familia": "simbolo",
+    "entidade": "prata",
+    "atributo": "simbolo",
+    "gabarito": "Ag"
+  },
+  {
+    "n": 8,
+    "pergunta": "Qual é a capital do Vietnã?",
+    "familia": "capital",
+    "entidade": "Vietnã",
+    "atributo": "capital",
+    "gabarito": "Hanói"
+  },
+  {
+    "n": 9,
+    "pergunta": "Qual a moeda da Nigéria?",
+    "familia": "moeda",
+    "entidade": "Nigéria",
+    "atributo": "moeda",
+    "gabarito": "naira"
+  },
+  {
+    "n": 10,
+    "pergunta": "Qual o símbolo químico do ouro?",
+    "familia": "simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 11,
+    "pergunta": "Qual é a capital da Itália?",
+    "familia": "capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 12,
+    "pergunta": "Qual é o número atômico do enxofre?",
+    "familia": "numero",
+    "entidade": "enxofre",
+    "atributo": "numero_atomico",
+    "gabarito": "16"
+  },
+  {
+    "n": 13,
+    "pergunta": "Qual é o símbolo químico do hidrogênio?",
+    "familia": "simbolo",
+    "entidade": "hidrogênio",
+    "atributo": "simbolo",
+    "gabarito": "H"
+  },
+  {
+    "n": 14,
+    "pergunta": "Em que continente fica a China?",
+    "familia": "continente",
+    "entidade": "China",
+    "atributo": "continente",
+    "gabarito": "Ásia"
+  },
+  {
+    "n": 15,
+    "pergunta": "Qual o símbolo químico do ouro?",
+    "familia": "simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 16,
+    "pergunta": "Qual é a capital do México?",
+    "familia": "capital",
+    "entidade": "México",
+    "atributo": "capital",
+    "gabarito": "Cidade do México"
+  },
+  {
+    "n": 17,
+    "pergunta": "Que língua se fala na China?",
+    "familia": "idioma",
+    "entidade": "China",
+    "atributo": "idioma",
+    "gabarito": "mandarim"
+  },
+  {
+    "n": 18,
+    "pergunta": "Qual é o número atômico do enxofre?",
+    "familia": "numero",
+    "entidade": "enxofre",
+    "atributo": "numero_atomico",
+    "gabarito": "16"
+  },
+  {
+    "n": 19,
+    "pergunta": "Qual é a capital do Egito?",
+    "familia": "capital",
+    "entidade": "Egito",
+    "atributo": "capital",
+    "gabarito": "Cairo"
+  },
+  {
+    "n": 20,
+    "pergunta": "Qual é a moeda do Canadá?",
+    "familia": "moeda",
+    "entidade": "Canadá",
+    "atributo": "moeda",
+    "gabarito": "dólar canadense"
+  },
+  {
+    "n": 21,
+    "pergunta": "Qual é o número atômico do cálcio?",
+    "familia": "numero",
+    "entidade": "cálcio",
+    "atributo": "numero_atomico",
+    "gabarito": "20"
+  },
+  {
+    "n": 22,
+    "pergunta": "Qual a capital da Espanha?",
+    "familia": "capital",
+    "entidade": "Espanha",
+    "atributo": "capital",
+    "gabarito": "Madri"
+  },
+  {
+    "n": 23,
+    "pergunta": "Em que continente fica a França?",
+    "familia": "continente",
+    "entidade": "França",
+    "atributo": "continente",
+    "gabarito": "Europa"
+  },
+  {
+    "n": 24,
+    "pergunta": "Que língua se fala na Alemanha?",
+    "familia": "idioma",
+    "entidade": "Alemanha",
+    "atributo": "idioma",
+    "gabarito": "alemão"
+  },
+  {
+    "n": 25,
+    "pergunta": "Em que continente fica o Canadá?",
+    "familia": "continente",
+    "entidade": "Canadá",
+    "atributo": "continente",
+    "gabarito": "América do Norte"
+  },
+  {
+    "n": 26,
+    "pergunta": "Qual é o símbolo químico do hélio?",
+    "familia": "simbolo",
+    "entidade": "hélio",
+    "atributo": "simbolo",
+    "gabarito": "He"
+  },
+  {
+    "n": 27,
+    "pergunta": "Qual é a capital da China?",
+    "familia": "capital",
+    "entidade": "China",
+    "atributo": "capital",
+    "gabarito": "Pequim"
+  },
+  {
+    "n": 28,
+    "pergunta": "Qual é o símbolo químico do cloro?",
+    "familia": "simbolo",
+    "entidade": "cloro",
+    "atributo": "simbolo",
+    "gabarito": "Cl"
+  },
+  {
+    "n": 29,
+    "pergunta": "Qual é o número atômico do hélio?",
+    "familia": "numero",
+    "entidade": "hélio",
+    "atributo": "numero_atomico",
+    "gabarito": "2"
+  },
+  {
+    "n": 30,
+    "pergunta": "Qual o símbolo químico do estanho?",
+    "familia": "simbolo",
+    "entidade": "estanho",
+    "atributo": "simbolo",
+    "gabarito": "Sn"
+  },
+  {
+    "n": 31,
+    "pergunta": "Qual é o símbolo químico do ouro?",
+    "familia": "simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 32,
+    "pergunta": "Qual a moeda da China?",
+    "familia": "moeda",
+    "entidade": "China",
+    "atributo": "moeda",
+    "gabarito": "yuan"
+  },
+  {
+    "n": 33,
+    "pergunta": "Me diga a capital da França.",
+    "familia": "capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 34,
+    "pergunta": "Que língua se fala na Coreia do Sul?",
+    "familia": "idioma",
+    "entidade": "Coreia do Sul",
+    "atributo": "idioma",
+    "gabarito": "coreano"
+  },
+  {
+    "n": 35,
+    "pergunta": "Me diga a capital da Colômbia.",
+    "familia": "capital",
+    "entidade": "Colômbia",
+    "atributo": "capital",
+    "gabarito": "Bogotá"
+  },
+  {
+    "n": 36,
+    "pergunta": "Qual o símbolo químico do urânio?",
+    "familia": "simbolo",
+    "entidade": "urânio",
+    "atributo": "simbolo",
+    "gabarito": "U"
+  },
+  {
+    "n": 37,
+    "pergunta": "Qual é a capital dos Estados Unidos?",
+    "familia": "capital",
+    "entidade": "Estados Unidos",
+    "atributo": "capital",
+    "gabarito": "Washington, D.C."
+  },
+  {
+    "n": 38,
+    "pergunta": "Qual a moeda do Peru?",
+    "familia": "moeda",
+    "entidade": "Peru",
+    "atributo": "moeda",
+    "gabarito": "sol"
+  },
+  {
+    "n": 39,
+    "pergunta": "Me diga a capital do Brasil.",
+    "familia": "capital",
+    "entidade": "Brasil",
+    "atributo": "capital",
+    "gabarito": "Brasília"
+  },
+  {
+    "n": 40,
+    "pergunta": "Qual é a capital do Marrocos?",
+    "familia": "capital",
+    "entidade": "Marrocos",
+    "atributo": "capital",
+    "gabarito": "Rabat"
+  },
+  {
+    "n": 41,
+    "pergunta": "Que língua se fala na Nigéria?",
+    "familia": "idioma",
+    "entidade": "Nigéria",
+    "atributo": "idioma",
+    "gabarito": "inglês"
+  },
+  {
+    "n": 42,
+    "pergunta": "Qual a moeda da Alemanha?",
+    "familia": "moeda",
+    "entidade": "Alemanha",
+    "atributo": "moeda",
+    "gabarito": "euro"
+  },
+  {
+    "n": 43,
+    "pergunta": "Qual é a moeda dos Estados Unidos?",
+    "familia": "moeda",
+    "entidade": "Estados Unidos",
+    "atributo": "moeda",
+    "gabarito": "dólar americano"
+  },
+  {
+    "n": 44,
+    "pergunta": "Que língua se fala no Canadá?",
+    "familia": "idioma",
+    "entidade": "Canadá",
+    "atributo": "idioma",
+    "gabarito": "inglês e francês"
+  },
+  {
+    "n": 45,
+    "pergunta": "Em que continente fica a Alemanha?",
+    "familia": "continente",
+    "entidade": "Alemanha",
+    "atributo": "continente",
+    "gabarito": "Europa"
+  },
+  {
+    "n": 46,
+    "pergunta": "Qual a capital da Austrália?",
+    "familia": "capital",
+    "entidade": "Austrália",
+    "atributo": "capital",
+    "gabarito": "Camberra"
+  },
+  {
+    "n": 47,
+    "pergunta": "Qual é a capital do Marrocos?",
+    "familia": "capital",
+    "entidade": "Marrocos",
+    "atributo": "capital",
+    "gabarito": "Rabat"
+  },
+  {
+    "n": 48,
+    "pergunta": "Qual a capital do Egito?",
+    "familia": "capital",
+    "entidade": "Egito",
+    "atributo": "capital",
+    "gabarito": "Cairo"
+  },
+  {
+    "n": 49,
+    "pergunta": "Qual o símbolo químico do chumbo?",
+    "familia": "simbolo",
+    "entidade": "chumbo",
+    "atributo": "simbolo",
+    "gabarito": "Pb"
+  },
+  {
+    "n": 50,
+    "pergunta": "Qual é o número atômico do chumbo?",
+    "familia": "numero",
+    "entidade": "chumbo",
+    "atributo": "numero_atomico",
+    "gabarito": "82"
+  },
+  {
+    "n": 51,
+    "pergunta": "Qual a capital da Rússia?",
+    "familia": "capital",
+    "entidade": "Rússia",
+    "atributo": "capital",
+    "gabarito": "Moscou"
+  },
+  {
+    "n": 52,
+    "pergunta": "Qual é a moeda do Chile?",
+    "familia": "moeda",
+    "entidade": "Chile",
+    "atributo": "moeda",
+    "gabarito": "peso chileno"
+  },
+  {
+    "n": 53,
+    "pergunta": "Qual a moeda da Espanha?",
+    "familia": "moeda",
+    "entidade": "Espanha",
+    "atributo": "moeda",
+    "gabarito": "euro"
+  },
+  {
+    "n": 54,
+    "pergunta": "Qual a moeda da China?",
+    "familia": "moeda",
+    "entidade": "China",
+    "atributo": "moeda",
+    "gabarito": "yuan"
+  },
+  {
+    "n": 55,
+    "pergunta": "Me diga a capital do Brasil.",
+    "familia": "capital",
+    "entidade": "Brasil",
+    "atributo": "capital",
+    "gabarito": "Brasília"
+  },
+  {
+    "n": 56,
+    "pergunta": "Qual é a moeda da China?",
+    "familia": "moeda",
+    "entidade": "China",
+    "atributo": "moeda",
+    "gabarito": "yuan"
+  },
+  {
+    "n": 57,
+    "pergunta": "Qual a capital do Japão?",
+    "familia": "capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 58,
+    "pergunta": "Que língua se fala na Suécia?",
+    "familia": "idioma",
+    "entidade": "Suécia",
+    "atributo": "idioma",
+    "gabarito": "sueco"
+  },
+  {
+    "n": 59,
+    "pergunta": "Qual o símbolo químico do neônio?",
+    "familia": "simbolo",
+    "entidade": "neônio",
+    "atributo": "simbolo",
+    "gabarito": "Ne"
+  },
+  {
+    "n": 60,
+    "pergunta": "Que língua se fala na Noruega?",
+    "familia": "idioma",
+    "entidade": "Noruega",
+    "atributo": "idioma",
+    "gabarito": "norueguês"
+  },
+  {
+    "n": 61,
+    "pergunta": "Qual é o número atômico do ferro?",
+    "familia": "numero",
+    "entidade": "ferro",
+    "atributo": "numero_atomico",
+    "gabarito": "26"
+  },
+  {
+    "n": 62,
+    "pergunta": "Qual a capital da Irlanda?",
+    "familia": "capital",
+    "entidade": "Irlanda",
+    "atributo": "capital",
+    "gabarito": "Dublin"
+  },
+  {
+    "n": 63,
+    "pergunta": "Me diga a capital da China.",
+    "familia": "capital",
+    "entidade": "China",
+    "atributo": "capital",
+    "gabarito": "Pequim"
+  },
+  {
+    "n": 64,
+    "pergunta": "Qual a moeda da França?",
+    "familia": "moeda",
+    "entidade": "França",
+    "atributo": "moeda",
+    "gabarito": "euro"
+  },
+  {
+    "n": 65,
+    "pergunta": "Me diga a capital do Vietnã.",
+    "familia": "capital",
+    "entidade": "Vietnã",
+    "atributo": "capital",
+    "gabarito": "Hanói"
+  },
+  {
+    "n": 66,
+    "pergunta": "Qual é o número atômico do níquel?",
+    "familia": "numero",
+    "entidade": "níquel",
+    "atributo": "numero_atomico",
+    "gabarito": "28"
+  },
+  {
+    "n": 67,
+    "pergunta": "Em que continente fica a Irlanda?",
+    "familia": "continente",
+    "entidade": "Irlanda",
+    "atributo": "continente",
+    "gabarito": "Europa"
+  },
+  {
+    "n": 68,
+    "pergunta": "Qual a moeda da Coreia do Sul?",
+    "familia": "moeda",
+    "entidade": "Coreia do Sul",
+    "atributo": "moeda",
+    "gabarito": "won sul-coreano"
+  },
+  {
+    "n": 69,
+    "pergunta": "Qual é o número atômico do carbono?",
+    "familia": "numero",
+    "entidade": "carbono",
+    "atributo": "numero_atomico",
+    "gabarito": "6"
+  },
+  {
+    "n": 70,
+    "pergunta": "Me diga a capital da Coreia do Sul.",
+    "familia": "capital",
+    "entidade": "Coreia do Sul",
+    "atributo": "capital",
+    "gabarito": "Seul"
+  },
+  {
+    "n": 71,
+    "pergunta": "Qual é o número atômico do zinco?",
+    "familia": "numero",
+    "entidade": "zinco",
+    "atributo": "numero_atomico",
+    "gabarito": "30"
+  },
+  {
+    "n": 72,
+    "pergunta": "Qual a capital do México?",
+    "familia": "capital",
+    "entidade": "México",
+    "atributo": "capital",
+    "gabarito": "Cidade do México"
+  },
+  {
+    "n": 73,
+    "pergunta": "Qual o símbolo químico do hidrogênio?",
+    "familia": "simbolo",
+    "entidade": "hidrogênio",
+    "atributo": "simbolo",
+    "gabarito": "H"
+  },
+  {
+    "n": 74,
+    "pergunta": "Qual é o símbolo químico do cálcio?",
+    "familia": "simbolo",
+    "entidade": "cálcio",
+    "atributo": "simbolo",
+    "gabarito": "Ca"
+  },
+  {
+    "n": 75,
+    "pergunta": "Que língua se fala no Marrocos?",
+    "familia": "idioma",
+    "entidade": "Marrocos",
+    "atributo": "idioma",
+    "gabarito": "árabe e berbere"
+  },
+  {
+    "n": 76,
+    "pergunta": "Qual o número atômico do chumbo?",
+    "familia": "numero",
+    "entidade": "chumbo",
+    "atributo": "numero_atomico",
+    "gabarito": "82"
+  },
+  {
+    "n": 77,
+    "pergunta": "Que língua se fala na Austrália?",
+    "familia": "idioma",
+    "entidade": "Austrália",
+    "atributo": "idioma",
+    "gabarito": "inglês"
+  },
+  {
+    "n": 78,
+    "pergunta": "Qual a capital do Marrocos?",
+    "familia": "capital",
+    "entidade": "Marrocos",
+    "atributo": "capital",
+    "gabarito": "Rabat"
+  },
+  {
+    "n": 79,
+    "pergunta": "Qual é a moeda do Egito?",
+    "familia": "moeda",
+    "entidade": "Egito",
+    "atributo": "moeda",
+    "gabarito": "libra egípcia"
+  },
+  {
+    "n": 80,
+    "pergunta": "Qual é o número atômico da prata?",
+    "familia": "numero",
+    "entidade": "prata",
+    "atributo": "numero_atomico",
+    "gabarito": "47"
+  },
+  {
+    "n": 81,
+    "pergunta": "Me diga a capital da Nigéria.",
+    "familia": "capital",
+    "entidade": "Nigéria",
+    "atributo": "capital",
+    "gabarito": "Abuja"
+  },
+  {
+    "n": 82,
+    "pergunta": "Qual é a capital do Vietnã?",
+    "familia": "capital",
+    "entidade": "Vietnã",
+    "atributo": "capital",
+    "gabarito": "Hanói"
+  },
+  {
+    "n": 83,
+    "pergunta": "Que língua se fala no Paraguai?",
+    "familia": "idioma",
+    "entidade": "Paraguai",
+    "atributo": "idioma",
+    "gabarito": "espanhol e guarani"
+  },
+  {
+    "n": 84,
+    "pergunta": "Qual é a capital do Quênia?",
+    "familia": "capital",
+    "entidade": "Quênia",
+    "atributo": "capital",
+    "gabarito": "Nairóbi"
+  },
+  {
+    "n": 85,
+    "pergunta": "Que língua se fala no Peru?",
+    "familia": "idioma",
+    "entidade": "Peru",
+    "atributo": "idioma",
+    "gabarito": "espanhol"
+  },
+  {
+    "n": 86,
+    "pergunta": "Qual é a moeda da Noruega?",
+    "familia": "moeda",
+    "entidade": "Noruega",
+    "atributo": "moeda",
+    "gabarito": "coroa norueguesa"
+  },
+  {
+    "n": 87,
+    "pergunta": "Qual é o símbolo químico do oxigênio?",
+    "familia": "simbolo",
+    "entidade": "oxigênio",
+    "atributo": "simbolo",
+    "gabarito": "O"
+  },
+  {
+    "n": 88,
+    "pergunta": "Qual é a moeda do Reino Unido?",
+    "familia": "moeda",
+    "entidade": "Reino Unido",
+    "atributo": "moeda",
+    "gabarito": "libra esterlina"
+  },
+  {
+    "n": 89,
+    "pergunta": "Qual é o símbolo químico do níquel?",
+    "familia": "simbolo",
+    "entidade": "níquel",
+    "atributo": "simbolo",
+    "gabarito": "Ni"
+  },
+  {
+    "n": 90,
+    "pergunta": "Me diga a capital da França.",
+    "familia": "capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 91,
+    "pergunta": "Qual é o símbolo químico do oxigênio?",
+    "familia": "simbolo",
+    "entidade": "oxigênio",
+    "atributo": "simbolo",
+    "gabarito": "O"
+  },
+  {
+    "n": 92,
+    "pergunta": "Qual é a capital da Nigéria?",
+    "familia": "capital",
+    "entidade": "Nigéria",
+    "atributo": "capital",
+    "gabarito": "Abuja"
+  },
+  {
+    "n": 93,
+    "pergunta": "Qual é o número atômico do ferro?",
+    "familia": "numero",
+    "entidade": "ferro",
+    "atributo": "numero_atomico",
+    "gabarito": "26"
+  },
+  {
+    "n": 94,
+    "pergunta": "Qual a moeda do Marrocos?",
+    "familia": "moeda",
+    "entidade": "Marrocos",
+    "atributo": "moeda",
+    "gabarito": "dirham marroquino"
+  },
+  {
+    "n": 95,
+    "pergunta": "Qual o número atômico do sódio?",
+    "familia": "numero",
+    "entidade": "sódio",
+    "atributo": "numero_atomico",
+    "gabarito": "11"
+  },
+  {
+    "n": 96,
+    "pergunta": "Qual a moeda da Coreia do Sul?",
+    "familia": "moeda",
+    "entidade": "Coreia do Sul",
+    "atributo": "moeda",
+    "gabarito": "won sul-coreano"
+  },
+  {
+    "n": 97,
+    "pergunta": "Em que continente fica a China?",
+    "familia": "continente",
+    "entidade": "China",
+    "atributo": "continente",
+    "gabarito": "Ásia"
+  },
+  {
+    "n": 98,
+    "pergunta": "Em que continente fica a Irlanda?",
+    "familia": "continente",
+    "entidade": "Irlanda",
+    "atributo": "continente",
+    "gabarito": "Europa"
+  },
+  {
+    "n": 99,
+    "pergunta": "Me diga a capital dos Estados Unidos.",
+    "familia": "capital",
+    "entidade": "Estados Unidos",
+    "atributo": "capital",
+    "gabarito": "Washington, D.C."
+  },
+  {
+    "n": 100,
+    "pergunta": "Qual é o símbolo químico do neônio?",
+    "familia": "simbolo",
+    "entidade": "neônio",
+    "atributo": "simbolo",
+    "gabarito": "Ne"
+  },
+  {
+    "n": 101,
+    "pergunta": "Me diga a capital da Nigéria.",
+    "familia": "capital",
+    "entidade": "Nigéria",
+    "atributo": "capital",
+    "gabarito": "Abuja"
+  },
+  {
+    "n": 102,
+    "pergunta": "Qual é o número atômico do ouro?",
+    "familia": "numero",
+    "entidade": "ouro",
+    "atributo": "numero_atomico",
+    "gabarito": "79"
+  },
+  {
+    "n": 103,
+    "pergunta": "Que língua se fala na Polônia?",
+    "familia": "idioma",
+    "entidade": "Polônia",
+    "atributo": "idioma",
+    "gabarito": "polonês"
+  },
+  {
+    "n": 104,
+    "pergunta": "Qual o símbolo químico do enxofre?",
+    "familia": "simbolo",
+    "entidade": "enxofre",
+    "atributo": "simbolo",
+    "gabarito": "S"
+  },
+  {
+    "n": 105,
+    "pergunta": "Qual o símbolo químico do níquel?",
+    "familia": "simbolo",
+    "entidade": "níquel",
+    "atributo": "simbolo",
+    "gabarito": "Ni"
+  },
+  {
+    "n": 106,
+    "pergunta": "Qual é o número atômico do níquel?",
+    "familia": "numero",
+    "entidade": "níquel",
+    "atributo": "numero_atomico",
+    "gabarito": "28"
+  },
+  {
+    "n": 107,
+    "pergunta": "Qual o número atômico do mercúrio?",
+    "familia": "numero",
+    "entidade": "mercúrio",
+    "atributo": "numero_atomico",
+    "gabarito": "80"
+  },
+  {
+    "n": 108,
+    "pergunta": "Qual é a capital da Suécia?",
+    "familia": "capital",
+    "entidade": "Suécia",
+    "atributo": "capital",
+    "gabarito": "Estocolmo"
+  },
+  {
+    "n": 109,
+    "pergunta": "Qual é o símbolo químico do alumínio?",
+    "familia": "simbolo",
+    "entidade": "alumínio",
+    "atributo": "simbolo",
+    "gabarito": "Al"
+  },
+  {
+    "n": 110,
+    "pergunta": "Qual é a moeda do Peru?",
+    "familia": "moeda",
+    "entidade": "Peru",
+    "atributo": "moeda",
+    "gabarito": "sol"
+  },
+  {
+    "n": 111,
+    "pergunta": "Qual é a moeda do Chile?",
+    "familia": "moeda",
+    "entidade": "Chile",
+    "atributo": "moeda",
+    "gabarito": "peso chileno"
+  },
+  {
+    "n": 112,
+    "pergunta": "Qual é o símbolo químico do fósforo?",
+    "familia": "simbolo",
+    "entidade": "fósforo",
+    "atributo": "simbolo",
+    "gabarito": "P"
+  },
+  {
+    "n": 113,
+    "pergunta": "Me diga a capital da Rússia.",
+    "familia": "capital",
+    "entidade": "Rússia",
+    "atributo": "capital",
+    "gabarito": "Moscou"
+  },
+  {
+    "n": 114,
+    "pergunta": "Qual é a capital do Peru?",
+    "familia": "capital",
+    "entidade": "Peru",
+    "atributo": "capital",
+    "gabarito": "Lima"
+  },
+  {
+    "n": 115,
+    "pergunta": "Em que continente fica a Índia?",
+    "familia": "continente",
+    "entidade": "Índia",
+    "atributo": "continente",
+    "gabarito": "Ásia"
+  },
+  {
+    "n": 116,
+    "pergunta": "Qual é a capital da Irlanda?",
+    "familia": "capital",
+    "entidade": "Irlanda",
+    "atributo": "capital",
+    "gabarito": "Dublin"
+  },
+  {
+    "n": 117,
+    "pergunta": "Qual o símbolo químico do fósforo?",
+    "familia": "simbolo",
+    "entidade": "fósforo",
+    "atributo": "simbolo",
+    "gabarito": "P"
+  },
+  {
+    "n": 118,
+    "pergunta": "Em que continente fica a Austrália?",
+    "familia": "continente",
+    "entidade": "Austrália",
+    "atributo": "continente",
+    "gabarito": "Oceania"
+  },
+  {
+    "n": 119,
+    "pergunta": "Qual é o número atômico do ferro?",
+    "familia": "numero",
+    "entidade": "ferro",
+    "atributo": "numero_atomico",
+    "gabarito": "26"
+  },
+  {
+    "n": 120,
+    "pergunta": "Qual é a moeda do Quênia?",
+    "familia": "moeda",
+    "entidade": "Quênia",
+    "atributo": "moeda",
+    "gabarito": "xelim queniano"
+  },
+  {
+    "n": 121,
+    "pergunta": "Qual é a capital da Noruega?",
+    "familia": "capital",
+    "entidade": "Noruega",
+    "atributo": "capital",
+    "gabarito": "Oslo"
+  },
+  {
+    "n": 122,
+    "pergunta": "Qual é a capital do Brasil?",
+    "familia": "capital",
+    "entidade": "Brasil",
+    "atributo": "capital",
+    "gabarito": "Brasília"
+  },
+  {
+    "n": 123,
+    "pergunta": "Qual é a moeda da Colômbia?",
+    "familia": "moeda",
+    "entidade": "Colômbia",
+    "atributo": "moeda",
+    "gabarito": "peso colombiano"
+  },
+  {
+    "n": 124,
+    "pergunta": "Em que continente fica o Reino Unido?",
+    "familia": "continente",
+    "entidade": "Reino Unido",
+    "atributo": "continente",
+    "gabarito": "Europa"
+  },
+  {
+    "n": 125,
+    "pergunta": "Qual o número atômico do enxofre?",
+    "familia": "numero",
+    "entidade": "enxofre",
+    "atributo": "numero_atomico",
+    "gabarito": "16"
+  },
+  {
+    "n": 126,
+    "pergunta": "Me diga a capital da Itália.",
+    "familia": "capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 127,
+    "pergunta": "Que língua se fala na Alemanha?",
+    "familia": "idioma",
+    "entidade": "Alemanha",
+    "atributo": "idioma",
+    "gabarito": "alemão"
+  },
+  {
+    "n": 128,
+    "pergunta": "Qual a capital do Brasil?",
+    "familia": "capital",
+    "entidade": "Brasil",
+    "atributo": "capital",
+    "gabarito": "Brasília"
+  },
+  {
+    "n": 129,
+    "pergunta": "Me diga a capital da Grécia.",
+    "familia": "capital",
+    "entidade": "Grécia",
+    "atributo": "capital",
+    "gabarito": "Atenas"
+  },
+  {
+    "n": 130,
+    "pergunta": "Qual é a moeda da Suécia?",
+    "familia": "moeda",
+    "entidade": "Suécia",
+    "atributo": "moeda",
+    "gabarito": "coroa sueca"
+  },
+  {
+    "n": 131,
+    "pergunta": "Me diga a capital do México.",
+    "familia": "capital",
+    "entidade": "México",
+    "atributo": "capital",
+    "gabarito": "Cidade do México"
+  },
+  {
+    "n": 132,
+    "pergunta": "Em que continente fica a Tailândia?",
+    "familia": "continente",
+    "entidade": "Tailândia",
+    "atributo": "continente",
+    "gabarito": "Ásia"
+  },
+  {
+    "n": 133,
+    "pergunta": "Qual é a capital da Índia?",
+    "familia": "capital",
+    "entidade": "Índia",
+    "atributo": "capital",
+    "gabarito": "Nova Délhi"
+  },
+  {
+    "n": 134,
+    "pergunta": "Qual é o símbolo químico do potássio?",
+    "familia": "simbolo",
+    "entidade": "potássio",
+    "atributo": "simbolo",
+    "gabarito": "K"
+  },
+  {
+    "n": 135,
+    "pergunta": "Qual a moeda da Noruega?",
+    "familia": "moeda",
+    "entidade": "Noruega",
+    "atributo": "moeda",
+    "gabarito": "coroa norueguesa"
+  },
+  {
+    "n": 136,
+    "pergunta": "Que língua se fala na Argentina?",
+    "familia": "idioma",
+    "entidade": "Argentina",
+    "atributo": "idioma",
+    "gabarito": "espanhol"
+  },
+  {
+    "n": 137,
+    "pergunta": "Em que continente fica o Paraguai?",
+    "familia": "continente",
+    "entidade": "Paraguai",
+    "atributo": "continente",
+    "gabarito": "América do Sul"
+  },
+  {
+    "n": 138,
+    "pergunta": "Qual a capital da Nigéria?",
+    "familia": "capital",
+    "entidade": "Nigéria",
+    "atributo": "capital",
+    "gabarito": "Abuja"
+  },
+  {
+    "n": 139,
+    "pergunta": "Qual é a capital da Alemanha?",
+    "familia": "capital",
+    "entidade": "Alemanha",
+    "atributo": "capital",
+    "gabarito": "Berlim"
+  },
+  {
+    "n": 140,
+    "pergunta": "Qual é a capital do Japão?",
+    "familia": "capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 141,
+    "pergunta": "Qual a moeda do Japão?",
+    "familia": "moeda",
+    "entidade": "Japão",
+    "atributo": "moeda",
+    "gabarito": "iene"
+  },
+  {
+    "n": 142,
+    "pergunta": "Qual é o número atômico do níquel?",
+    "familia": "numero",
+    "entidade": "níquel",
+    "atributo": "numero_atomico",
+    "gabarito": "28"
+  },
+  {
+    "n": 143,
+    "pergunta": "Qual é a moeda da Colômbia?",
+    "familia": "moeda",
+    "entidade": "Colômbia",
+    "atributo": "moeda",
+    "gabarito": "peso colombiano"
+  },
+  {
+    "n": 144,
+    "pergunta": "Qual a capital da Irlanda?",
+    "familia": "capital",
+    "entidade": "Irlanda",
+    "atributo": "capital",
+    "gabarito": "Dublin"
+  },
+  {
+    "n": 145,
+    "pergunta": "Em que continente fica a Coreia do Sul?",
+    "familia": "continente",
+    "entidade": "Coreia do Sul",
+    "atributo": "continente",
+    "gabarito": "Ásia"
+  },
+  {
+    "n": 146,
+    "pergunta": "Qual a capital da Suécia?",
+    "familia": "capital",
+    "entidade": "Suécia",
+    "atributo": "capital",
+    "gabarito": "Estocolmo"
+  },
+  {
+    "n": 147,
+    "pergunta": "Me diga a capital do Brasil.",
+    "familia": "capital",
+    "entidade": "Brasil",
+    "atributo": "capital",
+    "gabarito": "Brasília"
+  },
+  {
+    "n": 148,
+    "pergunta": "Em que continente fica o Vietnã?",
+    "familia": "continente",
+    "entidade": "Vietnã",
+    "atributo": "continente",
+    "gabarito": "Ásia"
+  },
+  {
+    "n": 149,
+    "pergunta": "Qual a moeda da Itália?",
+    "familia": "moeda",
+    "entidade": "Itália",
+    "atributo": "moeda",
+    "gabarito": "euro"
+  },
+  {
+    "n": 150,
+    "pergunta": "Qual é a capital da Nigéria?",
+    "familia": "capital",
+    "entidade": "Nigéria",
+    "atributo": "capital",
+    "gabarito": "Abuja"
+  }
+]

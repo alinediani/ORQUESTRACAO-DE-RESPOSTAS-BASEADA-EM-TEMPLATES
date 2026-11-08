@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/Orquestracao.Core/Orquestracao.Core.csproj" />
+    <Project Path="src/Orquestracao.Experimento/Orquestracao.Experimento.csproj" />
     <Project Path="src/Orquestracao.Motores/Orquestracao.Motores.csproj" />
     <Project Path="src/Orquestracao.Templates/Orquestracao.Templates.csproj" />
     <Project Path="src/Orquestracao.Web/Orquestracao.Web.csproj" />
