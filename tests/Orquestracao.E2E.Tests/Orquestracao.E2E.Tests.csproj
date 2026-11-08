@@ -24,4 +24,9 @@
     <ProjectReference Include="..\..\src\Orquestracao.Web\Orquestracao.Web.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Os testes de front que rodam no Chromium (mini-teste.js + *.spec.js). -->
+    <None Include="js/**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
+using Orquestracao.Core.Conversas;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Playwright;
 
@@ -25,7 +27,12 @@ public sealed class App : IAsyncLifetime
 
     public async Task InitializeAsync()
     {
-        _fabrica = new WebApplicationFactory<Program>().WithWebHostBuilder(b => b.UseSetting("Diagramas:Pasta", Path.Combine(Dir, "diagrams")));
+        _fabrica = new WebApplicationFactory<Program>().WithWebHostBuilder(b =>
+        {
+            b.UseSetting("Diagramas:Pasta", Path.Combine(Dir, "diagrams"));
+            // A API da Anthropic é trocada por um motor falso: os testes não usam rede nem chave.
+            b.ConfigureTestServices(s => s.AddSingleton<IMotor>(new ApiFalsa()));
+        });
         _fabrica.UseKestrel(0); // porta livre, escolhida pelo sistema
         _fabrica.StartServer();
         // O endereço real (com a porta) que o Kestrel publicou.
@@ -95,6 +102,25 @@ public sealed class App : IAsyncLifetime
             if (ok(v) || DateTime.UtcNow > fim) return v;
             await Task.Delay(100);
         }
+    }
+}
+
+/// <summary>O motor "api" de mentira: responde na hora, devagar o bastante para o chat mostrar "pensando".</summary>
+public sealed class ApiFalsa : IMotor
+{
+    public string Nome => "api";
+
+    public Task<Disponibilidade> Disponivel(CancellationToken ct = default) => Task.FromResult(new Disponibilidade(true, "falsa"));
+
+    public async Task<Resposta> Atender(Pedido p, Action<string> delta, CancellationToken ct)
+    {
+        var texto = $"{p.Persona.Nome} fala ({p.Tipo}).";
+        foreach (var parte in texto.Split(' '))
+        {
+            delta(parte + " ");
+            await Task.Delay(30, ct);
+        }
+        return new Resposta { Texto = texto, Uso = new Uso { Entrada = 100, Saida = 20, Custo = 0.0042 } };
     }
 }
 

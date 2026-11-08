@@ -43,6 +43,12 @@ public sealed partial class Workspace : IDisposable
 
     public string Pasta => _dir;
 
+    /// <summary>Um retângulo foi removido (slug, id): a persona dele vai para a lixeira.</summary>
+    public Action<string, string>? AoRemoverNo { get; set; }
+
+    /// <summary>O diagrama foi fechado (renomeado ou apagado): as conversas dele param.</summary>
+    public Action<string>? AoFechar { get; set; }
+
     /// <param name="dir">Pasta dos diagramas.</param>
     /// <param name="arquivoAntigo">O diagram.json solto de antes dos vários diagramas: vira o primeiro, se não há nenhum.</param>
     public Workspace(string dir, string? arquivoAntigo = null)
@@ -131,7 +137,11 @@ public sealed partial class Workspace : IDisposable
         {
             if (_abertos.TryGetValue(slug, out aberto)) return aberto;
             if (!Existe(slug)) throw NaoEncontrado(slug);
-            aberto = new DiagramaArmazenado(Path.Combine(PastaDe(slug), "diagram.json")) { AoMudar = AvisarEmBreve };
+            aberto = new DiagramaArmazenado(Path.Combine(PastaDe(slug), "diagram.json"))
+            {
+                AoMudar = AvisarEmBreve,
+                AoRemoverNo = id => AoRemoverNo?.Invoke(slug, id),
+            };
             _abertos[slug] = aberto;
             return aberto;
         }
@@ -142,6 +152,7 @@ public sealed partial class Workspace : IDisposable
 
     private void Fechar(string slug)
     {
+        AoFechar?.Invoke(slug);
         if (_abertos.TryRemove(slug, out var aberto)) aberto.Fechar();
     }
 
@@ -260,7 +271,45 @@ public sealed partial class Workspace : IDisposable
         return raiz.TryGetProperty("diagram", out var d) && d.ValueKind == JsonValueKind.Object ? Entrada.Diagrama(d) : new Diagram();
     }
 
-    public DiagramItem Duplicar(string slug) => Criar($"{LerMeta(slug).Name} (cópia)", Atual(slug));
+    public DiagramItem Duplicar(string slug)
+    {
+        var item = Criar($"{LerMeta(slug).Name} (cópia)", Atual(slug));
+        // As personas vão junto (a memória e as conversas, não).
+        foreach (var (nome, texto) in ArquivosDePersona(slug)) GravarPersona(item.Slug, nome, texto);
+        return item;
+    }
+
+    /// <summary>Os .md das personas de um diagrama (personas/&lt;id&gt;.md e &lt;id&gt;.saida.md).</summary>
+    private IEnumerable<(string Nome, string Texto)> ArquivosDePersona(string slug)
+    {
+        var pasta = Path.Combine(PastaDe(slug), "personas");
+        if (!Directory.Exists(pasta)) yield break;
+        foreach (var f in Directory.EnumerateFiles(pasta, "*.md").Order(StringComparer.Ordinal))
+            yield return (Path.GetFileName(f), File.ReadAllText(f));
+    }
+
+    [GeneratedRegex(@"^(?:[^/]+/)?personas/([A-Za-z][A-Za-z0-9_-]*)(\.saida)?\.md$")]
+    private static partial Regex PersonaZipRe();
+
+    /// <summary>Grava o .md de uma persona vindo de fora (só o id validado vira nome de arquivo; a persona é validada).</summary>
+    private void GravarPersona(string slug, string nome, string texto)
+    {
+        var m = PersonaZipRe().Match("personas/" + nome);
+        if (!m.Success) return;
+        var id = m.Groups[1].Value;
+        try
+        {
+            if (!m.Groups[2].Success) Conversas.Personas.Ler(id, texto, id);
+            else if (string.IsNullOrWhiteSpace(texto)) return;
+        }
+        catch (OpError)
+        {
+            return;
+        }
+        var pasta = Path.Combine(PastaDe(slug), "personas");
+        Directory.CreateDirectory(pasta);
+        File.WriteAllText(Path.Combine(pasta, m.Groups[2].Success ? $"{id}.saida.md" : $"{id}.md"), texto);
+    }
 
     public string NomeDoArquivo(string slug) => Slugify(LerMeta(slug).Name);
 
@@ -275,6 +324,7 @@ public sealed partial class Workspace : IDisposable
             Escrever(zip, Meta, JsonSerializer.Serialize(meta, Indentado) + "\n");
             Escrever(zip, "diagram.json", DiagramaArmazenado.Serializar(0, d));
             Escrever(zip, "diagram.mmd", Mermaid.Gerar(d) + "\n");
+            foreach (var (nome, texto) in ArquivosDePersona(slug)) Escrever(zip, $"personas/{nome}", texto);
         }
         return ms.ToArray();
     }
@@ -302,12 +352,19 @@ public sealed partial class Workspace : IDisposable
 
         // Só os arquivos que interessam são lidos: nada do zip é gravado com o nome que traz.
         var arquivos = new Dictionary<string, string>();
+        var personas = new List<(string Nome, string Texto)>();
         try
         {
             using var zip = new ZipArchive(new MemoryStream(dados), ZipArchiveMode.Read);
             foreach (var entrada in zip.Entries.OrderBy(e => e.FullName.Length))
             {
                 var baseNome = entrada.FullName.Split('/')[^1];
+                if (PersonaZipRe().IsMatch(entrada.FullName) && entrada.Length <= MaxImport)
+                {
+                    using var lp = new StreamReader(entrada.Open(), Encoding.UTF8);
+                    personas.Add((baseNome, lp.ReadToEnd()));
+                    continue;
+                }
                 if (!Lidos.Contains(baseNome) || entrada.Length > MaxImport || arquivos.ContainsKey(baseNome)) continue;
                 using var leitor = new StreamReader(entrada.Open(), Encoding.UTF8);
                 arquivos[baseNome] = leitor.ReadToEnd();
@@ -348,7 +405,9 @@ public sealed partial class Workspace : IDisposable
             if (arquivos.TryGetValue(Meta, out var meta)) nomeDoMeta = Json.Ler<MetaInfo>(meta)?.Name;
         }
         catch (JsonException) { }
-        return Criar(nome.Length > 0 ? nome : nomeDoMeta is { Length: > 0 } ? nomeDoMeta : "Importado", diagrama);
+        var item = Criar(nome.Length > 0 ? nome : nomeDoMeta is { Length: > 0 } ? nomeDoMeta : "Importado", diagrama);
+        foreach (var (n, t) in personas) GravarPersona(item.Slug, n, t);
+        return item;
     }
 
     public void Dispose()

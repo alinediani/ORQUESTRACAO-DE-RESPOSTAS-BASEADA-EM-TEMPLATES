@@ -1,4 +1,6 @@
+using Orquestracao.Core.Conversas;
 using Orquestracao.Core.Diagramas;
+using Orquestracao.Motores;
 using Orquestracao.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,18 @@ var pasta = builder.Configuration["Diagramas:Pasta"]
     ?? Path.Combine(builder.Environment.ContentRootPath, "diagrams");
 var antigo = builder.Configuration["Diagramas:ArquivoAntigo"] ?? Environment.GetEnvironmentVariable("MERMAID_DRAW_FILE");
 builder.Services.AddSingleton(_ => new Workspace(pasta, antigo));
+
+// Os motores que dão voz às personas. Com dois de mesmo nome, vale o último registrado (os testes trocam por falsos).
+builder.Services.AddSingleton<MotorMcp>();
+builder.Services.AddSingleton<IMotor>(sp => sp.GetRequiredService<MotorMcp>());
+builder.Services.AddSingleton<IMotor>(_ => new MotorOllama());
+builder.Services.AddSingleton<IMotor>(_ => new MotorApi());
+builder.Services.AddSingleton<RegistroDeMotores>();
+var templates = EspacoIa.AcharTemplates(builder.Configuration["Templates:Pasta"], builder.Environment.ContentRootPath);
+builder.Services.AddSingleton(sp => new EspacoIa(sp.GetRequiredService<Workspace>(), sp.GetRequiredService<RegistroDeMotores>(), templates));
+
+// O servidor MCP (Streamable HTTP, sem sessão): o Claude Code dá voz às personas de motor "mcp".
+builder.Services.AddMcpServer().WithHttpTransport(o => o.Stateless = true).WithTools<FerramentasMcp>();
 
 var app = builder.Build();
 
@@ -34,7 +48,9 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.MapGet("/api/saude", () => Results.Ok(new { ok = true }));
+app.MapApiPersonas();
 app.MapApiDiagramas();
+app.MapMcp("/mcp");
 
 app.Run();
 

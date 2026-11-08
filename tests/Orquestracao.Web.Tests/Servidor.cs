@@ -3,6 +3,8 @@ using System.Text;
 using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Orquestracao.Web.Tests;
 
@@ -18,12 +20,14 @@ public sealed class Servidor : IDisposable
     private readonly WebApplicationFactory<Program> _fabrica;
     public HttpClient Cliente { get; }
 
-    public Servidor(string? arquivoAntigo = null)
+    /// <param name="servicos">Troca serviços do app (ex.: um motor falso no lugar do da API da Anthropic).</param>
+    public Servidor(string? arquivoAntigo = null, Action<IServiceCollection>? servicos = null)
     {
         _fabrica = new WebApplicationFactory<Program>().WithWebHostBuilder(b =>
         {
             b.UseSetting("Diagramas:Pasta", Diagramas);
             if (arquivoAntigo is not null) b.UseSetting("Diagramas:ArquivoAntigo", arquivoAntigo);
+            if (servicos is not null) b.ConfigureTestServices(servicos);
         });
         Cliente = _fabrica.CreateClient();
     }

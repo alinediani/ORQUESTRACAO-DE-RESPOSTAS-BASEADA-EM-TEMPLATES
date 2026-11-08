@@ -57,11 +57,11 @@ O caminho escolhido:
 - [x] Testes de navegador com Playwright para .NET (editor, SSE, código, preview, menu e câmera)
 
 **F3 — Personas, conversa e motores**
-- [ ] Personas (`.md` + yaml), turnos e conversa (debate, resposta, tarefa)
-- [ ] Persona humana (Aprovar / Pedir mudança): a base do feedback do TCC
-- [ ] Motores: API da Anthropic, Ollama e MCP
-- [ ] Servidor MCP em `/mcp` (SDK `ModelContextProtocol.AspNetCore`), mesmo `.mcp.json`
-- [ ] Testes de conversa, turnos e personas portados
+- [x] Personas (`.md` + yaml), turnos e conversa (debate, resposta, tarefa)
+- [x] Persona humana (Aprovar / Pedir mudança): a base do feedback do TCC
+- [x] Motores: API da Anthropic, Ollama e MCP
+- [x] Servidor MCP em `/mcp` (SDK `ModelContextProtocol.AspNetCore`), mesmo `.mcp.json`
+- [x] Testes de conversa, turnos e personas portados (xUnit) e do chat no navegador (Playwright)
 
 **F4 — Paridade**
 - [ ] Remover `legado/` e o Node
