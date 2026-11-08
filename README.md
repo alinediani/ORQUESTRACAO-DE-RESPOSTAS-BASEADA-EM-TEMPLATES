@@ -1,3 +1,96 @@
+# Orquestração de respostas baseada em templates
+
+Repositório do protótipo do TCC **"Orquestração de respostas baseada em templates: reaproveitamento de estruturas de resposta para reduzir a dependência de modelos de linguagem"** (Ciência da Computação, FAM, 2026).
+
+A ideia: em vez de chamar o LLM a cada pergunta, o orquestrador guarda a **estrutura** (template) das respostas numa base chave-valor. Um parser extrai a estrutura e os slots da pergunta:
+- **chave conhecida:** recupera o template, busca o dado numa fonte externa e preenche os slots, sem chamar o LLM de geração;
+- **chave nova:** o LLM padrão responde, o template é extraído da resposta e salvo com peso inicial 0,5.
+
+O feedback do usuário ajusta o peso de cada template (média móvel), respostas mal avaliadas voltam ao LLM até um limite de tentativas, e templates abaixo de um limiar são descartados.
+
+```mermaid
+flowchart TD
+    ui("UI · pergunta") --> parser("Parser · estrutura e slots")
+    parser --> motor("Motor · consulta a chave")
+    motor -->|"chave existe"| busca("Busca o template")
+    busca --> fonte("Fonte externa")
+    fonte --> adapta("Adapta · preenche os slots")
+    adapta --> entrega("Entrega")
+    entrega --> feedback("Feedback · ajusta o peso")
+    motor -->|"chave nova"| llm("LLM padrão")
+    feedback -->|"ruim: até o limite"| llm
+    llm --> extrai("Extrai o template")
+    extrai --> salva("Salva no chave-valor")
+    salva --> feedback
+    feedback -->|"bom"| fim("Fim")
+```
+
+## Estado atual
+
+O código deste repositório ainda é o **mermaid-ai-draw** (TypeScript + Vite), documentado logo abaixo: um editor de diagramas em que cada retângulo é uma persona de IA, com chat, motores MCP/Ollama/API e servidor MCP. Ele é a base do protótipo.
+
+O caminho escolhido:
+- **Migrar para C# (.NET 10) com testes em xUnit**, numa compilação só: `dotnet build`, `dotnet test`, `dotnet run`.
+- **Front dentro do projeto C#:** o canvas vira JavaScript puro (ES modules) servido pelo ASP.NET a partir de `wwwroot/`, sem Node e sem build de front.
+- **O orquestrador como um motor:** um `MotorTemplate` que envolve outro motor (o fallback) e entra no lugar de qualquer persona.
+- **O fluxo visível:** o diagrama da figura acima roda no canvas, e cada pergunta acende o caminho seguido (verde: template; roxo: LLM).
+
+## Próximos passos
+
+**F0 — Preparação**
+- [ ] Branch `migracao-csharp` e .NET 10 SDK
+- [ ] Solução `OrquestracaoTemplates.slnx`: `Core`, `Motores`, `Templates`, `Web` e os projetos de teste xUnit
+- [ ] App TypeScript movido para `legado/` (referência até a paridade)
+- [ ] `dotnet build` e `dotnet test` passando com a solução vazia
+
+**F1 — Núcleo do diagrama**
+- [ ] Modelo do diagrama e leitura/geração do código Mermaid em C#
+- [ ] Operações granulares (criar, alterar, remover retângulos e setas) e seus eventos
+- [ ] Testes de `ops` portados para xUnit
+
+**F2 — API, SSE e front**
+- [ ] API REST com as mesmas rotas, cabeçalho `X-Rev` e eventos SSE (ASP.NET Minimal API)
+- [ ] Front convertido de TypeScript para JavaScript puro em `wwwroot/`, com o Mermaid em `wwwroot/lib/`
+- [ ] Front sem parser Mermaid próprio: o código vem do servidor (`/api/diagram`)
+- [ ] Testes de API portados (xUnit + `WebApplicationFactory`)
+- [ ] Marco: o canvas funciona inteiro com `dotnet run`
+
+**F3 — Personas, conversa e motores**
+- [ ] Personas (`.md` + yaml), turnos e conversa (debate, resposta, tarefa)
+- [ ] Persona humana (Aprovar / Pedir mudança): a base do feedback do TCC
+- [ ] Motores: API da Anthropic, Ollama e MCP
+- [ ] Servidor MCP em `/mcp` (SDK `ModelContextProtocol.AspNetCore`), mesmo `.mcp.json`
+- [ ] Testes de conversa, turnos e personas portados
+
+**F4 — Paridade**
+- [ ] Remover `legado/` e o Node
+- [ ] README reescrito para a versão C#
+
+**F5 — Orquestrador por template (o TCC)**
+- [ ] R01 · Parser (Claude Haiku): pergunta → estrutura + slots → chave
+- [ ] R02 · Motor: decide entre template existente e chave nova
+- [ ] R03 · Fonte de fatos local e preenchimento dos slots
+- [ ] R04 · Fallback no LLM, extração do template e gravação com peso 0,5 (SQLite)
+- [ ] R05 · Feedback: média móvel do peso, reenvio até o limite, descarte abaixo do limiar
+- [ ] R06 · Orquestrador exposto pelo MCP e usado pelo Claude Code
+- [ ] R07 · Contagem de chamadas, tokens e custo do LLM
+
+**F6 — Visualização do fluxo**
+- [ ] Diagrama "Orquestrador por template" com os blocos da figura
+- [ ] Cada etapa emite um evento e a mensagem percorre a seta correspondente
+- [ ] Painel com chave, template, peso e chamadas ao LLM
+- [ ] Testes de ponta a ponta com Playwright para .NET
+
+**F7 — Experimento**
+- [ ] Conjunto de 100 a 200 perguntas em famílias de mesma estrutura
+- [ ] T01–T06: protótipo vs. linha de base (LLM puro), com LLM simulado e real
+- [ ] Relatório: taxa de acerto de template, chamadas, tokens, custo, latência e qualidade
+- [ ] Resultados levados ao texto do TCC
+
+Fora do escopo do TCC, para depois da paridade: palácio da memória, curadoria, pós-fluxo e exportação `.zip`.
+
+---
+
 # mermaid-ai-draw
 
 Fork do [mermaid-draw](https://github.com/lucasisabelf/mermaid-draw) em que **cada retângulo é uma persona de IA** e **as setas dizem quem responde a quem**. Na lateral esquerda há um **chat**. Você lança um assunto e escolhe o que quer:
