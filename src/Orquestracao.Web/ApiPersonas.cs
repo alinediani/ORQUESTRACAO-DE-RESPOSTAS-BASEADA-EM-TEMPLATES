@@ -90,7 +90,9 @@ public static class ApiPersonas
         DiagramNode No(string slug, string id) =>
             ws.Diagrama(slug).Diagrama.Nodes.Find(n => n.Id == id) ?? throw new OpError(404, $"Retângulo \"{id}\" não encontrado.");
 
-        g.MapGet("/personas", (HttpContext ctx) => Enviar(ctx, 200, ia.PersonasDoDiagrama(Slug(ctx))));
+        // O diagrama da Figura 1 é a visualização do orquestrador: os blocos são etapas, não personas.
+        static bool EhAFigura(HttpContext ctx) => Slug(ctx) == OrquestradorAoVivo.Slug;
+        g.MapGet("/personas", (HttpContext ctx) => Enviar(ctx, 200, EhAFigura(ctx) ? [] : ia.PersonasDoDiagrama(Slug(ctx))));
         g.MapGet("/personas/{id}", (HttpContext ctx, string id) =>
         {
             var n = No(Slug(ctx), id);
@@ -124,6 +126,8 @@ public static class ApiPersonas
         g.MapGet("/conversas", (HttpContext ctx) => EnviarSemNulos(ctx, 200, ia.ConversasDe(Slug(ctx)).Listar()));
         g.MapPost("/conversas", async (HttpContext ctx) =>
         {
+            if (EhAFigura(ctx))
+                throw new OpError(400, "Este diagrama é a visualização do orquestrador (Figura 1): pergunte pelo painel (orquestrador.html) ou por uma persona com motor Template.");
             var corpo = await LerJson(ctx);
             int? rodadas = null;
             if (corpo.ValueKind == JsonValueKind.Object && corpo.TryGetProperty("rodadas", out var r))

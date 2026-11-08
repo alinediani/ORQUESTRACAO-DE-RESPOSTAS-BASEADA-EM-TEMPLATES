@@ -32,9 +32,8 @@ public static class ApiOrquestrador
         if (string.IsNullOrWhiteSpace(pergunta)) throw new OpError(400, "Escreva a pergunta.");
         motor ??= "api";
         if (motor is not ("api" or "ollama" or "mcp") || !motores.Tem(motor)) throw new OpError(400, "\"motor\" deve ser api, ollama ou mcp.");
-        var r = await orq.Responder(pergunta.Trim(), new LlmPorMotor(motores[motor], PersonaDireta(motor)), ct);
-        aoVivo.Publicar(new { type = "resultado", pergunta, resultado = r });
-        return r;
+        // O resultado chega ao painel pelo evento Respondido do orquestrador (OrquestradorAoVivo).
+        return await orq.Responder(pergunta.Trim(), new LlmPorMotor(motores[motor], PersonaDireta(motor)), ct);
     }
 
     public static TemplateResposta? Feedback(Orquestrador orq, OrquestradorAoVivo aoVivo, string? chave, bool bom)

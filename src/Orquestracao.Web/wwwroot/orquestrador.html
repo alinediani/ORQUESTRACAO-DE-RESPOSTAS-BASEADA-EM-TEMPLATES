@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orquestrador por templates</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/orquestrador.css" />
+  </head>
+  <body class="painel">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Orquestrador por template<small>o fluxo da Figura 1, ao vivo</small></h1>
+      </div>
+      <nav class="actions">
+        <a class="botao-link" href="./?d=orquestrador-por-template" id="link-canvas" title="O diagrama da Figura 1 no editor: cada etapa percorre a seta">Ver no canvas</a>
+        <a class="botao-link" href="./">Editor</a>
+      </nav>
+    </header>
+
+    <main class="painel-grade">
+      <section class="cartao" aria-labelledby="t-perguntar">
+        <h2 id="t-perguntar">Perguntar</h2>
+        <form id="form-pergunta" class="form-pergunta">
+          <input id="pergunta" type="text" autocomplete="off" placeholder="Qual é a capital da França?" aria-label="Pergunta" />
+          <select id="motor" aria-label="LLM das chaves novas" title="Quem responde quando a estrutura é nova">
+            <option value="api">API · Claude</option>
+            <option value="ollama">Ollama · local</option>
+          </select>
+          <button type="submit" class="primary">Perguntar</button>
+        </form>
+        <div id="exemplos" class="exemplos" aria-label="Exemplos"></div>
+
+        <div id="resultado" class="resultado" hidden aria-live="polite">
+          <div class="resultado-cabeca">
+            <span id="r-caminho" class="selo"></span>
+            <span id="r-motivo" class="r-motivo"></span>
+          </div>
+          <p id="r-texto" class="r-texto"></p>
+          <dl class="r-dados">
+            <dt>Chave</dt><dd><code id="r-chave"></code></dd>
+            <dt>Template</dt><dd><code id="r-template"></code></dd>
+            <dt>Peso</dt><dd id="r-peso"></dd>
+            <dt>LLM</dt><dd id="r-chamadas"></dd>
+            <dt>Latência</dt><dd id="r-latencia"></dd>
+          </dl>
+          <div class="feedback" id="feedback">
+            <span>A resposta está boa?</span>
+            <button type="button" id="bom" title="Feedback bom: o peso do template sobe">👍 Boa</button>
+            <button type="button" id="ruim" title="Feedback ruim: o peso desce; abaixo do limiar, o template é descartado">👎 Ruim</button>
+            <span id="r-feedback" class="r-feedback"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cartao" aria-labelledby="t-fluxo">
+        <h2 id="t-fluxo">Fluxo da última pergunta</h2>
+        <p class="legenda"><span class="ponto verde"></span>template (sem LLM de geração) <span class="ponto roxo"></span>LLM padrão</p>
+        <div id="fluxo" class="fluxo" aria-label="Figura 1 com o caminho seguido"></div>
+      </section>
+
+      <section class="cartao" aria-labelledby="t-estatisticas">
+        <h2 id="t-estatisticas">Estatísticas (R07)</h2>
+        <div id="estatisticas" class="estatisticas"></div>
+        <p class="legenda" id="configuracao"></p>
+      </section>
+
+      <section class="cartao largo" aria-labelledby="t-templates">
+        <div class="cartao-cabeca">
+          <h2 id="t-templates">Templates na base chave-valor</h2>
+          <button type="button" id="limpar" class="danger" title="Apaga todos os templates (as próximas perguntas voltam ao LLM)">Limpar todos</button>
+        </div>
+        <table class="tabela">
+          <thead><tr><th>Chave</th><th>Template</th><th>Peso</th><th>Usos</th><th>👍</th><th>👎</th><th></th></tr></thead>
+          <tbody id="templates"></tbody>
+        </table>
+        <p id="sem-templates" class="legenda">Nenhum template ainda: a primeira pergunta de cada estrutura vai ao LLM.</p>
+      </section>
+
+      <section class="cartao largo" aria-labelledby="t-log">
+        <h2 id="t-log">Ao vivo</h2>
+        <ol id="log" class="log"></ol>
+      </section>
+    </main>
+
+    <!-- Sem bundler: o Mermaid é um script global e o painel é um ES module. -->
+    <script src="lib/mermaid.min.js"></script>
+    <script type="module" src="js/orquestrador.js"></script>
+  </body>
+</html>

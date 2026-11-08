@@ -112,9 +112,20 @@ public sealed class ApiFalsa : IMotor
 
     public Task<Disponibilidade> Disponivel(CancellationToken ct = default) => Task.FromResult(new Disponibilidade(true, "falsa"));
 
+    /// <summary>Respostas factuais para as perguntas que os testes do orquestrador fazem.</summary>
+    private static readonly (string Trecho, string Resposta)[] Fatos =
+    [
+        ("capital da França", "A capital da França é Paris."),
+        ("capital do Japão", "A capital do Japão é Tóquio."),
+        ("moeda da Argentina", "A moeda da Argentina é o peso argentino."),
+        ("símbolo químico do ferro", "O símbolo químico do ferro é Fe."),
+    ];
+
     public async Task<Resposta> Atender(Pedido p, Action<string> delta, CancellationToken ct)
     {
-        var texto = $"{p.Persona.Nome} fala ({p.Tipo}).";
+        // Pedido do orquestrador por template (o system de geração pede uma frase factual): responde com o fato.
+        var fato = p.System.Contains("uma única frase") ? Fatos.FirstOrDefault(f => p.Contexto.Contains(f.Trecho)).Resposta : null;
+        var texto = fato ?? $"{p.Persona.Nome} fala ({p.Tipo}).";
         foreach (var parte in texto.Split(' '))
         {
             delta(parte + " ");

@@ -24,6 +24,9 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
     /// <summary>Cada etapa do fluxo, para a visualização: (de, para, rótulo).</summary>
     public event Action<EtapaFluxo>? Etapa;
 
+    /// <summary>Cada pergunta respondida (pelo painel, pelo MCP ou por uma persona numa conversa).</summary>
+    public event Action<ResultadoOrquestrador>? Respondido;
+
     /// <summary>O system prompt do LLM padrão: respostas factuais curtas, que repetem o assunto (reaproveitáveis).</summary>
     public const string SystemGeracao =
         "Responda à pergunta em uma única frase completa e factual, em português do Brasil, retomando o assunto da pergunta " +
@@ -64,7 +67,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
                 store.Salvar(existente with { Usos = existente.Usos + 1 });
                 return Fechar(new ResultadoOrquestrador
                 {
-                    Texto = texto, Caminho = Caminho.Template, Chave = estrutura.Chave, Entidade = estrutura.Entidade.Nome,
+                    Pergunta = pergunta, Texto = texto, Caminho = Caminho.Template, Chave = estrutura.Chave, Entidade = estrutura.Entidade.Nome,
                     Template = existente.Template, Peso = existente.Peso, ChamadasParser = usoParser is null ? 0 : 1,
                     TokensEntrada = usoParser?.Entrada ?? 0, TokensSaida = usoParser?.Saida ?? 0, Custo = usoParser?.Custo ?? 0, Etapas = etapas,
                 }, relogio);
@@ -101,7 +104,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         }
         return Fechar(new ResultadoOrquestrador
         {
-            Texto = resposta, Caminho = Caminho.Llm, Chave = estrutura.Chave, Entidade = estrutura.Entidade?.Nome, Template = template, Peso = peso,
+            Pergunta = pergunta, Texto = resposta, Caminho = Caminho.Llm, Chave = estrutura.Chave, Entidade = estrutura.Entidade?.Nome, Template = template, Peso = peso,
             TemplateSalvo = salvo, Motivo = motivo, ChamadasGeracao = 1, ChamadasParser = usoParser is null ? 0 : 1,
             TokensEntrada = r.Entrada + (usoParser?.Entrada ?? 0), TokensSaida = r.Saida + (usoParser?.Saida ?? 0), Custo = r.Custo + (usoParser?.Custo ?? 0),
             Etapas = etapas,
@@ -112,6 +115,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
     {
         var final = r with { LatenciaMs = relogio.Elapsed.TotalMilliseconds };
         Estatisticas.Registrar(final);
+        Respondido?.Invoke(final);
         return final;
     }
 

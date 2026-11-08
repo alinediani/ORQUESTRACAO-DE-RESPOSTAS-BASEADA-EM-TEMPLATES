@@ -41,6 +41,7 @@ public static class Caminho
 /// <summary>A resposta do orquestrador para uma pergunta, com tudo o que a visualização e o experimento precisam.</summary>
 public sealed record ResultadoOrquestrador
 {
+    public string Pergunta { get; init; } = "";
     public required string Texto { get; init; }
     public required string Caminho { get; init; }
     public required string Chave { get; init; }

@@ -173,10 +173,10 @@ templates/   os papéis da paleta          examples/   diagramas prontos para im
 - [x] R07 · Contagem de chamadas, tokens e custo do LLM
 
 **F6 — Visualização do fluxo**
-- [ ] Diagrama "Orquestrador por template" com os blocos da figura
-- [ ] Cada etapa emite um evento e a mensagem percorre a seta correspondente
-- [ ] Painel com chave, template, peso e chamadas ao LLM
-- [ ] Testes de ponta a ponta com Playwright para .NET
+- [x] Diagrama "Orquestrador por template" com os blocos da figura (criado na primeira vez)
+- [x] Cada etapa emite um evento e a mensagem percorre a seta correspondente
+- [x] Painel (`orquestrador.html`) com chave, template, peso, chamadas ao LLM, feedback 👍/👎 e o caminho destacado
+- [x] Testes de ponta a ponta com Playwright para .NET
 
 **F7 — Experimento**
 - [ ] Conjunto de 100 a 200 perguntas em famílias de mesma estrutura

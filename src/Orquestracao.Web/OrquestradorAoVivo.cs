@@ -52,6 +52,7 @@ public sealed class OrquestradorAoVivo
         _ws = ws;
         if (criarDiagrama) GarantirDiagrama();
         orquestrador.Etapa += Etapa;
+        orquestrador.Respondido += r => Publicar(new { type = "resultado", resultado = r });
     }
 
     /// <summary>Cria o diagrama da Figura 1, se ainda não existe.</summary>

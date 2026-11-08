@@ -71,6 +71,8 @@ public class OrquestradorApiTests : IDisposable
     {
         Assert.Contains("orquestrador-por-template", (await _s.Call("GET", "/diagrams")).Json!.AsArray().Select(d => (string?)d!["slug"]));
         Assert.Equal(12, (await _s.Call("GET", "/d/orquestrador-por-template/nodes")).Json!.AsArray().Count);
+        Assert.Empty((await _s.Call("GET", "/d/orquestrador-por-template/personas")).Json!.AsArray()); // etapas, não personas
+        Assert.Equal(400, (await _s.Call("POST", "/d/orquestrador-por-template/conversas", new { assunto = "x" })).Status);
 
         using var canvas = await _s.Ouvir("/d/orquestrador-por-template/events");
         await canvas.Proximo(); // snapshot

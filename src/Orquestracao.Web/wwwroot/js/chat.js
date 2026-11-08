@@ -302,6 +302,17 @@ export class ChatPanel {
       .filter(Boolean)
       .join(' · ');
     if (meta) head.append(Object.assign(document.createElement('span'), { className: 'msg-meta', textContent: meta }));
+    // Orquestrador por template (motor "template"): de onde veio a resposta, com a chave e o peso.
+    const d = m.detalhe;
+    if (d?.caminho === 'template' || d?.caminho === 'llm') {
+      head.append(
+        Object.assign(document.createElement('span'), {
+          className: `msg-caminho caminho-${d.caminho}`,
+          textContent: d.caminho === 'template' ? 'template · sem LLM' : 'LLM',
+          title: `chave: ${d.chave}${d.template ? `\ntemplate: ${d.template}` : ''}${d.peso !== null && d.peso !== undefined ? `\npeso: ${d.peso}` : ''}${d.motivo ? `\n${d.motivo}` : ''}`,
+        }),
+      );
+    }
     const corpo = document.createElement('div');
     corpo.className = 'msg-texto';
     if (pendente && !m.texto)
