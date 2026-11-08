@@ -79,6 +79,7 @@ app.MapGet("/api/saude", () => Results.Ok(new { ok = true }));
 // O diagrama da Figura 1 (criado na primeira vez) e os pulsos das etapas.
 app.Services.GetRequiredService<OrquestradorAoVivo>();
 app.MapApiOrquestrador();
+app.MapApiExperimento();
 app.MapApiPersonas();
 app.MapApiDiagramas();
 app.MapMcp("/mcp");

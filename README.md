@@ -142,7 +142,20 @@ dotnet run --project src/Orquestracao.Experimento -- --llm api     # Claude Sonn
 
 O conjunto tem 150 perguntas sorteadas (semente 2026) em seis famílias de mesma estrutura (capital, moeda, idioma, continente, símbolo químico e número atômico), com mais perguntas nas famílias "em alta". O protótipo e a linha de base (o LLM responde todas) recebem o mesmo conjunto; o relatório compara chamadas ao LLM, tokens, custo, latência, respostas corretas pelo gabarito e uma comparação cega. O resultado fica em [`docs/experimento/`](docs/experimento/resultados.md), junto com o conjunto.
 
-Com o LLM simulado (que erra 5% das vezes): **6 chamadas ao LLM de geração contra 150 (−96%)**, 96% das perguntas montadas pelo template, 100% de respostas corretas contra 94% da linha de base e, na comparação cega, o protótipo melhor em 9 e empate em 141. São números de simulação; a rodada com o modelo real (`--llm api`) grava `resultados-api.md` ao lado.
+**Com um LLM real** (o Claude Opus 5.5, numa sessão do Claude Code respondendo pelo `/mcp`):
+- **Chamadas ao LLM de geração:** 6 no protótipo, contra 150 da linha de base (−96%).
+- **Template:** 144 perguntas (96%) foram montadas por ele.
+- **Dado correto pelo gabarito:** 100% nas duas estratégias.
+- **Forma:** 33 das 144 respostas do template diferem do texto do LLM. A maioria é concordância herdada da primeira resposta da família, como "A moeda do Japão é **a** iene".
+
+Detalhes em [`analise-mcp.md`](docs/experimento/analise-mcp.md). A comparação cega humana se faz com [`avaliacao-humana.csv`](docs/experimento/avaliacao-humana.csv) (veja [`AVALIACAO-HUMANA.md`](docs/experimento/AVALIACAO-HUMANA.md)).
+
+**Para repetir com o Claude Code:**
+1. Suba o app.
+2. Rode `curl -X POST localhost:5190/api/experimento -d '{"llm":"mcp"}'`.
+3. No Claude Code, responda aos turnos com `proxima_vez` e `responder` (diagrama `orquestrador`).
+
+Com o LLM simulado (que erra 5% das vezes): 6 chamadas contra 150, 100% de respostas corretas contra 94% e comparação cega 9 × 0 (141 empates).
 
 ## Estrutura
 

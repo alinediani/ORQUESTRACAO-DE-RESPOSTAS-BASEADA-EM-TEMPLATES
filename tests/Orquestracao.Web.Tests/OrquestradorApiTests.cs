@@ -152,4 +152,43 @@ public class OrquestradorApiTests : IDisposable
         Assert.Equal(("A capital do Peru é Lima.", "template", 0.0), ((string?)m2["texto"], (string?)m2["detalhe"]!["caminho"], (double)m2["uso"]!["custo"]!));
         Assert.Equal(1, _api.Chamadas);
     }
+
+    [Fact]
+    public async Task Experimento_RodaNoServidor_EGravaRelatorioEPlanilhasDaAvaliacaoHumana()
+    {
+        var saida = Path.Combine(_s.Dir, "experimento");
+        using var s = new Servidor(servicos: x => x.AddSingleton<IMotor>(new ApiFactual()), configuracoes: new() { ["Experimento:Saida"] = saida });
+        Assert.Equal(400, (await s.Call("POST", "/experimento", new { llm = "gpt" })).Status);
+        Assert.Equal("parado", (string?)(await s.Call("GET", "/experimento")).Json!["status"]);
+
+        Assert.Equal(202, (await s.Call("POST", "/experimento", new { llm = "api", perguntas = 12 })).Status);
+        JsonNode st = null!;
+        for (var i = 0; i < 250; i++)
+        {
+            st = (await s.Call("GET", "/experimento")).Json!;
+            if ((string?)st["status"] != "rodando") break;
+            await Task.Delay(20);
+        }
+        Assert.Equal("concluido", (string?)st["status"]);
+        Assert.Equal(12, (int)st["resumo"]!["linhaDeBase"]!["chamadasGeracao"]!);
+        foreach (var f in new[] { "resultados-api.md", "resultados-api.json", "avaliacao-humana.csv", "avaliacao-humana-chave.csv" })
+            Assert.True(File.Exists(Path.Combine(saida, f)), f);
+    }
+
+    [Fact]
+    public async Task AvaliacaoHumana_ParesSorteados_EAChaveDesembaralha()
+    {
+        var fonte = Orquestracao.Templates.FonteDeFatosJson.Ler(Orquestracao.Templates.FonteDeFatosJson.Achar(null, AppContext.BaseDirectory));
+        var conjunto = Orquestracao.Templates.Experimento.GerarConjunto(fonte, 2026, 12);
+        var r = await Orquestracao.Templates.Experimento.Rodar(fonte, conjunto, new Orquestracao.Templates.LlmDeFatos(fonte), new Orquestracao.Templates.LlmDeFatos(fonte),
+            new Orquestracao.Templates.JuizPorGabarito(), "simulado", 2026, 0, 0);
+        var (planilha, chave) = Orquestracao.Templates.AvaliacaoHumana.Gerar(r, 2026);
+        var linhas = planilha.TrimStart('\uFEFF').Trim().Split('\n');
+        Assert.Equal(13, linhas.Length);
+        Assert.StartsWith("id;pergunta;resposta_a;resposta_b;melhor", linhas[0]);
+        Assert.DoesNotContain("prototipo", planilha); // cega: a planilha não diz de onde veio cada resposta
+        var k = chave.TrimStart('\uFEFF').Trim().Split('\n').Skip(1).Select(l => l.Split(';')).ToList();
+        Assert.All(k, c => Assert.Contains(c[1], new[] { "prototipo", "linha_de_base" }));
+        Assert.True(k.Select(c => c[1]).Distinct().Count() == 2); // as duas ordens aparecem
+    }
 }

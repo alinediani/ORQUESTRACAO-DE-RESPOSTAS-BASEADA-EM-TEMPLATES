@@ -22,10 +22,11 @@ public sealed class Servidor : IDisposable
 
     /// <param name="servicos">Troca serviços do app (ex.: um motor falso no lugar do da API da Anthropic).</param>
     /// <param name="diagramaDaFigura">Cria o diagrama da Figura 1 na partida (desligado: a lista começa só com "Meu diagrama").</param>
-    public Servidor(string? arquivoAntigo = null, Action<IServiceCollection>? servicos = null, bool diagramaDaFigura = false)
+    public Servidor(string? arquivoAntigo = null, Action<IServiceCollection>? servicos = null, bool diagramaDaFigura = false, Dictionary<string, string>? configuracoes = null)
     {
         _fabrica = new WebApplicationFactory<Program>().WithWebHostBuilder(b =>
         {
+            foreach (var (k, v) in configuracoes ?? []) b.UseSetting(k, v);
             b.UseSetting("Diagramas:Pasta", Diagramas);
             b.UseSetting("Orquestrador:DiagramaDaFigura", diagramaDaFigura ? "true" : "false");
             if (arquivoAntigo is not null) b.UseSetting("Diagramas:ArquivoAntigo", arquivoAntigo);

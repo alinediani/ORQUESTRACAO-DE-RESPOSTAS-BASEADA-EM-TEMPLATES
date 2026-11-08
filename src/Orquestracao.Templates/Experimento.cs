@@ -206,7 +206,8 @@ public static class Experimento
     /// </summary>
     public static async Task<ResultadoExperimento> Rodar(
         IFonteDeFatos fonte, List<PerguntaTeste> conjunto, ILlm llmPrototipo, ILlm llmLinhaDeBase, IJuiz juiz,
-        string modo, int semente, double taxaErroLlm, double latenciaLlmMs, ConfiguracaoOrquestrador? cfg = null, IParser? parser = null, CancellationToken ct = default)
+        string modo, int semente, double taxaErroLlm, double latenciaLlmMs, ConfiguracaoOrquestrador? cfg = null, IParser? parser = null, CancellationToken ct = default,
+        int concorrenciaLinhaDeBase = 1)
     {
         var orq = new Orquestrador(parser ?? new ParserHeuristico(fonte), new TemplateStoreMemoria(), fonte, cfg);
         var proto = new List<RespostaTeste>();
@@ -223,14 +224,26 @@ public static class Experimento
                 r.LatenciaMs + (r.ChamadasGeracao + r.ChamadasParser) * latenciaLlmMs));
         }
 
-        var baseLista = new List<RespostaTeste>();
-        foreach (var p in conjunto)
-        {
-            var relogio = Stopwatch.StartNew();
-            var r = await llmLinhaDeBase.Completar(Orquestrador.SystemGeracao, p.Pergunta, ct);
-            baseLista.Add(new RespostaTeste(p.N, r.Texto.Trim(), Correta(r.Texto, p.Gabarito), Caminho.Llm, 1, 0, r.Entrada + r.Saida, r.Custo,
-                relogio.Elapsed.TotalMilliseconds + latenciaLlmMs));
-        }
+        // A linha de base: o LLM responde todas. Com concorrência > 1, as perguntas vão juntas (no MCP, chegam
+        // todas como turnos pendentes); a ordem das respostas é a do conjunto.
+        var baseArr = new RespostaTeste[conjunto.Count];
+        using (var vagas = new SemaphoreSlim(Math.Max(1, concorrenciaLinhaDeBase)))
+            await Task.WhenAll(conjunto.Select(async (p, i) =>
+            {
+                await vagas.WaitAsync(ct);
+                try
+                {
+                    var relogio = Stopwatch.StartNew();
+                    var r = await llmLinhaDeBase.Completar(Orquestrador.SystemGeracao, p.Pergunta, ct);
+                    baseArr[i] = new RespostaTeste(p.N, r.Texto.Trim(), Correta(r.Texto, p.Gabarito), Caminho.Llm, 1, 0, r.Entrada + r.Saida, r.Custo,
+                        relogio.Elapsed.TotalMilliseconds + latenciaLlmMs);
+                }
+                finally
+                {
+                    vagas.Release();
+                }
+            }));
+        var baseLista = baseArr.ToList();
 
         // Comparação cega: a ordem (A/B) é sorteada a cada pergunta, e o juiz não sabe de onde veio cada resposta.
         var rnd = new Random(semente + 1);
@@ -283,8 +296,16 @@ public static class Experimento
         var sb = new StringBuilder();
         sb.AppendLine("# Resultados do experimento");
         sb.AppendLine();
-        sb.AppendLine($"Gerado por `dotnet run --project src/Orquestracao.Experimento -- --llm {r.Modo}` · semente {r.Semente} · {p.Perguntas} perguntas em {r.PorFamilia.Count} famílias de mesma estrutura.");
+        var comando = r.Modo == "mcp" ? "`POST /api/experimento {\"llm\": \"mcp\"}` (com o Claude Code respondendo pelo /mcp)" : $"`dotnet run --project src/Orquestracao.Experimento -- --llm {r.Modo}`";
+        sb.AppendLine($"Gerado por {comando} · semente {r.Semente} · {p.Perguntas} perguntas em {r.PorFamilia.Count} famílias de mesma estrutura.");
         sb.AppendLine();
+        if (r.Modo == "mcp")
+        {
+            sb.AppendLine("> **LLM real via MCP.** O LLM de geração foi o Claude (Opus 5.5) numa sessão do Claude Code conectada ao servidor MCP do protótipo: cada chamada ao LLM virou um turno pendente, respondido pela ferramenta `responder` a partir do conhecimento do próprio modelo (sem consultar a base de fatos). " +
+                          "Os tokens são estimados pelo tamanho do texto (≈ 4 caracteres por token) e o custo usa o preço do Claude Opus 5.5 (US$ 4 / US$ 20 por milhão de tokens). A latência não é comparável (a resposta passa pela sessão do Claude Code) e fica fora da tabela. " +
+                          "A correção automática compara a resposta com o gabarito da base de fatos (palavra exata); as divergências estão listadas abaixo, e a comparação cega humana fica em `avaliacao-humana.csv`.");
+            sb.AppendLine();
+        }
         if (r.Modo == "simulado")
         {
             sb.AppendLine($"> **LLM simulado.** O LLM de geração responde pela base de fatos e erra {Pct(r.TaxaErroLlm)} das vezes (troca o dado pelo de outra entidade, simulando alucinação). " +
@@ -301,10 +322,12 @@ public static class Experimento
         sb.AppendLine($"| Taxa de acerto de template | {Pct(p.TaxaAcertoTemplate)} ({p.AcertosTemplate}) | — | |");
         sb.AppendLine($"| Tokens | {p.Tokens.ToString("N0", PtBr)} | {b.Tokens.ToString("N0", PtBr)} | {Reducao(p.Tokens, b.Tokens)} |");
         sb.AppendLine($"| Custo estimado | {Usd(p.Custo)} | {Usd(b.Custo)} | {Reducao(p.Custo, b.Custo)} |");
-        sb.AppendLine($"| Latência média estimada | {Ms(p.LatenciaMediaMs)} | {Ms(b.LatenciaMediaMs)} | {Reducao(p.LatenciaMediaMs, b.LatenciaMediaMs)} |");
+        if (r.Modo != "mcp")
+            sb.AppendLine($"| Latência média estimada | {Ms(p.LatenciaMediaMs)} | {Ms(b.LatenciaMediaMs)} | {Reducao(p.LatenciaMediaMs, b.LatenciaMediaMs)} |");
         sb.AppendLine($"| Respostas corretas (gabarito) | {Pct(p.TaxaCorretas)} ({p.Corretas}) | {Pct(b.TaxaCorretas)} ({b.Corretas}) | |");
         sb.AppendLine();
-        sb.AppendLine($"**Comparação cega (T06):** protótipo melhor em {c.VitoriasPrototipo}, linha de base melhor em {c.VitoriasLinhaDeBase}, empate em {c.Empates} de {p.Perguntas}.");
+        var rotulo = r.Modo == "mcp" ? "Comparação automática pelo gabarito (a cega humana está em avaliacao-humana.csv)" : "Comparação cega (T06)";
+        sb.AppendLine($"**{rotulo}:** protótipo melhor em {c.VitoriasPrototipo}, linha de base melhor em {c.VitoriasLinhaDeBase}, empate em {c.Empates} de {p.Perguntas}.");
         sb.AppendLine();
         sb.AppendLine("## Por família");
         sb.AppendLine();
@@ -322,6 +345,20 @@ public static class Experimento
         sb.AppendLine("|---|---|---|");
         foreach (var (t, obtido, ok) in Quadro2(r)) sb.AppendLine($"| {t} | {obtido} | {(ok ? "Aprovado" : "Reprovado")} |");
         sb.AppendLine();
+        var divergentes = r.Conjunto.Where(q => !r.RespostasPrototipo[q.N - 1].Correta || !r.RespostasLinhaDeBase[q.N - 1].Correta).ToList();
+        if (divergentes.Count > 0)
+        {
+            sb.AppendLine("## Respostas que não trazem o gabarito (para conferir na avaliação humana)");
+            sb.AppendLine();
+            sb.AppendLine("| # | Pergunta | Gabarito | Protótipo | Linha de base |");
+            sb.AppendLine("|---:|---|---|---|---|");
+            foreach (var q in divergentes)
+            {
+                var (rp, rb) = (r.RespostasPrototipo[q.N - 1], r.RespostasLinhaDeBase[q.N - 1]);
+                sb.AppendLine($"| {q.N} | {q.Pergunta} | {q.Gabarito} | {rp.Texto}{(rp.Correta ? "" : " ❌")} | {rb.Texto}{(rb.Correta ? "" : " ❌")} |");
+            }
+            sb.AppendLine();
+        }
         sb.AppendLine("## As primeiras perguntas");
         sb.AppendLine();
         sb.AppendLine("| # | Pergunta | Protótipo | Caminho | Linha de base |");
@@ -349,5 +386,43 @@ public static class Experimento
             ("T05", $"{p.ChamadasGeracao} chamadas ao LLM no protótipo contra {b.ChamadasGeracao} na linha de base (redução de {Reducao(p.ChamadasGeracao, b.ChamadasGeracao)})", p.ChamadasGeracao < b.ChamadasGeracao),
             ("T06", $"Comparação cega: protótipo melhor em {c.VitoriasPrototipo}, linha de base em {c.VitoriasLinhaDeBase}, empate em {c.Empates}; corretas: {Pct(p.TaxaCorretas)} × {Pct(b.TaxaCorretas)}", c.VitoriasPrototipo >= c.VitoriasLinhaDeBase && p.TaxaCorretas >= b.TaxaCorretas),
         ];
+    }
+}
+
+/// <summary>Completa tokens e custo pelo tamanho do texto quando o motor não informa (ex.: o MCP).</summary>
+public sealed class LlmComEstimativa(ILlm llm, double precoEntrada, double precoSaida) : ILlm
+{
+    public async Task<RespostaLlm> Completar(string system, string usuario, CancellationToken ct = default)
+    {
+        var r = await llm.Completar(system, usuario, ct);
+        if (r.Entrada > 0 || r.Saida > 0) return r;
+        var (e, s) = (LlmDeFatos.Tokens(system) + LlmDeFatos.Tokens(usuario), LlmDeFatos.Tokens(r.Texto));
+        return r with { Entrada = e, Saida = s, Custo = (e * precoEntrada + s * precoSaida) / 1_000_000 };
+    }
+}
+
+/// <summary>
+/// O material da avaliação humana (comparação cega, T06): uma planilha com as duas respostas de cada pergunta
+/// em ordem sorteada (A/B), sem dizer de onde veio cada uma, e uma chave à parte para desembaralhar depois.
+/// </summary>
+public static class AvaliacaoHumana
+{
+    private static string Csv(string s) => "\"" + s.Replace("\"", "\"\"") + "\"";
+
+    public static (string Planilha, string Chave) Gerar(ResultadoExperimento r, int semente)
+    {
+        var rnd = new Random(semente + 99);
+        var planilha = new StringBuilder("id;pergunta;resposta_a;resposta_b;melhor (A, B ou empate);a_correta (s/n);b_correta (s/n);comentario\n");
+        var chave = new StringBuilder("id;a;b;familia;gabarito;caminho_prototipo\n");
+        foreach (var q in r.Conjunto)
+        {
+            var (rp, rb) = (r.RespostasPrototipo[q.N - 1], r.RespostasLinhaDeBase[q.N - 1]);
+            var protoEhA = rnd.Next(2) == 0;
+            var (a, b) = protoEhA ? (rp.Texto, rb.Texto) : (rb.Texto, rp.Texto);
+            planilha.Append($"{q.N};{Csv(q.Pergunta)};{Csv(a)};{Csv(b)};;;;\n");
+            chave.Append($"{q.N};{(protoEhA ? "prototipo" : "linha_de_base")};{(protoEhA ? "linha_de_base" : "prototipo")};{q.Familia};{Csv(q.Gabarito)};{rp.Caminho}\n");
+        }
+        // Com BOM: o Excel abre os acentos certos.
+        return ("\uFEFF" + planilha, "\uFEFF" + chave);
     }
 }
