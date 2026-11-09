@@ -12,7 +12,7 @@ namespace Orquestracao.Web;
 /// conectado ao /mcp: cada chamada ao LLM vira um turno pendente (diagrama "orquestrador"), que o cliente MCP
 /// busca com <c>proxima_vez</c> e responde com <c>responder</c>.
 /// <code>
-/// POST /api/experimento   {llm: "mcp" | "api", perguntas?: 150, semente?: 2026}   começa (202)
+/// POST /api/experimento   {llm: "mcp" | "api", perguntas?: 150, semente?: 2026, cenario?: "gsm8k"}   começa (202)
 /// GET  /api/experimento   status, turnos MCP pendentes e, no fim, o resumo e onde os arquivos foram gravados
 /// </code>
 /// O protótipo roda primeiro (uma pergunta por vez: os templates se formam na ordem); a linha de base manda todas
@@ -65,6 +65,15 @@ public static class ApiExperimento
             var llm = Texto("llm", "mcp");
             if (llm is not ("mcp" or "api") || !motores.Tem(llm)) throw new OpError(400, "\"llm\" deve ser mcp ou api.");
             var (total, semente) = (Numero("perguntas", 150), Numero("semente", 2026));
+            // Um cenário com base pública: o conjunto (e, se houver, a fonte) vem de docs/experimento/cenarios/{cenario}/.
+            var cenario = Texto("cenario", "");
+            string? pastaCenario = null;
+            if (cenario.Length > 0)
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(cenario, "^[a-z0-9-]+$")) throw new OpError(400, "\"cenario\" inválido.");
+                pastaCenario = Path.Combine(saida, "cenarios", cenario);
+                if (!File.Exists(Path.Combine(pastaCenario, "conjunto.json"))) throw new OpError(404, $"Sem conjunto.json em {pastaCenario}.");
+            }
             lock (Trava)
             {
                 if (Atual.Status == "rodando") throw new OpError(409, "Já há um experimento rodando.");
@@ -78,13 +87,24 @@ public static class ApiExperimento
                 {
                     var persona = Personas.Padrao("experimento", "Experimento") with { Motor = llm, Modelo = "claude-opus-5-5", Esforco = "low" };
                     ILlm Novo() => new LlmComEstimativa(new LlmPorMotor(motor, persona), 4, 20);
-                    var conjunto = Experimento.GerarConjunto(fonte, semente, total);
+                    var fonteUsada = fonte;
+                    List<PerguntaTeste> conjunto;
+                    var pasta = saida;
+                    if (pastaCenario is null) conjunto = Experimento.GerarConjunto(fonte, semente, total);
+                    else
+                    {
+                        pasta = pastaCenario;
+                        conjunto = JsonSerializer.Deserialize<List<PerguntaTeste>>(File.ReadAllText(Path.Combine(pastaCenario, "conjunto.json")),
+                            new JsonSerializerOptions(JsonSerializerDefaults.Web))!;
+                        if (File.Exists(Path.Combine(pastaCenario, "fatos.json"))) fonteUsada = FonteDeFatosJson.Ler(Path.Combine(pastaCenario, "fatos.json"));
+                    }
                     // A base do experimento (templates, perguntas e feedbacks do protótipo) fica gravada ao lado do relatório.
-                    Directory.CreateDirectory(saida);
-                    var banco = Path.Combine(saida, $"experimento-{llm}.db");
+                    Directory.CreateDirectory(pasta);
+                    var banco = Path.Combine(pasta, $"experimento-{llm}.db");
                     if (File.Exists(banco)) File.Delete(banco);
-                    var r = await Experimento.Rodar(fonte, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
+                    var r = await Experimento.Rodar(fonteUsada, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
                         concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco));
+                    if (pastaCenario is not null) r = r with { Cenario = cenario };
                     var opcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
                     {
                         WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping, IncludeFields = true,
@@ -95,7 +115,7 @@ public static class ApiExperimento
                         [$"resultados-{llm}.md"] = Experimento.Relatorio(r),
                         [$"resultados-{llm}.json"] = JsonSerializer.Serialize(new
                         {
-                            r.Modo, r.Semente, r.Prototipo, r.LinhaDeBase, r.Comparacao, r.ChavesPorFamilia, r.TemplatesSalvos,
+                            r.Modo, r.Cenario, r.Semente, r.Prototipo, r.LinhaDeBase, r.Comparacao, r.ChavesPorFamilia, r.TemplatesSalvos,
                             quadro2 = Experimento.Quadro2(r).Select(t => new { teste = t.Teste, obtido = t.Obtido, situacao = t.Ok ? "Aprovado" : "Reprovado" }),
                             respostas = r.Conjunto.Select(q => new
                             {
@@ -106,12 +126,19 @@ public static class ApiExperimento
                         ["avaliacao-humana.csv"] = planilha,
                         ["avaliacao-humana-chave.csv"] = chave,
                     };
-                    foreach (var (nome, conteudo) in arquivos) File.WriteAllText(Path.Combine(saida, nome), conteudo);
+                    if (pastaCenario is not null)
+                    {
+                        // Num cenário, o Quadro 2 (do experimento factual) não se aplica.
+                        var json = arquivos[$"resultados-{llm}.json"];
+                        arquivos[$"resultados-{llm}.json"] = JsonSerializer.Serialize(JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json)!
+                            .Where(k => k.Key != "quadro2").ToDictionary(), opcoes) + "\n";
+                    }
+                    foreach (var (nome, conteudo) in arquivos) File.WriteAllText(Path.Combine(pasta, nome), conteudo);
                     lock (Trava)
                     {
                         Atual.Status = "concluido";
                         Atual.Resumo = new { prototipo = r.Prototipo, linhaDeBase = r.LinhaDeBase, comparacao = r.Comparacao, r.ChavesPorFamilia, r.TemplatesSalvos };
-                        Atual.Arquivos.AddRange(arquivos.Keys.Select(k => Path.Combine(saida, k)));
+                        Atual.Arquivos.AddRange(arquivos.Keys.Select(k => Path.Combine(pasta, k)));
                         Atual.Arquivos.Add(banco);
                     }
                 }
@@ -120,7 +147,7 @@ public static class ApiExperimento
                     lock (Trava) (Atual.Status, Atual.Mensagem) = ("erro", e.Message);
                 }
             });
-            await Enviar(ctx, 202, new { status = "rodando", llm, perguntas = total, semente, saida });
+            await Enviar(ctx, 202, new { status = "rodando", llm, cenario = cenario.Length > 0 ? cenario : null, perguntas = cenario.Length > 0 ? (int?)null : total, semente, saida = pastaCenario ?? saida });
         });
     }
 }

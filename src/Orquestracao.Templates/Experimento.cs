@@ -32,6 +32,8 @@ public sealed record ComparacaoCega(int VitoriasPrototipo, int VitoriasLinhaDeBa
 public sealed record ResultadoExperimento
 {
     public required string Modo { get; init; }
+    /// <summary>O cenário com base pública (gsm8k, mkqa, saude, squad); null no experimento factual do protótipo.</summary>
+    public string? Cenario { get; init; }
     public required int Semente { get; init; }
     public required double TaxaErroLlm { get; init; }
     public required double LatenciaLlmMs { get; init; }
@@ -195,9 +197,25 @@ public static class Experimento
     /// <summary>A resposta traz o gabarito (sem diferenciar maiúsculas e acentos)?</summary>
     public static bool Correta(string resposta, string gabarito)
     {
+        // Gabarito numérico (o GSM8K): vale o número, escrito como for ("1.200", "1200", "R$ 1.200,00").
+        if (decimal.TryParse(gabarito, NumberStyles.Number, CultureInfo.InvariantCulture, out var alvo) && !gabarito.Contains(','))
+            return Numeros(resposta).Contains(alvo);
         var r = Texto.Normalizar(resposta);
         var g = Texto.Normalizar(gabarito);
         return System.Text.RegularExpressions.Regex.IsMatch(r, $@"(^|\s){System.Text.RegularExpressions.Regex.Escape(g)}($|\s)");
+    }
+
+    /// <summary>Os números de um texto em português ("1.200,50" = 1200,5; "2,5" = 2,5; "1200" = 1200).</summary>
+    public static HashSet<decimal> Numeros(string texto)
+    {
+        var achados = new HashSet<decimal>();
+        foreach (System.Text.RegularExpressions.Match m in System.Text.RegularExpressions.Regex.Matches(texto, @"(?<![\d.,])\d{1,3}(?:\.\d{3})+(?:,\d+)?(?![\d])|(?<![\d.,])\d+(?:[.,]\d+)?(?![\d])"))
+        {
+            var v = m.Value;
+            v = System.Text.RegularExpressions.Regex.IsMatch(v, @"^\d{1,3}(\.\d{3})+(,\d+)?$") ? v.Replace(".", "").Replace(',', '.') : v.Replace(',', '.');
+            if (decimal.TryParse(v, NumberStyles.Number, CultureInfo.InvariantCulture, out var d)) achados.Add(d);
+        }
+        return achados;
     }
 
     /// <summary>
@@ -288,6 +306,9 @@ public static class Experimento
 
     private static string Ms(double x) => x.ToString("0", PtBr) + " ms";
 
+    /// <summary>Texto numa célula de tabela Markdown: sem quebras de linha nem barras soltas.</summary>
+    private static string Celula(string s) => s.ReplaceLineEndings(" ").Replace("|", "\\|");
+
     private static string Reducao(double proto, double baseValor) => baseValor == 0 ? "—" : Pct(1 - proto / baseValor);
 
     /// <summary>O relatório em Markdown (vai para docs/experimento/resultados.md).</summary>
@@ -295,12 +316,24 @@ public static class Experimento
     {
         var (p, b, c) = (r.Prototipo, r.LinhaDeBase, r.Comparacao);
         var sb = new StringBuilder();
-        sb.AppendLine("# Resultados do experimento");
+        sb.AppendLine(r.Cenario is null ? "# Resultados do experimento" : $"# Resultados do experimento — cenário {r.Cenario}");
         sb.AppendLine();
+        if (r.Cenario is not null)
+        {
+            sb.AppendLine($"Gerado por `POST /api/experimento {{\"llm\": \"{r.Modo}\", \"cenario\": \"{r.Cenario}\"}}` · {p.Perguntas} perguntas da amostra `conjunto.json` (semente {r.Semente}; ver `analise.md` e `README.md`).");
+            sb.AppendLine();
+            if (r.Modo == "mcp")
+            {
+                sb.AppendLine("> **LLM real via MCP.** O LLM de geração foi o Claude (Opus 5.5) conectado ao /mcp do protótipo; cada chamada virou um turno pendente respondido pela ferramenta `responder`, sem consultar o gabarito. " +
+                              "O protótipo e a linha de base usam o mesmo system prompt de geração (resposta em uma frase). Tokens estimados pelo tamanho do texto (≈ 4 caracteres por token), custo pelo preço do Claude Opus 5.5 (US$ 4 / US$ 20 por milhão). " +
+                              "A correção automática procura o gabarito da base na resposta (palavra exata; gabarito numérico, pelo valor).");
+                sb.AppendLine();
+            }
+        }
         var comando = r.Modo == "mcp" ? "`POST /api/experimento {\"llm\": \"mcp\"}` (com o Claude Code respondendo pelo /mcp)" : $"`dotnet run --project src/Orquestracao.Experimento -- --llm {r.Modo}`";
-        sb.AppendLine($"Gerado por {comando} · semente {r.Semente} · {p.Perguntas} perguntas em {r.PorFamilia.Count} famílias de mesma estrutura.");
-        sb.AppendLine();
-        if (r.Modo == "mcp")
+        if (r.Cenario is null) sb.AppendLine($"Gerado por {comando} · semente {r.Semente} · {p.Perguntas} perguntas em {r.PorFamilia.Count} famílias de mesma estrutura.");
+        if (r.Cenario is null) sb.AppendLine();
+        if (r.Modo == "mcp" && r.Cenario is null)
         {
             sb.AppendLine("> **LLM real via MCP.** O LLM de geração foi o Claude (Opus 5.5) numa sessão do Claude Code conectada ao servidor MCP do protótipo: cada chamada ao LLM virou um turno pendente, respondido pela ferramenta `responder` a partir do conhecimento do próprio modelo (sem consultar a base de fatos). " +
                           "Os tokens são estimados pelo tamanho do texto (≈ 4 caracteres por token) e o custo usa o preço do Claude Opus 5.5 (US$ 4 / US$ 20 por milhão de tokens). A latência não é comparável (a resposta passa pela sessão do Claude Code) e fica fora da tabela. " +
@@ -334,18 +367,24 @@ public static class Experimento
         sb.AppendLine();
         sb.AppendLine("| Família | Perguntas | Chaves distintas (T01) | Respondidas pelo template |");
         sb.AppendLine("|---|---:|---:|---:|");
-        foreach (var f in Familias)
-            if (r.PorFamilia.TryGetValue(f.Nome, out var x))
-                sb.AppendLine($"| {f.Nome} | {x.Perguntas} | {r.ChavesPorFamilia.GetValueOrDefault(f.Nome)} | {x.Template} ({Pct((double)x.Template / x.Perguntas)}) |");
+        var ordem = r.PorFamilia.Keys.OrderBy(k => Array.FindIndex(Familias, f => f.Nome == k) is var i && i >= 0 ? i : int.MaxValue).ThenBy(k => k, StringComparer.Ordinal);
+        foreach (var nome in ordem)
+        {
+            var x = r.PorFamilia[nome];
+            sb.AppendLine($"| {nome} | {x.Perguntas} | {r.ChavesPorFamilia.GetValueOrDefault(nome)} | {x.Template} ({Pct((double)x.Template / x.Perguntas)}) |");
+        }
         sb.AppendLine();
         sb.AppendLine($"Templates salvos na base chave-valor: {r.TemplatesSalvos}.");
         sb.AppendLine();
-        sb.AppendLine("## Testes do Quadro 2");
-        sb.AppendLine();
-        sb.AppendLine("| Teste | Resultado obtido | Situação |");
-        sb.AppendLine("|---|---|---|");
-        foreach (var (t, obtido, ok) in Quadro2(r)) sb.AppendLine($"| {t} | {obtido} | {(ok ? "Aprovado" : "Reprovado")} |");
-        sb.AppendLine();
+        if (r.Cenario is null)
+        {
+            sb.AppendLine("## Testes do Quadro 2");
+            sb.AppendLine();
+            sb.AppendLine("| Teste | Resultado obtido | Situação |");
+            sb.AppendLine("|---|---|---|");
+            foreach (var (t, obtido, ok) in Quadro2(r)) sb.AppendLine($"| {t} | {obtido} | {(ok ? "Aprovado" : "Reprovado")} |");
+            sb.AppendLine();
+        }
         var divergentes = r.Conjunto.Where(q => !r.RespostasPrototipo[q.N - 1].Correta || !r.RespostasLinhaDeBase[q.N - 1].Correta).ToList();
         if (divergentes.Count > 0)
         {
@@ -356,7 +395,7 @@ public static class Experimento
             foreach (var q in divergentes)
             {
                 var (rp, rb) = (r.RespostasPrototipo[q.N - 1], r.RespostasLinhaDeBase[q.N - 1]);
-                sb.AppendLine($"| {q.N} | {q.Pergunta} | {q.Gabarito} | {rp.Texto}{(rp.Correta ? "" : " ❌")} | {rb.Texto}{(rb.Correta ? "" : " ❌")} |");
+                sb.AppendLine($"| {q.N} | {Celula(q.Pergunta)} | {Celula(q.Gabarito)} | {Celula(rp.Texto)}{(rp.Correta ? "" : " ❌")} | {Celula(rb.Texto)}{(rb.Correta ? "" : " ❌")} |");
             }
             sb.AppendLine();
         }
@@ -367,7 +406,7 @@ public static class Experimento
         foreach (var q in r.Conjunto.Take(20))
         {
             var (rp, rb) = (r.RespostasPrototipo[q.N - 1], r.RespostasLinhaDeBase[q.N - 1]);
-            sb.AppendLine($"| {q.N} | {q.Pergunta} | {rp.Texto}{(rp.Correta ? "" : " ❌")} | {rp.Caminho} | {rb.Texto}{(rb.Correta ? "" : " ❌")} |");
+            sb.AppendLine($"| {q.N} | {Celula(q.Pergunta)} | {Celula(rp.Texto)}{(rp.Correta ? "" : " ❌")} | {rp.Caminho} | {Celula(rb.Texto)}{(rb.Correta ? "" : " ❌")} |");
         }
         return sb.ToString();
     }

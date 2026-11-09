@@ -7,6 +7,8 @@
 //   dotnet run --project src/Orquestracao.Experimento -- --llm api --parser hibrido   # e o Claude Haiku 5.5 no parser
 //   dotnet run --project src/Orquestracao.Experimento -- --llm gravado --respostas docs/experimento/resultados-mcp.json --banco docs/experimento/experimento-mcp.db
 //       reproduz um experimento a partir das respostas gravadas do LLM (ex.: o do Claude via MCP) e grava a base SQLite
+//   dotnet run --project src/Orquestracao.Experimento -- --cenario gsm8k --analisar --preparar --perguntas 30
+//       análise estrutural da base inteira (sem LLM) e a amostra que vai ao experimento (cenarios/gsm8k/conjunto.json)
 using System.Globalization;
 using System.Text.Json;
 using Orquestracao.Core.Conversas;
@@ -22,6 +24,39 @@ var total = int.Parse(opcoes.GetValueOrDefault("perguntas", "150"), CultureInfo.
 var saida = opcoes.GetValueOrDefault("saida", Path.Combine(Raiz(), "docs", "experimento"));
 
 var fonte = FonteDeFatosJson.Ler(FonteDeFatosJson.Achar(opcoes.GetValueOrDefault("fatos"), AppContext.BaseDirectory));
+
+if (opcoes.GetValueOrDefault("cenario") is { } cenario)
+{
+    // Os cenários com bases públicas: docs/experimento/cenarios/{cenario}/. A fonte de fatos do cenário (fatos.json
+    // na pasta) substitui a padrão quando existe.
+    var pasta = Path.Combine(Raiz(), "docs", "experimento", "cenarios", cenario);
+    var fatosDoCenario = Path.Combine(pasta, "fatos.json");
+    var fonteCenario = File.Exists(fatosDoCenario) ? FonteDeFatosJson.Ler(fatosDoCenario) : fonte;
+    var descricao = File.Exists(fatosDoCenario) ? "do cenário (`fatos.json` na pasta)" : $"padrão do protótipo (`dados/fatos.json`, {fonte.Entidades.Count} entidades)";
+    var todas = cenario switch
+    {
+        "gsm8k" => Cenarios.LerGsm8k(Path.Combine(pasta, "gsm8k-pt-test.jsonl")),
+        _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
+    };
+    var jsonOpcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
+    {
+        WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+    };
+    if (opcoes.ContainsKey("analisar"))
+    {
+        var a = Cenarios.Analisar(cenario, todas.Select(p => p.Pergunta).ToList(), new ParserHeuristico(fonteCenario));
+        File.WriteAllText(Path.Combine(pasta, "analise.md"), Cenarios.RelatorioAnalise(a, descricao));
+        Console.WriteLine($"{cenario}: {a.Perguntas} perguntas, {a.ComEntidade} com entidade, {a.ChavesDistintas} chaves, teto de reaproveitamento {a.TetoReaproveitamento} ({a.TetoReaproveitamentoPct:P1}), estruturas abstratas repetidas {a.RepeticoesAbstratas}");
+    }
+    if (opcoes.ContainsKey("preparar"))
+    {
+        var amostra = Cenarios.Amostra(todas, total, semente);
+        File.WriteAllText(Path.Combine(pasta, "conjunto.json"), JsonSerializer.Serialize(amostra, jsonOpcoes) + "\n");
+        Console.WriteLine($"{cenario}: amostra de {amostra.Count} perguntas (semente {semente}) em {Path.Combine(pasta, "conjunto.json")}");
+    }
+    return 0;
+}
+
 var conjunto = Experimento.GerarConjunto(fonte, semente, total);
 
 ILlm llmProto, llmBase;
