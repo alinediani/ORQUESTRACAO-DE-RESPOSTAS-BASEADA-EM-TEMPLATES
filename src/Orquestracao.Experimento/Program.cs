@@ -51,6 +51,7 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
         "gsm8k" => Cenarios.LerGsm8k(Path.Combine(pasta, "gsm8k-pt-test.jsonl")),
         "mkqa" => Cenarios.LerMkqa(Path.Combine(pasta, "mkqa-pt.jsonl"), conferiveis),
         "saude" => Cenarios.LerSaude(Path.Combine(pasta, "saudebr-qa.csv")),
+        "squad" => Cenarios.LerSquad(Path.Combine(pasta, "squad-pt-validation.jsonl"), comTexto: conferiveis),
         _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
     };
     var jsonOpcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)

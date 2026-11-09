@@ -125,6 +125,31 @@ public static partial class Cenarios
 
     private static string SemZeroDecimal(string n) => n.EndsWith(".0", StringComparison.Ordinal) ? n[..^2] : n;
 
+    // ---- SQuAD-pt ----------------------------------------------------------------------------------------
+
+    /// <summary>
+    /// Lê o SQuAD-pt agrupado por parágrafo (title, context, qas[{id, question, answer}]). Com <paramref name="comTexto"/>,
+    /// a pergunta leva o parágrafo ("Texto: …\n\nPergunta: …"), porque sem ele não dá para responder; sem, fica só a
+    /// pergunta (para a análise estrutural). A família é o artigo da Wikipédia; o gabarito, o trecho do parágrafo.
+    /// </summary>
+    public static List<PerguntaTeste> LerSquad(string caminho, bool comTexto = true)
+    {
+        var lista = new List<PerguntaTeste>();
+        foreach (var linha in File.ReadLines(caminho).Where(l => l.Trim().Length > 0))
+        {
+            using var doc = JsonDocument.Parse(linha);
+            var titulo = doc.RootElement.GetProperty("title").GetString()!;
+            var texto = doc.RootElement.GetProperty("context").GetString()!.Trim();
+            foreach (var qa in doc.RootElement.GetProperty("qas").EnumerateArray())
+            {
+                var q = qa.GetProperty("question").GetString()!.Trim();
+                var a = qa.GetProperty("answer").GetString()!.Trim();
+                lista.Add(new PerguntaTeste(lista.Count + 1, comTexto ? $"Texto: {texto}\n\nPergunta: {q}" : q, titulo, "", "trecho", a));
+            }
+        }
+        return lista;
+    }
+
     // ---- Saúde (SaudeBR-QA) -----------------------------------------------------------------------------
 
     /// <summary>Lê um CSV (vírgula, aspas duplas com "" escapadas e quebras de linha dentro das aspas).</summary>
