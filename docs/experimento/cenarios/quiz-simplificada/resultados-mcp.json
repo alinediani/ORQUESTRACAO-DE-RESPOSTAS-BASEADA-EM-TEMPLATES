@@ -1,0 +1,886 @@
+{
+  "modo": "mcp",
+  "cenario": "quiz-simplificada",
+  "semente": 2026,
+  "prototipo": {
+    "estrategia": "Protótipo (templates)",
+    "perguntas": 30,
+    "chamadasGeracao": 14,
+    "chamadasParser": 0,
+    "acertosTemplate": 16,
+    "taxaAcertoTemplate": 0.5333333333333333,
+    "tokens": 995,
+    "custo": 0.00638,
+    "latenciaMediaMs": 87.88586000000002,
+    "corretas": 21,
+    "taxaCorretas": 0.7
+  },
+  "linhaDeBase": {
+    "estrategia": "Linha de base (LLM puro)",
+    "perguntas": 30,
+    "chamadasGeracao": 30,
+    "chamadasParser": 0,
+    "acertosTemplate": 0,
+    "taxaAcertoTemplate": 0,
+    "tokens": 2167,
+    "custo": 0.013979999999999998,
+    "latenciaMediaMs": 180.66026,
+    "corretas": 15,
+    "taxaCorretas": 0.5
+  },
+  "comparacao": {
+    "vitoriasPrototipo": 6,
+    "vitoriasLinhaDeBase": 0,
+    "empates": 24
+  },
+  "chavesPorFamilia": {
+    "P495": 1,
+    "P136": 1,
+    "P27": 1,
+    "R19": 1,
+    "P19": 1
+  },
+  "templatesSalvos": 4,
+  "respostas": [
+    {
+      "n": 1,
+      "pergunta": "Qual é o país de origem de The Rapture?",
+      "familia": "P495",
+      "gabarito": "México || Estados Unidos Mexicanos || República Mexicana || mx || Mexico",
+      "prototipo": {
+        "n": 1,
+        "texto": "The Rapture (El rapto) é um filme do México.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000468,
+        "latenciaMs": 201.5413
+      },
+      "linhaDeBase": {
+        "n": 1,
+        "texto": "The Rapture (El rapto) é um filme do México.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000468,
+        "latenciaMs": 195.3109
+      }
+    },
+    {
+      "n": 2,
+      "pergunta": "Qual é o país de origem de Victoria No. 203?",
+      "familia": "P495",
+      "gabarito": "Índia || India",
+      "prototipo": {
+        "n": 2,
+        "texto": "Victoria No. 203 (El rapto) é um filme do Índia.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 10.9772
+      },
+      "linhaDeBase": {
+        "n": 2,
+        "texto": "Victoria No. 203 é um filme da Índia.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000452,
+        "latenciaMs": 202.2368
+      }
+    },
+    {
+      "n": 3,
+      "pergunta": "Qual é o gênero de Something for the Boys?",
+      "familia": "P136",
+      "gabarito": "Filme musical || musical || musical film",
+      "prototipo": {
+        "n": 3,
+        "texto": "Something for the Boys é um filme musical.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 74,
+        "custo": 0.000472,
+        "latenciaMs": 154.5463
+      },
+      "linhaDeBase": {
+        "n": 3,
+        "texto": "Something for the Boys é um filme musical.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 74,
+        "custo": 0.000472,
+        "latenciaMs": 196.7454
+      }
+    },
+    {
+      "n": 4,
+      "pergunta": "Qual é o país de origem de The New Fred and Barney Show?",
+      "familia": "P495",
+      "gabarito": "Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States",
+      "prototipo": {
+        "n": 4,
+        "texto": "The New Fred and Barney Show (El rapto) é um filme do Estados Unidos.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 8.4971
+      },
+      "linhaDeBase": {
+        "n": 4,
+        "texto": "O país de origem de The New Fred and Barney Show é os Estados Unidos.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 84,
+        "custo": 0.000624,
+        "latenciaMs": 155.0036
+      }
+    },
+    {
+      "n": 5,
+      "pergunta": "Qual é o gênero de Why Is There Air??",
+      "familia": "P136",
+      "gabarito": "comédia stand-up || Stand-up || Comédia stand up || Stand-up Comedy || Stand Up Comedy || stand-up comedy",
+      "prototipo": {
+        "n": 5,
+        "texto": "Why Is There Air? é um álbum de comédia.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 72,
+        "custo": 0.000448,
+        "latenciaMs": 154.8003
+      },
+      "linhaDeBase": {
+        "n": 5,
+        "texto": "Why Is There Air? é um álbum de comédia.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 72,
+        "custo": 0.000448,
+        "latenciaMs": 200.2212
+      }
+    },
+    {
+      "n": 6,
+      "pergunta": "Qual é a nacionalidade de Malouf Abraham, Sr.?",
+      "familia": "P27",
+      "gabarito": "Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States",
+      "prototipo": {
+        "n": 6,
+        "texto": "Malouf Abraham, Sr. é dos Estados Unidos.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 75,
+        "custo": 0.000476,
+        "latenciaMs": 195.4262
+      },
+      "linhaDeBase": {
+        "n": 6,
+        "texto": "Malouf Abraham, Sr. é dos Estados Unidos.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 75,
+        "custo": 0.000476,
+        "latenciaMs": 159.6819
+      }
+    },
+    {
+      "n": 7,
+      "pergunta": "Qual é o país de origem de TV Patrol Northwestern Mindanao?",
+      "familia": "P495",
+      "gabarito": "Filipinas || República das Filipinas || Philippines",
+      "prototipo": {
+        "n": 7,
+        "texto": "TV Patrol Northwestern Mindanao (El rapto) é um filme do Filipinas.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 8.2501
+      },
+      "linhaDeBase": {
+        "n": 7,
+        "texto": "TV Patrol Northwestern Mindanao é exibido nas Filipinas.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 81,
+        "custo": 0.000548,
+        "latenciaMs": 208.2112
+      }
+    },
+    {
+      "n": 8,
+      "pergunta": "Quem nasceu em Phalaborwa?",
+      "familia": "R19",
+      "gabarito": "Dale Steyn",
+      "prototipo": {
+        "n": 8,
+        "texto": "Não sei citar com segurança uma pessoa nascida em Phalaborwa.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 75,
+        "custo": 0.000556,
+        "latenciaMs": 149.6234
+      },
+      "linhaDeBase": {
+        "n": 8,
+        "texto": "Não sei citar com segurança uma pessoa nascida em Phalaborwa.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 75,
+        "custo": 0.000556,
+        "latenciaMs": 171.7185
+      }
+    },
+    {
+      "n": 9,
+      "pergunta": "Quem nasceu em Helsinque?",
+      "familia": "R19",
+      "gabarito": "Abba Gindin",
+      "prototipo": {
+        "n": 9,
+        "texto": "Linus Torvalds nasceu em Helsinque.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 68,
+        "custo": 0.000416,
+        "latenciaMs": 171.8895
+      },
+      "linhaDeBase": {
+        "n": 9,
+        "texto": "Linus Torvalds nasceu em Helsinque.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 68,
+        "custo": 0.000416,
+        "latenciaMs": 156.5725
+      }
+    },
+    {
+      "n": 10,
+      "pergunta": "Onde Fawzi al-Mulki nasceu?",
+      "familia": "P19",
+      "gabarito": "Irbid",
+      "prototipo": {
+        "n": 10,
+        "texto": "Fawzi al-Mulki nasceu em Irbid.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 67,
+        "custo": 0.000396,
+        "latenciaMs": 252.1369
+      },
+      "linhaDeBase": {
+        "n": 10,
+        "texto": "Fawzi al-Mulki nasceu em Irbid.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 67,
+        "custo": 0.000396,
+        "latenciaMs": 206.5532
+      }
+    },
+    {
+      "n": 11,
+      "pergunta": "Qual é o gênero de Saturday Night?",
+      "familia": "P136",
+      "gabarito": "filme mudo || cinema mudo || filmes mudos || silent film",
+      "prototipo": {
+        "n": 11,
+        "texto": "Saturday Night é um filme de drama.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.000424,
+        "latenciaMs": 195.9579
+      },
+      "linhaDeBase": {
+        "n": 11,
+        "texto": "Saturday Night é um filme de drama.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.000424,
+        "latenciaMs": 170.427
+      }
+    },
+    {
+      "n": 12,
+      "pergunta": "Qual é a nacionalidade de Mary Lou Fallis?",
+      "familia": "P27",
+      "gabarito": "Canadá || América do Norte Britânica || ca || CDN || Canada",
+      "prototipo": {
+        "n": 12,
+        "texto": "Mary Lou Fallis é dos Canadá.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 8.2741
+      },
+      "linhaDeBase": {
+        "n": 12,
+        "texto": "Mary Lou Fallis é do Canadá.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.000392,
+        "latenciaMs": 205.2294
+      }
+    },
+    {
+      "n": 13,
+      "pergunta": "Qual é o gênero de Colloquio?",
+      "familia": "P136",
+      "gabarito": "música experimental || Experimental music || Musica experimental || experimental music",
+      "prototipo": {
+        "n": 13,
+        "texto": "Não sei a que gênero musical Colloquio está ligado.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.0005,
+        "latenciaMs": 164.5056
+      },
+      "linhaDeBase": {
+        "n": 13,
+        "texto": "Não sei a que gênero musical Colloquio está ligado.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.0005,
+        "latenciaMs": 203.6633
+      }
+    },
+    {
+      "n": 14,
+      "pergunta": "Onde Q2614262 nasceu?",
+      "familia": "P19",
+      "gabarito": "Trenton || Trenton, Nova Jersey",
+      "prototipo": {
+        "n": 14,
+        "texto": "Q2614262 nasceu em Trenton.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 23.2127
+      },
+      "linhaDeBase": {
+        "n": 14,
+        "texto": "Vernee Watson-Johnson nasceu em Trenton.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 68,
+        "custo": 0.000432,
+        "latenciaMs": 179.3934
+      }
+    },
+    {
+      "n": 15,
+      "pergunta": "Qual é o gênero de The Good Companions?",
+      "familia": "P136",
+      "gabarito": "romance || romance literário || novel",
+      "prototipo": {
+        "n": 15,
+        "texto": "The Good Companions é um romance.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 71,
+        "custo": 0.000428,
+        "latenciaMs": 160.7696
+      },
+      "linhaDeBase": {
+        "n": 15,
+        "texto": "The Good Companions é um romance.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 71,
+        "custo": 0.000428,
+        "latenciaMs": 177.9398
+      }
+    },
+    {
+      "n": 16,
+      "pergunta": "Qual é o gênero de Theocracy?",
+      "familia": "P136",
+      "gabarito": "estratégia em tempo real || estratégia || real-time strategy",
+      "prototipo": {
+        "n": 16,
+        "texto": "Theocracy é um estratégia em tempo real.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 11.6813
+      },
+      "linhaDeBase": {
+        "n": 16,
+        "texto": "Theocracy é uma banda de power metal.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.00044,
+        "latenciaMs": 168.8653
+      }
+    },
+    {
+      "n": 17,
+      "pergunta": "Onde Charles Koppelman nasceu?",
+      "familia": "P19",
+      "gabarito": "Brooklyn || Condado de Kings",
+      "prototipo": {
+        "n": 17,
+        "texto": "Charles Koppelman nasceu em Brooklyn.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 6.7664
+      },
+      "linhaDeBase": {
+        "n": 17,
+        "texto": "Charles Koppelman nasceu em Nova York.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.00044,
+        "latenciaMs": 166.2432
+      }
+    },
+    {
+      "n": 18,
+      "pergunta": "Qual é o país de origem de Crusader?",
+      "familia": "P495",
+      "gabarito": "Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States",
+      "prototipo": {
+        "n": 18,
+        "texto": "Crusader (El rapto) é um filme do Estados Unidos.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 14.8754
+      },
+      "linhaDeBase": {
+        "n": 18,
+        "texto": "O país de origem de Crusader é os Estados Unidos.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 74,
+        "custo": 0.000504,
+        "latenciaMs": 184.5213
+      }
+    },
+    {
+      "n": 19,
+      "pergunta": "Qual é o país de origem de El Greco?",
+      "familia": "P495",
+      "gabarito": "Espanha || Reino da Espanha || Reino de Espanha || Spain",
+      "prototipo": {
+        "n": 19,
+        "texto": "El Greco (El rapto) é um filme do Espanha.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 8.2778
+      },
+      "linhaDeBase": {
+        "n": 19,
+        "texto": "O filme El Greco é da Grécia.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 69,
+        "custo": 0.000404,
+        "latenciaMs": 193.6557
+      }
+    },
+    {
+      "n": 20,
+      "pergunta": "Quem nasceu em Stoke-on-Trent?",
+      "familia": "R19",
+      "gabarito": "Clint Boulton",
+      "prototipo": {
+        "n": 20,
+        "texto": "Robbie Williams nasceu em Stoke-on-Trent.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 71,
+        "custo": 0.00046,
+        "latenciaMs": 124.3674
+      },
+      "linhaDeBase": {
+        "n": 20,
+        "texto": "Robbie Williams nasceu em Stoke-on-Trent.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 71,
+        "custo": 0.00046,
+        "latenciaMs": 164.1836
+      }
+    },
+    {
+      "n": 21,
+      "pergunta": "Qual é a nacionalidade de Sören Link?",
+      "familia": "P27",
+      "gabarito": "Alemanha || FRG || República Federal da Alemanha || Germany",
+      "prototipo": {
+        "n": 21,
+        "texto": "Sören Link é dos Alemanha.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 20.6127
+      },
+      "linhaDeBase": {
+        "n": 21,
+        "texto": "A nacionalidade de Sören Link é alemã, da Alemanha.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 75,
+        "custo": 0.000508,
+        "latenciaMs": 176.4607
+      }
+    },
+    {
+      "n": 22,
+      "pergunta": "Qual é a nacionalidade de John F. Williams (New York)?",
+      "familia": "P27",
+      "gabarito": "Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States",
+      "prototipo": {
+        "n": 22,
+        "texto": "John F. Williams (New York) é dos Estados Unidos.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 8.9146
+      },
+      "linhaDeBase": {
+        "n": 22,
+        "texto": "John F. Williams (New York) é dos Estados Unidos.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 79,
+        "custo": 0.000524,
+        "latenciaMs": 162.6121
+      }
+    },
+    {
+      "n": 23,
+      "pergunta": "Onde Hans Günther van Allen nasceu?",
+      "familia": "P19",
+      "gabarito": "Haan",
+      "prototipo": {
+        "n": 23,
+        "texto": "Hans Günther van Allen nasceu em Haan.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 7.7268
+      },
+      "linhaDeBase": {
+        "n": 23,
+        "texto": "Não sei onde Hans Günther van Allen nasceu.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 72,
+        "custo": 0.000464,
+        "latenciaMs": 160.9773
+      }
+    },
+    {
+      "n": 24,
+      "pergunta": "Quem nasceu em Woolwich?",
+      "familia": "R19",
+      "gabarito": "Peter Jones",
+      "prototipo": {
+        "n": 24,
+        "texto": "Não sei citar com segurança uma pessoa nascida em Woolwich.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000532,
+        "latenciaMs": 146.9343
+      },
+      "linhaDeBase": {
+        "n": 24,
+        "texto": "Não sei citar com segurança uma pessoa nascida em Woolwich.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000532,
+        "latenciaMs": 182.3693
+      }
+    },
+    {
+      "n": 25,
+      "pergunta": "Onde Sergio Spina nasceu?",
+      "familia": "P19",
+      "gabarito": "Milão || Milan",
+      "prototipo": {
+        "n": 25,
+        "texto": "Sergio Spina nasceu em Milão.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 55.1932
+      },
+      "linhaDeBase": {
+        "n": 25,
+        "texto": "Não sei com segurança onde Sergio Spina nasceu.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 71,
+        "custo": 0.000476,
+        "latenciaMs": 181.0127
+      }
+    },
+    {
+      "n": 26,
+      "pergunta": "Quem nasceu em Nancy?",
+      "familia": "R19",
+      "gabarito": "Henri Cartan",
+      "prototipo": {
+        "n": 26,
+        "texto": "Hubert Lyautey nasceu em Nancy.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 66,
+        "custo": 0.000392,
+        "latenciaMs": 139.0312
+      },
+      "linhaDeBase": {
+        "n": 26,
+        "texto": "Hubert Lyautey nasceu em Nancy.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 66,
+        "custo": 0.000392,
+        "latenciaMs": 174.7952
+      }
+    },
+    {
+      "n": 27,
+      "pergunta": "Quem nasceu em Srinagar?",
+      "familia": "R19",
+      "gabarito": "Amitabh Mattoo",
+      "prototipo": {
+        "n": 27,
+        "texto": "Farooq Abdullah nasceu em Srinagar.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 67,
+        "custo": 0.000412,
+        "latenciaMs": 190.9459
+      },
+      "linhaDeBase": {
+        "n": 27,
+        "texto": "Farooq Abdullah nasceu em Srinagar.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 67,
+        "custo": 0.000412,
+        "latenciaMs": 173.1274
+      }
+    },
+    {
+      "n": 28,
+      "pergunta": "Onde Barry Ferguson nasceu?",
+      "familia": "P19",
+      "gabarito": "Dublin",
+      "prototipo": {
+        "n": 28,
+        "texto": "Barry Ferguson nasceu em Dublin.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 19.6588
+      },
+      "linhaDeBase": {
+        "n": 28,
+        "texto": "Barry Ferguson nasceu em Glasgow.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 68,
+        "custo": 0.000416,
+        "latenciaMs": 186.0146
+      }
+    },
+    {
+      "n": 29,
+      "pergunta": "Qual é a nacionalidade de Larry Hite?",
+      "familia": "P27",
+      "gabarito": "Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States",
+      "prototipo": {
+        "n": 29,
+        "texto": "Larry Hite é dos Estados Unidos.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 8.9362
+      },
+      "linhaDeBase": {
+        "n": 29,
+        "texto": "A nacionalidade de Larry Hite é americana, dos Estados Unidos.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 78,
+        "custo": 0.000568,
+        "latenciaMs": 198.1114
+      }
+    },
+    {
+      "n": 30,
+      "pergunta": "Qual é a nacionalidade de Alex Newport?",
+      "familia": "P27",
+      "gabarito": "Reino Unido || Reino Unido da Grã-Bretanha e Irlanda do Norte || Grã-Bretanha || UKGBNI || United Kingdom",
+      "prototipo": {
+        "n": 30,
+        "texto": "Alex Newport é dos Reino Unido.",
+        "correta": true,
+        "caminho": "template",
+        "chamadasGeracao": 0,
+        "chamadasParser": 0,
+        "tokens": 0,
+        "custo": 0,
+        "latenciaMs": 12.2456
+      },
+      "linhaDeBase": {
+        "n": 30,
+        "texto": "Alex Newport é do Reino Unido.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.000408,
+        "latenciaMs": 157.9499
+      }
+    }
+  ]
+}

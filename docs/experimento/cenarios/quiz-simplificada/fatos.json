@@ -1,0 +1,2930 @@
+{
+  "descricao": "Fonte do quiz, gerada do Wikidata (amostra.json da pasta quiz): cada sujeito é uma entidade e cada relação um atributo.",
+  "entidades": [
+    {
+      "nome": "Xeneizes",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Quarashi"
+      }
+    },
+    {
+      "nome": "Luisa Valenzuela",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "feminino"
+      }
+    },
+    {
+      "nome": "Estados Unidos",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "E.U.A.",
+        "U.S.A",
+        "Estados Unidos da América",
+        "United States"
+      ],
+      "atributos": {
+        "r17": "condado de Kinney"
+      }
+    },
+    {
+      "nome": "jazz",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r136": "Gil Goldstein"
+      }
+    },
+    {
+      "nome": "Reino Unido",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Reino Unido da Grã-Bretanha e Irlanda do Norte",
+        "Grã-Bretanha",
+        "UKGBNI",
+        "United Kingdom"
+      ],
+      "atributos": {
+        "r17": "Belfast"
+      }
+    },
+    {
+      "nome": "Condado de Strafford",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Strafford County"
+      ],
+      "atributos": {
+        "r131": "Rochester"
+      }
+    },
+    {
+      "nome": "Ibne Jubair",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Ibn Jubayr"
+      ],
+      "atributos": {
+        "p20": "Alexandria"
+      }
+    },
+    {
+      "nome": "David Hawthorne",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Londres"
+      }
+    },
+    {
+      "nome": "Q2058071",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Um Palhaço Suspeito"
+      ],
+      "atributos": {
+        "p58": "Q369424"
+      }
+    },
+    {
+      "nome": "Karl Dönitz",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Dönitz",
+        "Karl Doenitz"
+      ],
+      "atributos": {
+        "p20": "Aumühle"
+      }
+    },
+    {
+      "nome": "Matthew Cable",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p170": "Len Wein"
+      }
+    },
+    {
+      "nome": "The Rapture",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "México"
+      }
+    },
+    {
+      "nome": "Victoria No. 203",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Índia"
+      }
+    },
+    {
+      "nome": "Something for the Boys",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Alegria, Rapazes!"
+      ],
+      "atributos": {
+        "p136": "Filme musical"
+      }
+    },
+    {
+      "nome": "campista direito",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Campo direito",
+        "Right fielder",
+        "right fielder"
+      ],
+      "atributos": {
+        "r413": "Hank Aaron"
+      }
+    },
+    {
+      "nome": "The New Fred and Barney Show",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Fat Cat",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p106": "cantor"
+      }
+    },
+    {
+      "nome": "rock and roll",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "rock 'n roll",
+        "rock 'n' roll",
+        "rock n' roll"
+      ],
+      "atributos": {
+        "r136": "Brian Cadd"
+      }
+    },
+    {
+      "nome": "Camilo José Cela Conde",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r40": "Camilo José Cela"
+      }
+    },
+    {
+      "nome": "Chance and Necessity",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p50": "Jacques Monod"
+      }
+    },
+    {
+      "nome": "masculino",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "homem",
+        "macho humano",
+        "gênero masculino",
+        "H",
+        "male"
+      ],
+      "atributos": {
+        "r21": "Blanka"
+      }
+    },
+    {
+      "nome": "ator",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "atriz",
+        "atores",
+        "atrizes",
+        "actor"
+      ],
+      "atributos": {
+        "r106": "Sammy Brooks"
+      }
+    },
+    {
+      "nome": "Max von Pettenkofer",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Max Joseph Pettenkofer",
+        "Max Joseph von Pettenkofer"
+      ],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Why Is There Air?",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "comédia stand-up"
+      }
+    },
+    {
+      "nome": "Carry On Cruising",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p86": "Edmund Crispin"
+      }
+    },
+    {
+      "nome": "Malouf Abraham, Sr.",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Malouf Abraham Sr."
+      ],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Daddy Day Camp",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Acampamento do Papai"
+      ],
+      "atributos": {
+        "p58": "David N. Weiss"
+      }
+    },
+    {
+      "nome": "TV Patrol Northwestern Mindanao",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Filipinas"
+      }
+    },
+    {
+      "nome": "Bloodlines",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p50": "Karen Traviss"
+      }
+    },
+    {
+      "nome": "Crawford Hall",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p149": "arquitetura futurista"
+      }
+    },
+    {
+      "nome": "drama",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "filme dramático",
+        "drama film"
+      ],
+      "atributos": {
+        "r136": "World Trade Center"
+      }
+    },
+    {
+      "nome": "Phalaborwa",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Dale Steyn"
+      }
+    },
+    {
+      "nome": "Lane Smith",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Northridge"
+      }
+    },
+    {
+      "nome": "Anna Karenina",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Ana Karenina",
+        "Ana karênina",
+        "Karenina",
+        "Anna Kariênina"
+      ],
+      "atributos": {
+        "r144": "Anna Karenina"
+      }
+    },
+    {
+      "nome": "Robôs",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p272": "Blue Sky Studios"
+      }
+    },
+    {
+      "nome": "Helsinque",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Helsinquia",
+        "Helsinki"
+      ],
+      "atributos": {
+        "r19": "Abba Gindin"
+      }
+    },
+    {
+      "nome": "Fawzi al-Mulki",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Irbid"
+      }
+    },
+    {
+      "nome": "Ganging Up on the Sun",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Guster"
+      }
+    },
+    {
+      "nome": "Saturday Night",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "filme mudo"
+      }
+    },
+    {
+      "nome": "Mary Lou Fallis",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Canadá"
+      }
+    },
+    {
+      "nome": "Colloquio",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "música experimental"
+      }
+    },
+    {
+      "nome": "cantautor",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "cantor compositor",
+        "cantautora",
+        "cantora-compositora",
+        "singer-songwriter"
+      ],
+      "atributos": {
+        "r106": "Kristen Hall"
+      }
+    },
+    {
+      "nome": "Q2614262",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Vernee Christell Watson"
+      ],
+      "atributos": {
+        "p19": "Trenton"
+      }
+    },
+    {
+      "nome": "The Good Companions",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "romance"
+      }
+    },
+    {
+      "nome": "Theocracy",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "estratégia em tempo real"
+      }
+    },
+    {
+      "nome": "Charles Koppelman",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Brooklyn",
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "thrash metal",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Thrash/Groove",
+        "Thrash Groovado",
+        "Thrash-Metal",
+        "Thrash metal melódico",
+        "Technical Thrash Metal"
+      ],
+      "atributos": {
+        "r136": "Terrible Certainty"
+      }
+    },
+    {
+      "nome": "Industrial Canal",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r177": "Claiborne Avenue Bridge"
+      }
+    },
+    {
+      "nome": "Too Romantic",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p57": "Todd Field"
+      }
+    },
+    {
+      "nome": "The Best of The Stylistics",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rhythm and blues"
+      }
+    },
+    {
+      "nome": "Yves Giraud-Cabantous",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Marius Aristide Yves Giraud-Cabantous"
+      ],
+      "atributos": {
+        "p20": "Paris"
+      }
+    },
+    {
+      "nome": "Crusader",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "The Green Hornet",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "inglês"
+      }
+    },
+    {
+      "nome": "música country",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "country",
+        "country music"
+      ],
+      "atributos": {
+        "r136": "All the Women I Am"
+      }
+    },
+    {
+      "nome": "The Spoiler",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Stanley Turrentine"
+      }
+    },
+    {
+      "nome": "Battleground",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p86": "Lennie Hayton"
+      }
+    },
+    {
+      "nome": "Jean-Joël Perrier-Doumbé",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "zagueiro"
+      }
+    },
+    {
+      "nome": "Lee Child",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r170": "Jack Reacher"
+      }
+    },
+    {
+      "nome": "Yo-Yo Ma Plays Ennio Morricone",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Yo-Yo Ma"
+      }
+    },
+    {
+      "nome": "Condado de Cook",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Cook County"
+      ],
+      "atributos": {
+        "r131": "Burbank"
+      }
+    },
+    {
+      "nome": "Hoot",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "filme infantil"
+      }
+    },
+    {
+      "nome": "Primeira Guerra Mundial",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "A Grande Guerra",
+        "Grande Guerra",
+        "IGM",
+        "I Guerra Mundial",
+        "World War I"
+      ],
+      "atributos": {
+        "r607": "William John English"
+      }
+    },
+    {
+      "nome": "El Greco",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Espanha"
+      }
+    },
+    {
+      "nome": "Sleeping in Flame",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p50": "Jonathan Carroll"
+      }
+    },
+    {
+      "nome": "Stoke-on-Trent",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Clint Boulton"
+      }
+    },
+    {
+      "nome": "Q7363106",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Ruby Rose",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p106": "ator"
+      }
+    },
+    {
+      "nome": "The Last of His Tribe",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "drama"
+      }
+    },
+    {
+      "nome": "Sören Link",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Alemanha"
+      }
+    },
+    {
+      "nome": "John F. Williams (New York)",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "John F. Williams"
+      ],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Mary Renault",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r50": "The King Must Die"
+      }
+    },
+    {
+      "nome": "Condado de Luzerne",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Luzerne County"
+      ],
+      "atributos": {
+        "r131": "Bear Creek Village"
+      }
+    },
+    {
+      "nome": "jogo eletrônico para um jogador",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "modo um jogador",
+        "um jogador",
+        "single-player",
+        "single Player",
+        "singleplayer",
+        "single-player video game"
+      ],
+      "atributos": {
+        "r404": "Evochron Alliance"
+      }
+    },
+    {
+      "nome": "STS-111",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p1029": "Daniel Bursch"
+      }
+    },
+    {
+      "nome": "Buddy Childers",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p509": "câncer"
+      }
+    },
+    {
+      "nome": "Q760989",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Moscou em Nova Iorque",
+        "Um Russo em Nova Iorque"
+      ],
+      "atributos": {
+        "p136": "drama"
+      }
+    },
+    {
+      "nome": "Hans Günther van Allen",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Haan"
+      }
+    },
+    {
+      "nome": "Woolwich",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Peter Jones"
+      }
+    },
+    {
+      "nome": "Back in the Day",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Demon's Winter",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p178": "Strategic Simulations"
+      }
+    },
+    {
+      "nome": "Segunda Guerra Mundial",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "II Guerra Mundial",
+        "II Grande Guerra",
+        "Grande Guerra de 1939-1945",
+        "Segunda Grande Guerra",
+        "World War II"
+      ],
+      "atributos": {
+        "r607": "Walther Fischer von Weikersthal"
+      }
+    },
+    {
+      "nome": "Sergio Spina",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Milão"
+      }
+    },
+    {
+      "nome": "pintor",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "painter"
+      ],
+      "atributos": {
+        "r106": "Ruth Sobotka"
+      }
+    },
+    {
+      "nome": "Josef Rovenský",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p106": "diretor(a) de cinema"
+      }
+    },
+    {
+      "nome": "Francis De Sales",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Q315861",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Adans."
+      ],
+      "atributos": {
+        "p20": "Paris"
+      }
+    },
+    {
+      "nome": "Frank Joslyn Baum",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r40": "L. Frank Baum"
+      }
+    },
+    {
+      "nome": "Intelligent Qube",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Kurushi"
+      ],
+      "atributos": {
+        "p404": "jogo eletrônico multijogador"
+      }
+    },
+    {
+      "nome": "Nancy",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Henri Cartan"
+      }
+    },
+    {
+      "nome": "Beyond the Rocks",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Origin Systems",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r178": "Ultima Online: Lord Blackthorn's Revenge"
+      }
+    },
+    {
+      "nome": "Dead Leaves",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p162": "Katsuji Morishita"
+      }
+    },
+    {
+      "nome": "Srinagar",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Amitabh Mattoo"
+      }
+    },
+    {
+      "nome": "Poolside Chats",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "rhythm and blues",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Rhythm & Blues",
+        "Rhythm'n'Blues",
+        "R&b",
+        "R&B americano",
+        "Rhythm 'n' blues"
+      ],
+      "atributos": {
+        "r136": "IMx"
+      }
+    },
+    {
+      "nome": "Sergey Ilyushin",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Sergey Vladimirovich Ilyushin"
+      ],
+      "atributos": {
+        "r112": "Ilyushin"
+      }
+    },
+    {
+      "nome": "Smyrna",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "William Barksdale"
+      }
+    },
+    {
+      "nome": "atacante",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "avancado",
+        "forward"
+      ],
+      "atributos": {
+        "r413": "Viktor Zemchenkov"
+      }
+    },
+    {
+      "nome": "O Barco das Ilusões",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Show Boat"
+      ],
+      "atributos": {
+        "p136": "romance"
+      }
+    },
+    {
+      "nome": "Garam Masala",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "língua hindi"
+      }
+    },
+    {
+      "nome": "Blue Bayou",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p407": "alemão"
+      }
+    },
+    {
+      "nome": "Barry Ferguson",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Dublin"
+      }
+    },
+    {
+      "nome": "Brian Griffin",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Otto Jelinek",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Otto John Jelinek"
+      ],
+      "atributos": {
+        "p19": "Praga"
+      }
+    },
+    {
+      "nome": "Werner Max Moser",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Werner M. Moser"
+      ],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Somethin' Slick!",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Jack McDuff"
+      }
+    },
+    {
+      "nome": "Calypso Cat",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p57": "Gene Deitch"
+      }
+    },
+    {
+      "nome": "A Sailor-Made Man",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p162": "Hal Roach"
+      }
+    },
+    {
+      "nome": "Every Night at Eight",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "inglês"
+      }
+    },
+    {
+      "nome": "Ultimate Collection",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Eurythmics"
+      }
+    },
+    {
+      "nome": "Michael Galea",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "atacante"
+      }
+    },
+    {
+      "nome": "Aníbal Maria Di Francia",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Santo Anibal Maria",
+        "Anibal Maria Di Frância",
+        "Santo Aníbal",
+        "Annibale Maria di Francia"
+      ],
+      "atributos": {
+        "p19": "Messina"
+      }
+    },
+    {
+      "nome": "Aimar-Charles-Marie de Nicolaï",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Paris"
+      }
+    },
+    {
+      "nome": "Frota Suicida",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Suicide Fleet"
+      ],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Larry Hite",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Heather Hunter",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p172": "afroamericano"
+      }
+    },
+    {
+      "nome": "Bersebá",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Be'er Sheva",
+        "Beersheva",
+        "Berseba",
+        "Beersheba"
+      ],
+      "atributos": {
+        "r19": "Eviatar Banai"
+      }
+    },
+    {
+      "nome": "Mein Kampf",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Alemanha"
+      }
+    },
+    {
+      "nome": "Carla Dunlap",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p172": "afroamericano"
+      }
+    },
+    {
+      "nome": "A Intérprete",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "L'interprète",
+        "The Interpreter",
+        "Ajene Xola"
+      ],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Daniel Haglund",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Yoon Bo-mi",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Bomi"
+      ],
+      "atributos": {
+        "p136": "dance-pop"
+      }
+    },
+    {
+      "nome": "Naran",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p57": "Joshiy"
+      }
+    },
+    {
+      "nome": "Louis-Philippe de Ségur",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Paris"
+      }
+    },
+    {
+      "nome": "New York Doll",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rockumentary"
+      }
+    },
+    {
+      "nome": "Ready to Run",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "The Chicks"
+      }
+    },
+    {
+      "nome": "Shan",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Estado Shan",
+        "Shan State"
+      ],
+      "atributos": {
+        "p17": "Birmânia"
+      }
+    },
+    {
+      "nome": "8816 Gamow",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p196": "Cintura de asteroides"
+      }
+    },
+    {
+      "nome": "Alex Newport",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Reino Unido"
+      }
+    },
+    {
+      "nome": "Pat Swilling",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "linebacker"
+      }
+    },
+    {
+      "nome": "Book of Lightning",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rock"
+      }
+    },
+    {
+      "nome": "Bill Drayton",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Nova Iorque"
+      }
+    },
+    {
+      "nome": "Constance Towers",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Peravia",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Peravia Province"
+      ],
+      "atributos": {
+        "p17": "República Dominicana"
+      }
+    },
+    {
+      "nome": "Steve Wilson",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "center"
+      }
+    },
+    {
+      "nome": "Cake",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rock alternativo"
+      }
+    },
+    {
+      "nome": "Drive a Crooked Road",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p57": "Richard Quine"
+      }
+    },
+    {
+      "nome": "Män som hatar kvinnor",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Os Homens que Não Amavam as Mulheres",
+        "Millennium 1 - Os Homens que Odeiam as Mulheres",
+        "Os Homens que Odeiam as Mulheres",
+        "The Girl with the Dragon Tattoo"
+      ],
+      "atributos": {
+        "p86": "Jacob Groth"
+      }
+    },
+    {
+      "nome": "Miksha",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "metal extremo"
+      }
+    },
+    {
+      "nome": "violão",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "violao",
+        "viola",
+        "guitar"
+      ],
+      "atributos": {
+        "r1303": "Ray Davies"
+      }
+    },
+    {
+      "nome": "Martha Mattox",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "SkyClan's Destiny",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p179": "Gatos Guerreiros"
+      }
+    },
+    {
+      "nome": "The Dark Man and Others",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "conto"
+      }
+    },
+    {
+      "nome": "Yves Klein",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p509": "infarto agudo do miocárdio"
+      }
+    },
+    {
+      "nome": "MASH",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "M*A*S*H"
+      ],
+      "atributos": {
+        "p86": "Johnny Mandel"
+      }
+    },
+    {
+      "nome": "Leo G. Carroll",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Leo Gratten Carroll"
+      ],
+      "atributos": {
+        "p20": "Hollywood"
+      }
+    },
+    {
+      "nome": "Gritos Mortais",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Dead Silence"
+      ],
+      "atributos": {
+        "p86": "Charlie Clouser"
+      }
+    },
+    {
+      "nome": "Attack of the Killer Tomatoes",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "jogo eletrônico de plataforma"
+      }
+    },
+    {
+      "nome": "Ginger Baker",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "jazz fusion"
+      }
+    },
+    {
+      "nome": "Yolande James",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "feminino"
+      }
+    },
+    {
+      "nome": "Ham Schulte",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "segunda-base"
+      }
+    },
+    {
+      "nome": "Abandoned Garden",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Michael Franks"
+      }
+    },
+    {
+      "nome": "Stevie Wonder",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Stevie Judkins",
+        "Little Stevie Wonder"
+      ],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "filme de terror",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "horror film"
+      ],
+      "atributos": {
+        "r136": "Apollo 18"
+      }
+    },
+    {
+      "nome": "Séamus Coleman",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "zagueiro"
+      }
+    },
+    {
+      "nome": "Hugh Mercer",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Princeton"
+      }
+    },
+    {
+      "nome": "Ahn Seok-Ho",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Coreia do Sul"
+      }
+    },
+    {
+      "nome": "Kronos",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "Invasão alienígena"
+      }
+    },
+    {
+      "nome": "The Golden Age of Grotesque",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "metal industrial"
+      }
+    },
+    {
+      "nome": "Saitō Yoshitatsu",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Província de Mino"
+      }
+    },
+    {
+      "nome": "Trond Egil Soltvedt",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Voss"
+      }
+    },
+    {
+      "nome": "Valentiniano II",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Valentinian II"
+      ],
+      "atributos": {
+        "r40": "Justina"
+      }
+    },
+    {
+      "nome": "Otto Behaghel",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Alemanha"
+      }
+    },
+    {
+      "nome": "Estilo rainha Ana",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Queen Anne style"
+      ],
+      "atributos": {
+        "r149": "Wyant-Talbot House"
+      }
+    },
+    {
+      "nome": "Delta blues",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Blues primitivo do Delta"
+      ],
+      "atributos": {
+        "r136": "Mattie Delaney"
+      }
+    },
+    {
+      "nome": "Hiram N. Breed",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Benedetto, II Gennari",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Benedetto Gennari II"
+      ],
+      "atributos": {
+        "p19": "Cento"
+      }
+    },
+    {
+      "nome": "Eu Sei Quem Me Matou",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "I know who killed me",
+        "I Know Who Killed Me"
+      ],
+      "atributos": {
+        "p86": "Joel McNeely"
+      }
+    },
+    {
+      "nome": "Second Album",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rock progressivo"
+      }
+    },
+    {
+      "nome": "Sense and Sensibility",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Razão e sensibilidade"
+      ],
+      "atributos": {
+        "p50": "Jane Austen"
+      }
+    },
+    {
+      "nome": "A New Day in Old Sana'a",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "árabe"
+      }
+    },
+    {
+      "nome": "jogo eletrônico multijogador",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "modo multijogador",
+        "multijogador",
+        "jogo multijogador",
+        "Multiplayer video game",
+        "multiplayer video game"
+      ],
+      "atributos": {
+        "r404": "Command & Conquer: Tiberian Sun"
+      }
+    },
+    {
+      "nome": "Lyn Collingwood",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Sydney"
+      }
+    },
+    {
+      "nome": "Dubrovnik",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Ragusa"
+      ],
+      "atributos": {
+        "r19": "Franco Sacchetti"
+      }
+    },
+    {
+      "nome": "37 Uses for a Dead Sheep",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "inglês"
+      }
+    },
+    {
+      "nome": "Beloved",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p162": "Gary Goetzman"
+      }
+    },
+    {
+      "nome": "Heartland",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Owen Pallett"
+      }
+    },
+    {
+      "nome": "(2594) Acamas",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "2594 Acamas"
+      ],
+      "atributos": {
+        "p397": "Sol"
+      }
+    },
+    {
+      "nome": "Tom Flores",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Thomas R. Flores",
+        "Thomas Flores"
+      ],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Russell Harlan",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r344": "Gun Crazy"
+      }
+    },
+    {
+      "nome": "Brooklyn Bridge",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Jørgen + Anne = sant",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Totally True Love"
+      ],
+      "atributos": {
+        "p364": "língua norueguesa"
+      }
+    },
+    {
+      "nome": "Rainfox",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "drama"
+      }
+    },
+    {
+      "nome": "Soul of the Fire",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p50": "Terry Goodkind"
+      }
+    },
+    {
+      "nome": "Asif Ali Malik",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Paquistão"
+      }
+    },
+    {
+      "nome": "Donny Baldwin",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rock"
+      }
+    },
+    {
+      "nome": "Conrad McRae",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p172": "afroamericano"
+      }
+    },
+    {
+      "nome": "5 Ingredient Fix",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Ryuichi Sakamoto",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r86": "Merry Christmas, Mr. Lawrence"
+      }
+    },
+    {
+      "nome": "Catharine MacKinnon",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Minneapolis"
+      }
+    },
+    {
+      "nome": "Bruce Tarr",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Gloucester"
+      }
+    },
+    {
+      "nome": "Huy",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Alfred Pfaff"
+      }
+    },
+    {
+      "nome": "São Francisco",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Cidade e Condado de São Francisco",
+        "San Francisco"
+      ],
+      "atributos": {
+        "r19": "Bill Hubbell"
+      }
+    },
+    {
+      "nome": "zagueiro",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "beque",
+        "defesa central",
+        "defender"
+      ],
+      "atributos": {
+        "r413": "Anucha Kitphongsri"
+      }
+    },
+    {
+      "nome": "The Maze",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "Rock instrumental"
+      }
+    },
+    {
+      "nome": "John F. Mulholland, Jr.",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Clovis"
+      }
+    },
+    {
+      "nome": "The Case of the Toxic Spell Dump",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p50": "Harry Turtledove"
+      }
+    },
+    {
+      "nome": "John Ogdon",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p1303": "piano"
+      }
+    },
+    {
+      "nome": "The Lost Room",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "inglês"
+      }
+    },
+    {
+      "nome": "Jacques Demy",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r57": "Trois places pour le 26"
+      }
+    },
+    {
+      "nome": "Sylvia Poggioli",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Providence"
+      }
+    },
+    {
+      "nome": "Dick McBride",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "arremessador"
+      }
+    },
+    {
+      "nome": "Lionel Pina",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Nova Iorque"
+      }
+    },
+    {
+      "nome": "Stylez G. White",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Byron Haskin",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r344": "On Trial"
+      }
+    },
+    {
+      "nome": "Seven",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "David Bowie"
+      }
+    },
+    {
+      "nome": "Walter Bullock",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Los Angeles"
+      }
+    },
+    {
+      "nome": "4741 Leskov",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p196": "Cintura de asteroides"
+      }
+    },
+    {
+      "nome": "Equador",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "República do Equador",
+        "Ecuador"
+      ],
+      "atributos": {
+        "r17": "Isabela"
+      }
+    },
+    {
+      "nome": "The Canadian",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "romance"
+      }
+    },
+    {
+      "nome": "Gia",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p58": "Jay McInerney"
+      }
+    },
+    {
+      "nome": "Edmund Bailey O'Callaghan",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Nova Iorque"
+      }
+    },
+    {
+      "nome": "(29156) 1989 CH",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p61": "Hiroshi Kaneda"
+      }
+    },
+    {
+      "nome": "Merritt Island",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p131": "Condado de Brevard"
+      }
+    },
+    {
+      "nome": "Matt Taylor",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Appleseed Ex Machina",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p162": "John Woo"
+      }
+    },
+    {
+      "nome": "Sunair",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p113": "Tauranga Airport"
+      }
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Capital do RJ",
+        "Capital do Rio de Janeiro",
+        "Cidade Maravilhosa",
+        "Rio de Janeiro (cidade)",
+        "Rio de Janeiro (município)"
+      ],
+      "atributos": {
+        "r19": "Sérgio Rezende"
+      }
+    },
+    {
+      "nome": "Manorhaven",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p131": "Condado de Nassau"
+      }
+    },
+    {
+      "nome": "Greenwich",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r19": "Colin Wilson"
+      }
+    },
+    {
+      "nome": "documentário",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Documentários",
+        "Filme documentário",
+        "Cinejornalismo",
+        "cinema documental",
+        "documentary film"
+      ],
+      "atributos": {
+        "r136": "Shocking Asia II: The Last Taboos"
+      }
+    },
+    {
+      "nome": "¡Policia! – A Tribute to The Police",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "rock"
+      }
+    },
+    {
+      "nome": "Frenzal Rhomb",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p264": "Epitaph Records"
+      }
+    },
+    {
+      "nome": "HMS E56",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p289": "E-class submarine"
+      }
+    },
+    {
+      "nome": "Cho Hyung-ik",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "Meio-campista"
+      }
+    },
+    {
+      "nome": "Spasm Smash XXXOXOX Ox & Ass",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "Trumans Water"
+      }
+    },
+    {
+      "nome": "Grass Roots",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "filme independente"
+      }
+    },
+    {
+      "nome": "Paul Newlan",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p509": "insuficiência cardíaca"
+      }
+    },
+    {
+      "nome": "Hans Krása",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p106": "compositor"
+      }
+    },
+    {
+      "nome": "6247 Amanogawa",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p196": "Cintura de asteroides"
+      }
+    },
+    {
+      "nome": "câncer",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "tumor maligno",
+        "neoplasia maligna",
+        "câncer primário",
+        "cancer"
+      ],
+      "atributos": {
+        "r509": "David Woodward"
+      }
+    },
+    {
+      "nome": "Jan Garbarek",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r175": "I Took Up the Runes"
+      }
+    },
+    {
+      "nome": "Vale Forge",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Valley Forge"
+      ],
+      "atributos": {
+        "p276": "Valley Forge National Historical Park"
+      }
+    },
+    {
+      "nome": "Humphrey Osbaldston Brooke Firman",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p607": "Primeira Guerra Mundial"
+      }
+    },
+    {
+      "nome": "Gentlemen Marry Brunettes",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "inglês"
+      }
+    },
+    {
+      "nome": "Bernie Graham",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "defensor externo"
+      }
+    },
+    {
+      "nome": "Joe Kracher",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Joan Baez",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Joan C. Baez"
+      ],
+      "atributos": {
+        "r175": "Joan Baez in San Francisco"
+      }
+    },
+    {
+      "nome": "SNK",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Playmore",
+        "Playmore Corporation",
+        "SNK Playmore",
+        "SNK Playmore Corporation",
+        "SNK Corporation"
+      ],
+      "atributos": {
+        "r123": "Double Dragon"
+      }
+    },
+    {
+      "nome": "Anthony Minghella",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r162": "Catch a Fire"
+      }
+    },
+    {
+      "nome": "Claudia Lonow",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Regina Belle",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r175": "Believe in Me"
+      }
+    },
+    {
+      "nome": "Let's Go to Prison",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p57": "Bob Odenkirk"
+      }
+    },
+    {
+      "nome": "rock",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "roque",
+        "rock and roll",
+        "rock music"
+      ],
+      "atributos": {
+        "r136": "It's in There"
+      }
+    },
+    {
+      "nome": "The Return of Captain Nemo",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Women in Trouble",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p86": "Robyn Hitchcock"
+      }
+    },
+    {
+      "nome": "Soldier's Home",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Manuel Gayoso de Lemos",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p509": "febre amarela"
+      }
+    },
+    {
+      "nome": "Melvin B. Tolson",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p20": "Dallas"
+      }
+    },
+    {
+      "nome": "Birmingham",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Birmingham, Inglaterra",
+        "Birmingham, Midlands Ocidentais"
+      ],
+      "atributos": {
+        "r19": "John Gunnell"
+      }
+    },
+    {
+      "nome": "Camille Winbush",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Camille Simoine Winbush"
+      ],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Cleopatra Borel",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Trindade e Tobago"
+      }
+    },
+    {
+      "nome": "Chris Cillizza",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p27": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Q966721",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "jogo eletrônico de quebra-cabeça"
+      }
+    },
+    {
+      "nome": "Havaí",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Estado do Havaí",
+        "Havai",
+        "Estado do Havai",
+        "Hawaii"
+      ],
+      "atributos": {
+        "r19": "Michael-James Olsen"
+      }
+    },
+    {
+      "nome": "Arnaud Demuynck",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p106": "diretor(a) de cinema"
+      }
+    },
+    {
+      "nome": "Adolph J. Sabath",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "Jenin, Jenin",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p57": "Mohammad Bakri"
+      }
+    },
+    {
+      "nome": "Martin Pakula",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Melbourne"
+      }
+    },
+    {
+      "nome": "Branko Isaković",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Valjevo"
+      }
+    },
+    {
+      "nome": "the dells",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "doo-wop"
+      }
+    },
+    {
+      "nome": "Niño Gelig",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "masculino"
+      }
+    },
+    {
+      "nome": "An Acapella Christmas",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p175": "The Manhattan Transfer"
+      }
+    },
+    {
+      "nome": "The Twilight Zone",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r179": "A Kind of a Stopwatch"
+      }
+    },
+    {
+      "nome": "Mahesh Thakur",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Bombaim"
+      }
+    },
+    {
+      "nome": "Running Scared",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Medo da Morte",
+        "No Rastro da Bala"
+      ],
+      "atributos": {
+        "p495": "Alemanha"
+      }
+    },
+    {
+      "nome": "Saint John",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Paróquia de Saint John",
+        "Saint John Parish"
+      ],
+      "atributos": {
+        "p131": "Dominica"
+      }
+    },
+    {
+      "nome": "Sharpe",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p364": "inglês"
+      }
+    },
+    {
+      "nome": "Chicago",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r175": "Chicago XXVI – Live in Concert"
+      }
+    },
+    {
+      "nome": "Rogue Trader",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p58": "Nick Leeson"
+      }
+    },
+    {
+      "nome": "John Pizzarelli",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "jazz"
+      }
+    },
+    {
+      "nome": "Margaret Way",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Brisbane"
+      }
+    },
+    {
+      "nome": "Grandia II",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Grandia 2"
+      ],
+      "atributos": {
+        "p136": "RPG eletrônico"
+      }
+    },
+    {
+      "nome": "David Koepp",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r58": "Toy Soldiers"
+      }
+    },
+    {
+      "nome": "A Troca",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "The Changeling"
+      ],
+      "atributos": {
+        "p272": "Imagine Entertainment"
+      }
+    },
+    {
+      "nome": "Daria Werbowy",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p21": "feminino"
+      }
+    },
+    {
+      "nome": "música pop",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "pop music",
+        "música popular",
+        "pop comercial",
+        "pop"
+      ],
+      "atributos": {
+        "r136": "Nikki Flores"
+      }
+    },
+    {
+      "nome": "Platão",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Plato"
+      ],
+      "atributos": {
+        "p20": "Atenas"
+      }
+    },
+    {
+      "nome": "Magic Man",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Estados Unidos"
+      }
+    },
+    {
+      "nome": "Erik Brann",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p136": "Rock psicodélico"
+      }
+    },
+    {
+      "nome": "Alfie",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Alfie e as Mulheres"
+      ],
+      "atributos": {
+        "p58": "Charles Shyer"
+      }
+    },
+    {
+      "nome": "Ivan Jević",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "zagueiro"
+      }
+    },
+    {
+      "nome": "Bryan Kelly",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "arremessador"
+      }
+    },
+    {
+      "nome": "Long Live (canção)",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Long Live (canção de Taylor Swift)",
+        "Long Live"
+      ],
+      "atributos": {
+        "p407": "inglês"
+      }
+    },
+    {
+      "nome": "Sedin Dujone",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Índia"
+      }
+    },
+    {
+      "nome": "Jefferson F. Long",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Knoxville"
+      }
+    },
+    {
+      "nome": "Lightfields",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p495": "Reino Unido"
+      }
+    },
+    {
+      "nome": "Dan Bigras",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p19": "Montreal"
+      }
+    },
+    {
+      "nome": "Roma",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "A Cidade Eterna",
+        "Rome"
+      ],
+      "atributos": {
+        "r19": "Giuseppe Cades"
+      }
+    },
+    {
+      "nome": "Ingmar Bergman",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r58": "Sommarlek"
+      }
+    },
+    {
+      "nome": "piano",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "r1303": "Matthew Odell"
+      }
+    },
+    {
+      "nome": "Allie Long",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Alexandra Linsley Long"
+      ],
+      "atributos": {
+        "p413": "Meio-campista"
+      }
+    },
+    {
+      "nome": "Philip Roth",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [
+        "Philip Milton Roth"
+      ],
+      "atributos": {
+        "r50": "Operation Shylock"
+      }
+    },
+    {
+      "nome": "Paul Keita",
+      "tipo": "item",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "p413": "Meio-campista"
+      }
+    }
+  ]
+}

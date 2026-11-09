@@ -125,6 +125,84 @@ public static partial class Cenarios
 
     private static string SemZeroDecimal(string n) => n.EndsWith(".0", StringComparison.Ordinal) ? n[..^2] : n;
 
+    // ---- Quiz (SimpleQuestions no Wikidata) --------------------------------------------------------------
+
+    /// <summary>O prompt do normalizador (cenário 6b): reescreve a pergunta na forma canônica da relação.</summary>
+    public const string SystemNormalizacao =
+        "Traduza a pergunta para o português do Brasil e reescreva-a na forma mais simples e padronizada possível para o que ela pede " +
+        "(por exemplo: \"Onde X nasceu?\", \"Qual é a nacionalidade de X?\", \"Quem dirigiu X?\"), mantendo o nome da entidade. Devolva só a pergunta.";
+
+    public sealed record Quiz(List<PerguntaTeste> Perguntas, List<Entidade> Entidades, List<string> Originais);
+
+    /// <summary>
+    /// O quiz: perguntas de uma relação só (sujeito, relação, objeto) do SimpleQuestions mapeado para o Wikidata. A fonte sai do
+    /// Wikidata: cada sujeito vira uma entidade (tipo "item") e cada relação um atributo, com o rótulo do objeto em português (ou
+    /// em inglês). <paramref name="variante"/>: "fiel" (traducao-fiel.tsv), "simplificada" (a forma canônica de simplificacao.tsv)
+    /// ou "original" (o inglês). A família é a relação; o gabarito, o rótulo do objeto e os apelidos.
+    /// </summary>
+    public static Quiz LerQuiz(string pasta, string variante)
+    {
+        using var doc = JsonDocument.Parse(File.ReadAllText(Path.Combine(pasta, "amostra.json")));
+        var labels = doc.RootElement.GetProperty("labels");
+        string Nome(string id) => labels.TryGetProperty(id, out var l)
+            ? (l.GetProperty("pt").GetString() ?? l.GetProperty("en").GetString() ?? id) : id;
+        IEnumerable<string> Apelidos(string id) => labels.TryGetProperty(id, out var l)
+            ? l.GetProperty("apelidos_pt").EnumerateArray().Select(a => a.GetString()!).Append(l.GetProperty("en").GetString() ?? "").Where(a => a.Length > 0)
+            : [];
+        var fiel = File.ReadLines(Path.Combine(pasta, "traducao-fiel.tsv")).Where(l => l.Contains('\t')).Select(l => l.Split('\t', 2)).ToDictionary(c => int.Parse(c[0], CultureInfo.InvariantCulture), c => c[1].Trim());
+        var forma = File.ReadLines(Path.Combine(pasta, "simplificacao.tsv")).Where(l => !l.StartsWith('#') && l.Contains('\t')).Select(l => l.Split('\t', 2)).ToDictionary(c => c[0], c => c[1].Trim());
+        var entidades = new Dictionary<string, Entidade>();
+        var perguntas = new List<PerguntaTeste>();
+        var originais = new List<string>();
+        foreach (var r in doc.RootElement.GetProperty("amostra").EnumerateArray())
+        {
+            var (suj, rel, obj, en) = (r[0].GetString()!, r[1].GetString()!, r[2].GetString()!, r[3].GetString()!.Trim());
+            var n = perguntas.Count + 1;
+            var nome = Nome(suj);
+            var resposta = Nome(obj);
+            var e = entidades.GetValueOrDefault(suj) ?? new Entidade
+            {
+                Nome = nome, Tipo = "item", Apelidos = Apelidos(suj).Where(a => !string.Equals(a, nome, StringComparison.OrdinalIgnoreCase)).Distinct().ToList(),
+            };
+            // Um atributo por relação (a primeira resposta vale, como numa fonte de um valor só).
+            e.Atributos.TryAdd(rel.ToLowerInvariant(), resposta);
+            entidades[suj] = e;
+            var pergunta = variante switch
+            {
+                "fiel" => fiel[n],
+                // Sem rótulo no Wikidata, o normalizador manteria o nome escrito na pergunta: fica a tradução fiel.
+                "simplificada" => forma.TryGetValue(rel, out var f) && !SemRotulo(nome) ? f.Replace("{X}", nome) : fiel[n],
+                _ => en,
+            };
+            var gabarito = string.Join(" || ", Apelidos(obj).Prepend(resposta).Distinct());
+            perguntas.Add(new PerguntaTeste(n, pergunta, rel, nome, rel.ToLowerInvariant(), gabarito));
+            originais.Add(en);
+        }
+        return new Quiz(perguntas, entidades.Values.ToList(), originais);
+    }
+
+    private static bool SemRotulo(string nome) => nome.Length > 1 && nome[0] == 'Q' && nome[1..].All(char.IsDigit);
+
+    /// <summary>
+    /// O custo de simplificar as perguntas com um LLM antes do parser: uma chamada por pergunta, com o system do normalizador e a
+    /// pergunta original na entrada e a pergunta simplificada na saída (tokens estimados por ≈ 4 caracteres).
+    /// </summary>
+    public static (long Entrada, long Saida) TokensSimplificacao(IEnumerable<(string Original, string Simplificada)> pares)
+    {
+        long e = 0, s = 0;
+        foreach (var (o, x) in pares)
+        {
+            e += LlmDeFatos.Tokens(SystemNormalizacao) + LlmDeFatos.Tokens(o);
+            s += LlmDeFatos.Tokens(x);
+        }
+        return (e, s);
+    }
+
+    /// <summary>A amostra do experimento do quiz: as <paramref name="porRelacao"/> primeiras perguntas de cada uma das <paramref name="relacoes"/> relações mais frequentes.</summary>
+    public static List<PerguntaTeste> AmostraPorRelacao(IReadOnlyList<PerguntaTeste> todas, int relacoes, int porRelacao) =>
+        todas.GroupBy(p => p.Familia).OrderByDescending(g => g.Count()).ThenBy(g => g.Key, StringComparer.Ordinal).Take(relacoes)
+            .SelectMany(g => g.Take(porRelacao)).OrderBy(p => p.N).Select((p, i) => p with { N = i + 1 }).ToList();
+
     // ---- SQuAD-pt ----------------------------------------------------------------------------------------
 
     /// <summary>

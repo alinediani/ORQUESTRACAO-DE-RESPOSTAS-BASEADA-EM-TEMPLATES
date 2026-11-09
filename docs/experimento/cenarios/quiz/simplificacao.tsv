@@ -1,0 +1,64 @@
+# Forma canônica de cada relação (cenário 6b): a pergunta simplificada é a forma da relação com {X} = nome da entidade na fonte.
+P136	Qual é o gênero de {X}?
+P19	Onde {X} nasceu?
+P495	Qual é o país de origem de {X}?
+P27	Qual é a nacionalidade de {X}?
+R19	Quem nasceu em {X}?
+P21	Qual é o sexo de {X}?
+R136	Cite uma obra do gênero {X}.
+P20	Onde {X} morreu?
+P413	Em que posição {X} joga?
+P175	Quem é o intérprete de {X}?
+P364	Qual é o idioma de {X}?
+P86	Quem compôs a música de {X}?
+P50	Quem é o autor de {X}?
+P57	Quem dirigiu {X}?
+P58	Quem escreveu o roteiro de {X}?
+P106	Qual é a ocupação de {X}?
+R413	Cite um jogador que atua como {X}.
+R106	Cite uma pessoa com a ocupação {X}.
+P509	Qual foi a causa da morte de {X}?
+P162	Quem produziu {X}?
+R175	Cite uma obra de {X}.
+R17	Cite um lugar localizado em {X}.
+R131	Cite um lugar localizado em {X}.
+R40	Quem é o pai ou a mãe de {X}?
+R404	Cite um jogo com o modo {X}.
+P172	Qual é a etnia de {X}?
+P196	De que grupo de asteroides {X} faz parte?
+P131	Onde fica {X}?
+P272	Que empresa produziu {X}?
+R607	Cite alguém que participou de {X}.
+R50	Cite uma obra de {X}.
+P407	Qual é o idioma de {X}?
+P17	Em que país fica {X}?
+R1303	Quem toca {X}?
+R344	Cite um filme fotografado por {X}.
+R58	Cite um filme escrito por {X}.
+P170	Quem criou {X}?
+R21	Cite um personagem do sexo {X}.
+P149	Qual é o estilo arquitetônico de {X}?
+R144	Cite uma obra baseada em {X}.
+R177	O que atravessa {X}?
+R170	Cite uma criação de {X}.
+P1029	Quem foi tripulante de {X}?
+P178	Quem desenvolveu {X}?
+P404	Qual é o modo de jogo de {X}?
+R178	Cite um jogo desenvolvido por {X}.
+R112	Cite algo fundado por {X}.
+P179	De que série {X} faz parte?
+R149	Cite um edifício no estilo {X}.
+P397	Em torno de que astro {X} orbita?
+R86	Cite um filme com música de {X}.
+P1303	Que instrumento {X} toca?
+R57	Cite um filme dirigido por {X}.
+P61	Quem descobriu {X}?
+P113	Qual é um aeroporto de conexão de {X}?
+P264	Qual é a gravadora de {X}?
+P289	Qual é a classe de {X}?
+R509	Cite alguém que morreu de {X}.
+P276	Onde aconteceu {X}?
+P607	De que guerra {X} participou?
+R123	Cite um jogo publicado por {X}.
+R162	Cite um filme produzido por {X}.
+R179	Cite um episódio de {X}.

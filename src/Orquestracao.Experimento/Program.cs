@@ -43,6 +43,19 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
         }, j) + "\n");
         Console.WriteLine($"saude: fonte com {ents.Count} condições em {fatosDoCenario}");
     }
+    // O quiz (quiz-fiel, quiz-simplificada): a fonte sai do Wikidata, junto com as perguntas.
+    var quiz = cenario.StartsWith("quiz", StringComparison.Ordinal) ? Cenarios.LerQuiz(Path.Combine(Raiz(), "docs", "experimento", "cenarios", "quiz"), cenario.Length > 5 ? cenario[5..] : "fiel") : null;
+    if (quiz is not null)
+    {
+        pasta = Path.Combine(Raiz(), "docs", "experimento", "cenarios", cenario);
+        Directory.CreateDirectory(pasta);
+        var jf = new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+        File.WriteAllText(fatosDoCenario = Path.Combine(pasta, "fatos.json"), JsonSerializer.Serialize(new
+        {
+            descricao = "Fonte do quiz, gerada do Wikidata (amostra.json da pasta quiz): cada sujeito é uma entidade e cada relação um atributo.",
+            entidades = quiz.Entidades,
+        }, jf) + "\n");
+    }
     var fonteCenario = File.Exists(fatosDoCenario) ? FonteDeFatosJson.Ler(fatosDoCenario) : fonte;
     var descricao = File.Exists(fatosDoCenario) ? "do cenário (`fatos.json` na pasta)" : $"padrão do protótipo (`dados/fatos.json`, {fonte.Entidades.Count} entidades)";
     // conferiveis: só as perguntas com gabarito curto (a amostra); a análise estrutural usa a base inteira.
@@ -51,6 +64,7 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
         "gsm8k" => Cenarios.LerGsm8k(Path.Combine(pasta, "gsm8k-pt-test.jsonl")),
         "mkqa" => Cenarios.LerMkqa(Path.Combine(pasta, "mkqa-pt.jsonl"), conferiveis),
         "saude" => Cenarios.LerSaude(Path.Combine(pasta, "saudebr-qa.csv")),
+        _ when quiz is not null => quiz.Perguntas,
         "squad" => Cenarios.LerSquad(Path.Combine(pasta, "squad-pt-validation.jsonl"), comTexto: conferiveis),
         _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
     };
@@ -62,12 +76,26 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     {
         var a = Cenarios.Analisar(cenario, Ler(false).Select(p => p.Pergunta).ToList(), new ParserHeuristico(fonteCenario));
         File.WriteAllText(Path.Combine(pasta, "analise.md"), Cenarios.RelatorioAnalise(a, descricao));
+        if (quiz is not null)
+        {
+            // A mesma análise sobre o inglês original (com a mesma fonte): mede se a tradução mudou a repetição de estrutura.
+            var aEn = Cenarios.Analisar(cenario + " (inglês original)", quiz.Originais, new ParserHeuristico(fonteCenario));
+            File.AppendAllText(Path.Combine(pasta, "analise.md"), "\n---\n\n" + Cenarios.RelatorioAnalise(aEn, "do quiz (Wikidata)").Replace("# Análise estrutural", "## Análise estrutural"));
+            Console.WriteLine($"  inglês: {aEn.ChavesDistintas} chaves, teto {aEn.TetoReaproveitamento} ({aEn.TetoReaproveitamentoPct:P1})");
+            if (cenario.EndsWith("simplificada", StringComparison.Ordinal))
+            {
+                var (te, ts) = Cenarios.TokensSimplificacao(quiz.Originais.Zip(quiz.Perguntas.Select(p => p.Pergunta)));
+                Console.WriteLine($"  simplificação: {quiz.Perguntas.Count} chamadas, {te} tokens de entrada, {ts} de saída");
+                File.AppendAllText(Path.Combine(pasta, "analise.md"), $"\n## Custo estimado da simplificação\n\n{quiz.Perguntas.Count} chamadas ao normalizador (uma por pergunta), {te} tokens de entrada e {ts} de saída (≈ 4 caracteres por token).\n");
+            }
+        }
         Console.WriteLine($"{cenario}: {a.Perguntas} perguntas, {a.ComEntidade} com entidade, {a.ChavesDistintas} chaves, teto de reaproveitamento {a.TetoReaproveitamento} ({a.TetoReaproveitamentoPct:P1}), estruturas abstratas repetidas {a.RepeticoesAbstratas}");
     }
     if (opcoes.ContainsKey("preparar"))
     {
         // Saúde: o melhor caso (as chaves que mais se repetem), para exercitar o caminho do template.
-        var amostra = cenario == "saude"
+        // Quiz: 6 perguntas de cada uma das 5 relações mais frequentes (o perfil de um app de quiz).
+        var amostra = quiz is not null ? Cenarios.AmostraPorRelacao(Ler(true), 5, total / 5) : cenario == "saude"
             ? Cenarios.AmostraMelhorCaso(Ler(true), new ParserHeuristico(fonteCenario), total, semente)
             : Cenarios.Amostra(Ler(true), total, semente);
         File.WriteAllText(Path.Combine(pasta, "conjunto.json"), JsonSerializer.Serialize(amostra, jsonOpcoes) + "\n");

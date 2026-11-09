@@ -10,7 +10,7 @@ namespace Orquestracao.Templates;
 /// </summary>
 public static partial class Extrator
 {
-    [GeneratedRegex(@"\{([A-Za-z_]+)\}")]
+    [GeneratedRegex(@"\{([A-Za-z0-9_]+)\}")]
     private static partial Regex Slot();
 
     private static Regex PalavraInteira(string valor) => new($@"(?<![\p{{L}}\p{{N}}]){Regex.Escape(valor)}(?![\p{{L}}\p{{N}}])");

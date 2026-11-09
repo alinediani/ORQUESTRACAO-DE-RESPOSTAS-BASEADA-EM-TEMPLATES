@@ -88,6 +88,17 @@ public class CenariosTests
         Assert.Equal(("qual e a", 2), a.IntencoesMaisFrequentes[0]);
     }
 
+    [Fact]
+    public void Template_ComAtributoDeNomeComDigitos_EPreenchido()
+    {
+        var e = new Entidade { Nome = "Barry Ferguson", Tipo = "item", Atributos = new() { ["p19"] = "Glasgow" } };
+        var t = Extrator.ExtrairTemplate("Barry Ferguson nasceu em Glasgow.", e);
+        Assert.Equal("{entidade} nasceu em {p19}.", t);
+        var outra = new Entidade { Nome = "Sergio Spina", Tipo = "item", Atributos = new() { ["p19"] = "Milão" } };
+        Assert.Equal("Sergio Spina nasceu em Milão.", Extrator.Preencher(t!, outra, new FonteDeFatosJson([e, outra])));
+        Assert.Equal(["p19"], Extrator.Atributos(t!));
+    }
+
     [Theory]
     [InlineData("James corre 540 metros por semana.", "540", true)]
     [InlineData("O total é de R$ 1.200,00.", "1200", true)]

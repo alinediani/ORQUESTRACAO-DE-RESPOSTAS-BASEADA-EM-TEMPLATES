@@ -1,0 +1,31 @@
+﻿id;a;b;familia;gabarito;caminho_prototipo
+1;linha_de_base;prototipo;P495;"México || Estados Unidos Mexicanos || República Mexicana || mx || Mexico";llm
+2;prototipo;linha_de_base;P495;"Índia || India";llm
+3;prototipo;linha_de_base;P136;"Filme musical || musical || musical film";llm
+4;prototipo;linha_de_base;P495;"Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States";llm
+5;linha_de_base;prototipo;P136;"comédia stand-up || Stand-up || Comédia stand up || Stand-up Comedy || Stand Up Comedy || stand-up comedy";llm
+6;linha_de_base;prototipo;P27;"Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States";llm
+7;prototipo;linha_de_base;P495;"Filipinas || República das Filipinas || Philippines";llm
+8;linha_de_base;prototipo;R19;"Dale Steyn";llm
+9;linha_de_base;prototipo;R19;"Abba Gindin";llm
+10;linha_de_base;prototipo;P19;"Irbid";llm
+11;linha_de_base;prototipo;P136;"filme mudo || cinema mudo || filmes mudos || silent film";llm
+12;prototipo;linha_de_base;P27;"Canadá || América do Norte Britânica || ca || CDN || Canada";llm
+13;prototipo;linha_de_base;P136;"música experimental || Experimental music || Musica experimental || experimental music";llm
+14;prototipo;linha_de_base;P19;"Trenton || Trenton, Nova Jersey";llm
+15;prototipo;linha_de_base;P136;"romance || romance literário || novel";llm
+16;prototipo;linha_de_base;P136;"estratégia em tempo real || estratégia || real-time strategy";llm
+17;prototipo;linha_de_base;P19;"Brooklyn || Condado de Kings";template
+18;prototipo;linha_de_base;P495;"Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States";llm
+19;prototipo;linha_de_base;P495;"Espanha || Reino da Espanha || Reino de Espanha || Spain";llm
+20;prototipo;linha_de_base;R19;"Clint Boulton";llm
+21;prototipo;linha_de_base;P27;"Alemanha || FRG || República Federal da Alemanha || Germany";llm
+22;prototipo;linha_de_base;P27;"Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States";template
+23;prototipo;linha_de_base;P19;"Haan";template
+24;prototipo;linha_de_base;R19;"Peter Jones";llm
+25;linha_de_base;prototipo;P19;"Milão || Milan";llm
+26;prototipo;linha_de_base;R19;"Henri Cartan";llm
+27;linha_de_base;prototipo;R19;"Amitabh Mattoo";llm
+28;prototipo;linha_de_base;P19;"Dublin";llm
+29;prototipo;linha_de_base;P27;"Estados Unidos || E.U.A. || U.S.A || Estados Unidos da América || United States";template
+30;prototipo;linha_de_base;P27;"Reino Unido || Reino Unido da Grã-Bretanha e Irlanda do Norte || Grã-Bretanha || UKGBNI || United Kingdom";llm
