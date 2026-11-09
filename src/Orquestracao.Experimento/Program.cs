@@ -33,9 +33,11 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     var fatosDoCenario = Path.Combine(pasta, "fatos.json");
     var fonteCenario = File.Exists(fatosDoCenario) ? FonteDeFatosJson.Ler(fatosDoCenario) : fonte;
     var descricao = File.Exists(fatosDoCenario) ? "do cenário (`fatos.json` na pasta)" : $"padrão do protótipo (`dados/fatos.json`, {fonte.Entidades.Count} entidades)";
-    var todas = cenario switch
+    // conferiveis: só as perguntas com gabarito curto (a amostra); a análise estrutural usa a base inteira.
+    List<PerguntaTeste> Ler(bool conferiveis) => cenario switch
     {
         "gsm8k" => Cenarios.LerGsm8k(Path.Combine(pasta, "gsm8k-pt-test.jsonl")),
+        "mkqa" => Cenarios.LerMkqa(Path.Combine(pasta, "mkqa-pt.jsonl"), conferiveis),
         _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
     };
     var jsonOpcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
@@ -44,13 +46,13 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     };
     if (opcoes.ContainsKey("analisar"))
     {
-        var a = Cenarios.Analisar(cenario, todas.Select(p => p.Pergunta).ToList(), new ParserHeuristico(fonteCenario));
+        var a = Cenarios.Analisar(cenario, Ler(false).Select(p => p.Pergunta).ToList(), new ParserHeuristico(fonteCenario));
         File.WriteAllText(Path.Combine(pasta, "analise.md"), Cenarios.RelatorioAnalise(a, descricao));
         Console.WriteLine($"{cenario}: {a.Perguntas} perguntas, {a.ComEntidade} com entidade, {a.ChavesDistintas} chaves, teto de reaproveitamento {a.TetoReaproveitamento} ({a.TetoReaproveitamentoPct:P1}), estruturas abstratas repetidas {a.RepeticoesAbstratas}");
     }
     if (opcoes.ContainsKey("preparar"))
     {
-        var amostra = Cenarios.Amostra(todas, total, semente);
+        var amostra = Cenarios.Amostra(Ler(true), total, semente);
         File.WriteAllText(Path.Combine(pasta, "conjunto.json"), JsonSerializer.Serialize(amostra, jsonOpcoes) + "\n");
         Console.WriteLine($"{cenario}: amostra de {amostra.Count} perguntas (semente {semente}) em {Path.Combine(pasta, "conjunto.json")}");
     }

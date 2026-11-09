@@ -1,0 +1,242 @@
+[
+  {
+    "n": 1,
+    "pergunta": "qual é o recorde de temperatura mais quente na terra",
+    "familia": "number_with_unit",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "134.1"
+  },
+  {
+    "n": 2,
+    "pergunta": "quem canta that's what i like about you",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "The Romantics"
+  },
+  {
+    "n": 3,
+    "pergunta": "qual é o maior rio dos estados unidos",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Rio Mississippi || Rio Missouri"
+  },
+  {
+    "n": 4,
+    "pergunta": "quem escreveu i can't make you love me",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Mire Kreid || Allen Shamblin"
+  },
+  {
+    "n": 5,
+    "pergunta": "quem interpretou o pantera negra no filme pantera negra",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Chadwick Boseman || Chadwick Aaron Boseman"
+  },
+  {
+    "n": 6,
+    "pergunta": "quem venceu o Miami Dolphins em 1972 no Super Bowl",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Washington Redskins || Boston Redskins"
+  },
+  {
+    "n": 7,
+    "pergunta": "em qual temporada os amigos Mônica e Chandler se juntam",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Friends (4.ª temporada) || 4.0 || 4"
+  },
+  {
+    "n": 8,
+    "pergunta": "qual é a medida de um colchão queen size",
+    "familia": "number_with_unit",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "6080"
+  },
+  {
+    "n": 9,
+    "pergunta": "quando foi a última vez que israel ganhou a eurovision",
+    "familia": "date",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "2018"
+  },
+  {
+    "n": 10,
+    "pergunta": "quem atuou no filme o reencontro",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "William Hurt || Glenn Close || Jeff Goldblum || Kevin Kline || Tom Berenger"
+  },
+  {
+    "n": 11,
+    "pergunta": "quem fez as vozes do rei leão",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Chiwetel Ejiofor || James Earl Jones || Beyoncé || Beyoncé Giselle Knowles-Carter || Seth Rogen || Seth Rogan || Donald Glover || Childish Gambino"
+  },
+  {
+    "n": 12,
+    "pergunta": "personagem do john goodman em o grande lebowski",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Walter Sobchak"
+  },
+  {
+    "n": 13,
+    "pergunta": "Arizona é um estado vermelho ou azul?",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "vermelho || encarnado"
+  },
+  {
+    "n": 14,
+    "pergunta": "qual é a comida mais popular no Canadá",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "poutine"
+  },
+  {
+    "n": 15,
+    "pergunta": "qual o nome do cachorro da rca victor",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Nipper"
+  },
+  {
+    "n": 16,
+    "pergunta": "quais são os nomes das quatro tartarugas ninjas",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Leonardo || Michelangelo || Raphael || Donatello"
+  },
+  {
+    "n": 17,
+    "pergunta": "barragens no rio missouri em dakota do sul",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Represa de Fort Randall || Represa de Big Bend || represa de Oahe"
+  },
+  {
+    "n": 18,
+    "pergunta": "quem canta did i shave my legs for this",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Deana Carter"
+  },
+  {
+    "n": 19,
+    "pergunta": "quantas vitórias os dodgers tem nessa temporada",
+    "familia": "number",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "106"
+  },
+  {
+    "n": 20,
+    "pergunta": "quem canta you're just too good to be true",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Frankie Valli"
+  },
+  {
+    "n": 21,
+    "pergunta": "qual canal é o canal Smithsonian na  directv?",
+    "familia": "number",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "570"
+  },
+  {
+    "n": 22,
+    "pergunta": "quem interpreta a mãe em the parent trap",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Natasha Richardson"
+  },
+  {
+    "n": 23,
+    "pergunta": "quem interpreta calypso em piratas do Caribe",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Naomie Harris || Naomie Melanie Harris"
+  },
+  {
+    "n": 24,
+    "pergunta": "quantas calorias tem em um soft serve de sorvete",
+    "familia": "number",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "191"
+  },
+  {
+    "n": 25,
+    "pergunta": "qual é a velocidade do som ao nível do mar",
+    "familia": "number_with_unit",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "344"
+  },
+  {
+    "n": 26,
+    "pergunta": "quem foi o último presidente a sofrer impeachment",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Bill Clinton"
+  },
+  {
+    "n": 27,
+    "pergunta": "quantos anos tem o vocalista do walk the moon",
+    "familia": "number_with_unit",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "32"
+  },
+  {
+    "n": 28,
+    "pergunta": "qual é o primeiro estado nos eua",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Delaware"
+  },
+  {
+    "n": 29,
+    "pergunta": "quem canta o melhor ainda está por vir",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Frank Sinatra || Francis Albert Sinatra"
+  },
+  {
+    "n": 30,
+    "pergunta": "Quem é a juíza do American Idol",
+    "familia": "entity",
+    "entidade": "",
+    "atributo": "resposta",
+    "gabarito": "Luke Bryan || Katy Perry || Kathy Beth Terry || Box || Katy Hudson || Black and Gold || Katheryn Elizabeth Hudson, || (A) Katy Perry"
+  }
+]

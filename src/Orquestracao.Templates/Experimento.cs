@@ -197,6 +197,9 @@ public static class Experimento
     /// <summary>A resposta traz o gabarito (sem diferenciar maiúsculas e acentos)?</summary>
     public static bool Correta(string resposta, string gabarito)
     {
+        // Gabarito com alternativas ("Chris Young || Young"): qualquer uma vale.
+        if (gabarito.Contains(" || ", StringComparison.Ordinal))
+            return gabarito.Split(" || ").Any(g => g.Trim().Length > 0 && Correta(resposta, g.Trim()));
         // Gabarito numérico (o GSM8K): vale o número, escrito como for ("1.200", "1200", "R$ 1.200,00").
         if (decimal.TryParse(gabarito, NumberStyles.Number, CultureInfo.InvariantCulture, out var alvo) && !gabarito.Contains(','))
             return Numeros(resposta).Contains(alvo);

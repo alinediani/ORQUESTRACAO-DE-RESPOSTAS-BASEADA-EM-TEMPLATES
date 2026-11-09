@@ -11,6 +11,8 @@ Gerado por `dotnet run --project src/Orquestracao.Experimento -- --cenario gsm8k
 | **Teto de reaproveitamento** (repetições de chave com entidade) | **0 (0,0%)** |
 | Chaves abstratas distintas (números → {n}) | 1318 |
 | Perguntas com a estrutura abstrata repetida | 0 (0,0%) |
+| Intenções distintas (3 primeiras palavras) | 1283 |
+| Perguntas em intenções que aparecem 10+ vezes | 0 (0,0%) |
 
 ## Chaves que mais se repetem
 
@@ -19,4 +21,19 @@ Nenhuma chave se repete.
 ## Estruturas abstratas que mais se repetem
 
 Nenhuma chave se repete.
+
+## Intenções que mais se repetem (3 primeiras palavras)
+
+| Chave | Perguntas |
+|---|---:|
+| `uma empresa de` | 4 |
+| `james compra um` | 3 |
+| `john decide fazer` | 3 |
+| `na segunda feira` | 3 |
+| `um vendedor de` | 3 |
+| `uma loja de` | 3 |
+| `a cidade de` | 2 |
+| `a familia de` | 2 |
+| `a idade de` | 2 |
+| `a mae do` | 2 |
 

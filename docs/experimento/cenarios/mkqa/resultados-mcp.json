@@ -1,0 +1,885 @@
+{
+  "modo": "mcp",
+  "cenario": "mkqa",
+  "semente": 2026,
+  "prototipo": {
+    "estrategia": "Protótipo (templates)",
+    "perguntas": 30,
+    "chamadasGeracao": 30,
+    "chamadasParser": 0,
+    "acertosTemplate": 0,
+    "taxaAcertoTemplate": 0,
+    "tokens": 2494,
+    "custo": 0.019655999999999996,
+    "latenciaMediaMs": 231.3996366666667,
+    "corretas": 20,
+    "taxaCorretas": 0.6666666666666666
+  },
+  "linhaDeBase": {
+    "estrategia": "Linha de base (LLM puro)",
+    "perguntas": 30,
+    "chamadasGeracao": 30,
+    "chamadasParser": 0,
+    "acertosTemplate": 0,
+    "taxaAcertoTemplate": 0,
+    "tokens": 2494,
+    "custo": 0.019655999999999996,
+    "latenciaMediaMs": 234.21539999999996,
+    "corretas": 20,
+    "taxaCorretas": 0.6666666666666666
+  },
+  "comparacao": {
+    "vitoriasPrototipo": 0,
+    "vitoriasLinhaDeBase": 0,
+    "empates": 30
+  },
+  "chavesPorFamilia": {
+    "number_with_unit": 4,
+    "entity": 22,
+    "date": 1,
+    "number": 3
+  },
+  "templatesSalvos": 0,
+  "respostas": [
+    {
+      "n": 1,
+      "pergunta": "qual é o recorde de temperatura mais quente na terra",
+      "familia": "number_with_unit",
+      "gabarito": "134.1",
+      "prototipo": {
+        "n": 1,
+        "texto": "O recorde de temperatura mais quente na Terra é de 56,7 °C (134 °F), registrado no Vale da Morte, na Califórnia, em 1913.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 96,
+        "custo": 0.00088,
+        "latenciaMs": 201.1498
+      },
+      "linhaDeBase": {
+        "n": 1,
+        "texto": "O recorde de temperatura mais quente na Terra é de 56,7 °C (134 °F), registrado no Vale da Morte, na Califórnia, em 1913.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 96,
+        "custo": 0.00088,
+        "latenciaMs": 247.4742
+      }
+    },
+    {
+      "n": 2,
+      "pergunta": "quem canta that's what i like about you",
+      "familia": "entity",
+      "gabarito": "The Romantics",
+      "prototipo": {
+        "n": 2,
+        "texto": "\"That's What I Like About You\" é cantada por Trisha Yearwood.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 78,
+        "custo": 0.000568,
+        "latenciaMs": 245.4929
+      },
+      "linhaDeBase": {
+        "n": 2,
+        "texto": "\"That's What I Like About You\" é cantada por Trisha Yearwood.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 78,
+        "custo": 0.000568,
+        "latenciaMs": 255.5753
+      }
+    },
+    {
+      "n": 3,
+      "pergunta": "qual é o maior rio dos estados unidos",
+      "familia": "entity",
+      "gabarito": "Rio Mississippi || Rio Missouri",
+      "prototipo": {
+        "n": 3,
+        "texto": "O maior rio dos Estados Unidos é o Rio Missouri.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 74,
+        "custo": 0.000488,
+        "latenciaMs": 204.3216
+      },
+      "linhaDeBase": {
+        "n": 3,
+        "texto": "O maior rio dos Estados Unidos é o Rio Missouri.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 74,
+        "custo": 0.000488,
+        "latenciaMs": 249.492
+      }
+    },
+    {
+      "n": 4,
+      "pergunta": "quem escreveu i can't make you love me",
+      "familia": "entity",
+      "gabarito": "Mire Kreid || Allen Shamblin",
+      "prototipo": {
+        "n": 4,
+        "texto": "\"I Can't Make You Love Me\" foi escrita por Mike Reid e Allen Shamblin.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 80,
+        "custo": 0.000608,
+        "latenciaMs": 183.0542
+      },
+      "linhaDeBase": {
+        "n": 4,
+        "texto": "\"I Can't Make You Love Me\" foi escrita por Mike Reid e Allen Shamblin.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 80,
+        "custo": 0.000608,
+        "latenciaMs": 204.7777
+      }
+    },
+    {
+      "n": 5,
+      "pergunta": "quem interpretou o pantera negra no filme pantera negra",
+      "familia": "entity",
+      "gabarito": "Chadwick Boseman || Chadwick Aaron Boseman",
+      "prototipo": {
+        "n": 5,
+        "texto": "O Pantera Negra foi interpretado por Chadwick Boseman no filme Pantera Negra.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 86,
+        "custo": 0.000664,
+        "latenciaMs": 211.5581
+      },
+      "linhaDeBase": {
+        "n": 5,
+        "texto": "O Pantera Negra foi interpretado por Chadwick Boseman no filme Pantera Negra.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 86,
+        "custo": 0.000664,
+        "latenciaMs": 253.1281
+      }
+    },
+    {
+      "n": 6,
+      "pergunta": "quem venceu o Miami Dolphins em 1972 no Super Bowl",
+      "familia": "entity",
+      "gabarito": "Washington Redskins || Boston Redskins",
+      "prototipo": {
+        "n": 6,
+        "texto": "No Super Bowl VII, da temporada de 1972, o Miami Dolphins venceu o Washington Redskins.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.0007,
+        "latenciaMs": 230.7893
+      },
+      "linhaDeBase": {
+        "n": 6,
+        "texto": "No Super Bowl VII, da temporada de 1972, o Miami Dolphins venceu o Washington Redskins.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.0007,
+        "latenciaMs": 211.7174
+      }
+    },
+    {
+      "n": 7,
+      "pergunta": "em qual temporada os amigos Mônica e Chandler se juntam",
+      "familia": "entity",
+      "gabarito": "Friends (4.ª temporada) || 4.0 || 4",
+      "prototipo": {
+        "n": 7,
+        "texto": "Mônica e Chandler ficam juntos no final da quarta temporada de Friends, no casamento de Ross em Londres.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 92,
+        "custo": 0.000784,
+        "latenciaMs": 230.3044
+      },
+      "linhaDeBase": {
+        "n": 7,
+        "texto": "Mônica e Chandler ficam juntos no final da quarta temporada de Friends, no casamento de Ross em Londres.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 92,
+        "custo": 0.000784,
+        "latenciaMs": 263.9893
+      }
+    },
+    {
+      "n": 8,
+      "pergunta": "qual é a medida de um colchão queen size",
+      "familia": "number_with_unit",
+      "gabarito": "6080",
+      "prototipo": {
+        "n": 8,
+        "texto": "Um colchão queen size mede 60 por 80 polegadas (cerca de 152 por 203 cm).",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 81,
+        "custo": 0.000628,
+        "latenciaMs": 190.0858
+      },
+      "linhaDeBase": {
+        "n": 8,
+        "texto": "Um colchão queen size mede 60 por 80 polegadas (cerca de 152 por 203 cm).",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 81,
+        "custo": 0.000628,
+        "latenciaMs": 224.9517
+      }
+    },
+    {
+      "n": 9,
+      "pergunta": "quando foi a última vez que israel ganhou a eurovision",
+      "familia": "date",
+      "gabarito": "2018",
+      "prototipo": {
+        "n": 9,
+        "texto": "A última vez que Israel ganhou a Eurovision foi em 2018, com Netta.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 83,
+        "custo": 0.000604,
+        "latenciaMs": 181.5491
+      },
+      "linhaDeBase": {
+        "n": 9,
+        "texto": "A última vez que Israel ganhou a Eurovision foi em 2018, com Netta.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 83,
+        "custo": 0.000604,
+        "latenciaMs": 207.6937
+      }
+    },
+    {
+      "n": 10,
+      "pergunta": "quem atuou no filme o reencontro",
+      "familia": "entity",
+      "gabarito": "William Hurt || Glenn Close || Jeff Goldblum || Kevin Kline || Tom Berenger",
+      "prototipo": {
+        "n": 10,
+        "texto": "O filme The Reunion (2011) tem no elenco John Cena, Ethan Embry, Boyd Holbrook e Amy Smart.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 83,
+        "custo": 0.0007,
+        "latenciaMs": 192.8772
+      },
+      "linhaDeBase": {
+        "n": 10,
+        "texto": "O filme The Reunion (2011) tem no elenco John Cena, Ethan Embry, Boyd Holbrook e Amy Smart.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 83,
+        "custo": 0.0007,
+        "latenciaMs": 261.8269
+      }
+    },
+    {
+      "n": 11,
+      "pergunta": "quem fez as vozes do rei leão",
+      "familia": "entity",
+      "gabarito": "Chiwetel Ejiofor || James Earl Jones || Beyoncé || Beyoncé Giselle Knowles-Carter || Seth Rogen || Seth Rogan || Donald Glover || Childish Gambino",
+      "prototipo": {
+        "n": 11,
+        "texto": "As vozes de O Rei Leão (1994) foram feitas por Matthew Broderick, James Earl Jones, Jeremy Irons, Nathan Lane, Ernie Sabella, Whoopi Goldberg, Rowan Atkinson e Moira Kelly, entre outros.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 107,
+        "custo": 0.00118,
+        "latenciaMs": 243.6825
+      },
+      "linhaDeBase": {
+        "n": 11,
+        "texto": "As vozes de O Rei Leão (1994) foram feitas por Matthew Broderick, James Earl Jones, Jeremy Irons, Nathan Lane, Ernie Sabella, Whoopi Goldberg, Rowan Atkinson e Moira Kelly, entre outros.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 107,
+        "custo": 0.00118,
+        "latenciaMs": 223.1497
+      }
+    },
+    {
+      "n": 12,
+      "pergunta": "personagem do john goodman em o grande lebowski",
+      "familia": "entity",
+      "gabarito": "Walter Sobchak",
+      "prototipo": {
+        "n": 12,
+        "texto": "O personagem de John Goodman em O Grande Lebowski é Walter Sobchak.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 81,
+        "custo": 0.000596,
+        "latenciaMs": 246.1015
+      },
+      "linhaDeBase": {
+        "n": 12,
+        "texto": "O personagem de John Goodman em O Grande Lebowski é Walter Sobchak.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 81,
+        "custo": 0.000596,
+        "latenciaMs": 259.701
+      }
+    },
+    {
+      "n": 13,
+      "pergunta": "Arizona é um estado vermelho ou azul?",
+      "familia": "entity",
+      "gabarito": "vermelho || encarnado",
+      "prototipo": {
+        "n": 13,
+        "texto": "O Arizona é tradicionalmente um estado vermelho (republicano), embora tenha votado no candidato democrata em 2020.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 91,
+        "custo": 0.000828,
+        "latenciaMs": 189.7741
+      },
+      "linhaDeBase": {
+        "n": 13,
+        "texto": "O Arizona é tradicionalmente um estado vermelho (republicano), embora tenha votado no candidato democrata em 2020.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 91,
+        "custo": 0.000828,
+        "latenciaMs": 257.0549
+      }
+    },
+    {
+      "n": 14,
+      "pergunta": "qual é a comida mais popular no Canadá",
+      "familia": "entity",
+      "gabarito": "poutine",
+      "prototipo": {
+        "n": 14,
+        "texto": "A comida mais popular do Canadá é a poutine.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000468,
+        "latenciaMs": 236.8278
+      },
+      "linhaDeBase": {
+        "n": 14,
+        "texto": "A comida mais popular do Canadá é a poutine.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000468,
+        "latenciaMs": 235.0675
+      }
+    },
+    {
+      "n": 15,
+      "pergunta": "qual o nome do cachorro da rca victor",
+      "familia": "entity",
+      "gabarito": "Nipper",
+      "prototipo": {
+        "n": 15,
+        "texto": "O cachorro da RCA Victor se chama Nipper.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000468,
+        "latenciaMs": 244.6738
+      },
+      "linhaDeBase": {
+        "n": 15,
+        "texto": "O cachorro da RCA Victor se chama Nipper.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 73,
+        "custo": 0.000468,
+        "latenciaMs": 232.9275
+      }
+    },
+    {
+      "n": 16,
+      "pergunta": "quais são os nomes das quatro tartarugas ninjas",
+      "familia": "entity",
+      "gabarito": "Leonardo || Michelangelo || Raphael || Donatello",
+      "prototipo": {
+        "n": 16,
+        "texto": "As quatro Tartarugas Ninja são Leonardo, Michelangelo, Donatello e Raphael.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 83,
+        "custo": 0.000636,
+        "latenciaMs": 263.2689
+      },
+      "linhaDeBase": {
+        "n": 16,
+        "texto": "As quatro Tartarugas Ninja são Leonardo, Michelangelo, Donatello e Raphael.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 83,
+        "custo": 0.000636,
+        "latenciaMs": 221.1222
+      }
+    },
+    {
+      "n": 17,
+      "pergunta": "barragens no rio missouri em dakota do sul",
+      "familia": "entity",
+      "gabarito": "Represa de Fort Randall || Represa de Big Bend || represa de Oahe",
+      "prototipo": {
+        "n": 17,
+        "texto": "No rio Missouri, em Dakota do Sul, ficam as barragens de Oahe, Big Bend, Fort Randall e Gavins Point.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 89,
+        "custo": 0.000772,
+        "latenciaMs": 247.2445
+      },
+      "linhaDeBase": {
+        "n": 17,
+        "texto": "No rio Missouri, em Dakota do Sul, ficam as barragens de Oahe, Big Bend, Fort Randall e Gavins Point.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 89,
+        "custo": 0.000772,
+        "latenciaMs": 219.3307
+      }
+    },
+    {
+      "n": 18,
+      "pergunta": "quem canta did i shave my legs for this",
+      "familia": "entity",
+      "gabarito": "Deana Carter",
+      "prototipo": {
+        "n": 18,
+        "texto": "\"Did I Shave My Legs for This?\" é cantada por Deana Carter.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 77,
+        "custo": 0.000548,
+        "latenciaMs": 211.0638
+      },
+      "linhaDeBase": {
+        "n": 18,
+        "texto": "\"Did I Shave My Legs for This?\" é cantada por Deana Carter.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 77,
+        "custo": 0.000548,
+        "latenciaMs": 240.2266
+      }
+    },
+    {
+      "n": 19,
+      "pergunta": "quantas vitórias os dodgers tem nessa temporada",
+      "familia": "number",
+      "gabarito": "106",
+      "prototipo": {
+        "n": 19,
+        "texto": "Não sei o número da temporada atual dos Dodgers; na temporada regular de 2019, eles tiveram 106 vitórias.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 91,
+        "custo": 0.000796,
+        "latenciaMs": 224.924
+      },
+      "linhaDeBase": {
+        "n": 19,
+        "texto": "Não sei o número da temporada atual dos Dodgers; na temporada regular de 2019, eles tiveram 106 vitórias.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 91,
+        "custo": 0.000796,
+        "latenciaMs": 245.1047
+      }
+    },
+    {
+      "n": 20,
+      "pergunta": "quem canta you're just too good to be true",
+      "familia": "entity",
+      "gabarito": "Frankie Valli",
+      "prototipo": {
+        "n": 20,
+        "texto": "\"Can't Take My Eyes Off You\" (\"You're just too good to be true\") é cantada por Frankie Valli.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.000732,
+        "latenciaMs": 171.9057
+      },
+      "linhaDeBase": {
+        "n": 20,
+        "texto": "\"Can't Take My Eyes Off You\" (\"You're just too good to be true\") é cantada por Frankie Valli.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.000732,
+        "latenciaMs": 217.2413
+      }
+    },
+    {
+      "n": 21,
+      "pergunta": "qual canal é o canal Smithsonian na  directv?",
+      "familia": "number",
+      "gabarito": "570",
+      "prototipo": {
+        "n": 21,
+        "texto": "O Smithsonian Channel fica no canal 570 da DirecTV.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 77,
+        "custo": 0.000516,
+        "latenciaMs": 220.108
+      },
+      "linhaDeBase": {
+        "n": 21,
+        "texto": "O Smithsonian Channel fica no canal 570 da DirecTV.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 77,
+        "custo": 0.000516,
+        "latenciaMs": 231.046
+      }
+    },
+    {
+      "n": 22,
+      "pergunta": "quem interpreta a mãe em the parent trap",
+      "familia": "entity",
+      "gabarito": "Natasha Richardson",
+      "prototipo": {
+        "n": 22,
+        "texto": "A mãe em The Parent Trap (1998) é interpretada por Natasha Richardson.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 80,
+        "custo": 0.000608,
+        "latenciaMs": 198.5173
+      },
+      "linhaDeBase": {
+        "n": 22,
+        "texto": "A mãe em The Parent Trap (1998) é interpretada por Natasha Richardson.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 80,
+        "custo": 0.000608,
+        "latenciaMs": 215.6689
+      }
+    },
+    {
+      "n": 23,
+      "pergunta": "quem interpreta calypso em piratas do Caribe",
+      "familia": "entity",
+      "gabarito": "Naomie Harris || Naomie Melanie Harris",
+      "prototipo": {
+        "n": 23,
+        "texto": "Calypso, em Piratas do Caribe, é interpretada por Naomie Harris.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 79,
+        "custo": 0.000572,
+        "latenciaMs": 174.9124
+      },
+      "linhaDeBase": {
+        "n": 23,
+        "texto": "Calypso, em Piratas do Caribe, é interpretada por Naomie Harris.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 79,
+        "custo": 0.000572,
+        "latenciaMs": 213.4405
+      }
+    },
+    {
+      "n": 24,
+      "pergunta": "quantas calorias tem em um soft serve de sorvete",
+      "familia": "number",
+      "gabarito": "191",
+      "prototipo": {
+        "n": 24,
+        "texto": "Uma porção de sorvete soft serve (uma xícara) tem cerca de 220 calorias.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 82,
+        "custo": 0.000616,
+        "latenciaMs": 206.2457
+      },
+      "linhaDeBase": {
+        "n": 24,
+        "texto": "Uma porção de sorvete soft serve (uma xícara) tem cerca de 220 calorias.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 82,
+        "custo": 0.000616,
+        "latenciaMs": 238.4647
+      }
+    },
+    {
+      "n": 25,
+      "pergunta": "qual é a velocidade do som ao nível do mar",
+      "familia": "number_with_unit",
+      "gabarito": "344",
+      "prototipo": {
+        "n": 25,
+        "texto": "Ao nível do mar, a 15 °C, a velocidade do som é de cerca de 340 m/s (1.225 km/h, ou 761 mph).",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.000732,
+        "latenciaMs": 319.8817
+      },
+      "linhaDeBase": {
+        "n": 25,
+        "texto": "Ao nível do mar, a 15 °C, a velocidade do som é de cerca de 340 m/s (1.225 km/h, ou 761 mph).",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.000732,
+        "latenciaMs": 236.733
+      }
+    },
+    {
+      "n": 26,
+      "pergunta": "quem foi o último presidente a sofrer impeachment",
+      "familia": "entity",
+      "gabarito": "Bill Clinton",
+      "prototipo": {
+        "n": 26,
+        "texto": "O último presidente a sofrer impeachment foi Donald Trump, em 2019 e de novo em 2021.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.0007,
+        "latenciaMs": 316.6676
+      },
+      "linhaDeBase": {
+        "n": 26,
+        "texto": "O último presidente a sofrer impeachment foi Donald Trump, em 2019 e de novo em 2021.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 87,
+        "custo": 0.0007,
+        "latenciaMs": 229.1723
+      }
+    },
+    {
+      "n": 27,
+      "pergunta": "quantos anos tem o vocalista do walk the moon",
+      "familia": "number_with_unit",
+      "gabarito": "32",
+      "prototipo": {
+        "n": 27,
+        "texto": "Nicholas Petricca, vocalista do Walk the Moon, nasceu em 1987 e tem cerca de 38 anos.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 86,
+        "custo": 0.000696,
+        "latenciaMs": 289.0498
+      },
+      "linhaDeBase": {
+        "n": 27,
+        "texto": "Nicholas Petricca, vocalista do Walk the Moon, nasceu em 1987 e tem cerca de 38 anos.",
+        "correta": false,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 86,
+        "custo": 0.000696,
+        "latenciaMs": 227.2656
+      }
+    },
+    {
+      "n": 28,
+      "pergunta": "qual é o primeiro estado nos eua",
+      "familia": "entity",
+      "gabarito": "Delaware",
+      "prototipo": {
+        "n": 28,
+        "texto": "O primeiro estado dos EUA é Delaware.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.00044,
+        "latenciaMs": 223.5617
+      },
+      "linhaDeBase": {
+        "n": 28,
+        "texto": "O primeiro estado dos EUA é Delaware.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.00044,
+        "latenciaMs": 242.4974
+      }
+    },
+    {
+      "n": 29,
+      "pergunta": "quem canta o melhor ainda está por vir",
+      "familia": "entity",
+      "gabarito": "Frank Sinatra || Francis Albert Sinatra",
+      "prototipo": {
+        "n": 29,
+        "texto": "\"The Best Is Yet to Come\" (\"O melhor ainda está por vir\") é cantada por Frank Sinatra.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 84,
+        "custo": 0.000688,
+        "latenciaMs": 382.2712
+      },
+      "linhaDeBase": {
+        "n": 29,
+        "texto": "\"The Best Is Yet to Come\" (\"O melhor ainda está por vir\") é cantada por Frank Sinatra.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 84,
+        "custo": 0.000688,
+        "latenciaMs": 251.0219
+      }
+    },
+    {
+      "n": 30,
+      "pergunta": "Quem é a juíza do American Idol",
+      "familia": "entity",
+      "gabarito": "Luke Bryan || Katy Perry || Kathy Beth Terry || Box || Katy Hudson || Black and Gold || Katheryn Elizabeth Hudson, || (A) Katy Perry",
+      "prototipo": {
+        "n": 30,
+        "texto": "A juíza do American Idol é Katy Perry.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.00044,
+        "latenciaMs": 260.1247
+      },
+      "linhaDeBase": {
+        "n": 30,
+        "texto": "A juíza do American Idol é Katy Perry.",
+        "correta": true,
+        "caminho": "llm",
+        "chamadasGeracao": 1,
+        "chamadasParser": 0,
+        "tokens": 70,
+        "custo": 0.00044,
+        "latenciaMs": 209.5993
+      }
+    }
+  ]
+}

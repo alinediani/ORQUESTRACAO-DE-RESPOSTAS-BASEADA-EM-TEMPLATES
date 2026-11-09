@@ -20,6 +20,26 @@ public class CenariosTests
     }
 
     [Fact]
+    public void Mkqa_SoRespostasConferiveis_ComAlternativasNoGabarito()
+    {
+        var arq = Path.GetTempFileName();
+        File.WriteAllText(arq, """
+            {"query_pt":"quem canta x","answers_pt":[{"type":"entity","text":"Chris Young","aliases":["C. Young"]}]}
+            {"query_pt":"quantas temporadas","answers_pt":[{"type":"number","text":"2.0"}]}
+            {"query_pt":"quanto mede","answers_pt":[{"type":"number_with_unit","text":"11.0 ano","aliases":["11 ano"]}]}
+            {"query_pt":"quando foi","answers_pt":[{"type":"date","text":"2013"}]}
+            {"query_pt":"quando nasceu","answers_pt":[{"type":"date","text":"2019-08-29"}]}
+            {"query_pt":"por que","answers_pt":[{"type":"long_answer","text":null}]}
+            """);
+        var l = Cenarios.LerMkqa(arq);
+        Assert.Equal([("Chris Young || C. Young", "entity"), ("2", "number"), ("11", "number_with_unit"), ("2013", "date")], l.Select(p => (p.Gabarito, p.Familia)));
+        Assert.Equal(6, Cenarios.LerMkqa(arq, soConferiveis: false).Count);
+        Assert.True(Experimento.Correta("Quem canta é C. Young.", l[0].Gabarito));
+        Assert.False(Experimento.Correta("Quem canta é Neil Young.", l[0].Gabarito));
+        File.Delete(arq);
+    }
+
+    [Fact]
     public void Amostra_ReprodutivelERenumerada()
     {
         var todas = Enumerable.Range(1, 50).Select(i => new PerguntaTeste(i, $"p{i}", "f", "", "a", $"{i}")).ToList();
@@ -45,6 +65,7 @@ public class CenariosTests
         Assert.Equal(3, a.ChavesAbstratasDistintas);
         Assert.Equal(("capital {pais}", 3), a.MaisFrequentes[0]);
         Assert.Contains("Teto de reaproveitamento", Cenarios.RelatorioAnalise(a, "de teste"));
+        Assert.Equal(("qual e a", 2), a.IntencoesMaisFrequentes[0]);
     }
 
     [Theory]
