@@ -1,0 +1,178 @@
+[
+  {
+    "n": 1,
+    "pergunta": "Reumatologista trata de artrose?",
+    "familia": "reumatologia",
+    "entidade": "artrose",
+    "atributo": "reumatologista trata {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 2,
+    "pergunta": "Labirintite tem cura?",
+    "familia": "otorrinolaringologia",
+    "entidade": "labirintite",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 3,
+    "pergunta": "Qual o melhor tratamento para Mioma?",
+    "familia": "ginecologia e obstetricia",
+    "entidade": "mioma",
+    "atributo": "melhor tratamento para {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 4,
+    "pergunta": "Gostaria de saber sobre tratamento de queda de cabelo.",
+    "familia": "dermatologia",
+    "entidade": "alopecia",
+    "atributo": "de sobre tratamento {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 5,
+    "pergunta": "Estou com a pressão alta. O que fazer?",
+    "familia": "cardiologia",
+    "entidade": "hipertensão",
+    "atributo": "estou com {condicao} que fazer",
+    "gabarito": ""
+  },
+  {
+    "n": 6,
+    "pergunta": "ARTROSE TEM CURA?",
+    "familia": "reumatologia",
+    "entidade": "artrose",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 7,
+    "pergunta": "Estou com queda de cabelo, o que fazer?",
+    "familia": "dermatologia",
+    "entidade": "alopecia",
+    "atributo": "estou com {condicao} que fazer",
+    "gabarito": ""
+  },
+  {
+    "n": 8,
+    "pergunta": "Gostaria de saber sobre tratamento da endometriose.",
+    "familia": "ginecologia e obstetricia",
+    "entidade": "endometriose",
+    "atributo": "de sobre tratamento {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 9,
+    "pergunta": "Depressão tem cura?",
+    "familia": "psiquiatria",
+    "entidade": "depressão",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 10,
+    "pergunta": "Ejaculação precoce tem cura??",
+    "familia": "urologia",
+    "entidade": "ejaculação precoce",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 11,
+    "pergunta": "A ejaculação precoce tem cura?",
+    "familia": "urologia",
+    "entidade": "ejaculação precoce",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 12,
+    "pergunta": "Qual o melhor tratamento para queda de cabelo?",
+    "familia": "dermatologia",
+    "entidade": "alopecia",
+    "atributo": "melhor tratamento para {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 13,
+    "pergunta": "O que é miopia?",
+    "familia": "oftalmologia",
+    "entidade": "miopia",
+    "atributo": "que {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 14,
+    "pergunta": "A depressão tem cura?",
+    "familia": "psiquiatria",
+    "entidade": "depressão",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 15,
+    "pergunta": "ZUMBIDO TEM CURA?",
+    "familia": "otorrinolaringologia",
+    "entidade": "zumbido",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 16,
+    "pergunta": "O que é TDAH?",
+    "familia": "psiquiatria",
+    "entidade": "TDAH",
+    "atributo": "que {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 17,
+    "pergunta": "Ansiedade tem cura?",
+    "familia": "psiquiatria",
+    "entidade": "ansiedade",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 18,
+    "pergunta": "O REUMATOLOGISTA TRATA DE ARTROSE?",
+    "familia": "reumatologia",
+    "entidade": "artrose",
+    "atributo": "reumatologista trata {condicao}",
+    "gabarito": ""
+  },
+  {
+    "n": 19,
+    "pergunta": "Fibromialgia tem cura?",
+    "familia": "reumatologia",
+    "entidade": "fibromialgia",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 20,
+    "pergunta": "Glaucoma tem cura?",
+    "familia": "oftalmologia",
+    "entidade": "glaucoma",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 21,
+    "pergunta": "Fissura anal tem cura?",
+    "familia": "coloproctologia",
+    "entidade": "fissura anal",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  },
+  {
+    "n": 22,
+    "pergunta": "Vitiligo tem cura?",
+    "familia": "dermatologia",
+    "entidade": "vitiligo",
+    "atributo": "{condicao} tem cura",
+    "gabarito": ""
+  }
+]

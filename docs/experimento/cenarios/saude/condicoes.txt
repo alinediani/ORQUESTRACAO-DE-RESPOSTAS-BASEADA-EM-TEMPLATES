@@ -1,0 +1,56 @@
+# Condições candidatas da fonte do cenário de saúde: nome;artigo;apelidos (separados por |).
+# A especialidade de cada uma vem do corpus (a mais frequente entre as perguntas que a citam); só entram as citadas 20+ vezes.
+urticária;a;
+diabetes;o;
+hipertensão;a;pressão alta
+ansiedade;a;
+depressão;a;
+enxaqueca;a;
+sinusite;a;
+rinite;a;
+labirintite;a;
+catarata;a;
+glaucoma;o;
+miopia;a;
+astigmatismo;o;
+ceratocone;o;
+hemorroida;a;hemorroidas|hemorróida|hemorróidas
+fissura anal;a;
+fístula;a;fistula anal
+varizes;as;
+psoríase;a;
+acne;a;espinhas
+dermatite;a;
+micose;a;
+candidíase;a;candidiase
+endometriose;a;
+mioma;o;miomas
+HPV;o;
+gastrite;a;
+refluxo;o;
+hérnia de disco;a;
+escoliose;a;
+tendinite;a;
+artrose;a;
+fibromialgia;a;
+epilepsia;a;
+autismo;o;
+TDAH;o;
+insônia;a;
+colesterol;o;
+cálculo renal;o;pedra no rim|pedras nos rins
+varicocele;a;
+fimose;a;
+ejaculação precoce;a;
+disfunção erétil;a;
+hipotireoidismo;o;
+asma;a;
+apneia;a;
+zumbido;o;
+vitiligo;o;
+alopecia;a;queda de cabelo
+herpes;o;
+sífilis;a;
+conjuntivite;a;
+pterígio;o;
+calázio;o;

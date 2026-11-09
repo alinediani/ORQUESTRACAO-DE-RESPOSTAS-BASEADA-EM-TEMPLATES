@@ -197,6 +197,8 @@ public static class Experimento
     /// <summary>A resposta traz o gabarito (sem diferenciar maiúsculas e acentos)?</summary>
     public static bool Correta(string resposta, string gabarito)
     {
+        // Sem gabarito (respostas livres, como no cenário de saúde), a correção automática não se aplica.
+        if (gabarito.Trim().Length == 0) return false;
         // Gabarito com alternativas ("Chris Young || Young"): qualquer uma vale.
         if (gabarito.Contains(" || ", StringComparison.Ordinal))
             return gabarito.Split(" || ").Any(g => g.Trim().Length > 0 && Correta(resposta, g.Trim()));
@@ -241,7 +243,8 @@ public static class Experimento
             if (!chaves.TryGetValue(p.Familia, out var set)) chaves[p.Familia] = set = [];
             set.Add(r.Chave);
             // Feedback simulado do usuário (como o TCC prevê nos testes automatizados).
-            if (r.Template is not null || r.Caminho == Caminho.Template) orq.Feedback(r.Chave, correta);
+            // Sem gabarito não há como simular o feedback: o template fica como o usuário que não avalia o deixaria.
+            if (p.Gabarito.Length > 0 && (r.Template is not null || r.Caminho == Caminho.Template)) orq.Feedback(r.Chave, correta);
             proto.Add(new RespostaTeste(p.N, r.Texto, correta, r.Caminho, r.ChamadasGeracao, r.ChamadasParser, r.TokensEntrada + r.TokensSaida, r.Custo,
                 r.LatenciaMs + (r.ChamadasGeracao + r.ChamadasParser) * latenciaLlmMs));
         }
@@ -361,10 +364,14 @@ public static class Experimento
         sb.AppendLine($"| Custo estimado | {Usd(p.Custo)} | {Usd(b.Custo)} | {Reducao(p.Custo, b.Custo)} |");
         if (r.Modo != "mcp")
             sb.AppendLine($"| Latência média estimada | {Ms(p.LatenciaMediaMs)} | {Ms(b.LatenciaMediaMs)} | {Reducao(p.LatenciaMediaMs, b.LatenciaMediaMs)} |");
-        sb.AppendLine($"| Respostas corretas (gabarito) | {Pct(p.TaxaCorretas)} ({p.Corretas}) | {Pct(b.TaxaCorretas)} ({b.Corretas}) | |");
+        var semGabarito = r.Conjunto.All(q => q.Gabarito.Trim().Length == 0);
+        if (semGabarito) sb.AppendLine("| Respostas corretas (gabarito) | não se aplica | não se aplica | |");
+        else sb.AppendLine($"| Respostas corretas (gabarito) | {Pct(p.TaxaCorretas)} ({p.Corretas}) | {Pct(b.TaxaCorretas)} ({b.Corretas}) | |");
         sb.AppendLine();
+        if (semGabarito)
+            sb.AppendLine("**Sem gabarito curto:** as respostas são orientações livres. A qualidade é avaliada uma a uma (README do cenário) e na planilha cega `avaliacao-humana.csv`; o feedback simulado não foi aplicado.");
         var rotulo = r.Modo == "mcp" ? "Comparação automática pelo gabarito (a cega humana está em avaliacao-humana.csv)" : "Comparação cega (T06)";
-        sb.AppendLine($"**{rotulo}:** protótipo melhor em {c.VitoriasPrototipo}, linha de base melhor em {c.VitoriasLinhaDeBase}, empate em {c.Empates} de {p.Perguntas}.");
+        if (!semGabarito) sb.AppendLine($"**{rotulo}:** protótipo melhor em {c.VitoriasPrototipo}, linha de base melhor em {c.VitoriasLinhaDeBase}, empate em {c.Empates} de {p.Perguntas}.");
         sb.AppendLine();
         sb.AppendLine("## Por família");
         sb.AppendLine();
@@ -388,7 +395,7 @@ public static class Experimento
             foreach (var (t, obtido, ok) in Quadro2(r)) sb.AppendLine($"| {t} | {obtido} | {(ok ? "Aprovado" : "Reprovado")} |");
             sb.AppendLine();
         }
-        var divergentes = r.Conjunto.Where(q => !r.RespostasPrototipo[q.N - 1].Correta || !r.RespostasLinhaDeBase[q.N - 1].Correta).ToList();
+        var divergentes = semGabarito ? [] : r.Conjunto.Where(q => !r.RespostasPrototipo[q.N - 1].Correta || !r.RespostasLinhaDeBase[q.N - 1].Correta).ToList();
         if (divergentes.Count > 0)
         {
             sb.AppendLine("## Respostas que não trazem o gabarito (para conferir na avaliação humana)");
@@ -402,11 +409,11 @@ public static class Experimento
             }
             sb.AppendLine();
         }
-        sb.AppendLine("## As primeiras perguntas");
+        sb.AppendLine(semGabarito ? "## As respostas" : "## As primeiras perguntas");
         sb.AppendLine();
         sb.AppendLine("| # | Pergunta | Protótipo | Caminho | Linha de base |");
         sb.AppendLine("|---:|---|---|---|---|");
-        foreach (var q in r.Conjunto.Take(20))
+        foreach (var q in r.Conjunto.Take(semGabarito ? r.Conjunto.Count : 20))
         {
             var (rp, rb) = (r.RespostasPrototipo[q.N - 1], r.RespostasLinhaDeBase[q.N - 1]);
             sb.AppendLine($"| {q.N} | {Celula(q.Pergunta)} | {Celula(rp.Texto)}{(rp.Correta ? "" : " ❌")} | {rp.Caminho} | {Celula(rb.Texto)}{(rb.Correta ? "" : " ❌")} |");

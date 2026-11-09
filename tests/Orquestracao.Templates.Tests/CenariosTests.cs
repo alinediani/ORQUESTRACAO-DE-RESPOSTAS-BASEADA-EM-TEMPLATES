@@ -40,6 +40,26 @@ public class CenariosTests
     }
 
     [Fact]
+    public void Saude_CsvComAspas_PerguntasDistintas_EFonteTiradaDoCorpus()
+    {
+        var dir = Directory.CreateTempSubdirectory().FullName;
+        var csv = Path.Combine(dir, "c.csv");
+        File.WriteAllText(csv, "ID,Especialidade,Pergunta,Resposta,Avaliação,Curtidas\n" +
+            "1,dermatologia-1,\"Vitiligo tem cura?\",\"Não, mas \"\"tem\"\" tratamento.\nProcure\",0,0\n" +
+            "1,dermatologia-1,\"Vitiligo tem cura?\",\"Outra resposta\",0,0\n" +
+            "2,clinica+medica-2,O que é vitiligo?,Uma doença,0,0\n" +
+            "3,dermatologia-1,Tenho vitiligo,ok,0,0\n");
+        var l = Cenarios.LerSaude(csv);
+        Assert.Equal([("Vitiligo tem cura?", "dermatologia"), ("O que é vitiligo?", "clinica medica"), ("Tenho vitiligo", "dermatologia")], l.Select(p => (p.Pergunta, p.Familia)));
+        Assert.Equal("Não, mas \"tem\" tratamento.\nProcure", Cenarios.LerCsv(csv).ElementAt(1)[3]);
+        var cond = Path.Combine(dir, "cond.txt");
+        File.WriteAllText(cond, "# comentário\nvitiligo;o;\nasma;a;\n");
+        var f = Cenarios.FonteSaude(l, cond, minimo: 2);
+        Assert.Equal(("vitiligo", "dermatologista", "3"), (f.Single().Nome, f[0].Atributos["especialista"], f[0].Atributos["citacoes"]));
+        Directory.Delete(dir, true);
+    }
+
+    [Fact]
     public void Amostra_ReprodutivelERenumerada()
     {
         var todas = Enumerable.Range(1, 50).Select(i => new PerguntaTeste(i, $"p{i}", "f", "", "a", $"{i}")).ToList();

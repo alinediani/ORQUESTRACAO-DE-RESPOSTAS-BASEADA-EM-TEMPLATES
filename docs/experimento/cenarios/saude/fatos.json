@@ -1,0 +1,472 @@
+{
+  "descricao": "Fonte do cenário de saúde, gerada do SaudeBR-QA por `--cenario saude --fonte`: condições de condicoes.txt citadas em 20+ perguntas, com o especialista da especialidade mais frequente entre elas.",
+  "entidades": [
+    {
+      "nome": "urticária",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "alergista",
+        "citacoes": "27"
+      }
+    },
+    {
+      "nome": "diabetes",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "endocrinologista",
+        "citacoes": "139"
+      }
+    },
+    {
+      "nome": "hipertensão",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [
+        "pressão alta"
+      ],
+      "atributos": {
+        "especialista": "cardiologista",
+        "citacoes": "104"
+      }
+    },
+    {
+      "nome": "ansiedade",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "psiquiatra",
+        "citacoes": "256"
+      }
+    },
+    {
+      "nome": "depressão",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "psiquiatra",
+        "citacoes": "219"
+      }
+    },
+    {
+      "nome": "enxaqueca",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "neurologista",
+        "citacoes": "40"
+      }
+    },
+    {
+      "nome": "sinusite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "otorrinolaringologista",
+        "citacoes": "75"
+      }
+    },
+    {
+      "nome": "rinite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "otorrinolaringologista",
+        "citacoes": "68"
+      }
+    },
+    {
+      "nome": "labirintite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "otorrinolaringologista",
+        "citacoes": "50"
+      }
+    },
+    {
+      "nome": "catarata",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "oftalmologista",
+        "citacoes": "72"
+      }
+    },
+    {
+      "nome": "glaucoma",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "oftalmologista",
+        "citacoes": "33"
+      }
+    },
+    {
+      "nome": "miopia",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "oftalmologista",
+        "citacoes": "43"
+      }
+    },
+    {
+      "nome": "astigmatismo",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "oftalmologista",
+        "citacoes": "26"
+      }
+    },
+    {
+      "nome": "hemorroida",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [
+        "hemorroidas",
+        "hemorróida",
+        "hemorróidas"
+      ],
+      "atributos": {
+        "especialista": "proctologista",
+        "citacoes": "159"
+      }
+    },
+    {
+      "nome": "fissura anal",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "proctologista",
+        "citacoes": "24"
+      }
+    },
+    {
+      "nome": "fístula",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [
+        "fistula anal"
+      ],
+      "atributos": {
+        "especialista": "proctologista",
+        "citacoes": "38"
+      }
+    },
+    {
+      "nome": "varizes",
+      "tipo": "condicao",
+      "artigo": "as",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "cirurgião vascular",
+        "citacoes": "145"
+      }
+    },
+    {
+      "nome": "psoríase",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "dermatologista",
+        "citacoes": "33"
+      }
+    },
+    {
+      "nome": "acne",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [
+        "espinhas"
+      ],
+      "atributos": {
+        "especialista": "dermatologista",
+        "citacoes": "102"
+      }
+    },
+    {
+      "nome": "dermatite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "dermatologista",
+        "citacoes": "56"
+      }
+    },
+    {
+      "nome": "micose",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "dermatologista",
+        "citacoes": "32"
+      }
+    },
+    {
+      "nome": "endometriose",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "ginecologista",
+        "citacoes": "39"
+      }
+    },
+    {
+      "nome": "mioma",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [
+        "miomas"
+      ],
+      "atributos": {
+        "especialista": "ginecologista",
+        "citacoes": "45"
+      }
+    },
+    {
+      "nome": "HPV",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "ginecologista",
+        "citacoes": "29"
+      }
+    },
+    {
+      "nome": "gastrite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "gastroenterologista",
+        "citacoes": "55"
+      }
+    },
+    {
+      "nome": "refluxo",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "gastroenterologista",
+        "citacoes": "81"
+      }
+    },
+    {
+      "nome": "hérnia de disco",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "clínico geral",
+        "citacoes": "61"
+      }
+    },
+    {
+      "nome": "tendinite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "ortopedista",
+        "citacoes": "23"
+      }
+    },
+    {
+      "nome": "artrose",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "reumatologista",
+        "citacoes": "73"
+      }
+    },
+    {
+      "nome": "fibromialgia",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "reumatologista",
+        "citacoes": "57"
+      }
+    },
+    {
+      "nome": "epilepsia",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "neuropediatra",
+        "citacoes": "35"
+      }
+    },
+    {
+      "nome": "autismo",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "neuropediatra",
+        "citacoes": "70"
+      }
+    },
+    {
+      "nome": "TDAH",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "psiquiatra",
+        "citacoes": "50"
+      }
+    },
+    {
+      "nome": "insônia",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "psiquiatra",
+        "citacoes": "69"
+      }
+    },
+    {
+      "nome": "colesterol",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "clínico geral",
+        "citacoes": "55"
+      }
+    },
+    {
+      "nome": "cálculo renal",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [
+        "pedra no rim",
+        "pedras nos rins"
+      ],
+      "atributos": {
+        "especialista": "nefrologista",
+        "citacoes": "32"
+      }
+    },
+    {
+      "nome": "fimose",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "urologista",
+        "citacoes": "34"
+      }
+    },
+    {
+      "nome": "ejaculação precoce",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "urologista",
+        "citacoes": "48"
+      }
+    },
+    {
+      "nome": "hipotireoidismo",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "endocrinologista",
+        "citacoes": "42"
+      }
+    },
+    {
+      "nome": "asma",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "pneumologista",
+        "citacoes": "50"
+      }
+    },
+    {
+      "nome": "zumbido",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "otorrinolaringologista",
+        "citacoes": "115"
+      }
+    },
+    {
+      "nome": "vitiligo",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "dermatologista",
+        "citacoes": "22"
+      }
+    },
+    {
+      "nome": "alopecia",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [
+        "queda de cabelo"
+      ],
+      "atributos": {
+        "especialista": "dermatologista",
+        "citacoes": "87"
+      }
+    },
+    {
+      "nome": "herpes",
+      "tipo": "condicao",
+      "artigo": "o",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "infectologista",
+        "citacoes": "69"
+      }
+    },
+    {
+      "nome": "conjuntivite",
+      "tipo": "condicao",
+      "artigo": "a",
+      "apelidos": [],
+      "atributos": {
+        "especialista": "oftalmologista",
+        "citacoes": "26"
+      }
+    }
+  ]
+}

@@ -31,6 +31,18 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     // na pasta) substitui a padrão quando existe.
     var pasta = Path.Combine(Raiz(), "docs", "experimento", "cenarios", cenario);
     var fatosDoCenario = Path.Combine(pasta, "fatos.json");
+    if (cenario == "saude" && opcoes.ContainsKey("fonte"))
+    {
+        // A fonte do cenário de saúde sai do corpus (condicoes.txt + a especialidade mais frequente de cada condição).
+        var ents = Cenarios.FonteSaude(Cenarios.LerSaude(Path.Combine(pasta, "saudebr-qa.csv")), Path.Combine(pasta, "condicoes.txt"));
+        var j = new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+        File.WriteAllText(fatosDoCenario, JsonSerializer.Serialize(new
+        {
+            descricao = "Fonte do cenário de saúde, gerada do SaudeBR-QA por `--cenario saude --fonte`: condições de condicoes.txt citadas em 20+ perguntas, com o especialista da especialidade mais frequente entre elas.",
+            entidades = ents,
+        }, j) + "\n");
+        Console.WriteLine($"saude: fonte com {ents.Count} condições em {fatosDoCenario}");
+    }
     var fonteCenario = File.Exists(fatosDoCenario) ? FonteDeFatosJson.Ler(fatosDoCenario) : fonte;
     var descricao = File.Exists(fatosDoCenario) ? "do cenário (`fatos.json` na pasta)" : $"padrão do protótipo (`dados/fatos.json`, {fonte.Entidades.Count} entidades)";
     // conferiveis: só as perguntas com gabarito curto (a amostra); a análise estrutural usa a base inteira.
@@ -38,6 +50,7 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     {
         "gsm8k" => Cenarios.LerGsm8k(Path.Combine(pasta, "gsm8k-pt-test.jsonl")),
         "mkqa" => Cenarios.LerMkqa(Path.Combine(pasta, "mkqa-pt.jsonl"), conferiveis),
+        "saude" => Cenarios.LerSaude(Path.Combine(pasta, "saudebr-qa.csv")),
         _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
     };
     var jsonOpcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
@@ -52,7 +65,10 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     }
     if (opcoes.ContainsKey("preparar"))
     {
-        var amostra = Cenarios.Amostra(Ler(true), total, semente);
+        // Saúde: o melhor caso (as chaves que mais se repetem), para exercitar o caminho do template.
+        var amostra = cenario == "saude"
+            ? Cenarios.AmostraMelhorCaso(Ler(true), new ParserHeuristico(fonteCenario), total, semente)
+            : Cenarios.Amostra(Ler(true), total, semente);
         File.WriteAllText(Path.Combine(pasta, "conjunto.json"), JsonSerializer.Serialize(amostra, jsonOpcoes) + "\n");
         Console.WriteLine($"{cenario}: amostra de {amostra.Count} perguntas (semente {semente}) em {Path.Combine(pasta, "conjunto.json")}");
     }

@@ -1,0 +1,23 @@
+﻿id;a;b;familia;gabarito;caminho_prototipo
+1;linha_de_base;prototipo;reumatologia;"";llm
+2;prototipo;linha_de_base;otorrinolaringologia;"";llm
+3;prototipo;linha_de_base;ginecologia e obstetricia;"";llm
+4;prototipo;linha_de_base;dermatologia;"";llm
+5;linha_de_base;prototipo;cardiologia;"";llm
+6;linha_de_base;prototipo;reumatologia;"";template
+7;prototipo;linha_de_base;dermatologia;"";template
+8;linha_de_base;prototipo;ginecologia e obstetricia;"";template
+9;linha_de_base;prototipo;psiquiatria;"";template
+10;linha_de_base;prototipo;urologia;"";template
+11;linha_de_base;prototipo;urologia;"";template
+12;prototipo;linha_de_base;dermatologia;"";template
+13;prototipo;linha_de_base;oftalmologia;"";llm
+14;prototipo;linha_de_base;psiquiatria;"";template
+15;prototipo;linha_de_base;otorrinolaringologia;"";template
+16;prototipo;linha_de_base;psiquiatria;"";template
+17;prototipo;linha_de_base;psiquiatria;"";template
+18;prototipo;linha_de_base;reumatologia;"";template
+19;prototipo;linha_de_base;reumatologia;"";template
+20;prototipo;linha_de_base;oftalmologia;"";template
+21;prototipo;linha_de_base;coloproctologia;"";template
+22;prototipo;linha_de_base;dermatologia;"";template

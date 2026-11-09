@@ -125,6 +125,116 @@ public static partial class Cenarios
 
     private static string SemZeroDecimal(string n) => n.EndsWith(".0", StringComparison.Ordinal) ? n[..^2] : n;
 
+    // ---- Saúde (SaudeBR-QA) -----------------------------------------------------------------------------
+
+    /// <summary>Lê um CSV (vírgula, aspas duplas com "" escapadas e quebras de linha dentro das aspas).</summary>
+    public static IEnumerable<List<string>> LerCsv(string caminho)
+    {
+        var texto = File.ReadAllText(caminho);
+        var campo = new StringBuilder();
+        var linha = new List<string>();
+        var aspas = false;
+        for (var i = 0; i < texto.Length; i++)
+        {
+            var c = texto[i];
+            if (aspas)
+            {
+                if (c == '"' && i + 1 < texto.Length && texto[i + 1] == '"') { campo.Append('"'); i++; }
+                else if (c == '"') aspas = false;
+                else campo.Append(c);
+            }
+            else if (c == '"') aspas = true;
+            else if (c == ',') { linha.Add(campo.ToString()); campo.Clear(); }
+            else if (c == '\n' || c == '\r')
+            {
+                if (c == '\r' && i + 1 < texto.Length && texto[i + 1] == '\n') i++;
+                linha.Add(campo.ToString());
+                campo.Clear();
+                if (linha.Count > 1 || linha[0].Length > 0) yield return linha;
+                linha = [];
+            }
+            else campo.Append(c);
+        }
+        if (campo.Length > 0 || linha.Count > 0)
+        {
+            linha.Add(campo.ToString());
+            yield return linha;
+        }
+    }
+
+    /// <summary>
+    /// As perguntas distintas do SaudeBR-QA (o CSV tem uma linha por resposta de profissional). A família é a
+    /// especialidade (sem o sufixo numérico) e o gabarito fica vazio: as respostas são orientações livres, sem
+    /// resposta curta conferível.
+    /// </summary>
+    public static List<PerguntaTeste> LerSaude(string caminho)
+    {
+        var vistas = new HashSet<string>();
+        var lista = new List<PerguntaTeste>();
+        foreach (var l in LerCsv(caminho).Skip(1))
+        {
+            if (l.Count < 3) continue;
+            var q = l[2].Trim();
+            if (q.Length == 0 || !vistas.Add(q)) continue;
+            var esp = l[1].Contains('-') ? l[1][..l[1].LastIndexOf('-')] : l[1];
+            lista.Add(new PerguntaTeste(lista.Count + 1, q, esp.Replace('+', ' '), "", "especialidade", ""));
+        }
+        return lista;
+    }
+
+    /// <summary>O profissional de cada especialidade (o atributo que o template procura na resposta do LLM).</summary>
+    public static readonly Dictionary<string, string> Profissional = new()
+    {
+        ["alergia e imunologia"] = "alergista", ["angiologia"] = "angiologista", ["cardiologia"] = "cardiologista",
+        ["cirurgia plastica"] = "cirurgião plástico", ["cirurgia vascular"] = "cirurgião vascular", ["clinica medica"] = "clínico geral",
+        ["coloproctologia"] = "proctologista", ["dermatologia"] = "dermatologista", ["endocrinologia e metabologia"] = "endocrinologista",
+        ["gastroenterologia"] = "gastroenterologista", ["ginecologia e obstetricia"] = "ginecologista", ["infectologia"] = "infectologista",
+        ["nefrologia"] = "nefrologista", ["neurologia"] = "neurologista", ["neurologia pediatrica"] = "neuropediatra", ["oftalmologia"] = "oftalmologista",
+        ["ortopedia e traumatologia"] = "ortopedista", ["otorrinolaringologia"] = "otorrinolaringologista", ["pneumologia"] = "pneumologista",
+        ["psiquiatria"] = "psiquiatra", ["psiquiatria da infancia e adolescencia"] = "psiquiatra infantil", ["reumatologia"] = "reumatologista",
+        ["sexologia"] = "sexólogo", ["urologia"] = "urologista", ["andrologia"] = "andrologista", ["medicina do sono"] = "médico do sono",
+        ["pediatria"] = "pediatra", ["geriatria"] = "geriatra", ["mastologia"] = "mastologista", ["hepatologia"] = "hepatologista",
+    };
+
+    /// <summary>
+    /// A fonte do cenário de saúde, tirada do próprio corpus: cada condição da lista (nome;artigo;apelidos) citada em
+    /// <paramref name="minimo"/>+ perguntas vira uma entidade do tipo "condicao", com o atributo "especialista" (o
+    /// profissional da especialidade mais frequente entre essas perguntas).
+    /// </summary>
+    public static List<Entidade> FonteSaude(IReadOnlyList<PerguntaTeste> perguntas, string condicoes, int minimo = 20)
+    {
+        var normalizadas = perguntas.Select(p => (Texto: " " + Texto.Normalizar(p.Pergunta) + " ", p.Familia)).ToList();
+        var lista = new List<Entidade>();
+        foreach (var linha in File.ReadLines(condicoes).Where(l => l.Trim().Length > 0 && !l.StartsWith('#')))
+        {
+            var c = linha.Split(';');
+            var apelidos = c.Length > 2 ? c[2].Split('|', StringSplitOptions.RemoveEmptyEntries).ToList() : [];
+            var nomes = apelidos.Prepend(c[0]).Select(n => " " + Texto.Normalizar(n) + " ").ToList();
+            var citam = normalizadas.Where(q => nomes.Any(q.Texto.Contains)).ToList();
+            if (citam.Count < minimo) continue;
+            var esp = citam.GroupBy(q => q.Familia).OrderByDescending(g => g.Count()).ThenBy(g => g.Key, StringComparer.Ordinal).First().Key;
+            lista.Add(new Entidade
+            {
+                Nome = c[0], Tipo = "condicao", Artigo = c.Length > 1 ? c[1] : "", Apelidos = apelidos,
+                Atributos = new() { ["especialista"] = Profissional.GetValueOrDefault(esp, "clínico geral"), ["citacoes"] = citam.Count.ToString(CultureInfo.InvariantCulture) },
+            });
+        }
+        return lista;
+    }
+
+    /// <summary>
+    /// O melhor caso para o protótipo: todas as perguntas com entidade cuja chave se repete na base (até <paramref name="maximo"/>),
+    /// embaralhadas pela semente. São as únicas que podem passar pelo caminho do template.
+    /// </summary>
+    public static List<PerguntaTeste> AmostraMelhorCaso(IReadOnlyList<PerguntaTeste> todas, ParserHeuristico parser, int maximo, int semente)
+    {
+        var rnd = new Random(semente);
+        var escolhidas = todas.Select(p => (P: p, E: parser.ExtrairSemLlm(p.Pergunta))).Where(x => x.E.TemSlot)
+            .GroupBy(x => x.E.Chave).Where(g => g.Count() >= 2)
+            .SelectMany(g => g.Select(x => x.P with { Entidade = x.E.Entidade!.Nome, Atributo = x.E.Chave })).ToList();
+        return escolhidas.OrderBy(_ => rnd.Next()).Take(maximo).Select((p, i) => p with { N = i + 1 }).ToList();
+    }
+
     /// <summary>Uma amostra reprodutível de <paramref name="n"/> perguntas (renumeradas de 1 a n, na ordem sorteada).</summary>
     public static List<PerguntaTeste> Amostra(IReadOnlyList<PerguntaTeste> todas, int n, int semente)
     {
