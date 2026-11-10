@@ -56,6 +56,20 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
             entidades = quiz.Entidades,
         }, jf) + "\n");
     }
+    // O MultiWOZ (multiwoz-fiel, multiwoz-canonica, multiwoz-original): a fonte é o banco do MultiWOZ.
+    var multiwoz = cenario.StartsWith("multiwoz-", StringComparison.Ordinal)
+        ? Cenarios.LerMultiwoz(Path.Combine(Raiz(), "docs", "experimento", "cenarios", "multiwoz"), cenario["multiwoz-".Length..]) : default;
+    if (multiwoz.Perguntas is not null)
+    {
+        pasta = Path.Combine(Raiz(), "docs", "experimento", "cenarios", cenario);
+        Directory.CreateDirectory(pasta);
+        var jm = new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+        File.WriteAllText(fatosDoCenario = Path.Combine(pasta, "fatos.json"), JsonSerializer.Serialize(new
+        {
+            descricao = "Fonte do MultiWOZ: o banco de restaurantes, hotéis e atrações (db/*_db.json), com os valores categóricos em português.",
+            entidades = multiwoz.Entidades,
+        }, jm) + "\n");
+    }
     var fonteCenario = File.Exists(fatosDoCenario) ? FonteDeFatosJson.Ler(fatosDoCenario) : fonte;
     var descricao = File.Exists(fatosDoCenario) ? "do cenário (`fatos.json` na pasta)" : $"padrão do protótipo (`dados/fatos.json`, {fonte.Entidades.Count} entidades)";
     // conferiveis: só as perguntas com gabarito curto (a amostra); a análise estrutural usa a base inteira.
@@ -65,6 +79,7 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
         "mkqa" => Cenarios.LerMkqa(Path.Combine(pasta, "mkqa-pt.jsonl"), conferiveis),
         "saude" => Cenarios.LerSaude(Path.Combine(pasta, "saudebr-qa.csv")),
         _ when quiz is not null => quiz.Perguntas,
+        _ when multiwoz.Perguntas is not null => multiwoz.Perguntas,
         "estilos" => Cenarios.GerarEstilos(fonte, semente),
         "squad" => Cenarios.LerSquad(Path.Combine(pasta, "squad-pt-validation.jsonl"), comTexto: conferiveis),
         _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
@@ -86,6 +101,13 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     {
         var a = Cenarios.Analisar(cenario, Ler(false).Select(p => p.Pergunta).ToList(), new ParserHeuristico(fonteCenario));
         File.WriteAllText(Path.Combine(pasta, "analise.md"), Cenarios.RelatorioAnalise(a, descricao));
+        if (multiwoz.Perguntas is not null)
+        {
+            // Com a entidade do contexto (o estado da conversa): a frase pode não trazer o nome.
+            var ac = Cenarios.AnalisarComContexto(cenario + " (com a entidade do contexto)", Ler(false), new ParserHeuristico(fonteCenario), fonteCenario);
+            File.AppendAllText(Path.Combine(pasta, "analise.md"), "\n---\n\n" + Cenarios.RelatorioAnalise(ac, "do MultiWOZ").Replace("# Análise estrutural", "## Análise estrutural"));
+            Console.WriteLine($"  com contexto: {ac.ChavesDistintas} chaves, teto {ac.Perguntas - ac.ChavesDistintas} ({(double)(ac.Perguntas - ac.ChavesDistintas) / ac.Perguntas:P1})");
+        }
         if (quiz is not null)
         {
             // A mesma análise sobre o inglês original (com a mesma fonte): mede se a tradução mudou a repetição de estrutura.

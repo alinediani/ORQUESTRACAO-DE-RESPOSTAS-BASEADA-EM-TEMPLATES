@@ -1,0 +1,3353 @@
+{
+  "descricao": "Fonte do MultiWOZ: o banco de restaurantes, hotéis e atrações (db/*_db.json), com os valores categóricos em português.",
+  "entidades": [
+    {
+      "nome": "pizza hut city centre",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Regent Street City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223323737",
+        "postcode": "cb21ab",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the missing sock",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Finders Corner Newmarket Road",
+        "area": "leste",
+        "food": "internacional",
+        "phone": "01223812660",
+        "postcode": "cb259aq",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "curry garden",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "106 Regent Street City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223302330",
+        "postcode": "cb21dp",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the good luck chinese food takeaway",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "82 Cherry Hinton Road Cherry Hinton",
+        "area": "sul",
+        "food": "chinesa",
+        "phone": "01223244149",
+        "postcode": "cb17ag",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "pizza hut cherry hinton",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "G4 Cambridge Leisure Park Clifton Way Cherry Hinton",
+        "area": "sul",
+        "food": "italiana",
+        "phone": "01223323737",
+        "postcode": "cb17dy",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "taj tandoori",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "64 Cherry Hinton Road Cherry Hinton",
+        "area": "sul",
+        "food": "indiana",
+        "phone": "01223412299",
+        "postcode": "cb17aa",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "restaurant alimentum",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "152 - 154 Hills Road",
+        "area": "sul",
+        "food": "europeia moderna",
+        "phone": "01223413000",
+        "postcode": "cb28pb",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "yu garden",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "529 Newmarket Road Fen Ditton",
+        "area": "leste",
+        "food": "chinesa",
+        "phone": "01223248882",
+        "postcode": "cb58pa",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "stazione restaurant and coffee bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Market Hill City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223352607",
+        "postcode": "cb23nj",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "curry prince",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "451 Newmarket Road Fen Ditton",
+        "area": "leste",
+        "food": "indiana",
+        "phone": "01223566388",
+        "postcode": "cb58jj",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "charlie chan",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Regent Street City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223361763",
+        "postcode": "cb21db",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "eraina",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Free School Lane City Centre",
+        "area": "centro",
+        "food": "europeia",
+        "phone": "01223368786",
+        "postcode": "cb23rh",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "pizza express",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Regent Street City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223324033",
+        "postcode": "cb21db",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "restaurant one seven",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "De Vere University Arms Regent Street City Centre",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223337766",
+        "postcode": "cb21ab",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "ask restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "12 Bridge Street City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223364917",
+        "postcode": "cb21uf",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "jinling noodle bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "11 Peas Hill City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223566188",
+        "postcode": "cb23pp",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "de luca cucina and bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "83 Regent Street",
+        "area": "centro",
+        "food": "europeia moderna",
+        "phone": "01223356666",
+        "postcode": "cb21aw",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "backstreet bistro",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "2 Sturton Street City Centre",
+        "area": "centro",
+        "food": "gastropub",
+        "phone": "01223306306",
+        "postcode": "cb12qa",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "tandoori palace",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "68 Histon Road Chesterton",
+        "area": "oeste",
+        "food": "indiana",
+        "phone": "01223506055",
+        "postcode": "cb43le",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "riverside brasserie",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Doubletree by Hilton Cambridge Granta Place Mill Lane",
+        "area": "centro",
+        "food": "europeia moderna",
+        "phone": "01223259988",
+        "postcode": "cb21rt",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "kohinoor",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "74 Mill Road City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223323639",
+        "postcode": "cb12as",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "chiquito restaurant bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "2G Cambridge Leisure Park Cherry Hinton Road Cherry Hinton",
+        "area": "sul",
+        "food": "mexicana",
+        "phone": "01223400170",
+        "postcode": "cb17dy",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "prezzo",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "21 - 24 Northampton Road",
+        "area": "oeste",
+        "food": "italiana",
+        "phone": "01799521260",
+        "postcode": "cb30ad",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "rice house",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "88 Mill Road City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223367755",
+        "postcode": "cb12bd",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "ali baba",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "59 Hills Road City Centre",
+        "area": "centro",
+        "food": "libanesa",
+        "phone": "01462432565",
+        "postcode": "cb21nt",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the varsity restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "35 Saint Andrews Street City Centre",
+        "area": "centro",
+        "food": "internacional",
+        "phone": "01223356060",
+        "postcode": "cb23ar",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "darrys cookhouse and wine shop",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "40270 King Street City Centre",
+        "area": "centro",
+        "food": "europeia moderna",
+        "phone": "01223505015",
+        "postcode": "cb11ln",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the golden curry",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Mill Road City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223329432",
+        "postcode": "cb12az",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "cocum",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "71 Castle Street City Centre",
+        "area": "oeste",
+        "food": "indiana",
+        "phone": "01223366668",
+        "postcode": "cb30ah",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "michaelhouse cafe",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "St. Michael's Church Trinity Street City Centre",
+        "area": "centro",
+        "food": "europeia",
+        "phone": "01223309147",
+        "postcode": "cb21su",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "rice boat",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "37 Newnham Road Newnham",
+        "area": "oeste",
+        "food": "indiana",
+        "phone": "01223302800",
+        "postcode": "cb39ey",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "hotel du vin and bistro",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "15 - 19 Trumpington Street",
+        "area": "centro",
+        "food": "europeia",
+        "phone": "01223227330",
+        "postcode": "cb21qa",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "maharajah tandoori restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "41518 Castle Street City Centre",
+        "area": "oeste",
+        "food": "indiana",
+        "phone": "01223358399",
+        "postcode": "cb30ah",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "bloomsbury restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Crowne Plaza Hotel 20 Downing Street",
+        "area": "centro",
+        "food": "internacional",
+        "phone": "08719429180",
+        "postcode": "cb23dt",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "thanh binh",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "17 Magdalene Street City Centre",
+        "area": "oeste",
+        "food": "vietnamita",
+        "phone": "01223362456",
+        "postcode": "cb30af",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "la tasca",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "14 -16 Bridge Street",
+        "area": "centro",
+        "food": "espanhola",
+        "phone": "01223464630",
+        "postcode": "cb21uf",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "da vinci pizzeria",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "20 Milton Road Chesterton",
+        "area": "norte",
+        "food": "italiana",
+        "phone": "01223351707",
+        "postcode": "cb41jy",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "restaurant two two",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "22 Chesterton Road Chesterton",
+        "area": "norte",
+        "food": "francesa",
+        "phone": "01223351880",
+        "postcode": "cb43ax",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "ugly duckling",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "12 St. Johns Street City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "postcode": "cb21tw",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "wagamama",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "36 Saint Andrews Street",
+        "area": "centro",
+        "food": "japonesa",
+        "phone": "01223462354",
+        "postcode": "cb23ar",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "lan hong house",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "12 Norfolk Street City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223350420",
+        "postcode": "cb12lf",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "nandos",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Cambridge Leisure Park Clifton Way",
+        "area": "sul",
+        "food": "portuguesa",
+        "phone": "01223327908",
+        "postcode": "cb17dy",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the oak bistro",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "6 Lensfield Road",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223323361",
+        "postcode": "cb21eg",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the copper kettle",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "4 Kings Parade City Centre",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223365068",
+        "postcode": "cb21sj",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the lucky star",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Cambridge Leisure Park Clifton Way Cherry Hinton",
+        "area": "sul",
+        "food": "chinesa",
+        "phone": "01223244277",
+        "postcode": "cb17dy",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "fitzbillies restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "51 Trumpington Street City Centre",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223352500",
+        "postcode": "cb21rg",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "little seoul",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "108 Regent Street City Centre",
+        "area": "centro",
+        "food": "coreana",
+        "phone": "01223308681",
+        "postcode": "cb21dp",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "meze bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "196 Mill Road City Centre",
+        "area": "centro",
+        "food": "turca",
+        "postcode": "cb13nf",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "dojo noodle bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "40210 Millers Yard City Centre",
+        "area": "centro",
+        "food": "oriental asiática",
+        "phone": "01223363471",
+        "postcode": "cb21rq",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "la margherita",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "15 Magdalene Street City Centre",
+        "area": "oeste",
+        "food": "italiana",
+        "phone": "01223315232",
+        "postcode": "cb30af",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "yippee noodle bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "40428 King Street City Centre",
+        "area": "centro",
+        "food": "oriental asiática",
+        "phone": "01223518111",
+        "postcode": "cb11lh",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the nirala",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "7 Milton Road Chesterton",
+        "area": "norte",
+        "food": "indiana",
+        "phone": "01223360966",
+        "postcode": "cb41uy",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "cotto",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "183 East Road City Centre",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223302010",
+        "postcode": "cb11bg",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "saint johns chop house",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "21 - 24 Northampton Street",
+        "area": "oeste",
+        "food": "britânica",
+        "phone": "01223353110",
+        "postcode": "cb30ad",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "pizza hut fen ditton",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Cambridge Retail Park Newmarket Road Fen Ditton",
+        "area": "leste",
+        "food": "italiana",
+        "phone": "01223323737",
+        "postcode": "cb58wr",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "golden house",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "12 Lensfield Road City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01842753771",
+        "postcode": "cb21eg",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "j restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "86 Regent Street City Centre",
+        "area": "centro",
+        "food": "oriental asiática",
+        "phone": "01223307581",
+        "postcode": "cb21dp",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "galleria",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "33 Bridge Street",
+        "area": "centro",
+        "food": "europeia",
+        "phone": "01223362054",
+        "postcode": "cb21uw",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the cow pizza kitchen and bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Corn Exchange Street",
+        "area": "centro",
+        "food": "gastropub",
+        "phone": "01223308871",
+        "postcode": "cb23qf",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "bedouin",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "100 Mill Road City Centre",
+        "area": "centro",
+        "food": "africana",
+        "phone": "01223367660",
+        "postcode": "cb12bd",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the gardenia",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "2 Rose Crescent City Centre",
+        "area": "centro",
+        "food": "mediterrânea",
+        "phone": "01223356354",
+        "postcode": "cb23ll",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "zizzi cambridge",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "47-53 Regent Street",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223365599",
+        "postcode": "cb21ab",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "pipasha restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Newmarket Road Fen Ditton",
+        "area": "leste",
+        "food": "indiana",
+        "phone": "01223577786",
+        "postcode": "cb58pa",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "nandos city centre",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "33-34 Saint Andrews Street",
+        "area": "centro",
+        "food": "portuguesa",
+        "phone": "01223327908",
+        "postcode": "cb23ar",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "royal spice",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Victoria Avenue Chesterton",
+        "area": "norte",
+        "food": "indiana",
+        "phone": "01733553355",
+        "postcode": "cb41eh",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "hakka",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Milton Road Chesterton",
+        "area": "norte",
+        "food": "chinesa",
+        "phone": "01223568988",
+        "postcode": "cb41jy",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "la raza",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "4 - 6 Rose Crescent",
+        "area": "centro",
+        "food": "espanhola",
+        "phone": "01223464550",
+        "postcode": "cb23ll",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the gandhi",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "72 Regent Street City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223353942",
+        "postcode": "cb21dp",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "golden wok",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "191 Histon Road Chesterton",
+        "area": "norte",
+        "food": "chinesa",
+        "phone": "01223350688",
+        "postcode": "cb43hl",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "meghna",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "205 Victoria Road Chesterton",
+        "area": "oeste",
+        "food": "indiana",
+        "phone": "01223727410",
+        "postcode": "cb43lf",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "saffron brasserie",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Hills Road City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223354679",
+        "postcode": "cb21la",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "la mimosa",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Thompsons Lane Fen Ditton",
+        "area": "centro",
+        "food": "mediterrânea",
+        "phone": "01223362525",
+        "postcode": "cb58aq",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "shanghai family restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "39 Burleigh Street City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223301761",
+        "postcode": "cb11dg",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "loch fyne",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "The Little Rose 37 Trumpington Street",
+        "area": "centro",
+        "food": "seafood",
+        "phone": "01223362433",
+        "postcode": "cb21qy",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "mahal of cambridge",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "3 - 5 Millers Yard Mill Lane",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223360409",
+        "postcode": "cb21rq",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "pizza express fen ditton",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Jesus Lane Fen Ditton",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223324033",
+        "postcode": "cb58ba",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "sala thong",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "35 Newnham Road Newnham",
+        "area": "oeste",
+        "food": "tailandesa",
+        "phone": "01223323178",
+        "postcode": "cb39ey",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "city stop restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Cambridge City Football Club Milton Road Chesterton",
+        "area": "norte",
+        "phone": "01223363270",
+        "postcode": "cb41uy",
+        "pricerange": "cara",
+        "food": "europeia",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "saigon city",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "169 High Street Chesterton Chesterton",
+        "area": "norte",
+        "food": "oriental asiática",
+        "phone": "01223356555",
+        "postcode": "cb41nl",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "peking restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "10 Homerton Street City Centre",
+        "area": "sul",
+        "food": "chinesa",
+        "phone": "01223354755",
+        "postcode": "cb28nx",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "frankie and bennys",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Cambridge Leisure Park Clifton Way Cherry Hinton",
+        "area": "sul",
+        "food": "italiana",
+        "phone": "01223412430",
+        "postcode": "cb17dy",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "graffiti",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Hotel Felix Whitehouse Lane Huntingdon Road",
+        "area": "oeste",
+        "food": "britânica",
+        "phone": "01223277977",
+        "postcode": "cb30lx",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "india house",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "31 Newnham Road Newnham",
+        "area": "oeste",
+        "food": "indiana",
+        "phone": "01223461661",
+        "postcode": "cb39ey",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "cambridge lodge restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Cambridge Lodge Hotel 139 Huntingdon Road City Centre",
+        "area": "oeste",
+        "food": "europeia",
+        "phone": "01223355166",
+        "postcode": "cb30dq",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "grafton hotel restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Grafton Hotel 619 Newmarket Road Fen Ditton",
+        "area": "leste",
+        "food": "britânica",
+        "phone": "01223241387",
+        "postcode": "cb58pa",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the hotpot",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "66 Chesterton Road Chesterton",
+        "area": "norte",
+        "food": "chinesa",
+        "phone": "01223366552",
+        "postcode": "cb41ep",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the river bar steakhouse and grill",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Quayside Off Bridge Street",
+        "area": "centro",
+        "food": "europeia moderna",
+        "phone": "01223307030",
+        "postcode": "cb58aq",
+        "pricerange": "barata",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "clowns cafe",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "54 King Street City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223355711",
+        "postcode": "cb11ln",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "anatolia",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "30 Bridge Street City Centre",
+        "area": "centro",
+        "food": "turca",
+        "phone": "01223362372",
+        "postcode": "cb21uj",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "panahar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "8 Norfolk Street City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223355012",
+        "postcode": "cb12lf",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "tang chinese",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Napier Street City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223357187",
+        "postcode": "cb11hr",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the slug and lettuce",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "34 - 35 Green Street",
+        "area": "centro",
+        "food": "gastropub",
+        "postcode": "cb23ju",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "curry king",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "5 Jordans Yard Bridge Street City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223324351",
+        "postcode": "cb21ug",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "travellers rest",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Huntingdon Road City Centre",
+        "area": "oeste",
+        "food": "britânica",
+        "phone": "01223276182",
+        "postcode": "cb30df",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "curry queen",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "106 Mill Road City Centre",
+        "area": "centro",
+        "food": "indiana",
+        "phone": "01223351027",
+        "postcode": "cb12bd",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "royal standard",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "290 Mill Road City Centre",
+        "area": "leste",
+        "food": "gastropub",
+        "phone": "01223247877",
+        "postcode": "cb13nl",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "rajmahal",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "7 Barnwell Road Fen Ditton",
+        "area": "leste",
+        "food": "indiana",
+        "phone": "01223244955",
+        "postcode": "cb58rg",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "hk fusion",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "21 Burleigh Street City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223355909",
+        "postcode": "cb11dg",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "efes restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "King Street City Centre",
+        "area": "centro",
+        "food": "turca",
+        "phone": "01223500005",
+        "postcode": "cb11ln",
+        "pricerange": "moderada",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "gourmet burger kitchen",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Regent Street City Centre",
+        "area": "centro",
+        "food": "norte-americana",
+        "phone": "01223312598",
+        "postcode": "cb21ab",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "don pasquale pizzeria",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "12 Market Hill City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223350106",
+        "postcode": "cb23nj",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "the cambridge chop house",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "1 Kings Parade",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223359506",
+        "postcode": "cb21sj",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "kymmoy",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "52 Mill Road City Centre",
+        "area": "centro",
+        "food": "oriental asiática",
+        "phone": "01223311911",
+        "postcode": "cb12as",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "sitar tandoori",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "43 High Street Cherry Hinton Cherry Hinton",
+        "area": "leste",
+        "food": "indiana",
+        "phone": "01223249955",
+        "postcode": "cb19hx",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "shiraz restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "84 Regent Street City Centre",
+        "area": "centro",
+        "food": "mediterrânea",
+        "phone": "01223307581",
+        "postcode": "cb21dp",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "midsummer house restaurant",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Midsummer Common",
+        "area": "centro",
+        "food": "britânica",
+        "phone": "01223369299",
+        "postcode": "cb41ha",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "cote",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "Bridge Street City Centre",
+        "area": "centro",
+        "food": "francesa",
+        "phone": "01223311053",
+        "postcode": "cb21uf",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "caffe uno",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "32 Bridge Street City Centre",
+        "area": "centro",
+        "food": "italiana",
+        "phone": "01223448620",
+        "postcode": "cb21uj",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "sesame restaurant and bar",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "17 Hills Road City Centre",
+        "area": "centro",
+        "food": "chinesa",
+        "phone": "01223358899",
+        "postcode": "cb21nw",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "bangkok city",
+      "tipo": "restaurante",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "24 Green Street City Centre",
+        "area": "centro",
+        "food": "tailandesa",
+        "phone": "01223354382",
+        "postcode": "cb23jx",
+        "pricerange": "cara",
+        "type": "restaurante"
+      }
+    },
+    {
+      "nome": "a and b guest house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "124 tenison road",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "não",
+        "phone": "01223315702",
+        "postcode": "cb12dp",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "acorn guest house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "154 chesterton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223353888",
+        "postcode": "cb41da",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "alexander bed and breakfast",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "56 saint barnabas road",
+        "area": "centro",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223525725",
+        "postcode": "cb12de",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "allenbell",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "517a coldham lane",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223210353",
+        "postcode": "cb13js",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "alpha-milton guest house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "63 milton road",
+        "area": "norte",
+        "internet": "não",
+        "parking": "não",
+        "phone": "01223311625",
+        "postcode": "cb41xa",
+        "pricerange": "moderada",
+        "stars": "3",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "arbury lodge guesthouse",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "82 arbury road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223364319",
+        "postcode": "cb42je",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "archway house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "52 gilbert road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223575314",
+        "postcode": "cb43pe",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "ashley hotel",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "74 chesterton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223350059",
+        "postcode": "cb41er",
+        "pricerange": "moderada",
+        "stars": "2",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "autumn house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "710 newmarket road",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223575122",
+        "postcode": "cb58rs",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "avalon",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "62 gilbert road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "não",
+        "phone": "01223353071",
+        "postcode": "cb43pd",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "aylesbray lodge guest house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "5 mowbray road",
+        "area": "sul",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223240089",
+        "postcode": "cb17sr",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "bridge guest house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "151 hills road",
+        "area": "sul",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223247942",
+        "postcode": "cb28rj",
+        "pricerange": "moderada",
+        "stars": "3",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "carolina bed and breakfast",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "138 perne road",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223247015",
+        "postcode": "cb13nx",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "city centre north b and b",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "328a histon road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223312843",
+        "postcode": "cb43ht",
+        "pricerange": "barata",
+        "stars": "0",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "cityroomz",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "sleeperz hotel, station road",
+        "area": "centro",
+        "internet": "sim",
+        "parking": "não",
+        "phone": "01223304050",
+        "postcode": "cb12tz",
+        "pricerange": "moderada",
+        "stars": "0",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "el shaddai",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "41 warkworth street",
+        "area": "centro",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223327978",
+        "postcode": "cb11eg",
+        "pricerange": "barata",
+        "stars": "0",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "express by holiday inn cambridge",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "15-17 norman way, coldhams business park",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223866800",
+        "postcode": "cb13lh",
+        "pricerange": "cara",
+        "stars": "2",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "finches bed and breakfast",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "144 thornton road",
+        "area": "oeste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223276653",
+        "postcode": "cb30nd",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "gonville hotel",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "gonville place",
+        "area": "centro",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223366611",
+        "postcode": "cb11ly",
+        "pricerange": "cara",
+        "stars": "3",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "hamilton lodge",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "156 chesterton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223365664",
+        "postcode": "cb41da",
+        "pricerange": "moderada",
+        "stars": "3",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "hobsons house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "96 barton road",
+        "area": "oeste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223304906",
+        "postcode": "cb39lh",
+        "pricerange": "moderada",
+        "stars": "3",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "home from home",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "78-80 milton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223323555",
+        "postcode": "cb41la",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "huntingdon marriott hotel",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "kingfisher way, hinchinbrook business park, huntingdon",
+        "area": "oeste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01480446000",
+        "postcode": "pe296fl",
+        "pricerange": "cara",
+        "stars": "4",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "kirkwood house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "172 chesterton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223306283",
+        "postcode": "cb41da",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "leverton house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "732-734 newmarket road",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223292094",
+        "postcode": "cb58rs",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "limehouse",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "78-80 milton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223300552",
+        "postcode": "cb42je",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "lovell lodge",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "365 milton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223425478",
+        "postcode": "cb41sr",
+        "pricerange": "moderada",
+        "stars": "2",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "rosa's bed and breakfast",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "53 roseford road",
+        "area": "sul",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223512596",
+        "postcode": "cb22ha",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "the cambridge belfry",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "back lane, cambourne",
+        "area": "oeste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01954714600",
+        "postcode": "cb236bw",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "the lensfield hotel",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "53-57 lensfield road",
+        "area": "sul",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223355017",
+        "postcode": "cb21en",
+        "pricerange": "cara",
+        "stars": "3",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "university arms hotel",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "regent street",
+        "area": "centro",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223351241",
+        "postcode": "cb21ad",
+        "pricerange": "cara",
+        "stars": "4",
+        "type": "hotel"
+      }
+    },
+    {
+      "nome": "warkworth house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "warkworth terrace",
+        "area": "leste",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223363682",
+        "postcode": "cb11ee",
+        "pricerange": "moderada",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "worth house",
+      "tipo": "hotel",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "152 chesterton road",
+        "area": "norte",
+        "internet": "sim",
+        "parking": "sim",
+        "phone": "01223316074",
+        "postcode": "cb41da",
+        "pricerange": "barata",
+        "stars": "4",
+        "type": "pousada"
+      }
+    },
+    {
+      "nome": "abbey pool and astroturf pitch",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "pool way, whitehill road, off newmarket road",
+        "area": "leste",
+        "phone": "01223902088",
+        "postcode": "cb58nt",
+        "type": "piscina"
+      }
+    },
+    {
+      "nome": "adc theatre",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "park street",
+        "area": "centro",
+        "phone": "01223300085",
+        "postcode": "cb58as",
+        "type": "teatro"
+      }
+    },
+    {
+      "nome": "all saints church",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "jesus lane",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223452587",
+        "postcode": "cb58bs",
+        "pricerange": "grátis",
+        "type": "arquitetura"
+      }
+    },
+    {
+      "nome": "ballare",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "heidelberg gardens, lion yard",
+        "area": "centro",
+        "entrancefee": "5 libras",
+        "phone": "01223364222",
+        "postcode": "cb23na",
+        "pricerange": "moderada",
+        "type": "casa noturna"
+      }
+    },
+    {
+      "nome": "broughton house gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "98 king street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223314960",
+        "postcode": "cb11ln",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "byard art",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "14 king's parade",
+        "area": "sul",
+        "entrancefee": "grátis",
+        "phone": "01223464646",
+        "postcode": "cb21sj",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cafe jello gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "cafe jello gallery, 13 magdalene street",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223312112",
+        "postcode": "cb30af",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "camboats",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "the plough, green end, fen ditton,",
+        "area": "leste",
+        "phone": "01223902112",
+        "postcode": "cb58sx",
+        "type": "passeio de barco"
+      }
+    },
+    {
+      "nome": "cambridge and county folk museum",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "2-3 castle street",
+        "area": "oeste",
+        "entrancefee": "3.50 libras",
+        "phone": "01223355159",
+        "postcode": "cb30aq",
+        "pricerange": "moderada",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cambridge arts theatre",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "6 saint edward's passage",
+        "area": "centro",
+        "phone": "01223503333",
+        "postcode": "cb23pj",
+        "type": "teatro"
+      }
+    },
+    {
+      "nome": "cambridge artworks",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "5 greens road",
+        "area": "leste",
+        "entrancefee": "grátis",
+        "phone": "01223902168",
+        "postcode": "cb13ef",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cambridge book and print gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "49 newnham road",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223694264",
+        "postcode": "cb39ey",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cambridge contemporary art",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "6 trinity street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223324222",
+        "postcode": "cb21su",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cambridge museum of technology",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "the old pumping station, cheddars lane",
+        "area": "leste",
+        "entrancefee": "5 libras",
+        "phone": "01223368650",
+        "postcode": "cb58ld",
+        "pricerange": "cara",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cambridge university botanic gardens",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "bateman street",
+        "area": "centro",
+        "entrancefee": "4 libras",
+        "phone": "01223336265",
+        "postcode": "cb21jf",
+        "pricerange": "moderada",
+        "type": "parque"
+      }
+    },
+    {
+      "nome": "castle galleries",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "unit su43, grande arcade, saint andrews street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223307402",
+        "postcode": "cb23bj",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "cherry hinton hall and grounds",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "cherry hinton road",
+        "area": "leste",
+        "phone": "01223446104",
+        "postcode": "cb18dw",
+        "type": "entretenimento"
+      }
+    },
+    {
+      "nome": "cherry hinton water play",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "cherry hinton hall, cherry hinton road",
+        "area": "leste",
+        "entrancefee": "grátis",
+        "phone": "01223446100",
+        "postcode": "cb18dw",
+        "pricerange": "grátis",
+        "type": "parque"
+      }
+    },
+    {
+      "nome": "christ's college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "saint andrew's street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223334900",
+        "postcode": "cb23bu",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "churchill college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "storey's way",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223336233",
+        "postcode": "cb30ds",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "cineworld cinema",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "cambridge leisure park, clifton way",
+        "area": "sul",
+        "phone": "00872208000",
+        "postcode": "cb17dy",
+        "type": "cinema"
+      }
+    },
+    {
+      "nome": "clare college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "trinity lane",
+        "area": "oeste",
+        "entrancefee": "2.50 libras",
+        "phone": "01223333200",
+        "postcode": "cb21tl",
+        "pricerange": "moderada",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "clare hall",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "herschel road",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223332360",
+        "postcode": "cb39al",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "club salsa",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "1 station road",
+        "area": "centro",
+        "entrancefee": "5 libras",
+        "phone": "07782218745",
+        "postcode": "cb12jb",
+        "pricerange": "moderada",
+        "type": "casa noturna"
+      }
+    },
+    {
+      "nome": "corpus christi",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "king's parade",
+        "area": "centro",
+        "entrancefee": "2 libras",
+        "phone": "01223338000",
+        "postcode": "cb21rh",
+        "pricerange": "barata",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "downing college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "regent street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223334860",
+        "postcode": "cb21dq",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "emmanuel college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "saint andrew's street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223334200",
+        "postcode": "cb23ap",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "funky fun house",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "8 mercers row, mercers row industrial estate",
+        "area": "leste",
+        "phone": "01223304705",
+        "postcode": "cb58hy",
+        "type": "entretenimento"
+      }
+    },
+    {
+      "nome": "gallery at twelve a high street",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "fulbourn",
+        "area": "leste",
+        "entrancefee": "grátis",
+        "phone": "01223295264",
+        "postcode": "cb15dh",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "gonville and caius college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "trinity street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223332400",
+        "postcode": "cb21ta",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "great saint mary's church",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "market square",
+        "area": "centro",
+        "entrancefee": "2 libras",
+        "phone": "01223350914",
+        "postcode": "cb23pq",
+        "pricerange": "barata",
+        "type": "arquitetura"
+      }
+    },
+    {
+      "nome": "holy trinity church",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "market street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223355397",
+        "postcode": "cb23nz",
+        "pricerange": "grátis",
+        "type": "arquitetura"
+      }
+    },
+    {
+      "nome": "hughes hall",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "wollaston road",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223334898",
+        "postcode": "cb12ew",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "jesus college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "jesus lane",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223339485",
+        "postcode": "cb58bl",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "jesus green outdoor pool",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "between victoria road and the river",
+        "area": "norte",
+        "phone": "01223302579",
+        "postcode": "cb43px",
+        "type": "piscina"
+      }
+    },
+    {
+      "nome": "kambar",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "1 wheeler street",
+        "area": "centro",
+        "entrancefee": "5 libras",
+        "phone": "01223842725",
+        "postcode": "cb23qb",
+        "pricerange": "moderada",
+        "type": "casa noturna"
+      }
+    },
+    {
+      "nome": "kettle's yard",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "castle street",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223748100",
+        "postcode": "cb30aq",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "king's college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "king's parade",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223331100",
+        "postcode": "cb21st",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "kings hedges learner pool",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "jedburgh court, kings hedges",
+        "area": "norte",
+        "phone": "01223353248",
+        "postcode": "cb42xh",
+        "type": "piscina"
+      }
+    },
+    {
+      "nome": "little saint mary's church",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "little saint mary's lane",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223366202",
+        "postcode": "cb21qy",
+        "pricerange": "grátis",
+        "type": "arquitetura"
+      }
+    },
+    {
+      "nome": "lynne strover gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "23 high street, fen ditton",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223295264",
+        "postcode": "cb30aq",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "magdalene college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "magdalene street",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223332138",
+        "postcode": "cb30ag",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "milton country park",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "milton country park, milton",
+        "area": "norte",
+        "entrancefee": "grátis",
+        "phone": "01223420060",
+        "postcode": "cb46az",
+        "pricerange": "grátis",
+        "type": "parque"
+      }
+    },
+    {
+      "nome": "mumford theatre",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "anglia ruskin enterprise, east road",
+        "area": "centro",
+        "phone": "08451962320",
+        "postcode": "cb11pt",
+        "type": "teatro"
+      }
+    },
+    {
+      "nome": "museum of archaelogy and anthropology",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "university of cambridge, downing street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223333516",
+        "postcode": "cb23dz",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "museum of classical archaeology",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "sidgwick avenue",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223335153",
+        "postcode": "cb39da",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "nusha",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "unit g6, cambridge leisure park, clifton road",
+        "area": "sul",
+        "phone": "01223902158",
+        "postcode": "cb17dy",
+        "type": "entretenimento"
+      }
+    },
+    {
+      "nome": "old schools",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "trinity lane",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223332320",
+        "postcode": "cb21tt",
+        "pricerange": "grátis",
+        "type": "arquitetura"
+      }
+    },
+    {
+      "nome": "parkside pools",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "gonville place",
+        "area": "centro",
+        "phone": "01223446100",
+        "postcode": "cb11ly",
+        "type": "piscina"
+      }
+    },
+    {
+      "nome": "pembroke college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "trumpington street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223338100",
+        "postcode": "cb21rf",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "people's portraits exhibition at girton college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "girton college, huntingdon road",
+        "area": "oeste",
+        "entrancefee": "grátis",
+        "phone": "01223338901",
+        "postcode": "cb3ojg",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "primavera",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "10 king s parade",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223357708",
+        "postcode": "cb21sj",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "queens' college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "silver street",
+        "area": "oeste",
+        "entrancefee": "2.50 libras",
+        "phone": "01223335511",
+        "postcode": "cb39et",
+        "pricerange": "moderada",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "regency gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "39 fitzroy street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223365454",
+        "postcode": "cb11er",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "riverboat georgina",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "cambridge passenger cruisers, jubilee house",
+        "area": "norte",
+        "phone": "01223902091",
+        "postcode": "cb43ax",
+        "type": "passeio de barco"
+      }
+    },
+    {
+      "nome": "ruskin gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "anglia ruskin university, east road",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01245493131",
+        "postcode": "cb11pt",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "saint barnabas press gallery",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "the belfast yard, coldham's road",
+        "area": "leste",
+        "entrancefee": "grátis",
+        "phone": "01223902116",
+        "postcode": "cb13ew",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "saint catharine's college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "king's parade",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223338300",
+        "postcode": "cb21rl",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "saint john's college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "saint john's street",
+        "area": "centro",
+        "entrancefee": "2.50 libras",
+        "phone": "01223338600",
+        "postcode": "cb21tp",
+        "pricerange": "moderada",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "scott polar museum",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "lensfield road",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223336540",
+        "postcode": "cb21er",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "scudamores punting co",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "granta place, mill lane",
+        "area": "centro",
+        "phone": "01223359750",
+        "postcode": "cb21rs",
+        "type": "passeio de barco"
+      }
+    },
+    {
+      "nome": "sheep's green and lammas land park fen causeway",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "fen causeway, newnham road,",
+        "area": "sul",
+        "entrancefee": "grátis",
+        "phone": "01223302580",
+        "postcode": "cb22ad",
+        "pricerange": "grátis",
+        "type": "parque"
+      }
+    },
+    {
+      "nome": "sidney sussex college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "sidney street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223338800",
+        "postcode": "cb23hu",
+        "pricerange": "grátis",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "soul tree nightclub",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "1-6 corn exchange street",
+        "area": "centro",
+        "entrancefee": "4 libras",
+        "phone": "01223477900",
+        "postcode": "cb23qf",
+        "pricerange": "barata",
+        "type": "casa noturna"
+      }
+    },
+    {
+      "nome": "tenpin",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "cambridge leisure park, clifton way",
+        "area": "sul",
+        "phone": "08715501010",
+        "postcode": "cb17dy",
+        "type": "entretenimento"
+      }
+    },
+    {
+      "nome": "the cambridge corn exchange",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "wheeler street",
+        "area": "centro",
+        "phone": "01223357851",
+        "postcode": "cb23qe",
+        "type": "teatro"
+      }
+    },
+    {
+      "nome": "the cambridge punter",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "251a chesterton road",
+        "area": "centro",
+        "phone": "07807718591",
+        "postcode": "cb41as",
+        "type": "passeio de barco"
+      }
+    },
+    {
+      "nome": "the cherry hinton village centre",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "colville road, cherry hinton",
+        "area": "leste",
+        "phone": "01223576412",
+        "postcode": "cb19ej",
+        "type": "esportes"
+      }
+    },
+    {
+      "nome": "the fez club",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "8 market passage",
+        "area": "centro",
+        "entrancefee": "5 libras",
+        "phone": "01223519224",
+        "postcode": "cb23hx",
+        "pricerange": "moderada",
+        "type": "casa noturna"
+      }
+    },
+    {
+      "nome": "the fitzwilliam museum",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "trumpington street",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223332900",
+        "postcode": "cb21rb",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "the junction",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "clifton way",
+        "area": "sul",
+        "phone": "01223511511",
+        "postcode": "cb17gx",
+        "type": "teatro"
+      }
+    },
+    {
+      "nome": "the man on the moon",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "2 norfolk street",
+        "area": "centro",
+        "phone": "01223474144",
+        "postcode": "cb12lf",
+        "type": "sala de concertos"
+      }
+    },
+    {
+      "nome": "the place",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "22 sidney street",
+        "area": "sul",
+        "phone": "01223324600",
+        "postcode": "cb23hg",
+        "pricerange": "moderada",
+        "type": "casa noturna"
+      }
+    },
+    {
+      "nome": "trinity college",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "trinity street",
+        "area": "centro",
+        "entrancefee": "1 libras",
+        "phone": "01223338400",
+        "postcode": "cb21tq",
+        "pricerange": "barata",
+        "type": "faculdade"
+      }
+    },
+    {
+      "nome": "vue cinema",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "the grafton centre, east road",
+        "area": "centro",
+        "phone": "08712240240",
+        "postcode": "cb11ps",
+        "type": "cinema"
+      }
+    },
+    {
+      "nome": "wandlebury country park",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "wandlebury ring, gog magog hills, babraham",
+        "area": "sul",
+        "entrancefee": "grátis",
+        "phone": "01223243830",
+        "postcode": "cb223ae",
+        "pricerange": "grátis",
+        "type": "parque"
+      }
+    },
+    {
+      "nome": "whale of a time",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "unit 8, viking way, bar hill",
+        "area": "oeste",
+        "phone": "01954781018",
+        "postcode": "cb238el",
+        "type": "entretenimento"
+      }
+    },
+    {
+      "nome": "whipple museum of the history of science",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "free school lane",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223330906",
+        "postcode": "cb23rh",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    },
+    {
+      "nome": "williams art and antiques",
+      "tipo": "atracao",
+      "artigo": "",
+      "apelidos": [],
+      "atributos": {
+        "address": "gwydir street, no. 5 dale's brewery",
+        "area": "centro",
+        "entrancefee": "grátis",
+        "phone": "01223311687",
+        "postcode": "cb12lj",
+        "pricerange": "grátis",
+        "type": "museu"
+      }
+    }
+  ]
+}

@@ -5,7 +5,8 @@ using System.Text;
 namespace Orquestracao.Templates;
 
 /// <summary>Uma pergunta do conjunto de teste, com a família (a estrutura) e o gabarito.</summary>
-public sealed record PerguntaTeste(int N, string Pergunta, string Familia, string Entidade, string Atributo, string Gabarito);
+/// <param name="Contexto">O que o LLM recebe junto (ex.: o registro do cadastro, num atendimento com consulta ao sistema).</param>
+public sealed record PerguntaTeste(int N, string Pergunta, string Familia, string Entidade, string Atributo, string Gabarito, string? Contexto = null);
 
 /// <summary>A resposta de uma estratégia (protótipo ou linha de base) para uma pergunta.</summary>
 public sealed record RespostaTeste(int N, string Texto, bool Correta, string Caminho, int ChamadasGeracao, int ChamadasParser, long Tokens, double Custo, double LatenciaMs,
@@ -213,6 +214,9 @@ public static class Experimento
     {
         // Sem gabarito (respostas livres, como no cenário de saúde), a correção automática não se aplica.
         if (gabarito.Trim().Length == 0) return false;
+        // Vários dados pedidos ("o endereço e o CEP"): todos têm de aparecer.
+        if (gabarito.Contains(" && ", StringComparison.Ordinal))
+            return gabarito.Split(" && ").All(g => g.Trim().Length == 0 || Correta(resposta, g.Trim()));
         // Gabarito com alternativas ("Chris Young || Young"): qualquer uma vale.
         if (gabarito.Contains(" || ", StringComparison.Ordinal))
             return gabarito.Split(" || ").Any(g => g.Trim().Length > 0 && Correta(resposta, g.Trim()));
@@ -244,7 +248,7 @@ public static class Experimento
     public static async Task<ResultadoExperimento> Rodar(
         IFonteDeFatos fonte, List<PerguntaTeste> conjunto, ILlm llmPrototipo, ILlm llmLinhaDeBase, IJuiz juiz,
         string modo, int semente, double taxaErroLlm, double latenciaLlmMs, ConfiguracaoOrquestrador? cfg = null, IParser? parser = null, CancellationToken ct = default,
-        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null, ILlm? normalizador = null, ILlm? validador = null, ILlm? estilizador = null)
+        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null, ILlm? normalizador = null, ILlm? validador = null, ILlm? estilizador = null, bool entidadeDoContexto = false)
     {
         var estil = estilizador is null ? null : new LlmMedido(estilizador);
         var valid = validador is null ? null : new LlmMedido(validador);
@@ -256,7 +260,8 @@ public static class Experimento
         var chaves = new Dictionary<string, HashSet<string>>();
         foreach (var p in conjunto)
         {
-            var r = await orq.Responder(p.Pergunta, llmPrototipo, ct, normalizador: norm, validador: valid, estilizador: estil);
+            var r = await orq.Responder(p.Pergunta, llmPrototipo, ct, systemExtra: p.Contexto, normalizador: norm, validador: valid, estilizador: estil,
+                entidadeDoContexto: entidadeDoContexto && p.Entidade.Length > 0 ? p.Entidade : null);
             var correta = Correta(r.Texto, p.Gabarito);
             if (!chaves.TryGetValue(p.Familia, out var set)) chaves[p.Familia] = set = [];
             set.Add(r.Chave);
@@ -277,7 +282,7 @@ public static class Experimento
                 try
                 {
                     var relogio = Stopwatch.StartNew();
-                    var r = await llmLinhaDeBase.Completar(Orquestrador.SystemGeracao, p.Pergunta, ct);
+                    var r = await llmLinhaDeBase.Completar(p.Contexto is null ? Orquestrador.SystemGeracao : $"{p.Contexto}\n---\n{Orquestrador.SystemGeracao}", p.Pergunta, ct);
                     baseArr[i] = new RespostaTeste(p.N, r.Texto.Trim(), Correta(r.Texto, p.Gabarito), Caminho.Llm, 1, 0, r.Entrada + r.Saida, r.Custo,
                         relogio.Elapsed.TotalMilliseconds + latenciaLlmMs);
                 }

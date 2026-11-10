@@ -73,12 +73,12 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
     /// normalização só decide a rota (a chave), e o LLM de geração continua recebendo a pergunta original.
     /// </summary>
     public async Task<ResultadoOrquestrador> Responder(string pergunta, ILlm geracao, CancellationToken ct = default, bool forcarLlm = false, string? systemExtra = null,
-        ILlm? normalizador = null, ILlm? validador = null, ILlm? estilizador = null)
+        ILlm? normalizador = null, ILlm? validador = null, ILlm? estilizador = null, string? entidadeDoContexto = null)
     {
         // O estilizador: o núcleo factual segue o fluxo (template + fonte) e só no fim o estilo é aplicado por um LLM pequeno.
         if (estilizador is not null && Estilos.Separar(pergunta) is var (nucleo, estilo))
         {
-            var rn = await Responder(nucleo, geracao, ct, forcarLlm, systemExtra, normalizador, validador);
+            var rn = await Responder(nucleo, geracao, ct, forcarLlm, systemExtra, normalizador, validador, entidadeDoContexto: entidadeDoContexto);
             var re = await estilizador.Completar(SystemEstilizacao, $"Estilo pedido: {estilo}\nResposta: {rn.Texto}", ct);
             Etapa?.Invoke(new EtapaFluxo("entrega", "fim", "estilo: " + Curto(estilo)));
             return rn with
@@ -106,6 +106,11 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         }
         else Passo("ui", "parser", Curto(pergunta));
         var (estrutura, usoParserBruto) = await parser.Extrair(paraParser, ct);
+        // Entidade do contexto: num atendimento, a entidade em discussão vem do estado da conversa ("qual é o telefone deles?").
+        if (!estrutura.TemSlot && entidadeDoContexto is not null && fonte.PorNome(entidadeDoContexto) is { } doContexto)
+        {
+            estrutura = new Estrutura($"{estrutura.Chave} {{{doContexto.Tipo}}}".Trim(), doContexto, estrutura.Pergunta);
+        }
         // O uso do normalizador entra junto com o do parser (os dois decidem a rota).
         var usoParser = Somar(usoParserBruto, usoNorm);
         var chamadasRota = (usoParserBruto is null ? 0 : 1);

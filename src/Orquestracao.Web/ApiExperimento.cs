@@ -73,6 +73,8 @@ public static class ApiExperimento
             var comValidador = Texto("validador", "") == "haiku";
             // O estilizador: "haiku" usa as reescritas do Claude Haiku gravadas em estilizadas-haiku.tsv (estilo<TAB>resposta do núcleo<TAB>texto).
             var comEstilizador = Texto("estilizador", "") == "haiku";
+            // A entidade do contexto: quando a frase não traz a entidade, vale a que está em discussão (PerguntaTeste.Entidade).
+            var comContexto = Texto("contexto", "") == "sim";
             string? pastaCenario = null;
             if (cenario.Length > 0)
             {
@@ -142,12 +144,13 @@ public static class ApiExperimento
                         }, 0, 0), 0.1, 0.5);
                         sufixo += "-estilizador";
                     }
+                    if (comContexto) sufixo += "-contexto";
                     // A base do experimento (templates, perguntas e feedbacks do protótipo) fica gravada ao lado do relatório.
                     Directory.CreateDirectory(pasta);
                     var banco = Path.Combine(pasta, $"experimento-{llm}{sufixo}.db");
                     if (File.Exists(banco)) File.Delete(banco);
                     var r = await Experimento.Rodar(fonteUsada, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
-                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador, validador: validador, estilizador: estilizador);
+                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador, validador: validador, estilizador: estilizador, entidadeDoContexto: comContexto);
                     if (pastaCenario is not null) r = r with { Cenario = cenario };
                     var opcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
                     {

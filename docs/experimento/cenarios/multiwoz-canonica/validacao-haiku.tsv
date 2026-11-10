@@ -1,0 +1,19 @@
+# Vereditos do validador (Claude Haiku 5.5, via subagente): template<TAB>SIM|NÃO<TAB>motivo
+O telefone da {entidade} é {phone}.	SIM	Telefone está no slot {phone}; texto fixo é genérico.
+O telefone da {entidade} é {phone}.	SIM	Telefone está no slot {phone}; texto fixo é genérico.
+A faixa de preço do {Entidade} é {pricerange}.	SIM	Faixa de preço está no slot {pricerange}; texto fixo é genérico.
+O endereço do {entidade} é {address}.	SIM	Endereço está no slot {address}; texto fixo é genérico.
+O endereço do {entidade} é {address}, e o telefone é {phone}.	SIM	Endereço e telefone estão nos slots; texto fixo é genérico.
+O endereço do {entidade} é {address}.	SIM	Endereço está no slot {address}; texto fixo é genérico.
+O endereço do ashley {type} é {address}.	NÃO	O texto fixo "ashley" é o nome da entidade original, não um slot.
+A {entidade} fica na região {area}.	SIM	Região está no slot {area}; texto fixo é genérico.
+O CEP do {entidade} é {postcode}, no endereço {address}.	SIM	CEP está no slot {postcode}; texto fixo é genérico.
+O CEP do {entidade} é {postcode}; o cadastro não informa o preço da entrada.	NÃO	"o cadastro não informa o preço da entrada" só vale para a entidade original.
+A {entidade} é uma atração do tipo {type}.	SIM	Tipo está no slot {type}; "uma atração" vale para todas as atrações.
+O {entidade} serve comida {food}.	SIM	Tipo de comida está no slot {food}; texto fixo é genérico.
+O {Entidade} serve comida {food}; o telefone é {phone} e o endereço é {address}.	SIM	Comida, telefone e endereço estão nos slots; texto fixo é genérico.
+O telefone do {entidade} é {phone}.	SIM	Telefone está no slot {phone}; texto fixo é genérico.
+O {Entidade} fica na região {area} da cidade.	SIM	Região está no slot {area}; "da cidade" vale para todas as entidades de Cambridge.
+O {entidade} fica na região {area}, no endereço {address}; o cadastro não informa o preço da entrada.	NÃO	"o cadastro não informa o preço da entrada" só vale para a entidade original.
+O CEP do {entidade} é {postcode}.	SIM	CEP está no slot {postcode}; texto fixo é genérico.
+A {entidade} é um {type}, e a entrada é {entrancefee}.	NÃO	O "um" fixo concorda com o tipo original (museu); outros tipos podem ser femininos.

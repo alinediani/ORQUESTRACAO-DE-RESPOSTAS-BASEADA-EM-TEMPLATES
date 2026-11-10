@@ -152,6 +152,18 @@ public class CenariosTests
         Assert.Equal("Responda como um pirata: Qual é a capital do Peru?", r2.Pergunta);
     }
 
+    [Fact]
+    public void Extrator_ReconheceONomeComOutraCaixa_ENaoOCongelaNoTemplate()
+    {
+        var e = new Entidade { Nome = "la mimosa", Tipo = "restaurante", Atributos = new() { ["address"] = "Thompsons Lane Fen Ditton" } };
+        Assert.Equal("O endereço do {entidade} é {address}.", Extrator.ExtrairTemplate("O endereço do La Mimosa é Thompsons Lane Fen Ditton.", e));
+        // O valor de um atributo ("hotel", o tipo) não é trocado dentro do nome ("ashley hotel").
+        var h = new Entidade { Nome = "ashley hotel", Tipo = "hotel", Atributos = new() { ["type"] = "hotel", ["address"] = "74 chesterton road" } };
+        Assert.Equal("O endereço do {entidade} é {address}.", Extrator.ExtrairTemplate("O endereço do ashley hotel é 74 chesterton road.", h));
+        // O inverso continua valendo: a capital contém o nome do país.
+        Assert.Equal("A capital {de_entidade} é {capital}.", Extrator.ExtrairTemplate("A capital do México é Cidade do México.", E("México")));
+    }
+
     [Theory]
     [InlineData("James corre 540 metros por semana.", "540", true)]
     [InlineData("O total é de R$ 1.200,00.", "1200", true)]

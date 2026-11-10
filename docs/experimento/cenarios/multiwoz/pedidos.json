@@ -1,0 +1,5485 @@
+[
+ {
+  "dialogo": "PMUL4462.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Can I get the postcode for that? I also need to book a taxi to the Golden Wok.",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o CEP disso? Também preciso reservar um táxi para o Golden Wok."
+ },
+ {
+  "dialogo": "PMUL0320.json",
+  "servico": "restaurant",
+  "nome": "lan hong house",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Sounds great, thanks! Actually, can you please just tell me the postcode and address?",
+  "nome_na_frase": false,
+  "traducao": "Parece ótimo, obrigado! Na verdade, você pode me dizer apenas o CEP e o endereço?"
+ },
+ {
+  "dialogo": "PMUL1484.json",
+  "servico": "attraction",
+  "nome": "castle galleries",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I please get the phone number for that?",
+  "nome_na_frase": false,
+  "traducao": "Poderia me dar o telefone disso, por favor?"
+ },
+ {
+  "dialogo": "PMUL2009.json",
+  "servico": "attraction",
+  "nome": "great saint mary's church",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Yes, that would be great.",
+  "nome_na_frase": false,
+  "traducao": "Sim, isso seria ótimo."
+ },
+ {
+  "dialogo": "PMUL3858.json",
+  "servico": "hotel",
+  "nome": "a and b guest house",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Could I have the address and postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia me dar o endereço e o CEP, por favor?"
+ },
+ {
+  "dialogo": "SNG1076.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes, that will work great. Can I get their phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, isso vai funcionar muito bem. Posso obter o telefone deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL2166.json",
+  "servico": "restaurant",
+  "nome": "zizzi cambridge",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "That sounds great, what's the price range for Zizzi Cambridge?",
+  "nome_na_frase": true,
+  "traducao": "Parece ótimo, qual é a faixa de preço do Zizzi Cambridge?"
+ },
+ {
+  "dialogo": "PMUL2436.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "The sounds great, can I get their address and postal code?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo, posso obter o endereço e o código postal deles?"
+ },
+ {
+  "dialogo": "PMUL2436.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "what's the postcode?",
+  "nome_na_frase": false,
+  "traducao": "qual é o CEP?"
+ },
+ {
+  "dialogo": "PMUL4239.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes. Could you give me the postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Sim. Poderia me dar o CEP, por favor?"
+ },
+ {
+  "dialogo": "MUL2646.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "internet",
+   "postcode"
+  ],
+  "frase": "Can you give me the postcode? And, do they have internet?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dar o CEP? E, eles têm internet?"
+ },
+ {
+  "dialogo": "MUL2646.json",
+  "servico": "attraction",
+  "nome": "kettle's yard",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Yes, I would love the address. Thank you so much!",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu adoraria o endereço. Muito obrigado!"
+ },
+ {
+  "dialogo": "MUL2089.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "internet"
+  ],
+  "frase": "Does it also have internet access?",
+  "nome_na_frase": false,
+  "traducao": "Também tem acesso à internet?"
+ },
+ {
+  "dialogo": "PMUL4125.json",
+  "servico": "restaurant",
+  "nome": "chiquito restaurant bar",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "May I have the phone number, please?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL4125.json",
+  "servico": "restaurant",
+  "nome": "chiquito restaurant bar",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Can you tell me what area they are in? I also need some help finding a train.",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer em que região eles ficam? Também preciso de ajuda para encontrar um trem."
+ },
+ {
+  "dialogo": "MUL1588.json",
+  "servico": "restaurant",
+  "nome": "charlie chan",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Yes, could you please give me the specific address of the restaurant?",
+  "nome_na_frase": false,
+  "traducao": "Sim, você poderia me dar o endereço específico do restaurante, por favor?"
+ },
+ {
+  "dialogo": "PMUL2719.json",
+  "servico": "attraction",
+  "nome": "clare hall",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "What is the entrance fee and the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o preço da entrada e o CEP?"
+ },
+ {
+  "dialogo": "PMUL3224.json",
+  "servico": "restaurant",
+  "nome": "saint johns chop house",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "Actually I don't need it booked right now. Can I please have the postcode and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, não preciso que seja reservado agora. Posso ter o CEP e o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL4840.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Great, I also want to make sure that it has free parking.",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, também quero ter certeza de que tem estacionamento gratuito."
+ },
+ {
+  "dialogo": "PMUL4840.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "What's their address and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço e o telefone deles?"
+ },
+ {
+  "dialogo": "SNG02172.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I choose the ashley hotel. What is their address, please?",
+  "nome_na_frase": true,
+  "traducao": "Eu escolho o ashley hotel. Qual é o endereço deles, por favor?"
+ },
+ {
+  "dialogo": "SNG02172.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "No, I just need the address.",
+  "nome_na_frase": false,
+  "traducao": "Não, eu só preciso do endereço."
+ },
+ {
+  "dialogo": "PMUL3558.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Great, thanks! Which area is it in?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, obrigado! Em que região fica?"
+ },
+ {
+  "dialogo": "PMUL3558.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "No, thanks. I just need to now the postcode.",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado. Eu só preciso saber o CEP."
+ },
+ {
+  "dialogo": "PMUL2275.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "thank you. i wish to get entrance fee",
+  "nome_na_frase": false,
+  "traducao": "obrigado. eu quero saber o preço da entrada"
+ },
+ {
+  "dialogo": "PMUL3600.json",
+  "servico": "attraction",
+  "nome": "cherry hinton water play",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Sounds great. Can I get the address and postcode for them please?",
+  "nome_na_frase": false,
+  "traducao": "Parece ótimo. Posso obter o endereço e o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL2525.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Great, can I get their phone number please? And I also wanted to see if you have any info on the Mumford Theatre.",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, posso obter o telefone deles, por favor? E também queria ver se você tem alguma informação sobre o Mumford Theatre."
+ },
+ {
+  "dialogo": "MUL2525.json",
+  "servico": "attraction",
+  "nome": "mumford theatre",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "I need to know where they are located and if they have an entrance fee please.",
+  "nome_na_frase": false,
+  "traducao": "Preciso saber onde eles ficam e se têm preço de entrada, por favor."
+ },
+ {
+  "dialogo": "MUL0409.json",
+  "servico": "attraction",
+  "nome": "regency gallery",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Just need to know what area it's in.",
+  "nome_na_frase": false,
+  "traducao": "Só preciso saber em que região fica."
+ },
+ {
+  "dialogo": "PMUL1259.json",
+  "servico": "attraction",
+  "nome": "the place",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes, I just need their postcode",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu só preciso do CEP deles"
+ },
+ {
+  "dialogo": "PMUL1374.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "Can you provide me with the entrance fee and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me fornecer o preço da entrada e o CEP?"
+ },
+ {
+  "dialogo": "PMUL3437.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Can you please give me the confirmation number for my booking?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dar o número de confirmação da minha reserva, por favor?"
+ },
+ {
+  "dialogo": "MUL0454.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "That's sounds good. Can I get their number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece bom. Posso obter o número e o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL4660.json",
+  "servico": "restaurant",
+  "nome": "meghna",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "What is the price range for Meghna?",
+  "nome_na_frase": true,
+  "traducao": "Qual é a faixa de preço do Meghna?"
+ },
+ {
+  "dialogo": "PMUL4660.json",
+  "servico": "restaurant",
+  "nome": "meghna",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "No, but I would like the price, arrival time, and travel time, please.",
+  "nome_na_frase": false,
+  "traducao": "Não, mas eu gostaria do preço, do horário de chegada e do tempo de viagem, por favor."
+ },
+ {
+  "dialogo": "PMUL0399.json",
+  "servico": "hotel",
+  "nome": "finches bed and breakfast",
+  "pedidos": [
+   "area",
+   "address",
+   "postcode"
+  ],
+  "frase": "I'm sorry, I am mistaken. I will not need you to book a reservation for me. I will need the area, address, and post code please.",
+  "nome_na_frase": false,
+  "traducao": "Desculpe, eu me enganei. Não vou precisar que você faça uma reserva para mim. Vou precisar da região, do endereço e do código postal, por favor."
+ },
+ {
+  "dialogo": "PMUL4880.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Is there an entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Tem preço de entrada?"
+ },
+ {
+  "dialogo": "MUL1555.json",
+  "servico": "restaurant",
+  "nome": "the missing sock",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes, can you give me a phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, você pode me dar um telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL0844.json",
+  "servico": "restaurant",
+  "nome": "pizza hut city centre",
+  "pedidos": [
+   "pricerange",
+   "area"
+  ],
+  "frase": "Can I get the area of town and the price range pleas?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter a região da cidade e a faixa de preço, por favor?"
+ },
+ {
+  "dialogo": "PMUL4025.json",
+  "servico": "attraction",
+  "nome": "jesus college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Do you happen to have the telephone number for the college? I would like to call the main office there.",
+  "nome_na_frase": false,
+  "traducao": "Por acaso você tem o telefone da faculdade? Eu gostaria de ligar para a secretaria principal de lá."
+ },
+ {
+  "dialogo": "PMUL1002.json",
+  "servico": "attraction",
+  "nome": "magdalene college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "What is the postcode there?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP de lá?"
+ },
+ {
+  "dialogo": "PMUL4949.json",
+  "servico": "restaurant",
+  "nome": "la mimosa",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "I'm sorry, I don't need it booked anymore. I just need the address, postcode, and phone number please.",
+  "nome_na_frase": false,
+  "traducao": "Desculpe, não preciso mais que seja reservado. Só preciso do endereço, do CEP e do telefone, por favor."
+ },
+ {
+  "dialogo": "MUL1248.json",
+  "servico": "restaurant",
+  "nome": "pizza hut fen ditton",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "No, I assume it is moderately priced though? If so, I just need an address, postcode and phone number.",
+  "nome_na_frase": false,
+  "traducao": "Não, eu imagino que tenha preço moderado, não? Se for, eu só preciso de um endereço, CEP e telefone."
+ },
+ {
+  "dialogo": "MUL1008.json",
+  "servico": "attraction",
+  "nome": "cambridge arts theatre",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That sounds perfect. Can I get the postcode of the Cambridge Arts Theatre please?",
+  "nome_na_frase": true,
+  "traducao": "Isso parece perfeito. Posso obter o CEP do Cambridge Arts Theatre, por favor?"
+ },
+ {
+  "dialogo": "SNG0832.json",
+  "servico": "hotel",
+  "nome": "el shaddai",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "At the moment, can I just get the postcode and it is a hotel?",
+  "nome_na_frase": false,
+  "traducao": "No momento, posso obter apenas o CEP, e é um hotel?"
+ },
+ {
+  "dialogo": "PMUL4716.json",
+  "servico": "attraction",
+  "nome": "wandlebury country park",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Thank you. May I have the phone number for wandlebury country park, please?",
+  "nome_na_frase": true,
+  "traducao": "Obrigado. Posso ter o telefone do wandlebury country park, por favor?"
+ },
+ {
+  "dialogo": "PMUL1477.json",
+  "servico": "attraction",
+  "nome": "churchill college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Please give me their phone number.",
+  "nome_na_frase": false,
+  "traducao": "Por favor, me dê o telefone deles."
+ },
+ {
+  "dialogo": "MUL2499.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Yes please. Can you let me know what the entrance fee is too?",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor. Você pode me informar qual é o preço da entrada também?"
+ },
+ {
+  "dialogo": "PMUL1173.json",
+  "servico": "attraction",
+  "nome": "great saint mary's church",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Ok, what's the address and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Ok, qual é o endereço e o CEP?"
+ },
+ {
+  "dialogo": "PMUL1385.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Yes, that would be great. Can you give me the phone number, address, and postcode.?",
+  "nome_na_frase": false,
+  "traducao": "Sim, isso seria ótimo. Você pode me dar o telefone, o endereço e o CEP?"
+ },
+ {
+  "dialogo": "PMUL1463.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "Just the address and entrance fee if fine, if there is no info on the fee, than Ill need the number",
+  "nome_na_frase": false,
+  "traducao": "Só o endereço e o preço da entrada está bom, se não houver informação sobre o preço, então vou precisar do número"
+ },
+ {
+  "dialogo": "PMUL2477.json",
+  "servico": "restaurant",
+  "nome": "bedouin",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Can I have the address and postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o endereço e o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL2477.json",
+  "servico": "restaurant",
+  "nome": "bedouin",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "I actually need some places to go in the centre area.",
+  "nome_na_frase": false,
+  "traducao": "Na verdade eu preciso de alguns lugares para ir na região central."
+ },
+ {
+  "dialogo": "PMUL2477.json",
+  "servico": "restaurant",
+  "nome": "bedouin",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "That would be fine. Can I get the address and phone number.",
+  "nome_na_frase": false,
+  "traducao": "Isso seria bom. Posso obter o endereço e o telefone?"
+ },
+ {
+  "dialogo": "MUL2120.json",
+  "servico": "hotel",
+  "nome": "finches bed and breakfast",
+  "pedidos": [
+   "type",
+   "parking",
+   "postcode"
+  ],
+  "frase": "I'd like to know if it has free parking. Also, the hotel type and it's postcode.",
+  "nome_na_frase": false,
+  "traducao": "Gostaria de saber se tem estacionamento gratuito. Além disso, o tipo de hotel e o CEP dele."
+ },
+ {
+  "dialogo": "MUL2269.json",
+  "servico": "hotel",
+  "nome": "huntingdon marriott hotel",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Could you give me the address for Huntingdon Marriott, please?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia me dar o endereço do Huntingdon Marriott, por favor?"
+ },
+ {
+  "dialogo": "MUL0264.json",
+  "servico": "restaurant",
+  "nome": "frankie and bennys",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Frankie and Benny's sounds good. What is the phone number for that restaurant?",
+  "nome_na_frase": false,
+  "traducao": "Frankie and Benny's parece bom. Qual é o telefone desse restaurante?"
+ },
+ {
+  "dialogo": "PMUL0509.json",
+  "servico": "restaurant",
+  "nome": "frankie and bennys",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "what is their phone number and address?",
+  "nome_na_frase": false,
+  "traducao": "qual é o telefone e o endereço deles?"
+ },
+ {
+  "dialogo": "PMUL3044.json",
+  "servico": "attraction",
+  "nome": "saint john's college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I am also looking to visit saint john's college, do you know the address and cost to visit?",
+  "nome_na_frase": true,
+  "traducao": "Também estou querendo visitar o saint john's college, você sabe o endereço e o custo para visitar?"
+ },
+ {
+  "dialogo": "MUL2042.json",
+  "servico": "hotel",
+  "nome": "cityroomz",
+  "pedidos": [
+   "area",
+   "address",
+   "phone"
+  ],
+  "frase": "No thank you, can I please just get their phone number, area, and address? Thanks.",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado, posso apenas obter o telefone, a região e o endereço deles, por favor? Obrigado."
+ },
+ {
+  "dialogo": "MUL2042.json",
+  "servico": "hotel",
+  "nome": "cityroomz",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can I have the exact address please?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o endereço exato, por favor?"
+ },
+ {
+  "dialogo": "PMUL1867.json",
+  "servico": "hotel",
+  "nome": "university arms hotel",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "No, don't worry about booking the room, just please give me the address for the hotel.",
+  "nome_na_frase": false,
+  "traducao": "Não, não se preocupe em reservar o quarto, apenas me dê o endereço do hotel, por favor."
+ },
+ {
+  "dialogo": "SNG0571.json",
+  "servico": "restaurant",
+  "nome": "maharajah tandoori restaurant",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "No, I'll have to discuss it with my wife. Can you just get me the postcode for Maharajah Tandoori please?",
+  "nome_na_frase": false,
+  "traducao": "Não, vou ter que discutir isso com a minha esposa. Você pode apenas me conseguir o CEP do Maharajah Tandoori, por favor?"
+ },
+ {
+  "dialogo": "PMUL2330.json",
+  "servico": "attraction",
+  "nome": "nusha",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "I would like Nusha. Can you give me the phone number and address for Nusha?",
+  "nome_na_frase": true,
+  "traducao": "Eu gostaria do Nusha. Você pode me dar o telefone e o endereço do Nusha?"
+ },
+ {
+  "dialogo": "SNG0733.json",
+  "servico": "restaurant",
+  "nome": "tandoori palace",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "Actually, I just need the number and address.",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, eu só preciso do número e do endereço."
+ },
+ {
+  "dialogo": "PMUL4186.json",
+  "servico": "restaurant",
+  "nome": "nandos",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Are you sure that they have two locations? Can you tell me their address(es)?",
+  "nome_na_frase": false,
+  "traducao": "Você tem certeza de que eles têm dois locais? Você pode me dizer o(s) endereço(s) deles?"
+ },
+ {
+  "dialogo": "PMUL4186.json",
+  "servico": "restaurant",
+  "nome": "nandos",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Yes their postcode and whether they have free parking or not.",
+  "nome_na_frase": false,
+  "traducao": "Sim, o CEP deles e se têm estacionamento gratuito ou não."
+ },
+ {
+  "dialogo": "PMUL4186.json",
+  "servico": "restaurant",
+  "nome": "nandos",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "You didn't answer my question. I need the postcode for The Cambridge Belfry and I need to know if they have free parking or not.",
+  "nome_na_frase": false,
+  "traducao": "Você não respondeu à minha pergunta. Preciso do CEP do The Cambridge Belfry e preciso saber se eles têm estacionamento gratuito ou não."
+ },
+ {
+  "dialogo": "PMUL0006.json",
+  "servico": "restaurant",
+  "nome": "the lucky star",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "The lucky star would be just fine. I need the postcode please.",
+  "nome_na_frase": true,
+  "traducao": "O lucky star seria ótimo. Preciso do CEP, por favor."
+ },
+ {
+  "dialogo": "MUL2442.json",
+  "servico": "attraction",
+  "nome": "kettle's yard",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "Yes, can you tell me about the kettle's yard? What is the address and entrance fee?",
+  "nome_na_frase": true,
+  "traducao": "Sim, você pode me falar sobre o kettle's yard? Qual é o endereço e o preço da entrada?"
+ },
+ {
+  "dialogo": "PMUL2006.json",
+  "servico": "attraction",
+  "nome": "milton country park",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "Just tell me the attraction type please",
+  "nome_na_frase": false,
+  "traducao": "Apenas me diga o tipo de atração, por favor"
+ },
+ {
+  "dialogo": "MUL2305.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "What area is the Funky Fun House located?",
+  "nome_na_frase": true,
+  "traducao": "Em que região fica o Funky Fun House?"
+ },
+ {
+  "dialogo": "PMUL4231.json",
+  "servico": "restaurant",
+  "nome": "the hotpot",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes could you give me their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim, você poderia me dar o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL4231.json",
+  "servico": "restaurant",
+  "nome": "the hotpot",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "What price range is that in?",
+  "nome_na_frase": false,
+  "traducao": "Em que faixa de preço isso está?"
+ },
+ {
+  "dialogo": "PMUL4842.json",
+  "servico": "hotel",
+  "nome": "el shaddai",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Great! What is their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo! Qual é o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL1812.json",
+  "servico": "hotel",
+  "nome": "allenbell",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "No I just need the phone number. Thanks",
+  "nome_na_frase": false,
+  "traducao": "Não, eu só preciso do telefone. Obrigado"
+ },
+ {
+  "dialogo": "SNG0456.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Oh, no, but I do need the postcode address and number.",
+  "nome_na_frase": false,
+  "traducao": "Ah, não, mas eu preciso do CEP, do endereço e do número."
+ },
+ {
+  "dialogo": "MUL2423.json",
+  "servico": "restaurant",
+  "nome": "panahar",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "What is the post code for the expensive restaurant Panahar?",
+  "nome_na_frase": true,
+  "traducao": "Qual é o código postal do restaurante caro Panahar?"
+ },
+ {
+  "dialogo": "MUL2423.json",
+  "servico": "attraction",
+  "nome": "cambridge arts theatre",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "I would be going from Cambridge Arts to Panahar, leaving by 1:00. Can you please provide the postcode and phone number of Cambridge Arts as well?",
+  "nome_na_frase": false,
+  "traducao": "Eu estaria indo do Cambridge Arts para o Panahar, saindo até 1:00. Você pode, por favor, fornecer também o CEP e o telefone do Cambridge Arts?"
+ },
+ {
+  "dialogo": "PMUL2746.json",
+  "servico": "attraction",
+  "nome": "nusha",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That would work whats the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso funcionaria, qual é o CEP?"
+ },
+ {
+  "dialogo": "MUL2270.json",
+  "servico": "hotel",
+  "nome": "archway house",
+  "pedidos": [
+   "internet"
+  ],
+  "frase": "Thanks! I am also looking for a hotel called Archway House. Can you tell me if they have free wifi?",
+  "nome_na_frase": true,
+  "traducao": "Obrigado! Também estou procurando um hotel chamado Archway House. Você pode me dizer se eles têm wifi gratuito?"
+ },
+ {
+  "dialogo": "MUL2270.json",
+  "servico": "hotel",
+  "nome": "archway house",
+  "pedidos": [
+   "type",
+   "pricerange"
+  ],
+  "frase": "I would first like to know what their price range and hotel type are, thank you.",
+  "nome_na_frase": false,
+  "traducao": "Primeiro eu gostaria de saber qual é a faixa de preço e o tipo de hotel deles, obrigado."
+ },
+ {
+  "dialogo": "MUL1552.json",
+  "servico": "restaurant",
+  "nome": "curry prince",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "What area is that in?",
+  "nome_na_frase": false,
+  "traducao": "Em que região fica isso?"
+ },
+ {
+  "dialogo": "MUL1376.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Sure, I would like to book a reservation for that. But first, could you tell me what area the Alexander Bed and Breakfast is in?",
+  "nome_na_frase": true,
+  "traducao": "Claro, eu gostaria de fazer uma reserva para isso. Mas primeiro, você poderia me dizer em que região fica o Alexander Bed and Breakfast?"
+ },
+ {
+  "dialogo": "MUL2294.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Does it have free parking?",
+  "nome_na_frase": false,
+  "traducao": "Tem estacionamento gratuito?"
+ },
+ {
+  "dialogo": "MUL2294.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "No thanks, but could you provide me with their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado, mas você poderia me fornecer o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL1316.json",
+  "servico": "attraction",
+  "nome": "the cambridge corn exchange",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "What type of attraction is that?",
+  "nome_na_frase": false,
+  "traducao": "Que tipo de atração é essa?"
+ },
+ {
+  "dialogo": "MUL2664.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "As I said before, I'd like something cheap. Centre area is preferred.",
+  "nome_na_frase": false,
+  "traducao": "Como eu disse antes, eu gostaria de algo barato. A região central é preferida."
+ },
+ {
+  "dialogo": "MUL2664.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Sure, can you give me their phone number?",
+  "nome_na_frase": false,
+  "traducao": "Claro, você pode me dar o telefone deles?"
+ },
+ {
+  "dialogo": "PMUL4964.json",
+  "servico": "attraction",
+  "nome": "cambridge university botanic gardens",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "i need its address and phone number.",
+  "nome_na_frase": false,
+  "traducao": "preciso do endereço e do telefone dele."
+ },
+ {
+  "dialogo": "PMUL2194.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "That sounds great, can I please have their phone number and information about their entrance fees?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo, posso ter o telefone deles e informações sobre os preços de entrada, por favor?"
+ },
+ {
+  "dialogo": "MUL1110.json",
+  "servico": "hotel",
+  "nome": "el shaddai",
+  "pedidos": [
+   "area",
+   "phone"
+  ],
+  "frase": "Thanks, do you know what area in the city they're located? I could also use a phone number if you have it on record.",
+  "nome_na_frase": false,
+  "traducao": "Obrigado, você sabe em que região da cidade eles ficam? Eu também poderia usar um telefone, se você tiver registrado."
+ },
+ {
+  "dialogo": "MUL0018.json",
+  "servico": "hotel",
+  "nome": "university arms hotel",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Could I get their phone number and address, please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter o telefone e o endereço deles, por favor?"
+ },
+ {
+  "dialogo": "MUL1883.json",
+  "servico": "attraction",
+  "nome": "riverboat georgina",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Great can I get their address please?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, posso obter o endereço deles, por favor?"
+ },
+ {
+  "dialogo": "MUL1883.json",
+  "servico": "attraction",
+  "nome": "riverboat georgina",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I would also like the street address please.",
+  "nome_na_frase": false,
+  "traducao": "Eu também gostaria do endereço da rua, por favor."
+ },
+ {
+  "dialogo": "MUL1883.json",
+  "servico": "attraction",
+  "nome": "riverboat georgina",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Is there a street address or landmark to locate them?",
+  "nome_na_frase": false,
+  "traducao": "Existe um endereço de rua ou ponto de referência para localizá-los?"
+ },
+ {
+  "dialogo": "MUL1935.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Yes for Saturday.I also want to know the nearby attraction called all saints church , address and area please",
+  "nome_na_frase": true,
+  "traducao": "Sim, para sábado. Também quero saber sobre a atração próxima chamada all saints church, o endereço e a região, por favor"
+ },
+ {
+  "dialogo": "PMUL3933.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "stars",
+   "address",
+   "postcode"
+  ],
+  "frase": "How many stars, also the postcode and address? I will also need a taxi and want it to arrive by 17:00. Contact number and car type.",
+  "nome_na_frase": false,
+  "traducao": "Quantas estrelas, e também o CEP e o endereço? Também vou precisar de um táxi e quero que ele chegue até as 17:00. Número de contato e tipo de carro."
+ },
+ {
+  "dialogo": "PMUL3933.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "just find me the postcode and address.",
+  "nome_na_frase": false,
+  "traducao": "apenas encontre para mim o CEP e o endereço."
+ },
+ {
+  "dialogo": "PMUL2491.json",
+  "servico": "restaurant",
+  "nome": "darrys cookhouse and wine shop",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "Could you give me the address and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Poderia me dar o endereço e o telefone?"
+ },
+ {
+  "dialogo": "PMUL2491.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the exact address?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço exato?"
+ },
+ {
+  "dialogo": "MUL0474.json",
+  "servico": "attraction",
+  "nome": "parkside pools",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Alright. Do you know if there is an entrance fee at that pool?",
+  "nome_na_frase": false,
+  "traducao": "Certo. Você sabe se há preço de entrada nessa piscina?"
+ },
+ {
+  "dialogo": "PMUL3778.json",
+  "servico": "restaurant",
+  "nome": "little seoul",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That sounds good. Could I get the postcode for Little Seoul please?",
+  "nome_na_frase": true,
+  "traducao": "Isso parece bom. Posso obter o CEP do Little Seoul, por favor?"
+ },
+ {
+  "dialogo": "SNG0715.json",
+  "servico": "restaurant",
+  "nome": "bedouin",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "Excellent! I don't need a table right now, but if you could give me the address and phone number, that would be great.",
+  "nome_na_frase": false,
+  "traducao": "Excelente! Não preciso de uma mesa agora, mas se você pudesse me dar o endereço e o telefone, seria ótimo."
+ },
+ {
+  "dialogo": "PMUL4155.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "pricerange",
+   "internet",
+   "address"
+  ],
+  "frase": "No, I just need the address, price range and I need to know if they have internet.",
+  "nome_na_frase": false,
+  "traducao": "Não, eu só preciso do endereço, da faixa de preço e preciso saber se eles têm internet."
+ },
+ {
+  "dialogo": "PMUL4026.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "What is the entrance fee there?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o preço da entrada de lá?"
+ },
+ {
+  "dialogo": "MUL1028.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "I just need the phone number for the hotel please.",
+  "nome_na_frase": false,
+  "traducao": "Eu só preciso do telefone do hotel, por favor."
+ },
+ {
+  "dialogo": "MUL1028.json",
+  "servico": "attraction",
+  "nome": "wandlebury country park",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "No, but I'd like to know the address and phone number for wandlebury country park.",
+  "nome_na_frase": true,
+  "traducao": "Não, mas eu gostaria de saber o endereço e o telefone do wandlebury country park."
+ },
+ {
+  "dialogo": "MUL1028.json",
+  "servico": "attraction",
+  "nome": "wandlebury country park",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "May I also get the address for wandlebury country park please.",
+  "nome_na_frase": true,
+  "traducao": "Posso também obter o endereço do wandlebury country park, por favor."
+ },
+ {
+  "dialogo": "MUL1028.json",
+  "servico": "attraction",
+  "nome": "wandlebury country park",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the address, please?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço, por favor?"
+ },
+ {
+  "dialogo": "MUL0364.json",
+  "servico": "restaurant",
+  "nome": "jinling noodle bar",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes please. Please provide the phone number before you book.",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor. Por favor, forneça o telefone antes de reservar."
+ },
+ {
+  "dialogo": "MUL1899.json",
+  "servico": "attraction",
+  "nome": "cherry hinton water play",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Can I get the phone number and address?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o telefone e o endereço?"
+ },
+ {
+  "dialogo": "PMUL3012.json",
+  "servico": "attraction",
+  "nome": "cambridge university botanic gardens",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "That sounds perfect for what I am looking for. Can you tell me what type of attraction that is considered?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece perfeito para o que estou procurando. Você pode me dizer que tipo de atração isso é considerado?"
+ },
+ {
+  "dialogo": "MUL2072.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "area",
+   "postcode"
+  ],
+  "frase": "Actually, let's not worry about booking it just now. Can you narrow down where it is for me with the area at postcode?",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, vamos não nos preocupar em reservar agora. Você pode delimitar para mim onde fica, com a região e o CEP?"
+ },
+ {
+  "dialogo": "PMUL0692.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "food"
+  ],
+  "frase": "I don't need a reservation right now. What type of food do they serve?",
+  "nome_na_frase": false,
+  "traducao": "Não preciso de uma reserva agora. Que tipo de comida eles servem?"
+ },
+ {
+  "dialogo": "PMUL0692.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "Can I get just the postcode and phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter apenas o CEP e o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL0109.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Can you tell me if this a hotel or guesthouse and whether or not they have free parking please?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer se isso é um hotel ou uma pousada e se eles têm ou não estacionamento gratuito, por favor?"
+ },
+ {
+  "dialogo": "PMUL0109.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Is the parking free??",
+  "nome_na_frase": false,
+  "traducao": "O estacionamento é gratuito??"
+ },
+ {
+  "dialogo": "PMUL2119.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Can you get me the phone number for old schools please?",
+  "nome_na_frase": true,
+  "traducao": "Você pode me conseguir o telefone do old schools, por favor?"
+ },
+ {
+  "dialogo": "MUL0466.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Okay. Wonderful. May I have the exact address as well? Also I need help finding a train to go to Stansted Airport that will arrive by 18:00.",
+  "nome_na_frase": false,
+  "traducao": "Ok. Maravilhoso. Posso ter também o endereço exato? Além disso, preciso de ajuda para encontrar um trem para ir ao Stansted Airport que chegue até as 18:00."
+ },
+ {
+  "dialogo": "MUL2320.json",
+  "servico": "attraction",
+  "nome": "mumford theatre",
+  "pedidos": [
+   "entrancefee",
+   "address",
+   "phone"
+  ],
+  "frase": "Yes and I need to know the entrance fee, address, and phone number",
+  "nome_na_frase": false,
+  "traducao": "Sim, e preciso saber o preço da entrada, o endereço e o telefone"
+ },
+ {
+  "dialogo": "MUL2320.json",
+  "servico": "restaurant",
+  "nome": "cote",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I am not sure how many people will be coming, so I will do that later. But can you provide me with their postcode and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Não tenho certeza de quantas pessoas virão, então vou fazer isso depois. Mas você pode me fornecer o CEP e o telefone deles?"
+ },
+ {
+  "dialogo": "MUL2320.json",
+  "servico": "attraction",
+  "nome": "mumford theatre",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "I am not sure how many people will be coming, so I will do that later. But can you provide me with their postcode and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Não tenho certeza de quantas pessoas virão, então vou fazer isso depois. Mas você pode me fornecer o CEP e o telefone deles?"
+ },
+ {
+  "dialogo": "MUL1675.json",
+  "servico": "restaurant",
+  "nome": "the lucky star",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Let's go with Lucky Star please. What is the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Vamos com o Lucky Star, por favor. Qual é o telefone?"
+ },
+ {
+  "dialogo": "MUL0457.json",
+  "servico": "attraction",
+  "nome": "abbey pool and astroturf pitch",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the address?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço?"
+ },
+ {
+  "dialogo": "PMUL3304.json",
+  "servico": "restaurant",
+  "nome": "thanh binh",
+  "pedidos": [
+   "area",
+   "address"
+  ],
+  "frase": "i need a address and the area please ?",
+  "nome_na_frase": false,
+  "traducao": "preciso de um endereço e da região, por favor ?"
+ },
+ {
+  "dialogo": "MUL0810.json",
+  "servico": "attraction",
+  "nome": "cambridge museum of technology",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I forgot to ask; what is the postcode for the Cambridge Museum of Technology that you mentioned earlier?",
+  "nome_na_frase": true,
+  "traducao": "Esqueci de perguntar; qual é o CEP do Cambridge Museum of Technology que você mencionou antes?"
+ },
+ {
+  "dialogo": "PMUL2670.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "area",
+   "address"
+  ],
+  "frase": "Sounds nice, can you just give me the address & area?",
+  "nome_na_frase": false,
+  "traducao": "Parece legal, você pode apenas me dar o endereço e a região?"
+ },
+ {
+  "dialogo": "PMUL4255.json",
+  "servico": "attraction",
+  "nome": "cambridge museum of technology",
+  "pedidos": [
+   "entrancefee",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Yes please! Could you kindly provide me with the phone number, post code, and the entrance fee I'd have to pay?",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor! Você poderia gentilmente me fornecer o telefone, o CEP e o preço da entrada que eu teria que pagar?"
+ },
+ {
+  "dialogo": "MUL2439.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Oh, nice! Can you tell me their phone number, please?",
+  "nome_na_frase": false,
+  "traducao": "Ah, legal! Você pode me dizer o telefone deles, por favor?"
+ },
+ {
+  "dialogo": "MUL2439.json",
+  "servico": "restaurant",
+  "nome": "shanghai family restaurant",
+  "pedidos": [
+   "area",
+   "postcode",
+   "address"
+  ],
+  "frase": "Sure, can I get the address, area, and postcode for shanghai family restaurant?",
+  "nome_na_frase": true,
+  "traducao": "Claro, posso obter o endereço, a região e o CEP do shanghai family restaurant?"
+ },
+ {
+  "dialogo": "PMUL3759.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "area",
+   "phone"
+  ],
+  "frase": "I think I would like to visit that location, It seems nice. Could I get the phone number and the area?",
+  "nome_na_frase": false,
+  "traducao": "Acho que eu gostaria de visitar esse local, parece legal. Poderia obter o telefone e a região?"
+ },
+ {
+  "dialogo": "PMUL4610.json",
+  "servico": "attraction",
+  "nome": "saint barnabas press gallery",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Sounds wonderful! Can you give me their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Parece maravilhoso! Você pode me dar o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL3336.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Can I have the number please?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o número, por favor?"
+ },
+ {
+  "dialogo": "PMUL3336.json",
+  "servico": "restaurant",
+  "nome": "rajmahal",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Can i also have their phone number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Posso também ter o telefone e o CEP deles?"
+ },
+ {
+  "dialogo": "MUL0844.json",
+  "servico": "restaurant",
+  "nome": "the slug and lettuce",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "No thank you. Could you tell me what area of town The Slug and Lettuce is in, though?",
+  "nome_na_frase": true,
+  "traducao": "Não, obrigado. Você poderia me dizer em que região da cidade fica o The Slug and Lettuce, porém?"
+ },
+ {
+  "dialogo": "MUL1803.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "entrancefee",
+   "address",
+   "phone"
+  ],
+  "frase": "It might. Can you please tell me the entrance fee, address, and phone number of All Saints Church?",
+  "nome_na_frase": true,
+  "traducao": "Pode ser. Você pode me dizer o preço da entrada, o endereço e o telefone da All Saints Church, por favor?"
+ },
+ {
+  "dialogo": "MUL0035.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "I need help finding the Aylesbray Lodge Guest House. Would you be able to give me the address and phone number?",
+  "nome_na_frase": true,
+  "traducao": "Preciso de ajuda para encontrar a Aylesbray Lodge Guest House. Você poderia me dar o endereço e o telefone?"
+ },
+ {
+  "dialogo": "MUL0035.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "internet",
+   "phone"
+  ],
+  "frase": "Could you also let me know the star rating of the hotel, phone number and I'd also like to know if they have wifi.",
+  "nome_na_frase": false,
+  "traducao": "Você poderia também me informar a classificação em estrelas do hotel, o telefone e eu também gostaria de saber se eles têm wifi."
+ },
+ {
+  "dialogo": "PMUL4059.json",
+  "servico": "hotel",
+  "nome": "autumn house",
+  "pedidos": [
+   "area",
+   "address",
+   "phone"
+  ],
+  "frase": "Could I get the area, phone number, and address of the Kettles yard?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter a região, o telefone e o endereço do Kettles yard?"
+ },
+ {
+  "dialogo": "PMUL4059.json",
+  "servico": "hotel",
+  "nome": "autumn house",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "What is the area?",
+  "nome_na_frase": false,
+  "traducao": "Qual é a região?"
+ },
+ {
+  "dialogo": "PMUL4059.json",
+  "servico": "hotel",
+  "nome": "autumn house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP?"
+ },
+ {
+  "dialogo": "MUL1806.json",
+  "servico": "attraction",
+  "nome": "people's portraits exhibition at girton college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I have the phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia me dar o telefone, por favor?"
+ },
+ {
+  "dialogo": "MUL1254.json",
+  "servico": "hotel",
+  "nome": "allenbell",
+  "pedidos": [
+   "type",
+   "parking"
+  ],
+  "frase": "Excellent. I'm also looking for the allenbell hotel. Do they have free parking and what type of hotel are they?",
+  "nome_na_frase": true,
+  "traducao": "Excelente. Também estou procurando o allenbell hotel. Eles têm estacionamento gratuito e que tipo de hotel eles são?"
+ },
+ {
+  "dialogo": "PMUL1533.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "internet",
+   "phone"
+  ],
+  "frase": "Ive heard good things about the acorn guesthouse. What is their phone number? And do they have free wifi?",
+  "nome_na_frase": false,
+  "traducao": "Ouvi coisas boas sobre a acorn guesthouse. Qual é o telefone deles? E eles têm wifi gratuito?"
+ },
+ {
+  "dialogo": "SNG0466.json",
+  "servico": "restaurant",
+  "nome": "ali baba",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Actually, can I just get the address there for now please?",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, posso obter só o endereço de lá por enquanto, por favor?"
+ },
+ {
+  "dialogo": "SNG0482.json",
+  "servico": "restaurant",
+  "nome": "don pasquale pizzeria",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That sounds good. No I don't need a reservation, but could you tell me the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece bom. Não, não preciso de uma reserva, mas você poderia me dizer o CEP?"
+ },
+ {
+  "dialogo": "PMUL1113.json",
+  "servico": "attraction",
+  "nome": "primavera",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "yes phone number and postcode,thank uyou",
+  "nome_na_frase": false,
+  "traducao": "sim telefone e CEP, obrigado"
+ },
+ {
+  "dialogo": "PMUL2195.json",
+  "servico": "attraction",
+  "nome": "great saint mary's church",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Great. What is the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo. Qual é o telefone?"
+ },
+ {
+  "dialogo": "PMUL2195.json",
+  "servico": "restaurant",
+  "nome": "little seoul",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "No thanks. I do need the phone number and post code.",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado. Eu preciso do telefone e do CEP."
+ },
+ {
+  "dialogo": "MUL1289.json",
+  "servico": "hotel",
+  "nome": "finches bed and breakfast",
+  "pedidos": [
+   "type",
+   "phone"
+  ],
+  "frase": "Okay. Sounds good. Can you tell me the type of hotel and provide me with the hotel's phone number?",
+  "nome_na_frase": false,
+  "traducao": "Ok. Parece bom. Você pode me dizer o tipo de hotel e me fornecer o telefone do hotel?"
+ },
+ {
+  "dialogo": "MUL0072.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could i get the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter o telefone?"
+ },
+ {
+  "dialogo": "MUL0072.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "That's fine. Can I please have the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Tudo bem. Posso ter o telefone, por favor?"
+ },
+ {
+  "dialogo": "MUL1015.json",
+  "servico": "attraction",
+  "nome": "the junction",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Yes, please provide the address and postcode as well.",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor forneça também o endereço e o CEP."
+ },
+ {
+  "dialogo": "MUL2466.json",
+  "servico": "attraction",
+  "nome": "the place",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "The \"Place\" sounds good, can I get its postcode, please?",
+  "nome_na_frase": false,
+  "traducao": "O \"Place\" parece bom, posso obter o CEP dele, por favor?"
+ },
+ {
+  "dialogo": "SNG0799.json",
+  "servico": "hotel",
+  "nome": "el shaddai",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "What is the phone number of the el shaddai?",
+  "nome_na_frase": true,
+  "traducao": "Qual é o telefone do el shaddai?"
+ },
+ {
+  "dialogo": "MUL0510.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Yes that sounds good. What is their phone number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim, isso parece bom. Qual é o telefone e o CEP deles?"
+ },
+ {
+  "dialogo": "MUL0528.json",
+  "servico": "attraction",
+  "nome": "tenpin",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "Can I have the entrance fee and address please?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o preço da entrada e o endereço, por favor?"
+ },
+ {
+  "dialogo": "PMUL1118.json",
+  "servico": "attraction",
+  "nome": "byard art",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "what is the phone number for that place?",
+  "nome_na_frase": false,
+  "traducao": "qual é o telefone desse lugar?"
+ },
+ {
+  "dialogo": "PMUL1118.json",
+  "servico": "attraction",
+  "nome": "byard art",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes, can I get the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim, posso obter o CEP?"
+ },
+ {
+  "dialogo": "MUL2284.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "No I just need a phone number.",
+  "nome_na_frase": false,
+  "traducao": "Não, eu só preciso de um telefone."
+ },
+ {
+  "dialogo": "PMUL3834.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Can you send me the phone number and postcode for the Funky Fun House?",
+  "nome_na_frase": true,
+  "traducao": "Você pode me enviar o telefone e o CEP do Funky Fun House?"
+ },
+ {
+  "dialogo": "MUL0912.json",
+  "servico": "attraction",
+  "nome": "nusha",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Can I have the entrance fee for the Nusha, as well as the phone number?",
+  "nome_na_frase": true,
+  "traducao": "Posso ter o preço da entrada do Nusha, assim como o telefone?"
+ },
+ {
+  "dialogo": "MUL0450.json",
+  "servico": "attraction",
+  "nome": "vue cinema",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "Vue Cinema, what is the entrance fee and address for that location?",
+  "nome_na_frase": true,
+  "traducao": "Vue Cinema, qual é o preço da entrada e o endereço desse local?"
+ },
+ {
+  "dialogo": "MUL2001.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "whats their postcode?",
+  "nome_na_frase": false,
+  "traducao": "qual é o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL1183.json",
+  "servico": "attraction",
+  "nome": "people's portraits exhibition at girton college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "That sounds good, can I have the phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece bom, posso ter o telefone, por favor?"
+ },
+ {
+  "dialogo": "SNG1105.json",
+  "servico": "attraction",
+  "nome": "whale of a time",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Whale of a Time sounds like a whale of a time! Yes, can I have their phone number, address, and postcode please?",
+  "nome_na_frase": true,
+  "traducao": "Whale of a Time parece uma baleia de um tempo! Sim, posso ter o telefone, o endereço e o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL4542.json",
+  "servico": "restaurant",
+  "nome": "curry prince",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "Yes. That would be fine. What is the address and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Sim. Isso seria bom. Qual é o endereço e o telefone?"
+ },
+ {
+  "dialogo": "MUL1189.json",
+  "servico": "attraction",
+  "nome": "byard art",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Yes, I will also need the phone number and entrance fee please.",
+  "nome_na_frase": false,
+  "traducao": "Sim, também vou precisar do telefone e do preço da entrada, por favor."
+ },
+ {
+  "dialogo": "MUL1189.json",
+  "servico": "attraction",
+  "nome": "byard art",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can you give me the address please?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dar o endereço, por favor?"
+ },
+ {
+  "dialogo": "PMUL2403.json",
+  "servico": "attraction",
+  "nome": "castle galleries",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes,and I will be needing the phone number also.",
+  "nome_na_frase": false,
+  "traducao": "Sim, e também vou precisar do telefone."
+ },
+ {
+  "dialogo": "PMUL1172.json",
+  "servico": "attraction",
+  "nome": "nusha",
+  "pedidos": [
+   "area",
+   "phone"
+  ],
+  "frase": "Yes I'd like to know where the area is and the phone number.",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu gostaria de saber onde fica a região e o telefone."
+ },
+ {
+  "dialogo": "PMUL4366.json",
+  "servico": "attraction",
+  "nome": "cafe jello gallery",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can you give me the address, please?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dar o endereço, por favor?"
+ },
+ {
+  "dialogo": "MUL0803.json",
+  "servico": "attraction",
+  "nome": "cineworld cinema",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Sure that sounds nice. Can you tell me about any entrance fees?",
+  "nome_na_frase": false,
+  "traducao": "Claro, isso parece legal. Você pode me falar sobre eventuais preços de entrada?"
+ },
+ {
+  "dialogo": "PMUL0267.json",
+  "servico": "restaurant",
+  "nome": "sesame restaurant and bar",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "I would love to try that restaurant. What is the address, phone number, and postcode, please?",
+  "nome_na_frase": false,
+  "traducao": "Eu adoraria experimentar esse restaurante. Qual é o endereço, o telefone e o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL2945.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "That sounds wonderful, can you tell me what the entrance fee is for that?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece maravilhoso, você pode me dizer qual é o preço da entrada para isso?"
+ },
+ {
+  "dialogo": "MUL1064.json",
+  "servico": "attraction",
+  "nome": "downing college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "soundss good. what is the address and postcode?",
+  "nome_na_frase": false,
+  "traducao": "parece bom. qual é o endereço e o CEP?"
+ },
+ {
+  "dialogo": "MUL1064.json",
+  "servico": "attraction",
+  "nome": "downing college",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Thank you. What is the entrance fee for Downing College?",
+  "nome_na_frase": true,
+  "traducao": "Obrigado. Qual é o preço da entrada do Downing College?"
+ },
+ {
+  "dialogo": "MUL0628.json",
+  "servico": "hotel",
+  "nome": "cityroomz",
+  "pedidos": [
+   "type",
+   "postcode"
+  ],
+  "frase": "That won't be necessary. Could you just give me the postcode, hotel type, and what it's star rating is please?",
+  "nome_na_frase": false,
+  "traducao": "Isso não será necessário. Você poderia apenas me dar o CEP, o tipo de hotel e qual é a classificação em estrelas dele, por favor?"
+ },
+ {
+  "dialogo": "PMUL1537.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Sounds promising. Do tell, what would be the Ashley's phone number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Parece promissor. Conte-me, qual seria o telefone e o CEP do Ashley?"
+ },
+ {
+  "dialogo": "MUL0992.json",
+  "servico": "attraction",
+  "nome": "trinity college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Great can I get the postcode of it?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, posso obter o CEP dele?"
+ },
+ {
+  "dialogo": "MUL0992.json",
+  "servico": "attraction",
+  "nome": "trinity college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "And what is the address?",
+  "nome_na_frase": false,
+  "traducao": "E qual é o endereço?"
+ },
+ {
+  "dialogo": "PMUL4644.json",
+  "servico": "restaurant",
+  "nome": "saigon city",
+  "pedidos": [
+   "pricerange",
+   "postcode"
+  ],
+  "frase": "No thank you. I just need the price range and postcode.",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado. Eu só preciso da faixa de preço e do CEP."
+ },
+ {
+  "dialogo": "PMUL3919.json",
+  "servico": "restaurant",
+  "nome": "peking restaurant",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Actually, I will book it myself. May I please get Peking Restaurant's phone number and postcode?",
+  "nome_na_frase": true,
+  "traducao": "Na verdade, eu mesmo vou reservar. Posso obter o telefone e o CEP do Peking Restaurant, por favor?"
+ },
+ {
+  "dialogo": "PMUL3919.json",
+  "servico": "restaurant",
+  "nome": "peking restaurant",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Thanks. Could I get the address as well please?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado. Poderia obter também o endereço, por favor?"
+ },
+ {
+  "dialogo": "MUL1392.json",
+  "servico": "restaurant",
+  "nome": "eraina",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "Can I get the phone number and postcode for eraina, please?",
+  "nome_na_frase": true,
+  "traducao": "Posso obter o telefone e o CEP do eraina, por favor?"
+ },
+ {
+  "dialogo": "PMUL1844.json",
+  "servico": "hotel",
+  "nome": "leverton house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can I have the address for Leverton House?",
+  "nome_na_frase": true,
+  "traducao": "Posso ter o endereço da Leverton House?"
+ },
+ {
+  "dialogo": "PMUL1844.json",
+  "servico": "hotel",
+  "nome": "leverton house",
+  "pedidos": [
+   "parking",
+   "internet"
+  ],
+  "frase": "Do they have internet and free parking?",
+  "nome_na_frase": false,
+  "traducao": "Eles têm internet e estacionamento gratuito?"
+ },
+ {
+  "dialogo": "PMUL1844.json",
+  "servico": "hotel",
+  "nome": "leverton house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I'm sorry, I don't need a room right now. I just need their address.",
+  "nome_na_frase": false,
+  "traducao": "Desculpe, não preciso de um quarto agora. Eu só preciso do endereço deles."
+ },
+ {
+  "dialogo": "PMUL2279.json",
+  "servico": "attraction",
+  "nome": "corpus christi",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes. What is the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim. Qual é o CEP?"
+ },
+ {
+  "dialogo": "PMUL4648.json",
+  "servico": "attraction",
+  "nome": "nusha",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "No, but please confirm their address again and their postcode.",
+  "nome_na_frase": false,
+  "traducao": "Não, mas por favor confirme novamente o endereço deles e o CEP deles."
+ },
+ {
+  "dialogo": "PMUL4648.json",
+  "servico": "restaurant",
+  "nome": "saffron brasserie",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can I get the address for saffron brasserie?",
+  "nome_na_frase": true,
+  "traducao": "Posso obter o endereço do saffron brasserie?"
+ },
+ {
+  "dialogo": "PMUL4122.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "I am looking for a place called the man on the moon, can you give me their phone number and postcode please",
+  "nome_na_frase": true,
+  "traducao": "Estou procurando um lugar chamado the man on the moon, você pode me dar o telefone e o CEP deles, por favor"
+ },
+ {
+  "dialogo": "MUL1211.json",
+  "servico": "restaurant",
+  "nome": "bedouin",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "That would be great, could you just give me their number?",
+  "nome_na_frase": false,
+  "traducao": "Isso seria ótimo, você poderia apenas me dar o número deles?"
+ },
+ {
+  "dialogo": "PMUL3145.json",
+  "servico": "restaurant",
+  "nome": "nandos",
+  "pedidos": [
+   "food"
+  ],
+  "frase": "What kind of food is it?",
+  "nome_na_frase": false,
+  "traducao": "Que tipo de comida é?"
+ },
+ {
+  "dialogo": "PMUL2437.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Can I get their phone number and address please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o telefone e o endereço deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL2437.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Just the address please",
+  "nome_na_frase": false,
+  "traducao": "Só o endereço, por favor"
+ },
+ {
+  "dialogo": "PMUL2437.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Is there an entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Tem preço de entrada?"
+ },
+ {
+  "dialogo": "PMUL2457.json",
+  "servico": "attraction",
+  "nome": "ballare",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Can I get their phone number and postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o telefone e o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL3066.json",
+  "servico": "hotel",
+  "nome": "bridge guest house",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "3 days and get me phone number, postcode, and address please",
+  "nome_na_frase": false,
+  "traducao": "3 dias e me consiga o telefone, o CEP e o endereço, por favor"
+ },
+ {
+  "dialogo": "PMUL3066.json",
+  "servico": "hotel",
+  "nome": "bridge guest house",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Actually I am don't need to book a room just yet but can you provide the phone number, postcode, and address.",
+  "nome_na_frase": false,
+  "traducao": "Na verdade eu não preciso reservar um quarto ainda, mas você pode fornecer o telefone, o CEP e o endereço."
+ },
+ {
+  "dialogo": "MUL1753.json",
+  "servico": "attraction",
+  "nome": "parkside pools",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "What is the phone number for Parkside Pools? I'll just call them to get the entrance fee myself.",
+  "nome_na_frase": true,
+  "traducao": "Qual é o telefone do Parkside Pools? Eu mesmo vou ligar para eles para saber o preço da entrada."
+ },
+ {
+  "dialogo": "MUL1753.json",
+  "servico": "attraction",
+  "nome": "parkside pools",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "What is the entrance fee to the Parkside Pool?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o preço da entrada da Parkside Pool?"
+ },
+ {
+  "dialogo": "MUL1024.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can you give me the address of the ADC Theatre please?",
+  "nome_na_frase": true,
+  "traducao": "Você pode me dar o endereço do ADC Theatre, por favor?"
+ },
+ {
+  "dialogo": "MUL0080.json",
+  "servico": "restaurant",
+  "nome": "cotto",
+  "pedidos": [
+   "area",
+   "postcode",
+   "address"
+  ],
+  "frase": "Not currently no. Can you give me the full address of Cotto? I need the address, postcode and area please.",
+  "nome_na_frase": true,
+  "traducao": "No momento não. Você pode me dar o endereço completo do Cotto? Preciso do endereço, do CEP e da região, por favor."
+ },
+ {
+  "dialogo": "PMUL2703.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Is there an entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Tem preço de entrada?"
+ },
+ {
+  "dialogo": "PMUL2703.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "stars"
+  ],
+  "frase": "I'm not ready to book quite yet. Can you let me know if it is a hotel or guest house. Also, how many stars it is?",
+  "nome_na_frase": false,
+  "traducao": "Ainda não estou pronto para reservar. Você pode me informar se é um hotel ou uma pousada. Além disso, quantas estrelas tem?"
+ },
+ {
+  "dialogo": "PMUL1373.json",
+  "servico": "attraction",
+  "nome": "churchill college",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Churchill College will be fine. I'll need the postcode and address, please?",
+  "nome_na_frase": true,
+  "traducao": "Churchill College está bom. Vou precisar do CEP e do endereço, por favor?"
+ },
+ {
+  "dialogo": "PMUL1373.json",
+  "servico": "attraction",
+  "nome": "churchill college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I still need the address for Churchill College, please.",
+  "nome_na_frase": true,
+  "traducao": "Eu ainda preciso do endereço do Churchill College, por favor."
+ },
+ {
+  "dialogo": "PMUL4672.json",
+  "servico": "attraction",
+  "nome": "camboats",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Yes, I'd like their phone number and postcode, please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu gostaria do telefone e do CEP deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL2778.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Thank you. Can you tell me their post code please?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado. Você pode me dizer o código postal deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL3495.json",
+  "servico": "restaurant",
+  "nome": "la mimosa",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the address?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço?"
+ },
+ {
+  "dialogo": "PMUL1521.json",
+  "servico": "hotel",
+  "nome": "hobsons house",
+  "pedidos": [
+   "type",
+   "stars",
+   "phone"
+  ],
+  "frase": "I would like to know how many stars the hotel is, what type of hotel it is, and I need their phone number please.",
+  "nome_na_frase": false,
+  "traducao": "Eu gostaria de saber quantas estrelas o hotel tem, que tipo de hotel é, e preciso do telefone deles, por favor."
+ },
+ {
+  "dialogo": "MUL2386.json",
+  "servico": "restaurant",
+  "nome": "zizzi cambridge",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Can I have the address, phone number, and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o endereço, o telefone e o CEP?"
+ },
+ {
+  "dialogo": "MUL2386.json",
+  "servico": "attraction",
+  "nome": "regency gallery",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "I am also looking for the regency gallery attraction. Could you please provide me with information about it including the phone number?",
+  "nome_na_frase": true,
+  "traducao": "Também estou procurando a atração regency gallery. Você poderia me fornecer informações sobre ela, incluindo o telefone?"
+ },
+ {
+  "dialogo": "PMUL2123.json",
+  "servico": "attraction",
+  "nome": "club salsa",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "We would like to try that Club. Can you tell me the postcode and if they have an entrance fee? Thanks!",
+  "nome_na_frase": false,
+  "traducao": "Gostaríamos de experimentar esse clube. Você pode me dizer o CEP e se eles têm preço de entrada? Obrigado!"
+ },
+ {
+  "dialogo": "PMUL2123.json",
+  "servico": "attraction",
+  "nome": "club salsa",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the postcode for that? I am also looking for an indian restaurant near the nightclub, are there any?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP disso? Também estou procurando um restaurante indiano perto da casa noturna, há algum?"
+ },
+ {
+  "dialogo": "PMUL2123.json",
+  "servico": "attraction",
+  "nome": "club salsa",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Postcode please, than search for an indian restaurant if you are able to",
+  "nome_na_frase": false,
+  "traducao": "CEP, por favor, depois procure um restaurante indiano se você puder"
+ },
+ {
+  "dialogo": "PMUL2123.json",
+  "servico": "restaurant",
+  "nome": "saffron brasserie",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Great, as long as the restaurant is near the nightclub. Do you happen to know the postcode for the restaurant?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, desde que o restaurante seja perto da casa noturna. Por acaso você sabe o CEP do restaurante?"
+ },
+ {
+  "dialogo": "PMUL2123.json",
+  "servico": "attraction",
+  "nome": "club salsa",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Great, as long as the restaurant is near the nightclub. Do you happen to know the postcode for the restaurant?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, desde que o restaurante seja perto da casa noturna. Por acaso você sabe o CEP do restaurante?"
+ },
+ {
+  "dialogo": "PMUL1148.json",
+  "servico": "attraction",
+  "nome": "camboats",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Great can I get the phone number and entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, posso obter o telefone e o preço da entrada?"
+ },
+ {
+  "dialogo": "MUL2542.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Yes, please. What is the address and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor. Qual é o endereço e o CEP?"
+ },
+ {
+  "dialogo": "MUL2151.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes please, book the hotel and give the address with the postcode. Thanks.",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor, reserve o hotel e dê o endereço com o CEP. Obrigado."
+ },
+ {
+  "dialogo": "PMUL3239.json",
+  "servico": "attraction",
+  "nome": "the fez club",
+  "pedidos": [
+   "area",
+   "postcode",
+   "phone"
+  ],
+  "frase": "That's okay, I just need the phone number, area and post code please.",
+  "nome_na_frase": false,
+  "traducao": "Tudo bem, eu só preciso do telefone, da região e do código postal, por favor."
+ },
+ {
+  "dialogo": "PMUL1895.json",
+  "servico": "hotel",
+  "nome": "worth house",
+  "pedidos": [
+   "internet"
+  ],
+  "frase": "Can you tell me if they have free internet?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer se eles têm internet gratuita?"
+ },
+ {
+  "dialogo": "PMUL4362.json",
+  "servico": "restaurant",
+  "nome": "yippee noodle bar",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "No, but I would like the postcode for that restaurant please. I also need to find a place to stay. Could you help me with that?",
+  "nome_na_frase": false,
+  "traducao": "Não, mas eu gostaria do CEP desse restaurante, por favor. Também preciso encontrar um lugar para ficar. Você poderia me ajudar com isso?"
+ },
+ {
+  "dialogo": "SNG0781.json",
+  "servico": "hotel",
+  "nome": "warkworth house",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "Can I get the price range on it?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter a faixa de preço dele?"
+ },
+ {
+  "dialogo": "PMUL1486.json",
+  "servico": "attraction",
+  "nome": "cambridge museum of technology",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That sounds neat. Could you tell me their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece legal. Você poderia me dizer o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL2174.json",
+  "servico": "attraction",
+  "nome": "whale of a time",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Can you tell me the entrance fee and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer o preço da entrada e o telefone?"
+ },
+ {
+  "dialogo": "PMUL2708.json",
+  "servico": "attraction",
+  "nome": "scott polar museum",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Sure, what is the address for this museum? Thanks for your help!",
+  "nome_na_frase": false,
+  "traducao": "Claro, qual é o endereço desse museu? Obrigado pela ajuda!"
+ },
+ {
+  "dialogo": "PMUL3523.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can you please give me the address?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dar o endereço, por favor?"
+ },
+ {
+  "dialogo": "PMUL3523.json",
+  "servico": "restaurant",
+  "nome": "curry prince",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "Yes, can I please have the postcode, address, and phone number for Curry Prince?",
+  "nome_na_frase": true,
+  "traducao": "Sim, posso ter o CEP, o endereço e o telefone do Curry Prince, por favor?"
+ },
+ {
+  "dialogo": "PMUL3523.json",
+  "servico": "restaurant",
+  "nome": "curry prince",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Okay. I still need the postcode and address, please?",
+  "nome_na_frase": false,
+  "traducao": "Ok. Eu ainda preciso do CEP e do endereço, por favor?"
+ },
+ {
+  "dialogo": "PMUL3520.json",
+  "servico": "restaurant",
+  "nome": "the varsity restaurant",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "The Varsity is good. Can I get the postcode please?",
+  "nome_na_frase": false,
+  "traducao": "O Varsity é bom. Posso obter o CEP, por favor?"
+ },
+ {
+  "dialogo": "MUL2358.json",
+  "servico": "attraction",
+  "nome": "magdalene college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "That sounds perfect. What is their address?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece perfeito. Qual é o endereço deles?"
+ },
+ {
+  "dialogo": "MUL2358.json",
+  "servico": "attraction",
+  "nome": "magdalene college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Okay what's their address?",
+  "nome_na_frase": false,
+  "traducao": "Ok, qual é o endereço deles?"
+ },
+ {
+  "dialogo": "MUL2358.json",
+  "servico": "restaurant",
+  "nome": "dojo noodle bar",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Sure. Can I get the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Claro. Posso obter o telefone?"
+ },
+ {
+  "dialogo": "PMUL0069.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "Yes can I get a address and phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, posso obter um endereço e um telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL2869.json",
+  "servico": "hotel",
+  "nome": "avalon",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I don't need to book yet, but I would like the address.",
+  "nome_na_frase": false,
+  "traducao": "Não preciso reservar ainda, mas eu gostaria do endereço."
+ },
+ {
+  "dialogo": "PMUL2869.json",
+  "servico": "hotel",
+  "nome": "avalon",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I also get the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter também o telefone?"
+ },
+ {
+  "dialogo": "PMUL2869.json",
+  "servico": "hotel",
+  "nome": "avalon",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Can you try entertainment in the same area please?",
+  "nome_na_frase": false,
+  "traducao": "Você pode tentar entretenimento na mesma região, por favor?"
+ },
+ {
+  "dialogo": "PMUL2869.json",
+  "servico": "attraction",
+  "nome": "whale of a time",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I do need the address.",
+  "nome_na_frase": false,
+  "traducao": "Eu preciso do endereço."
+ },
+ {
+  "dialogo": "MUL0831.json",
+  "servico": "attraction",
+  "nome": "king's college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could you please send me the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia me enviar o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL0117.json",
+  "servico": "restaurant",
+  "nome": "la mimosa",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "What is the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o telefone?"
+ },
+ {
+  "dialogo": "PMUL0117.json",
+  "servico": "restaurant",
+  "nome": "la mimosa",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I also need the postcode.",
+  "nome_na_frase": false,
+  "traducao": "Eu também preciso do CEP."
+ },
+ {
+  "dialogo": "PMUL0182.json",
+  "servico": "hotel",
+  "nome": "huntingdon marriott hotel",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "No thanks, just tell me the phone number and type for it please",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado, apenas me diga o telefone e o tipo dele, por favor"
+ },
+ {
+  "dialogo": "PMUL0182.json",
+  "servico": "hotel",
+  "nome": "huntingdon marriott hotel",
+  "pedidos": [
+   "stars"
+  ],
+  "frase": "How many stars does this hotel have?",
+  "nome_na_frase": false,
+  "traducao": "Quantas estrelas esse hotel tem?"
+ },
+ {
+  "dialogo": "PMUL4258.json",
+  "servico": "restaurant",
+  "nome": "the varsity restaurant",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What is the address for your suggested restaurant Varsity?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço do restaurante Varsity que você sugeriu?"
+ },
+ {
+  "dialogo": "PMUL4258.json",
+  "servico": "restaurant",
+  "nome": "the varsity restaurant",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Just get me the address, that is all.",
+  "nome_na_frase": false,
+  "traducao": "Apenas me consiga o endereço, é só isso."
+ },
+ {
+  "dialogo": "SNG1078.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "Great what type of attraction are they?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, que tipo de atração eles são?"
+ },
+ {
+  "dialogo": "MUL1240.json",
+  "servico": "hotel",
+  "nome": "warkworth house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "No, but can you give me that phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Não, mas você pode me dar esse telefone, por favor?"
+ },
+ {
+  "dialogo": "MUL0594.json",
+  "servico": "attraction",
+  "nome": "saint catharine's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "What is the postcode for Saint Catherine's College? I want to be able to enter the address into my GPS to get there.",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP do Saint Catherine's College? Quero poder digitar o endereço no meu GPS para chegar lá."
+ },
+ {
+  "dialogo": "MUL0594.json",
+  "servico": "attraction",
+  "nome": "saint catharine's college",
+  "pedidos": [
+   "type",
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "Could you just confirm the entrance fee, attraction type, and postcode for Saint Catharine's?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia apenas confirmar o preço da entrada, o tipo de atração e o CEP do Saint Catharine's?"
+ },
+ {
+  "dialogo": "PMUL2286.json",
+  "servico": "attraction",
+  "nome": "cambridge arts theatre",
+  "pedidos": [
+   "type",
+   "address"
+  ],
+  "frase": "Specifically there address and what type of attraction is it?",
+  "nome_na_frase": false,
+  "traducao": "Especificamente o endereço deles e que tipo de atração é?"
+ },
+ {
+  "dialogo": "MUL0990.json",
+  "servico": "restaurant",
+  "nome": "kohinoor",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Not now. What area of town is that in?",
+  "nome_na_frase": false,
+  "traducao": "Agora não. Em que região da cidade fica isso?"
+ },
+ {
+  "dialogo": "MUL0990.json",
+  "servico": "restaurant",
+  "nome": "kohinoor",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could you give me their phone number?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia me dar o telefone deles?"
+ },
+ {
+  "dialogo": "MUL0990.json",
+  "servico": "restaurant",
+  "nome": "kohinoor",
+  "pedidos": [
+   "pricerange",
+   "area"
+  ],
+  "frase": "Yes, I will need the price range for that restaurant and the area it is in as well please.",
+  "nome_na_frase": false,
+  "traducao": "Sim, vou precisar da faixa de preço desse restaurante e da região em que ele fica também, por favor."
+ },
+ {
+  "dialogo": "SNG0515.json",
+  "servico": "restaurant",
+  "nome": "golden house",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Yes, may I have the address, postcode, and phone number for Golden House? I'll book it myself.",
+  "nome_na_frase": true,
+  "traducao": "Sim, posso ter o endereço, o CEP e o telefone do Golden House? Eu mesmo vou reservar."
+ },
+ {
+  "dialogo": "PMUL2983.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "In what area is the ADC Theatre?",
+  "nome_na_frase": true,
+  "traducao": "Em que região fica o ADC Theatre?"
+ },
+ {
+  "dialogo": "PMUL2983.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "area",
+   "entrancefee",
+   "address"
+  ],
+  "frase": "please give me the entrance fee area and address",
+  "nome_na_frase": false,
+  "traducao": "por favor me dê o preço da entrada, a região e o endereço"
+ },
+ {
+  "dialogo": "SNG0954.json",
+  "servico": "hotel",
+  "nome": "kirkwood house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Just the postcode please.",
+  "nome_na_frase": false,
+  "traducao": "Só o CEP, por favor."
+ },
+ {
+  "dialogo": "MUL2051.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Can I get address and postcode for the hotel?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o endereço e o CEP do hotel?"
+ },
+ {
+  "dialogo": "SNG0892.json",
+  "servico": "hotel",
+  "nome": "hamilton lodge",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Please give me the number to the hamilton lodge.",
+  "nome_na_frase": true,
+  "traducao": "Por favor, me dê o número do hamilton lodge."
+ },
+ {
+  "dialogo": "SNG0892.json",
+  "servico": "hotel",
+  "nome": "hamilton lodge",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "No, I won't be booking today. Can you just give me the address?",
+  "nome_na_frase": false,
+  "traducao": "Não, não vou reservar hoje. Você pode apenas me dar o endereço?"
+ },
+ {
+  "dialogo": "MUL1870.json",
+  "servico": "attraction",
+  "nome": "kings hedges learner pool",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "No, just the entrance fee please. I think I am more interested in Kings Hedges.",
+  "nome_na_frase": false,
+  "traducao": "Não, apenas o preço da entrada, por favor. Acho que estou mais interessado em Kings Hedges."
+ },
+ {
+  "dialogo": "MUL1870.json",
+  "servico": "attraction",
+  "nome": "kings hedges learner pool",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Do you have any contact information for these pools I could have to get the entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Você tem alguma informação de contato dessas piscinas que eu possa usar para saber o preço da entrada?"
+ },
+ {
+  "dialogo": "PMUL3946.json",
+  "servico": "hotel",
+  "nome": "huntingdon marriott hotel",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Can you tell me if they have free parking?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer se eles têm estacionamento gratuito?"
+ },
+ {
+  "dialogo": "MUL2665.json",
+  "servico": "hotel",
+  "nome": "bridge guest house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That would be great. Can I can the postcode that it is in?",
+  "nome_na_frase": false,
+  "traducao": "Isso seria ótimo. Posso obter o CEP em que fica?"
+ },
+ {
+  "dialogo": "SNG0689.json",
+  "servico": "restaurant",
+  "nome": "graffiti",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Will you give me the phone number, address, and postcode for Graffiti, please?",
+  "nome_na_frase": true,
+  "traducao": "Você me daria o telefone, o endereço e o CEP do Graffiti, por favor?"
+ },
+ {
+  "dialogo": "PMUL3328.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "May I have the postcode ?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o CEP ?"
+ },
+ {
+  "dialogo": "PMUL3328.json",
+  "servico": "hotel",
+  "nome": "autumn house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "That sounds great. Could I get the phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo. Poderia obter o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL1332.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "type",
+   "address"
+  ],
+  "frase": "What type of attraction is the Broughton House gallery and may i have the address?",
+  "nome_na_frase": true,
+  "traducao": "Que tipo de atração é a Broughton House gallery e posso ter o endereço?"
+ },
+ {
+  "dialogo": "MUL1766.json",
+  "servico": "attraction",
+  "nome": "whale of a time",
+  "pedidos": [
+   "area",
+   "postcode"
+  ],
+  "frase": "Whale of a Time sounds great. Can you tell me what area of town they are in? And the postcode please?",
+  "nome_na_frase": true,
+  "traducao": "Whale of a Time parece ótimo. Você pode me dizer em que região da cidade eles ficam? E o CEP, por favor?"
+ },
+ {
+  "dialogo": "MUL1066.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Yes, could you provide me with their address.",
+  "nome_na_frase": false,
+  "traducao": "Sim, você poderia me fornecer o endereço deles."
+ },
+ {
+  "dialogo": "MUL1066.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "yes I'll need the attraction type please.",
+  "nome_na_frase": false,
+  "traducao": "sim, vou precisar do tipo de atração, por favor."
+ },
+ {
+  "dialogo": "PMUL3668.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Could I have their postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia ter o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL2086.json",
+  "servico": "hotel",
+  "nome": "gonville hotel",
+  "pedidos": [
+   "internet",
+   "phone"
+  ],
+  "frase": "The Gonville Hotel sounds ok can you provide the the telephone number and do they have internet?",
+  "nome_na_frase": true,
+  "traducao": "O Gonville Hotel parece ok, você pode fornecer o telefone e eles têm internet?"
+ },
+ {
+  "dialogo": "PMUL2980.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes it does. May I please get the museum's phone number?",
+  "nome_na_frase": false,
+  "traducao": "Sim, tem. Posso obter o telefone do museu, por favor?"
+ },
+ {
+  "dialogo": "SNG01386.json",
+  "servico": "hotel",
+  "nome": "a and b guest house",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Can I get the address and phone number, please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o endereço e o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL2452.json",
+  "servico": "attraction",
+  "nome": "trinity college",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "Yes. Can I please get the entrance fee and the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim. Posso obter o preço da entrada e o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL2558.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "What is the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP?"
+ },
+ {
+  "dialogo": "PMUL4515.json",
+  "servico": "attraction",
+  "nome": "abbey pool and astroturf pitch",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "What is the phone number for Abbey Pool and Astroturf Pitch?",
+  "nome_na_frase": true,
+  "traducao": "Qual é o telefone do Abbey Pool and Astroturf Pitch?"
+ },
+ {
+  "dialogo": "PMUL4515.json",
+  "servico": "attraction",
+  "nome": "abbey pool and astroturf pitch",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Could you also tell me Abbey Pool's address?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia também me dizer o endereço da Abbey Pool?"
+ },
+ {
+  "dialogo": "PMUL4515.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "no, thanks. I just need their address and phone number",
+  "nome_na_frase": false,
+  "traducao": "não, obrigado. Eu só preciso do endereço e do telefone deles"
+ },
+ {
+  "dialogo": "PMUL1241.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Yes can I get the address to that please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, posso obter o endereço disso, por favor?"
+ },
+ {
+  "dialogo": "PMUL1241.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "area",
+   "phone"
+  ],
+  "frase": "Can you tell me what the area of town is? Can I get the phone number too please?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer qual é a região da cidade? Posso obter o telefone também, por favor?"
+ },
+ {
+  "dialogo": "PMUL1136.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Can I have the phone number for All Saints Church please?",
+  "nome_na_frase": true,
+  "traducao": "Posso ter o telefone da All Saints Church, por favor?"
+ },
+ {
+  "dialogo": "SNG0994.json",
+  "servico": "hotel",
+  "nome": "archway house",
+  "pedidos": [
+   "pricerange",
+   "area"
+  ],
+  "frase": "That's great. Can you give me the area and price range, please?",
+  "nome_na_frase": false,
+  "traducao": "Isso é ótimo. Você pode me dar a região e a faixa de preço, por favor?"
+ },
+ {
+  "dialogo": "SNG0994.json",
+  "servico": "hotel",
+  "nome": "archway house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "What's its address?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o endereço dele?"
+ },
+ {
+  "dialogo": "PMUL3918.json",
+  "servico": "hotel",
+  "nome": "a and b guest house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Thank you. Can I also get the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado. Posso obter também o telefone?"
+ },
+ {
+  "dialogo": "PMUL3439.json",
+  "servico": "hotel",
+  "nome": "lovell lodge",
+  "pedidos": [
+   "internet",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Sorry I do not need to make a reservation but I do need the postcode, phone number, and whether they have internet.",
+  "nome_na_frase": false,
+  "traducao": "Desculpe, não preciso fazer uma reserva, mas preciso do CEP, do telefone e saber se eles têm internet."
+ },
+ {
+  "dialogo": "MUL1860.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Great, can I have the address and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, posso ter o endereço e o CEP?"
+ },
+ {
+  "dialogo": "PMUL2704.json",
+  "servico": "attraction",
+  "nome": "cambridge museum of technology",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I need the postcode please.",
+  "nome_na_frase": false,
+  "traducao": "Preciso do CEP, por favor."
+ },
+ {
+  "dialogo": "PMUL1983.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Alright tell me the star rating, phone number, and postcode for that location",
+  "nome_na_frase": false,
+  "traducao": "Certo, me diga a classificação em estrelas, o telefone e o CEP desse local"
+ },
+ {
+  "dialogo": "PMUL1983.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Actually I don't need a reservation. Could you just give me the star rating, phone and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Na verdade não preciso de uma reserva. Você poderia apenas me dar a classificação em estrelas, o telefone e o CEP?"
+ },
+ {
+  "dialogo": "MUL2290.json",
+  "servico": "hotel",
+  "nome": "express by holiday inn cambridge",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Sounds good. I need the postcode please.",
+  "nome_na_frase": false,
+  "traducao": "Parece bom. Preciso do CEP, por favor."
+ },
+ {
+  "dialogo": "PMUL1347.json",
+  "servico": "attraction",
+  "nome": "scudamores punting co",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "that's the address. what's the postcode?",
+  "nome_na_frase": false,
+  "traducao": "esse é o endereço. qual é o CEP?"
+ },
+ {
+  "dialogo": "PMUL3897.json",
+  "servico": "attraction",
+  "nome": "cafe jello gallery",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Sounds quite interesting. Can I get their address please?",
+  "nome_na_frase": false,
+  "traducao": "Parece bem interessante. Posso obter o endereço deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL4011.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Is the parking free perchance?",
+  "nome_na_frase": false,
+  "traducao": "O estacionamento é gratuito, por acaso?"
+ },
+ {
+  "dialogo": "PMUL4011.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Could I have the post code?",
+  "nome_na_frase": false,
+  "traducao": "Poderia ter o código postal?"
+ },
+ {
+  "dialogo": "PMUL4011.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I have the phone number too?",
+  "nome_na_frase": false,
+  "traducao": "Poderia ter o telefone também?"
+ },
+ {
+  "dialogo": "PMUL4011.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "It sounds like a great place. What is their phone number and postcode, please?",
+  "nome_na_frase": false,
+  "traducao": "Parece um ótimo lugar. Qual é o telefone e o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL2630.json",
+  "servico": "attraction",
+  "nome": "castle galleries",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Could I have the address for that museum as well please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia ter também o endereço desse museu, por favor?"
+ },
+ {
+  "dialogo": "PMUL2205.json",
+  "servico": "restaurant",
+  "nome": "curry prince",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "I think I would just like to get the postcode, address and phone number to contact them myself.",
+  "nome_na_frase": false,
+  "traducao": "Acho que eu só gostaria de obter o CEP, o endereço e o telefone para entrar em contato com eles eu mesmo."
+ },
+ {
+  "dialogo": "PMUL2205.json",
+  "servico": "attraction",
+  "nome": "cherry hinton hall and grounds",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Cherry Hinton Hall sounds good can I get the phone number, address, and postcode.",
+  "nome_na_frase": false,
+  "traducao": "Cherry Hinton Hall parece bom, posso obter o telefone, o endereço e o CEP."
+ },
+ {
+  "dialogo": "PMUL4641.json",
+  "servico": "attraction",
+  "nome": "kambar",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Please give me their postcode",
+  "nome_na_frase": false,
+  "traducao": "Por favor, me dê o CEP deles"
+ },
+ {
+  "dialogo": "PMUL4641.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "stars"
+  ],
+  "frase": "That would be fine. Could you tell me how many stars it has?",
+  "nome_na_frase": false,
+  "traducao": "Isso seria bom. Você poderia me dizer quantas estrelas tem?"
+ },
+ {
+  "dialogo": "PMUL4641.json",
+  "servico": "hotel",
+  "nome": "alexander bed and breakfast",
+  "pedidos": [
+   "pricerange",
+   "postcode"
+  ],
+  "frase": "no whats the price range, postcode please?",
+  "nome_na_frase": false,
+  "traducao": "não, qual é a faixa de preço, o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL4641.json",
+  "servico": "attraction",
+  "nome": "kambar",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "no whats the price range, postcode please?",
+  "nome_na_frase": false,
+  "traducao": "não, qual é a faixa de preço, o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL4106.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "What a neat sounding name! That might be a good fit. Can you tell me the address and postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Que nome legal! Pode ser uma boa opção. Você pode me dizer o endereço e o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL4106.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Great what is the entrance fee too?",
+  "nome_na_frase": false,
+  "traducao": "Ótimo, qual é o preço da entrada também?"
+ },
+ {
+  "dialogo": "PMUL1981.json",
+  "servico": "hotel",
+  "nome": "a and b guest house",
+  "pedidos": [
+   "internet",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Do they include wifi, and can I get the postcode and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Eles incluem wifi, e posso obter o CEP e o telefone?"
+ },
+ {
+  "dialogo": "PMUL3283.json",
+  "servico": "restaurant",
+  "nome": "eraina",
+  "pedidos": [
+   "food"
+  ],
+  "frase": "It was recommended by a friend, and I'm not sure what type of food they serve. Do you know?",
+  "nome_na_frase": false,
+  "traducao": "Foi recomendado por um amigo, e não tenho certeza de que tipo de comida eles servem. Você sabe?"
+ },
+ {
+  "dialogo": "PMUL3283.json",
+  "servico": "restaurant",
+  "nome": "eraina",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "That sounds great, can I get the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo, posso obter o telefone?"
+ },
+ {
+  "dialogo": "PMUL3283.json",
+  "servico": "hotel",
+  "nome": "bridge guest house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I actually just need the post code for the bridge guest house. and then i'll need a taxi as well.",
+  "nome_na_frase": true,
+  "traducao": "Na verdade eu só preciso do código postal da bridge guest house. e depois vou precisar de um táxi também."
+ },
+ {
+  "dialogo": "PMUL3085.json",
+  "servico": "attraction",
+  "nome": "king's college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could you tell me their phone number?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia me dizer o telefone deles?"
+ },
+ {
+  "dialogo": "MUL1192.json",
+  "servico": "attraction",
+  "nome": "scott polar museum",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "What type of attraction is this?",
+  "nome_na_frase": false,
+  "traducao": "Que tipo de atração é esta?"
+ },
+ {
+  "dialogo": "PMUL2000.json",
+  "servico": "hotel",
+  "nome": "hobsons house",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Do they have free parking?",
+  "nome_na_frase": false,
+  "traducao": "Eles têm estacionamento gratuito?"
+ },
+ {
+  "dialogo": "PMUL2000.json",
+  "servico": "hotel",
+  "nome": "hobsons house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Can I please get their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL0941.json",
+  "servico": "attraction",
+  "nome": "cambridge and county folk museum",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Could you also provide the museum's postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia também fornecer o CEP do museu, por favor?"
+ },
+ {
+  "dialogo": "MUL0941.json",
+  "servico": "attraction",
+  "nome": "cambridge and county folk museum",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Yes, can you find a Chinese food restaurant in that post code instead?",
+  "nome_na_frase": false,
+  "traducao": "Sim, você pode encontrar um restaurante de comida chinesa nesse código postal em vez disso?"
+ },
+ {
+  "dialogo": "PMUL4318.json",
+  "servico": "restaurant",
+  "nome": "lan hong house",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Okay, can I please have the postcode and address?",
+  "nome_na_frase": false,
+  "traducao": "Ok, posso ter o CEP e o endereço, por favor?"
+ },
+ {
+  "dialogo": "MUL1787.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "How about the Holy Trinity Church. What is the entrance fee?",
+  "nome_na_frase": true,
+  "traducao": "Que tal a Holy Trinity Church. Qual é o preço da entrada?"
+ },
+ {
+  "dialogo": "MUL1787.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "May I have their address and postcode, too?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o endereço e o CEP deles, também?"
+ },
+ {
+  "dialogo": "PMUL3976.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I would like the post code for the old school",
+  "nome_na_frase": false,
+  "traducao": "Eu gostaria do código postal da old school"
+ },
+ {
+  "dialogo": "MUL1466.json",
+  "servico": "restaurant",
+  "nome": "kymmoy",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "I need their address, and postcode.",
+  "nome_na_frase": false,
+  "traducao": "Preciso do endereço e do CEP deles."
+ },
+ {
+  "dialogo": "MUL0845.json",
+  "servico": "restaurant",
+  "nome": "zizzi cambridge",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Not right now, but can I have their postcode, please?",
+  "nome_na_frase": false,
+  "traducao": "Agora não, mas posso ter o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL0492.json",
+  "servico": "attraction",
+  "nome": "cambridge arts theatre",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "That sounds great! could you tell me how much the entrance fee would cost?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo! você poderia me dizer quanto custaria o preço da entrada?"
+ },
+ {
+  "dialogo": "MUL0492.json",
+  "servico": "attraction",
+  "nome": "cambridge arts theatre",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Could you please find the entrance fee for me? I am unable to make the phone call right now.",
+  "nome_na_frase": false,
+  "traducao": "Você poderia encontrar o preço da entrada para mim, por favor? Não consigo fazer a ligação agora."
+ },
+ {
+  "dialogo": "PMUL2848.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "I just need the entrance fee and postcode, please.",
+  "nome_na_frase": false,
+  "traducao": "Eu só preciso do preço da entrada e do CEP, por favor."
+ },
+ {
+  "dialogo": "MUL1763.json",
+  "servico": "attraction",
+  "nome": "museum of archaelogy and anthropology",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Excellent! What is the phone number and address?",
+  "nome_na_frase": false,
+  "traducao": "Excelente! Qual é o telefone e o endereço?"
+ },
+ {
+  "dialogo": "PMUL4078.json",
+  "servico": "restaurant",
+  "nome": "sesame restaurant and bar",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Thank you! Will you please tell me the address/postcode?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado! Você pode me dizer o endereço/CEP, por favor?"
+ },
+ {
+  "dialogo": "SNG01755.json",
+  "servico": "restaurant",
+  "nome": "la mimosa",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Never mind. I'll book the table myself. May I have the address and postcode? And the phone number, while you're at it.",
+  "nome_na_frase": false,
+  "traducao": "Deixa para lá. Eu mesmo vou reservar a mesa. Posso ter o endereço e o CEP? E o telefone, já que você está nisso."
+ },
+ {
+  "dialogo": "MUL1800.json",
+  "servico": "attraction",
+  "nome": "cambridge museum of technology",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Could you tell me the entrance fee and address for the Cambridge Museum of Technology?",
+  "nome_na_frase": true,
+  "traducao": "Você poderia me dizer o preço da entrada e o endereço do Cambridge Museum of Technology?"
+ },
+ {
+  "dialogo": "MUL1800.json",
+  "servico": "attraction",
+  "nome": "cambridge museum of technology",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That won't be necessary. Can you tell me the postcode for the museum?",
+  "nome_na_frase": false,
+  "traducao": "Isso não será necessário. Você pode me dizer o CEP do museu?"
+ },
+ {
+  "dialogo": "MUL2658.json",
+  "servico": "attraction",
+  "nome": "trinity college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Thank you so much for the phone number. Good bye.",
+  "nome_na_frase": false,
+  "traducao": "Muito obrigado pelo telefone. Tchau."
+ },
+ {
+  "dialogo": "MUL1983.json",
+  "servico": "attraction",
+  "nome": "kambar",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Can I also get the phone number and entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Posso também obter o telefone e o preço da entrada?"
+ },
+ {
+  "dialogo": "PMUL3160.json",
+  "servico": "attraction",
+  "nome": "cambridge and county folk museum",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "Please give me the entrance fee and postcode of County Folk Museum",
+  "nome_na_frase": false,
+  "traducao": "Por favor, me dê o preço da entrada e o CEP do County Folk Museum"
+ },
+ {
+  "dialogo": "PMUL3662.json",
+  "servico": "attraction",
+  "nome": "kings hedges learner pool",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes, please. I need the postcode.",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor. Eu preciso do CEP."
+ },
+ {
+  "dialogo": "MUL0533.json",
+  "servico": "attraction",
+  "nome": "pembroke college",
+  "pedidos": [
+   "area",
+   "type",
+   "entrancefee"
+  ],
+  "frase": "I'd like to know what type of attraction it is, the entrance fee, and what area it's in, please.",
+  "nome_na_frase": false,
+  "traducao": "Eu gostaria de saber que tipo de atração é, o preço da entrada e em que região fica, por favor."
+ },
+ {
+  "dialogo": "PMUL4636.json",
+  "servico": "restaurant",
+  "nome": "rice boat",
+  "pedidos": [
+   "food"
+  ],
+  "frase": "What type of food do they serve?",
+  "nome_na_frase": false,
+  "traducao": "Que tipo de comida eles servem?"
+ },
+ {
+  "dialogo": "PMUL4326.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Can I have the address and phone number, please?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o endereço e o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL4326.json",
+  "servico": "hotel",
+  "nome": "el shaddai",
+  "pedidos": [
+   "internet",
+   "postcode",
+   "phone"
+  ],
+  "frase": "No, i dont need it booked. But i do need to know if it has free internet, the phone number, and the post code.",
+  "nome_na_frase": false,
+  "traducao": "Não, eu não preciso que seja reservado. Mas eu preciso saber se tem internet gratuita, o telefone e o código postal."
+ },
+ {
+  "dialogo": "PMUL4326.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "No, i dont need it booked. But i do need to know if it has free internet, the phone number, and the post code.",
+  "nome_na_frase": false,
+  "traducao": "Não, eu não preciso que seja reservado. Mas eu preciso saber se tem internet gratuita, o telefone e o código postal."
+ },
+ {
+  "dialogo": "PMUL1273.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes please give me the phone number.",
+  "nome_na_frase": false,
+  "traducao": "Sim, por favor me dê o telefone."
+ },
+ {
+  "dialogo": "PMUL1273.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "How much is the entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Quanto é o preço da entrada?"
+ },
+ {
+  "dialogo": "PMUL3127.json",
+  "servico": "attraction",
+  "nome": "whipple museum of the history of science",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Can you tell me the address as well?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer o endereço também?"
+ },
+ {
+  "dialogo": "PMUL0441.json",
+  "servico": "hotel",
+  "nome": "allenbell",
+  "pedidos": [
+   "pricerange",
+   "stars"
+  ],
+  "frase": "Actually don't book it just yet on second thought. Can you advise how many stars it has and the price first?",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, pensando bem, não reserve ainda. Você pode informar quantas estrelas tem e o preço primeiro?"
+ },
+ {
+  "dialogo": "PMUL0441.json",
+  "servico": "hotel",
+  "nome": "allenbell",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "I need a a restaurant. The restaurant should be in the west and should serve italian food. The restaurant should be in the moderate price range",
+  "nome_na_frase": false,
+  "traducao": "Preciso de um restaurante. O restaurante deve ficar no oeste e deve servir comida italiana. O restaurante deve estar na faixa de preço moderada"
+ },
+ {
+  "dialogo": "SNG01683.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "area",
+   "phone",
+   "postcode"
+  ],
+  "frase": "Awesome. Can I also get the area, post code, and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Incrível. Posso obter também a região, o código postal e o telefone?"
+ },
+ {
+  "dialogo": "SNG01683.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Thanks, I just need the phone number so I can call them.",
+  "nome_na_frase": false,
+  "traducao": "Obrigado, eu só preciso do telefone para poder ligar para eles."
+ },
+ {
+  "dialogo": "PMUL1998.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "No, just get me their phone number and I'll give them a ring",
+  "nome_na_frase": false,
+  "traducao": "Não, apenas me consiga o telefone deles e eu dou uma ligada para eles"
+ },
+ {
+  "dialogo": "MUL0787.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "internet"
+  ],
+  "frase": "Can you confirm if this is a guesthouse or hotel? Do they have free wifi?",
+  "nome_na_frase": false,
+  "traducao": "Você pode confirmar se isso é uma pousada ou um hotel? Eles têm wifi gratuito?"
+ },
+ {
+  "dialogo": "MUL0787.json",
+  "servico": "hotel",
+  "nome": "aylesbray lodge guest house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "No that won't be necessary. What is the address though so I have it for my reference?",
+  "nome_na_frase": false,
+  "traducao": "Não, isso não será necessário. Qual é o endereço, porém, para eu ter como referência?"
+ },
+ {
+  "dialogo": "SNG1026.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I am not quite ready to make a reservation yet, but could you please get the address for me?",
+  "nome_na_frase": false,
+  "traducao": "Ainda não estou muito pronto para fazer uma reserva, mas você poderia me conseguir o endereço, por favor?"
+ },
+ {
+  "dialogo": "SNG1026.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Yes, do you have their postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, você tem o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL2347.json",
+  "servico": "restaurant",
+  "nome": "sesame restaurant and bar",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Sure, can i have their postcode, number and address?",
+  "nome_na_frase": false,
+  "traducao": "Claro, posso ter o CEP, o número e o endereço deles?"
+ },
+ {
+  "dialogo": "MUL2347.json",
+  "servico": "restaurant",
+  "nome": "sesame restaurant and bar",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "A college please. I'll need the entrance fee, postcode, and phone number for the one you suggest.",
+  "nome_na_frase": false,
+  "traducao": "Uma faculdade, por favor. Vou precisar do preço da entrada, do CEP e do telefone da que você sugerir."
+ },
+ {
+  "dialogo": "MUL2347.json",
+  "servico": "restaurant",
+  "nome": "sesame restaurant and bar",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "May I have a second recommendation with their phone number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter uma segunda recomendação com o telefone e o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL3685.json",
+  "servico": "restaurant",
+  "nome": "meghna",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "No but what is the address and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Não, mas qual é o endereço e o telefone?"
+ },
+ {
+  "dialogo": "PMUL3275.json",
+  "servico": "attraction",
+  "nome": "cambridge contemporary art",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Sounds interesting! What is the address?",
+  "nome_na_frase": false,
+  "traducao": "Parece interessante! Qual é o endereço?"
+ },
+ {
+  "dialogo": "PMUL1232.json",
+  "servico": "attraction",
+  "nome": "cambridge university botanic gardens",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Can I have the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o telefone?"
+ },
+ {
+  "dialogo": "MUL2378.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes that is fine can you please provide the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim, isso está bom, você pode fornecer o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL4800.json",
+  "servico": "restaurant",
+  "nome": "rajmahal",
+  "pedidos": [
+   "postcode",
+   "address"
+  ],
+  "frase": "Can I get the address and postcode for Rajmahal please?",
+  "nome_na_frase": true,
+  "traducao": "Posso obter o endereço e o CEP do Rajmahal, por favor?"
+ },
+ {
+  "dialogo": "PMUL3126.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Yes. The entrance fee and the phone number please.",
+  "nome_na_frase": false,
+  "traducao": "Sim. O preço da entrada e o telefone, por favor."
+ },
+ {
+  "dialogo": "PMUL2209.json",
+  "servico": "attraction",
+  "nome": "cherry hinton water play",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Thank you. Can you please tell me the area of town this is in?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado. Você pode me dizer a região da cidade em que isso fica, por favor?"
+ },
+ {
+  "dialogo": "MUL1650.json",
+  "servico": "restaurant",
+  "nome": "jinling noodle bar",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "Can I have their phone number and address? Also, are there any trains that go from Peterborough to Cambridge?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o telefone e o endereço deles? Além disso, há trens que vão de Peterborough para Cambridge?"
+ },
+ {
+  "dialogo": "MUL1650.json",
+  "servico": "restaurant",
+  "nome": "jinling noodle bar",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "What is the price range of the restaurant?",
+  "nome_na_frase": false,
+  "traducao": "Qual é a faixa de preço do restaurante?"
+ },
+ {
+  "dialogo": "MUL0939.json",
+  "servico": "attraction",
+  "nome": "lynne strover gallery",
+  "pedidos": [
+   "area",
+   "address",
+   "postcode"
+  ],
+  "frase": "Okay, Lynne Strover sounds great. Give me the address and post code, please. Also, which area is that, again?",
+  "nome_na_frase": false,
+  "traducao": "Ok, Lynne Strover parece ótimo. Me dê o endereço e o código postal, por favor. Além disso, em que região fica isso, mesmo?"
+ },
+ {
+  "dialogo": "MUL0939.json",
+  "servico": "attraction",
+  "nome": "lynne strover gallery",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "What area is the Lynne Strover museum in?",
+  "nome_na_frase": false,
+  "traducao": "Em que região fica o museu Lynne Strover?"
+ },
+ {
+  "dialogo": "MUL0939.json",
+  "servico": "attraction",
+  "nome": "lynne strover gallery",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Thank you very much, could I also have the postcode for the museum?",
+  "nome_na_frase": false,
+  "traducao": "Muito obrigado, poderia ter também o CEP do museu?"
+ },
+ {
+  "dialogo": "PMUL3576.json",
+  "servico": "attraction",
+  "nome": "churchill college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "May I have the address ?",
+  "nome_na_frase": false,
+  "traducao": "Posso ter o endereço ?"
+ },
+ {
+  "dialogo": "MUL1759.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "What is the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o telefone?"
+ },
+ {
+  "dialogo": "MUL2148.json",
+  "servico": "hotel",
+  "nome": "lovell lodge",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Yes, The Lovell Lodge sounds nice. Can you give me the phone number and postcode please?",
+  "nome_na_frase": true,
+  "traducao": "Sim, The Lovell Lodge parece legal. Você pode me dar o telefone e o CEP, por favor?"
+ },
+ {
+  "dialogo": "PMUL1256.json",
+  "servico": "attraction",
+  "nome": "regency gallery",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Yeah, I see them on the map but I need their entrance fee.",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu os vejo no mapa, mas preciso do preço da entrada deles."
+ },
+ {
+  "dialogo": "MUL1901.json",
+  "servico": "attraction",
+  "nome": "great saint mary's church",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Can I please get their phone number as well? I also need help finding a train for Monday.",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o telefone deles também, por favor? Também preciso de ajuda para encontrar um trem para segunda-feira."
+ },
+ {
+  "dialogo": "PMUL3557.json",
+  "servico": "attraction",
+  "nome": "the junction",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "I am looking for a place called the junction what area in the city is that located?",
+  "nome_na_frase": true,
+  "traducao": "Estou procurando um lugar chamado the junction, em que região da cidade fica?"
+ },
+ {
+  "dialogo": "PMUL3506.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "address and entrance fee please ?",
+  "nome_na_frase": false,
+  "traducao": "endereço e preço da entrada, por favor ?"
+ },
+ {
+  "dialogo": "PMUL3506.json",
+  "servico": "hotel",
+  "nome": "warkworth house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "I don't know yet, what is it's star rating and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Eu ainda não sei, qual é a classificação em estrelas dele e o CEP?"
+ },
+ {
+  "dialogo": "PMUL3506.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I don't know yet, what is it's star rating and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Eu ainda não sei, qual é a classificação em estrelas dele e o CEP?"
+ },
+ {
+  "dialogo": "PMUL3465.json",
+  "servico": "attraction",
+  "nome": "cineworld cinema",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Yes, what is the postcode? Is there an admission fee?",
+  "nome_na_frase": false,
+  "traducao": "Sim, qual é o CEP? Há uma taxa de admissão?"
+ },
+ {
+  "dialogo": "PMUL0457.json",
+  "servico": "hotel",
+  "nome": "a and b guest house",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Do they have free parking?",
+  "nome_na_frase": false,
+  "traducao": "Eles têm estacionamento gratuito?"
+ },
+ {
+  "dialogo": "MUL0828.json",
+  "servico": "restaurant",
+  "nome": "little seoul",
+  "pedidos": [
+   "pricerange",
+   "area"
+  ],
+  "frase": "No, but I do want its area and price range.",
+  "nome_na_frase": false,
+  "traducao": "Não, mas eu quero a região e a faixa de preço dele."
+ },
+ {
+  "dialogo": "MUL0828.json",
+  "servico": "attraction",
+  "nome": "downing college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I get the phone number for Downing College?",
+  "nome_na_frase": true,
+  "traducao": "Posso obter o telefone do Downing College?"
+ },
+ {
+  "dialogo": "MUL0828.json",
+  "servico": "attraction",
+  "nome": "downing college",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "How much is entrance fee and may i also get a number for them?",
+  "nome_na_frase": false,
+  "traducao": "Quanto é o preço da entrada e posso também obter um número deles?"
+ },
+ {
+  "dialogo": "MUL0828.json",
+  "servico": "attraction",
+  "nome": "downing college",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Is there an entrance fee for Downing College?",
+  "nome_na_frase": true,
+  "traducao": "Há preço de entrada no Downing College?"
+ },
+ {
+  "dialogo": "PMUL3348.json",
+  "servico": "restaurant",
+  "nome": "pizza express fen ditton",
+  "pedidos": [
+   "area",
+   "postcode",
+   "address"
+  ],
+  "frase": "Could I get more information, including the address, postcode, and area?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter mais informações, incluindo o endereço, o CEP e a região?"
+ },
+ {
+  "dialogo": "MUL1268.json",
+  "servico": "restaurant",
+  "nome": "riverside brasserie",
+  "pedidos": [
+   "phone",
+   "postcode",
+   "address"
+  ],
+  "frase": "Sure! Could you tell me the address - including the postcode and phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Claro! Você poderia me dizer o endereço - incluindo o CEP e o telefone, por favor?"
+ },
+ {
+  "dialogo": "MUL1268.json",
+  "servico": "hotel",
+  "nome": "cityroomz",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "I just need the postcode, telephone number and address of the hotel please.",
+  "nome_na_frase": false,
+  "traducao": "Eu só preciso do CEP, do telefone e do endereço do hotel, por favor."
+ },
+ {
+  "dialogo": "PMUL1284.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Can you give me the phone #, address, and postcode for the ADC theatre?",
+  "nome_na_frase": true,
+  "traducao": "Você pode me dar o telefone, o endereço e o CEP do ADC theatre?"
+ },
+ {
+  "dialogo": "PMUL1284.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "I also need their address and postcode as I asked before please.",
+  "nome_na_frase": false,
+  "traducao": "Eu também preciso do endereço e do CEP deles, como pedi antes, por favor."
+ },
+ {
+  "dialogo": "MUL2457.json",
+  "servico": "attraction",
+  "nome": "camboats",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "Sounds good. Do they have an entrance fee, and please provide me with the postcode.",
+  "nome_na_frase": false,
+  "traducao": "Parece bom. Eles têm preço de entrada, e por favor me forneça o CEP."
+ },
+ {
+  "dialogo": "PMUL3014.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "What is the postcode for the old school?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP da old school?"
+ },
+ {
+  "dialogo": "PMUL1420.json",
+  "servico": "attraction",
+  "nome": "the junction",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Could I have their phone number and address please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia ter o telefone e o endereço deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL4383.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "Sounds goof. What is the price range on that one?",
+  "nome_na_frase": false,
+  "traducao": "Parece bom. Qual é a faixa de preço desse?"
+ },
+ {
+  "dialogo": "PMUL4383.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Thanks. Could I get the address?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado. Poderia obter o endereço?"
+ },
+ {
+  "dialogo": "PMUL4383.json",
+  "servico": "restaurant",
+  "nome": "curry garden",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Oh, yes, I need the phone number, please.",
+  "nome_na_frase": false,
+  "traducao": "Ah, sim, eu preciso do telefone, por favor."
+ },
+ {
+  "dialogo": "PMUL0076.json",
+  "servico": "hotel",
+  "nome": "gonville hotel",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "Is that a hotel? And what is the price range?",
+  "nome_na_frase": false,
+  "traducao": "Isso é um hotel? E qual é a faixa de preço?"
+ },
+ {
+  "dialogo": "PMUL0076.json",
+  "servico": "hotel",
+  "nome": "gonville hotel",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That sounds great what is their postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo, qual é o CEP deles?"
+ },
+ {
+  "dialogo": "PMUL1200.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "area",
+   "entrancefee"
+  ],
+  "frase": "Can I get information on area and entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter informações sobre a região e o preço da entrada?"
+ },
+ {
+  "dialogo": "PMUL2311.json",
+  "servico": "attraction",
+  "nome": "cafe jello gallery",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "The cafe jello gallery sounds interesting. What is their phone number?",
+  "nome_na_frase": true,
+  "traducao": "O cafe jello gallery parece interessante. Qual é o telefone deles?"
+ },
+ {
+  "dialogo": "MUL0821.json",
+  "servico": "attraction",
+  "nome": "whipple museum of the history of science",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Sounds good. What's the address and phone number of the Whipple?",
+  "nome_na_frase": false,
+  "traducao": "Parece bom. Qual é o endereço e o telefone do Whipple?"
+ },
+ {
+  "dialogo": "PMUL3549.json",
+  "servico": "attraction",
+  "nome": "kettle's yard",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Do they charge an entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Eles cobram preço de entrada?"
+ },
+ {
+  "dialogo": "PMUL3549.json",
+  "servico": "attraction",
+  "nome": "kettle's yard",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Thanks, can I have the post code, please?",
+  "nome_na_frase": false,
+  "traducao": "Obrigado, posso ter o código postal, por favor?"
+ },
+ {
+  "dialogo": "PMUL3663.json",
+  "servico": "attraction",
+  "nome": "cafe jello gallery",
+  "pedidos": [
+   "area",
+   "phone"
+  ],
+  "frase": "That will work. Could you get me the phone number and area its in?",
+  "nome_na_frase": false,
+  "traducao": "Isso vai servir. Você poderia me conseguir o telefone e a região em que fica?"
+ },
+ {
+  "dialogo": "PMUL3415.json",
+  "servico": "attraction",
+  "nome": "riverboat georgina",
+  "pedidos": [
+   "type",
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "That sounds great. Could you tell me their phone number, entrance fee, and attraction type?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo. Você poderia me dizer o telefone deles, o preço da entrada e o tipo de atração?"
+ },
+ {
+  "dialogo": "PMUL2729.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "yes that sounds good can I get the postcode, address of that place?",
+  "nome_na_frase": false,
+  "traducao": "sim, isso parece bom, posso obter o CEP e o endereço desse lugar?"
+ },
+ {
+  "dialogo": "PMUL4911.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Just the postcode please",
+  "nome_na_frase": false,
+  "traducao": "Só o CEP, por favor"
+ },
+ {
+  "dialogo": "MUL2686.json",
+  "servico": "attraction",
+  "nome": "cineworld cinema",
+  "pedidos": [
+   "type",
+   "entrancefee",
+   "address"
+  ],
+  "frase": "Can I get the address, entrance fee and attraction type please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o endereço, o preço da entrada e o tipo de atração, por favor?"
+ },
+ {
+  "dialogo": "MUL1228.json",
+  "servico": "restaurant",
+  "nome": "peking restaurant",
+  "pedidos": [
+   "food",
+   "address"
+  ],
+  "frase": "iM LOOKING FOR THE peking restaurant WHAT TYPE OF FOOD DOES IT SERVE AND I ALSO NEED THE ADDRESS",
+  "nome_na_frase": true,
+  "traducao": "ESTOU PROCURANDO O peking restaurant QUE TIPO DE COMIDA ELE SERVE E TAMBÉM PRECISO DO ENDEREÇO"
+ },
+ {
+  "dialogo": "PMUL4050.json",
+  "servico": "attraction",
+  "nome": "lynne strover gallery",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Yes, I would also like to know what kind of attraction it is and the entrance fee.",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu também gostaria de saber que tipo de atração é e o preço da entrada."
+ },
+ {
+  "dialogo": "PMUL4050.json",
+  "servico": "attraction",
+  "nome": "lynne strover gallery",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "What area is it in?",
+  "nome_na_frase": false,
+  "traducao": "Em que região fica?"
+ },
+ {
+  "dialogo": "MUL0172.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "pricerange"
+  ],
+  "frase": "What is the price range of The Acorn Guest House?",
+  "nome_na_frase": true,
+  "traducao": "Qual é a faixa de preço da The Acorn Guest House?"
+ },
+ {
+  "dialogo": "MUL0172.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Do they have free parking? I will need that.",
+  "nome_na_frase": false,
+  "traducao": "Eles têm estacionamento gratuito? Vou precisar disso."
+ },
+ {
+  "dialogo": "PMUL3521.json",
+  "servico": "attraction",
+  "nome": "cafe jello gallery",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "Could you provide me with the address and entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia me fornecer o endereço e o preço da entrada?"
+ },
+ {
+  "dialogo": "MUL0901.json",
+  "servico": "attraction",
+  "nome": "emmanuel college",
+  "pedidos": [
+   "area",
+   "type",
+   "entrancefee"
+  ],
+  "frase": "May I get the area its in, attraction type and an entrance fee if any?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter a região em que fica, o tipo de atração e o preço da entrada, se houver?"
+ },
+ {
+  "dialogo": "MUL0818.json",
+  "servico": "attraction",
+  "nome": "gallery at twelve a high street",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "What kind of attraction is Gallery at twelve? Can you also tell me what their entrance fee and postcode are?",
+  "nome_na_frase": false,
+  "traducao": "Que tipo de atração é a Gallery at twelve? Você também pode me dizer qual é o preço da entrada e o CEP deles?"
+ },
+ {
+  "dialogo": "MUL0818.json",
+  "servico": "attraction",
+  "nome": "gallery at twelve a high street",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "Can I get the phone number for the taxi company and the type of car I will be picked up in?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o telefone da empresa de táxi e o tipo de carro em que serei buscado?"
+ },
+ {
+  "dialogo": "PMUL2239.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "What is the post code?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o código postal?"
+ },
+ {
+  "dialogo": "PMUL2239.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "i also want to know the phone number so that i can call them up",
+  "nome_na_frase": false,
+  "traducao": "eu também quero saber o telefone para poder ligar para eles"
+ },
+ {
+  "dialogo": "PMUL2239.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Can you give me the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dar o CEP?"
+ },
+ {
+  "dialogo": "MUL2675.json",
+  "servico": "attraction",
+  "nome": "the man on the moon",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I get the phone number for the concert hall please?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter o telefone da casa de concertos, por favor?"
+ },
+ {
+  "dialogo": "PMUL1883.json",
+  "servico": "hotel",
+  "nome": "huntingdon marriott hotel",
+  "pedidos": [
+   "parking"
+  ],
+  "frase": "Can you tell me if they have free parking?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer se eles têm estacionamento gratuito?"
+ },
+ {
+  "dialogo": "PMUL2578.json",
+  "servico": "hotel",
+  "nome": "gonville hotel",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Actually, I just need their phone number, please.",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, eu só preciso do telefone deles, por favor."
+ },
+ {
+  "dialogo": "MUL1059.json",
+  "servico": "attraction",
+  "nome": "mumford theatre",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes I would like their phone number.",
+  "nome_na_frase": false,
+  "traducao": "Sim, eu gostaria do telefone deles."
+ },
+ {
+  "dialogo": "MUL1059.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "I'm also looking for the Carolina Bed and Breakfast. What area is it in?",
+  "nome_na_frase": true,
+  "traducao": "Também estou procurando o Carolina Bed and Breakfast. Em que região fica?"
+ },
+ {
+  "dialogo": "MUL1059.json",
+  "servico": "hotel",
+  "nome": "carolina bed and breakfast",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "No, that's okay, I just needed to know what area it was in.",
+  "nome_na_frase": false,
+  "traducao": "Não, tudo bem, eu só precisava saber em que região era."
+ },
+ {
+  "dialogo": "MUL2637.json",
+  "servico": "attraction",
+  "nome": "nusha",
+  "pedidos": [
+   "address",
+   "phone"
+  ],
+  "frase": "Sounds good, please advise the address and phone number. Thank you.",
+  "nome_na_frase": false,
+  "traducao": "Parece bom, por favor informe o endereço e o telefone. Obrigado."
+ },
+ {
+  "dialogo": "MUL1365.json",
+  "servico": "restaurant",
+  "nome": "loch fyne",
+  "pedidos": [
+   "food",
+   "pricerange"
+  ],
+  "frase": "Can you tell me a little more about the place? I need to know what type of food they serve, price range and where it's located.",
+  "nome_na_frase": false,
+  "traducao": "Você pode me contar um pouco mais sobre o lugar? Preciso saber que tipo de comida eles servem, a faixa de preço e onde fica."
+ },
+ {
+  "dialogo": "MUL2316.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Is there a phone number I can get for the schools please",
+  "nome_na_frase": false,
+  "traducao": "Existe um telefone que eu possa obter para as schools, por favor"
+ },
+ {
+  "dialogo": "PMUL1036.json",
+  "servico": "attraction",
+  "nome": "christ's college",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Thank you. I also need the postcode please.",
+  "nome_na_frase": false,
+  "traducao": "Obrigado. Eu também preciso do CEP, por favor."
+ },
+ {
+  "dialogo": "PMUL4316.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "That sounds perfect. What is the address?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece perfeito. Qual é o endereço?"
+ },
+ {
+  "dialogo": "PMUL4894.json",
+  "servico": "attraction",
+  "nome": "cambridge book and print gallery",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "That sounds great! What is the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo! Qual é o CEP?"
+ },
+ {
+  "dialogo": "PMUL4894.json",
+  "servico": "attraction",
+  "nome": "cambridge book and print gallery",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Could I also have the phone number to the museum?",
+  "nome_na_frase": false,
+  "traducao": "Poderia ter também o telefone do museu?"
+ },
+ {
+  "dialogo": "PMUL0286.json",
+  "servico": "restaurant",
+  "nome": "kohinoor",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "What is the postcode and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP e o telefone?"
+ },
+ {
+  "dialogo": "PMUL4547.json",
+  "servico": "attraction",
+  "nome": "the junction",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Is there an entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "Tem preço de entrada?"
+ },
+ {
+  "dialogo": "MUL1278.json",
+  "servico": "hotel",
+  "nome": "city centre north b and b",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "I would like you to pick one, and tell em the adress and what type of room it is please.",
+  "nome_na_frase": false,
+  "traducao": "Eu gostaria que você escolhesse um, e me dissesse o endereço e que tipo de quarto é, por favor."
+ },
+ {
+  "dialogo": "PMUL3158.json",
+  "servico": "attraction",
+  "nome": "jesus green outdoor pool",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "Sounds good! Do you happen to know what attraction type it is?",
+  "nome_na_frase": false,
+  "traducao": "Parece bom! Por acaso você sabe que tipo de atração é?"
+ },
+ {
+  "dialogo": "PMUL2080.json",
+  "servico": "attraction",
+  "nome": "funky fun house",
+  "pedidos": [
+   "area",
+   "postcode"
+  ],
+  "frase": "Please give me their postcode, and the area of town they are located in.",
+  "nome_na_frase": false,
+  "traducao": "Por favor, me dê o CEP deles e a região da cidade em que eles ficam."
+ },
+ {
+  "dialogo": "MUL2301.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "That sounds good. Could I get their phone number?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece bom. Poderia obter o telefone deles?"
+ },
+ {
+  "dialogo": "PMUL0262.json",
+  "servico": "restaurant",
+  "nome": "loch fyne",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "No, that's but could I get the phone number for it?",
+  "nome_na_frase": false,
+  "traducao": "Não, isso é, mas poderia obter o telefone dele?"
+ },
+ {
+  "dialogo": "PMUL4176.json",
+  "servico": "attraction",
+  "nome": "king's college",
+  "pedidos": [
+   "entrancefee",
+   "phone"
+  ],
+  "frase": "Sure, could you tell me the entrance fee and phone number?",
+  "nome_na_frase": false,
+  "traducao": "Claro, você poderia me dizer o preço da entrada e o telefone?"
+ },
+ {
+  "dialogo": "PMUL4176.json",
+  "servico": "attraction",
+  "nome": "king's college",
+  "pedidos": [
+   "type"
+  ],
+  "frase": "What is the attraction type?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o tipo de atração?"
+ },
+ {
+  "dialogo": "MUL1273.json",
+  "servico": "restaurant",
+  "nome": "riverside brasserie",
+  "pedidos": [
+   "pricerange",
+   "phone",
+   "address"
+  ],
+  "frase": "can i get the address, phone number, and price range please?",
+  "nome_na_frase": false,
+  "traducao": "posso obter o endereço, o telefone e a faixa de preço, por favor?"
+ },
+ {
+  "dialogo": "SNG1147.json",
+  "servico": "attraction",
+  "nome": "williams art and antiques",
+  "pedidos": [
+   "area",
+   "postcode"
+  ],
+  "frase": "No thank you. Just the area and postcode please.",
+  "nome_na_frase": false,
+  "traducao": "Não, obrigado. Só a região e o CEP, por favor."
+ },
+ {
+  "dialogo": "SNG0866.json",
+  "servico": "hotel",
+  "nome": "acorn guest house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "May I just get the phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Posso apenas obter o telefone, por favor?"
+ },
+ {
+  "dialogo": "PMUL2433.json",
+  "servico": "attraction",
+  "nome": "mumford theatre",
+  "pedidos": [
+   "entrancefee",
+   "postcode"
+  ],
+  "frase": "Could I get the postcode and entrance fee for the Mumford Theatre please?",
+  "nome_na_frase": true,
+  "traducao": "Poderia obter o CEP e o preço da entrada do Mumford Theatre, por favor?"
+ },
+ {
+  "dialogo": "PMUL2933.json",
+  "servico": "attraction",
+  "nome": "clare hall",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I love free. Can you give me the address of Clare Hall?",
+  "nome_na_frase": true,
+  "traducao": "Eu adoro de graça. Você pode me dar o endereço do Clare Hall?"
+ },
+ {
+  "dialogo": "MUL0352.json",
+  "servico": "restaurant",
+  "nome": "golden house",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Golden House sounds delicious, please provide the address.",
+  "nome_na_frase": true,
+  "traducao": "Golden House parece delicioso, por favor forneça o endereço."
+ },
+ {
+  "dialogo": "SNG0616.json",
+  "servico": "restaurant",
+  "nome": "saigon city",
+  "pedidos": [
+   "food"
+  ],
+  "frase": "Actually, I won't be needing a reservation just yet. Could you verify the type of food Saigon City serves?",
+  "nome_na_frase": true,
+  "traducao": "Na verdade, não vou precisar de uma reserva ainda. Você poderia verificar o tipo de comida que o Saigon City serve?"
+ },
+ {
+  "dialogo": "SNG0616.json",
+  "servico": "restaurant",
+  "nome": "saigon city",
+  "pedidos": [
+   "phone",
+   "postcode"
+  ],
+  "frase": "Yes, could I get the restuarant's phone number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Sim, poderia obter o telefone e o CEP do restaurante?"
+ },
+ {
+  "dialogo": "PMUL3708.json",
+  "servico": "restaurant",
+  "nome": "saint johns chop house",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Cool, could you give me the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Legal, você poderia me dar o telefone?"
+ },
+ {
+  "dialogo": "PMUL2489.json",
+  "servico": "attraction",
+  "nome": "castle galleries",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Yes and I need the postcode and phone number as well.",
+  "nome_na_frase": false,
+  "traducao": "Sim, e eu preciso do CEP e do telefone também."
+ },
+ {
+  "dialogo": "PMUL2124.json",
+  "servico": "restaurant",
+  "nome": "curry prince",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Yes. May I have the post code for that place?",
+  "nome_na_frase": false,
+  "traducao": "Sim. Posso ter o código postal desse lugar?"
+ },
+ {
+  "dialogo": "PMUL2124.json",
+  "servico": "attraction",
+  "nome": "club salsa",
+  "pedidos": [
+   "entrancefee",
+   "address"
+  ],
+  "frase": "I need the entrance fee and post code.",
+  "nome_na_frase": false,
+  "traducao": "Preciso do preço da entrada e do código postal."
+ },
+ {
+  "dialogo": "PMUL2124.json",
+  "servico": "attraction",
+  "nome": "club salsa",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "Could you give me the address and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Você poderia me dar o endereço e o CEP?"
+ },
+ {
+  "dialogo": "MUL1756.json",
+  "servico": "attraction",
+  "nome": "cambridge contemporary art",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes, actually, can I have their phone number please?",
+  "nome_na_frase": false,
+  "traducao": "Sim, na verdade, posso ter o telefone deles, por favor?"
+ },
+ {
+  "dialogo": "SNG01391.json",
+  "servico": "restaurant",
+  "nome": "da vinci pizzeria",
+  "pedidos": [
+   "phone",
+   "address"
+  ],
+  "frase": "please get me the you get phone number and address",
+  "nome_na_frase": false,
+  "traducao": "por favor me consiga o telefone e o endereço"
+ },
+ {
+  "dialogo": "PMUL4246.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "Oh thank you for the name of the museum and what part of the area is this museum in? I'd also like information about the Lensfield Hotel.",
+  "nome_na_frase": false,
+  "traducao": "Ah, obrigado pelo nome do museu e em que parte da região fica esse museu? Eu também gostaria de informações sobre o Lensfield Hotel."
+ },
+ {
+  "dialogo": "PMUL4246.json",
+  "servico": "attraction",
+  "nome": "broughton house gallery",
+  "pedidos": [
+   "entrancefee"
+  ],
+  "frase": "Does the museum have an entrance fee?",
+  "nome_na_frase": false,
+  "traducao": "O museu tem preço de entrada?"
+ },
+ {
+  "dialogo": "SNG1091.json",
+  "servico": "attraction",
+  "nome": "holy trinity church",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "The Holy Trinity Church sounds lovely. Can you give me their postcode, please?",
+  "nome_na_frase": true,
+  "traducao": "A Holy Trinity Church parece adorável. Você pode me dar o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "PMUL1359.json",
+  "servico": "attraction",
+  "nome": "regency gallery",
+  "pedidos": [
+   "postcode",
+   "phone"
+  ],
+  "frase": "Sounds good. Can I get the phone number and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Parece bom. Posso obter o telefone e o CEP?"
+ },
+ {
+  "dialogo": "MUL1546.json",
+  "servico": "restaurant",
+  "nome": "golden house",
+  "pedidos": [
+   "pricerange",
+   "phone"
+  ],
+  "frase": "Yes, may I have their phone number? And the price range?",
+  "nome_na_frase": false,
+  "traducao": "Sim, posso ter o telefone deles? E a faixa de preço?"
+ },
+ {
+  "dialogo": "PMUL4930.json",
+  "servico": "hotel",
+  "nome": "ashley hotel",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "That sounds great. Could you give me the address please?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo. Você poderia me dar o endereço, por favor?"
+ },
+ {
+  "dialogo": "MUL1718.json",
+  "servico": "attraction",
+  "nome": "cambridge artworks",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "That sounds great. What's their address and postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece ótimo. Qual é o endereço e o CEP deles?"
+ },
+ {
+  "dialogo": "MUL1898.json",
+  "servico": "attraction",
+  "nome": "magdalene college",
+  "pedidos": [
+   "address",
+   "postcode"
+  ],
+  "frase": "What's the postcode? I need to send a letter there. It's a college, right?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o CEP? Preciso enviar uma carta para lá. É uma faculdade, certo?"
+ },
+ {
+  "dialogo": "MUL1898.json",
+  "servico": "attraction",
+  "nome": "magdalene college",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "Could I get the full address as well?",
+  "nome_na_frase": false,
+  "traducao": "Poderia obter o endereço completo também?"
+ },
+ {
+  "dialogo": "MUL1418.json",
+  "servico": "restaurant",
+  "nome": "prezzo",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "That won't be necessary. What is the postcode?",
+  "nome_na_frase": false,
+  "traducao": "Isso não será necessário. Qual é o CEP?"
+ },
+ {
+  "dialogo": "MUL1844.json",
+  "servico": "attraction",
+  "nome": "adc theatre",
+  "pedidos": [
+   "address",
+   "postcode",
+   "phone"
+  ],
+  "frase": "Can I get their address, phone number and postcode please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o endereço, o telefone e o CEP deles, por favor?"
+ },
+ {
+  "dialogo": "MUL1607.json",
+  "servico": "restaurant",
+  "nome": "graffiti",
+  "pedidos": [
+   "food",
+   "phone",
+   "address"
+  ],
+  "frase": "Can you tell me the food type as well as the phone number and address?",
+  "nome_na_frase": false,
+  "traducao": "Você pode me dizer o tipo de comida, assim como o telefone e o endereço?"
+ },
+ {
+  "dialogo": "PMUL2942.json",
+  "servico": "attraction",
+  "nome": "cambridge university botanic gardens",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "Yes, Ill need the number along with the address and postal code.",
+  "nome_na_frase": false,
+  "traducao": "Sim, vou precisar do número junto com o endereço e o código postal."
+ },
+ {
+  "dialogo": "PMUL2942.json",
+  "servico": "attraction",
+  "nome": "cambridge university botanic gardens",
+  "pedidos": [
+   "address"
+  ],
+  "frase": "I also need the address please.",
+  "nome_na_frase": false,
+  "traducao": "Eu também preciso do endereço, por favor."
+ },
+ {
+  "dialogo": "PMUL2942.json",
+  "servico": "attraction",
+  "nome": "cambridge university botanic gardens",
+  "pedidos": [
+   "postcode"
+  ],
+  "frase": "Can I get the postcode too please?",
+  "nome_na_frase": false,
+  "traducao": "Posso obter o CEP também, por favor?"
+ },
+ {
+  "dialogo": "PMUL2942.json",
+  "servico": "hotel",
+  "nome": "el shaddai",
+  "pedidos": [
+   "parking",
+   "pricerange",
+   "postcode"
+  ],
+  "frase": "Actually could you get me the postcode, their price range, and whether they have free parking?",
+  "nome_na_frase": false,
+  "traducao": "Na verdade, você poderia me conseguir o CEP, a faixa de preço deles e se eles têm estacionamento gratuito?"
+ },
+ {
+  "dialogo": "MUL1981.json",
+  "servico": "attraction",
+  "nome": "all saints church",
+  "pedidos": [
+   "type",
+   "phone"
+  ],
+  "frase": "That sounds wonderful. Could I get the phone number along with the attraction type?",
+  "nome_na_frase": false,
+  "traducao": "Isso parece maravilhoso. Poderia obter o telefone junto com o tipo de atração?"
+ },
+ {
+  "dialogo": "PMUL1194.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "area"
+  ],
+  "frase": "I don't have an area preference.",
+  "nome_na_frase": false,
+  "traducao": "Eu não tenho preferência de região."
+ },
+ {
+  "dialogo": "PMUL1194.json",
+  "servico": "attraction",
+  "nome": "old schools",
+  "pedidos": [
+   "phone"
+  ],
+  "frase": "What is the phone number?",
+  "nome_na_frase": false,
+  "traducao": "Qual é o telefone?"
+ }
+]

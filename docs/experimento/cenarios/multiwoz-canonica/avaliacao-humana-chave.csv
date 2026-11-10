@@ -1,0 +1,31 @@
+﻿id;a;b;familia;gabarito;caminho_prototipo
+1;linha_de_base;prototipo;hotel/phone;"01223315702 && a and b guest house";llm
+2;prototipo;linha_de_base;atracao/phone;"01223452587 && all saints church";llm
+3;prototipo;linha_de_base;restaurante/pricerange;"moderada && meghna";llm
+4;prototipo;linha_de_base;restaurante/address;"Thompsons Lane Fen Ditton && la mimosa";llm
+5;linha_de_base;prototipo;hotel/address+phone;"56 saint barnabas road && 01223525725 && alexander bed and breakfast";llm
+6;linha_de_base;prototipo;atracao/address;"free school lane && whipple museum of the history of science";llm
+7;prototipo;linha_de_base;hotel/address;"74 chesterton road && ashley hotel";llm
+8;linha_de_base;prototipo;atracao/area;"centro && regency gallery";llm
+9;linha_de_base;prototipo;hotel/postcode;"cb13lh && express by holiday inn cambridge";llm
+10;linha_de_base;prototipo;hotel/parking;"sim && hobsons house";llm
+11;linha_de_base;prototipo;atracao/postcode;"cb58sx && camboats";llm
+12;prototipo;linha_de_base;hotel/phone;"01223366611 && gonville hotel";template
+13;prototipo;linha_de_base;atracao/type;"arquitetura && all saints church";llm
+14;prototipo;linha_de_base;hotel/postcode;"cb13nx && carolina bed and breakfast";template
+15;prototipo;linha_de_base;atracao/address;"wandlebury ring, gog magog hills, babraham && wandlebury country park";template
+16;prototipo;linha_de_base;restaurante/address;"100 Mill Road City Centre && bedouin";template
+17;prototipo;linha_de_base;atracao/address;"pool way, whitehill road, off newmarket road && abbey pool and astroturf pitch";template
+18;prototipo;linha_de_base;restaurante/food;"indiana && curry garden";llm
+19;prototipo;linha_de_base;restaurante/food+phone+address;"britânica && 01223277977 && Hotel Felix Whitehouse Lane Huntingdon Road && graffiti";llm
+20;prototipo;linha_de_base;restaurante/address;"17 Hills Road City Centre && sesame restaurant and bar";template
+21;prototipo;linha_de_base;atracao/area;"leste && funky fun house";template
+22;prototipo;linha_de_base;restaurante/phone;"01223362525 && la mimosa";llm
+23;prototipo;linha_de_base;restaurante/area;"centro && kohinoor";llm
+24;prototipo;linha_de_base;atracao/phone;"01223334900 && christ's college";template
+25;linha_de_base;prototipo;atracao/area+address;"centro && park street && adc theatre";llm
+26;prototipo;linha_de_base;atracao/phone;"01223314960 && broughton house gallery";template
+27;linha_de_base;prototipo;restaurante/postcode;"cb58aq && la mimosa";llm
+28;prototipo;linha_de_base;atracao/entrancefee;"grátis && lynne strover gallery";llm
+29;prototipo;linha_de_base;atracao/phone;"01223332320 && old schools";template
+30;prototipo;linha_de_base;atracao/phone;"01223902158 && nusha";template

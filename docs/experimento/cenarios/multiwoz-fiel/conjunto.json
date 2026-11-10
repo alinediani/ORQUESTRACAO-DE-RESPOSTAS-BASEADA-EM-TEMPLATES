@@ -1,0 +1,272 @@
+[
+  {
+    "n": 1,
+    "pergunta": "Obrigado. Posso obter também o telefone?",
+    "familia": "hotel/phone",
+    "entidade": "a and b guest house",
+    "atributo": "phone",
+    "gabarito": "01223315702 && a and b guest house",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre a and b guest house: address: 124 tenison road; area: leste; internet: sim; parking: não; phone: 01223315702; postcode: cb12dp; pricerange: moderada; stars: 4; type: pousada."
+  },
+  {
+    "n": 2,
+    "pergunta": "Posso ter o telefone da All Saints Church, por favor?",
+    "familia": "atracao/phone",
+    "entidade": "all saints church",
+    "atributo": "phone",
+    "gabarito": "01223452587 && all saints church",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre all saints church: address: jesus lane; area: centro; entrancefee: grátis; phone: 01223452587; postcode: cb58bs; pricerange: grátis; type: arquitetura."
+  },
+  {
+    "n": 3,
+    "pergunta": "Qual é a faixa de preço do Meghna?",
+    "familia": "restaurante/pricerange",
+    "entidade": "meghna",
+    "atributo": "pricerange",
+    "gabarito": "moderada && meghna",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre meghna: address: 205 Victoria Road Chesterton; area: oeste; food: indiana; phone: 01223727410; postcode: cb43lf; pricerange: moderada; type: restaurante."
+  },
+  {
+    "n": 4,
+    "pergunta": "Qual é o endereço?",
+    "familia": "restaurante/address",
+    "entidade": "la mimosa",
+    "atributo": "address",
+    "gabarito": "Thompsons Lane Fen Ditton && la mimosa",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre la mimosa: address: Thompsons Lane Fen Ditton; area: centro; food: mediterrânea; phone: 01223362525; postcode: cb58aq; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 5,
+    "pergunta": "não, obrigado. Eu só preciso do endereço e do telefone deles",
+    "familia": "hotel/address+phone",
+    "entidade": "alexander bed and breakfast",
+    "atributo": "address+phone",
+    "gabarito": "56 saint barnabas road && 01223525725 && alexander bed and breakfast",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre alexander bed and breakfast: address: 56 saint barnabas road; area: centro; internet: sim; parking: sim; phone: 01223525725; postcode: cb12de; pricerange: barata; stars: 4; type: pousada."
+  },
+  {
+    "n": 6,
+    "pergunta": "Você pode me dizer o endereço também?",
+    "familia": "atracao/address",
+    "entidade": "whipple museum of the history of science",
+    "atributo": "address",
+    "gabarito": "free school lane && whipple museum of the history of science",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre whipple museum of the history of science: address: free school lane; area: centro; entrancefee: grátis; phone: 01223330906; postcode: cb23rh; pricerange: grátis; type: museu."
+  },
+  {
+    "n": 7,
+    "pergunta": "Eu escolho o ashley hotel. Qual é o endereço deles, por favor?",
+    "familia": "hotel/address",
+    "entidade": "ashley hotel",
+    "atributo": "address",
+    "gabarito": "74 chesterton road && ashley hotel",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre ashley hotel: address: 74 chesterton road; area: norte; internet: sim; parking: sim; phone: 01223350059; postcode: cb41er; pricerange: moderada; stars: 2; type: hotel."
+  },
+  {
+    "n": 8,
+    "pergunta": "Só preciso saber em que região fica.",
+    "familia": "atracao/area",
+    "entidade": "regency gallery",
+    "atributo": "area",
+    "gabarito": "centro && regency gallery",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre regency gallery: address: 39 fitzroy street; area: centro; entrancefee: grátis; phone: 01223365454; postcode: cb11er; pricerange: grátis; type: museu."
+  },
+  {
+    "n": 9,
+    "pergunta": "Sim, por favor, reserve o hotel e dê o endereço com o CEP. Obrigado.",
+    "familia": "hotel/postcode",
+    "entidade": "express by holiday inn cambridge",
+    "atributo": "postcode",
+    "gabarito": "cb13lh && express by holiday inn cambridge",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre express by holiday inn cambridge: address: 15-17 norman way, coldhams business park; area: leste; internet: sim; parking: sim; phone: 01223866800; postcode: cb13lh; pricerange: cara; stars: 2; type: hotel."
+  },
+  {
+    "n": 10,
+    "pergunta": "Eles têm estacionamento gratuito?",
+    "familia": "hotel/parking",
+    "entidade": "hobsons house",
+    "atributo": "parking",
+    "gabarito": "sim && hobsons house",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre hobsons house: address: 96 barton road; area: oeste; internet: sim; parking: sim; phone: 01223304906; postcode: cb39lh; pricerange: moderada; stars: 3; type: pousada."
+  },
+  {
+    "n": 11,
+    "pergunta": "Parece bom. Eles têm preço de entrada, e por favor me forneça o CEP.",
+    "familia": "atracao/postcode",
+    "entidade": "camboats",
+    "atributo": "postcode",
+    "gabarito": "cb58sx && camboats",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre camboats: address: the plough, green end, fen ditton,; area: leste; phone: 01223902112; postcode: cb58sx; type: passeio de barco."
+  },
+  {
+    "n": 12,
+    "pergunta": "Na verdade, eu só preciso do telefone deles, por favor.",
+    "familia": "hotel/phone",
+    "entidade": "gonville hotel",
+    "atributo": "phone",
+    "gabarito": "01223366611 && gonville hotel",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre gonville hotel: address: gonville place; area: centro; internet: sim; parking: sim; phone: 01223366611; postcode: cb11ly; pricerange: cara; stars: 3; type: hotel."
+  },
+  {
+    "n": 13,
+    "pergunta": "sim, vou precisar do tipo de atração, por favor.",
+    "familia": "atracao/type",
+    "entidade": "all saints church",
+    "atributo": "type",
+    "gabarito": "arquitetura && all saints church",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre all saints church: address: jesus lane; area: centro; entrancefee: grátis; phone: 01223452587; postcode: cb58bs; pricerange: grátis; type: arquitetura."
+  },
+  {
+    "n": 14,
+    "pergunta": "Poderia ter o código postal?",
+    "familia": "hotel/postcode",
+    "entidade": "carolina bed and breakfast",
+    "atributo": "postcode",
+    "gabarito": "cb13nx && carolina bed and breakfast",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre carolina bed and breakfast: address: 138 perne road; area: leste; internet: sim; parking: sim; phone: 01223247015; postcode: cb13nx; pricerange: moderada; stars: 4; type: pousada."
+  },
+  {
+    "n": 15,
+    "pergunta": "Qual é o endereço, por favor?",
+    "familia": "atracao/address",
+    "entidade": "wandlebury country park",
+    "atributo": "address",
+    "gabarito": "wandlebury ring, gog magog hills, babraham && wandlebury country park",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre wandlebury country park: address: wandlebury ring, gog magog hills, babraham; area: sul; entrancefee: grátis; phone: 01223243830; postcode: cb223ae; pricerange: grátis; type: parque."
+  },
+  {
+    "n": 16,
+    "pergunta": "Isso seria bom. Posso obter o endereço e o telefone?",
+    "familia": "restaurante/address",
+    "entidade": "bedouin",
+    "atributo": "address",
+    "gabarito": "100 Mill Road City Centre && bedouin",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre bedouin: address: 100 Mill Road City Centre; area: centro; food: africana; phone: 01223367660; postcode: cb12bd; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 17,
+    "pergunta": "Você poderia também me dizer o endereço da Abbey Pool?",
+    "familia": "atracao/address",
+    "entidade": "abbey pool and astroturf pitch",
+    "atributo": "address",
+    "gabarito": "pool way, whitehill road, off newmarket road && abbey pool and astroturf pitch",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre abbey pool and astroturf pitch: address: pool way, whitehill road, off newmarket road; area: leste; phone: 01223902088; postcode: cb58nt; type: piscina."
+  },
+  {
+    "n": 18,
+    "pergunta": "Não preciso de uma reserva agora. Que tipo de comida eles servem?",
+    "familia": "restaurante/food",
+    "entidade": "curry garden",
+    "atributo": "food",
+    "gabarito": "indiana && curry garden",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre curry garden: address: 106 Regent Street City Centre; area: centro; food: indiana; phone: 01223302330; postcode: cb21dp; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 19,
+    "pergunta": "Você pode me dizer o tipo de comida, assim como o telefone e o endereço?",
+    "familia": "restaurante/food+phone+address",
+    "entidade": "graffiti",
+    "atributo": "food+phone+address",
+    "gabarito": "britânica && 01223277977 && Hotel Felix Whitehouse Lane Huntingdon Road && graffiti",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre graffiti: address: Hotel Felix Whitehouse Lane Huntingdon Road; area: oeste; food: britânica; phone: 01223277977; postcode: cb30lx; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 20,
+    "pergunta": "Posso ter uma segunda recomendação com o telefone e o CEP deles?",
+    "familia": "restaurante/address",
+    "entidade": "sesame restaurant and bar",
+    "atributo": "address",
+    "gabarito": "17 Hills Road City Centre && sesame restaurant and bar",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre sesame restaurant and bar: address: 17 Hills Road City Centre; area: centro; food: chinesa; phone: 01223358899; postcode: cb21nw; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 21,
+    "pergunta": "Em que região fica o Funky Fun House?",
+    "familia": "atracao/area",
+    "entidade": "funky fun house",
+    "atributo": "area",
+    "gabarito": "leste && funky fun house",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre funky fun house: address: 8 mercers row, mercers row industrial estate; area: leste; phone: 01223304705; postcode: cb58hy; type: entretenimento."
+  },
+  {
+    "n": 22,
+    "pergunta": "Qual é o telefone?",
+    "familia": "restaurante/phone",
+    "entidade": "la mimosa",
+    "atributo": "phone",
+    "gabarito": "01223362525 && la mimosa",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre la mimosa: address: Thompsons Lane Fen Ditton; area: centro; food: mediterrânea; phone: 01223362525; postcode: cb58aq; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 23,
+    "pergunta": "Agora não. Em que região da cidade fica isso?",
+    "familia": "restaurante/area",
+    "entidade": "kohinoor",
+    "atributo": "area",
+    "gabarito": "centro && kohinoor",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre kohinoor: address: 74 Mill Road City Centre; area: centro; food: indiana; phone: 01223323639; postcode: cb12as; pricerange: barata; type: restaurante."
+  },
+  {
+    "n": 24,
+    "pergunta": "Ah, legal! Você pode me dizer o telefone deles, por favor?",
+    "familia": "atracao/phone",
+    "entidade": "christ's college",
+    "atributo": "phone",
+    "gabarito": "01223334900 && christ's college",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre christ's college: address: saint andrew's street; area: centro; entrancefee: grátis; phone: 01223334900; postcode: cb23bu; pricerange: grátis; type: faculdade."
+  },
+  {
+    "n": 25,
+    "pergunta": "por favor me dê o preço da entrada, a região e o endereço",
+    "familia": "atracao/area+address",
+    "entidade": "adc theatre",
+    "atributo": "area+address",
+    "gabarito": "centro && park street && adc theatre",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre adc theatre: address: park street; area: centro; phone: 01223300085; postcode: cb58as; type: teatro."
+  },
+  {
+    "n": 26,
+    "pergunta": "Sim, tem. Posso obter o telefone do museu, por favor?",
+    "familia": "atracao/phone",
+    "entidade": "broughton house gallery",
+    "atributo": "phone",
+    "gabarito": "01223314960 && broughton house gallery",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre broughton house gallery: address: 98 king street; area: centro; entrancefee: grátis; phone: 01223314960; postcode: cb11ln; pricerange: grátis; type: museu."
+  },
+  {
+    "n": 27,
+    "pergunta": "Eu também preciso do CEP.",
+    "familia": "restaurante/postcode",
+    "entidade": "la mimosa",
+    "atributo": "postcode",
+    "gabarito": "cb58aq && la mimosa",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre la mimosa: address: Thompsons Lane Fen Ditton; area: centro; food: mediterrânea; phone: 01223362525; postcode: cb58aq; pricerange: cara; type: restaurante."
+  },
+  {
+    "n": 28,
+    "pergunta": "Sim, eu também gostaria de saber que tipo de atração é e o preço da entrada.",
+    "familia": "atracao/entrancefee",
+    "entidade": "lynne strover gallery",
+    "atributo": "entrancefee",
+    "gabarito": "grátis && lynne strover gallery",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre lynne strover gallery: address: 23 high street, fen ditton; area: oeste; entrancefee: grátis; phone: 01223295264; postcode: cb30aq; pricerange: grátis; type: museu."
+  },
+  {
+    "n": 29,
+    "pergunta": "Existe um telefone que eu possa obter para as schools, por favor",
+    "familia": "atracao/phone",
+    "entidade": "old schools",
+    "atributo": "phone",
+    "gabarito": "01223332320 && old schools",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre old schools: address: trinity lane; area: centro; entrancefee: grátis; phone: 01223332320; postcode: cb21tt; pricerange: grátis; type: arquitetura."
+  },
+  {
+    "n": 30,
+    "pergunta": "Posso ter o preço da entrada do Nusha, assim como o telefone?",
+    "familia": "atracao/phone",
+    "entidade": "nusha",
+    "atributo": "phone",
+    "gabarito": "01223902158 && nusha",
+    "contexto": "Dados do cadastro (consulta ao sistema) sobre nusha: address: unit g6, cambridge leisure park, clifton road; area: sul; phone: 01223902158; postcode: cb17dy; type: entretenimento."
+  }
+]

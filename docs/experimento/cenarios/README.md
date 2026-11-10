@@ -14,6 +14,7 @@ passaram pelo mesmo protótipo e pela mesma linha de base. O LLM de geração fo
 | [Quiz, tradução fiel](quiz/README.md) | SimpleQuestions/Wikidata (CC BY 3.0) | 300 | 30,0% | 30 | 26 × 30 | 4 | Dado certo nas 4; corretas 17 × 15 |
 | [Quiz, simplificada](quiz/README.md) | idem, com normalizador | 300 | 79,3% | 30 | **14 × 30** (+30 do normalizador) | **16** | Dado certo nas 16; corretas **21 × 15**; erros de forma |
 | [Estilos (texto)](estilos/README.md) | fatos da base própria em 5 estilos | 50 | — | 50 | 10 × 50 (template inteiro); **2 × 50 + 50 Haiku (estilizador)** | 40; 48 | Template inteiro: 12 afirmações falsas congeladas; estilizador: nenhuma, −96% de custo |
+| [Atendimento (MultiWOZ)](multiwoz/README.md) | MultiWOZ 2.2 (CC BY 4.0) | 466 | 83,3% (canônico + contexto); 3,4% (fiel + contexto) | 30 | **19 × 30** (canônico) | 11 | Dado e nome corretos nas 11; 4 com artigo herdado; −37% de custo |
 
 ¹ Perguntas com entidade da fonte cuja chave já tinha aparecido: o máximo que o template poderia responder.
 ² O melhor caso: todas as perguntas do corpus cuja chave se repete.

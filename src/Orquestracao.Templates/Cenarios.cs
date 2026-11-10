@@ -203,6 +203,108 @@ public static partial class Cenarios
         todas.GroupBy(p => p.Familia).OrderByDescending(g => g.Count()).ThenBy(g => g.Key, StringComparer.Ordinal).Take(relacoes)
             .SelectMany(g => g.Take(porRelacao)).OrderBy(p => p.N).Select((p, i) => p with { N = i + 1 }).ToList();
 
+    // ---- MultiWOZ (cenário 8: atendimento com banco de dados) --------------------------------------------
+
+    /// <summary>Os atributos do banco do MultiWOZ, com o nome em português (para as formas canônicas).</summary>
+    public static readonly Dictionary<string, string> AtributosMultiwoz = new()
+    {
+        ["phone"] = "o telefone", ["address"] = "o endereço", ["postcode"] = "o CEP", ["area"] = "a região", ["pricerange"] = "a faixa de preço",
+        ["food"] = "o tipo de comida", ["stars"] = "a classificação em estrelas", ["type"] = "o tipo", ["internet"] = "se tem internet",
+        ["parking"] = "se tem estacionamento", ["entrancefee"] = "o preço da entrada",
+    };
+
+    private static readonly Dictionary<string, string> ValoresPt = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["centre"] = "centro", ["north"] = "norte", ["south"] = "sul", ["east"] = "leste", ["west"] = "oeste",
+        ["cheap"] = "barata", ["moderate"] = "moderada", ["expensive"] = "cara", ["yes"] = "sim", ["no"] = "não", ["free"] = "grátis",
+        ["guesthouse"] = "pousada", ["hotel"] = "hotel", ["restaurant"] = "restaurante", ["museum"] = "museu", ["college"] = "faculdade", ["park"] = "parque",
+        ["architecture"] = "arquitetura", ["theatre"] = "teatro", ["nightclub"] = "casa noturna", ["swimmingpool"] = "piscina",
+        ["boat"] = "passeio de barco", ["cinema"] = "cinema", ["entertainment"] = "entretenimento", ["concerthall"] = "sala de concertos",
+        ["multiple sports"] = "esportes", ["mutliple sports"] = "esportes", ["italian"] = "italiana", ["chinese"] = "chinesa", ["indian"] = "indiana",
+        ["european"] = "europeia", ["british"] = "britânica", ["modern european"] = "europeia moderna", ["french"] = "francesa", ["thai"] = "tailandesa",
+        ["asian oriental"] = "oriental asiática", ["mediterranean"] = "mediterrânea", ["spanish"] = "espanhola", ["japanese"] = "japonesa",
+        ["korean"] = "coreana", ["vietnamese"] = "vietnamita", ["international"] = "internacional", ["gastropub"] = "gastropub",
+        ["portuguese"] = "portuguesa", ["turkish"] = "turca", ["lebanese"] = "libanesa", ["african"] = "africana", ["mexican"] = "mexicana",
+        ["north american"] = "norte-americana",
+    };
+
+    private static string ValorPt(string atributo, string valor)
+    {
+        if (atributo == "entrancefee")
+            return valor.Equals("free", StringComparison.OrdinalIgnoreCase) ? "grátis" : Regex.Replace(valor, @"pounds?", "libras", RegexOptions.IgnoreCase);
+        return atributo is "phone" or "address" or "postcode" or "stars" ? valor : ValoresPt.GetValueOrDefault(valor, valor);
+    }
+
+    /// <summary>
+    /// O MultiWOZ: os pedidos de atributo (pedidos.json, tirados dos diálogos de teste do MultiWOZ 2.2) e a fonte (o banco de
+    /// restaurantes, hotéis e atrações, com os valores categóricos em português). Cada pergunta leva no Contexto o registro do
+    /// banco, como num atendimento que consulta o sistema, e na Entidade o nome em discussão (o estado da conversa).
+    /// <paramref name="variante"/>: "fiel" (a tradução fiel), "canonica" ("Qual é o telefone de X?") ou "original" (o inglês).
+    /// </summary>
+    public static (List<PerguntaTeste> Perguntas, List<Entidade> Entidades) LerMultiwoz(string pasta, string variante)
+    {
+        var tipos = new Dictionary<string, string> { ["restaurant"] = "restaurante", ["hotel"] = "hotel", ["attraction"] = "atracao" };
+        var registros = new Dictionary<string, Dictionary<string, string>>();
+        var entidades = new Dictionary<string, Entidade>();
+        foreach (var (servico, tipo) in tipos)
+        {
+            using var db = JsonDocument.Parse(File.ReadAllText(Path.Combine(pasta, $"{servico}_db.json")));
+            foreach (var e in db.RootElement.EnumerateArray())
+            {
+                var nome = e.GetProperty("name").GetString()!.ToLowerInvariant();
+                var atrs = new Dictionary<string, string>();
+                foreach (var p in e.EnumerateObject())
+                {
+                    var chave = p.Name.Replace(" ", "");
+                    if (!AtributosMultiwoz.ContainsKey(chave) || p.Value.ValueKind != JsonValueKind.String) continue;
+                    var v = p.Value.GetString()!.Trim();
+                    if (v.Length == 0 || v == "?") continue;
+                    atrs[chave] = ValorPt(chave, v);
+                }
+                registros[nome] = atrs;
+                entidades[nome] = new Entidade { Nome = nome, Tipo = tipo, Atributos = atrs };
+            }
+        }
+        using var doc = JsonDocument.Parse(File.ReadAllText(Path.Combine(pasta, "pedidos.json")));
+        var perguntas = new List<PerguntaTeste>();
+        foreach (var x in doc.RootElement.EnumerateArray())
+        {
+            var nome = x.GetProperty("nome").GetString()!;
+            var pedidos = x.GetProperty("pedidos").EnumerateArray().Select(a => a.GetString()!).Where(registros[nome].ContainsKey).Distinct().ToList();
+            if (pedidos.Count == 0) continue; // o banco não tem o dado pedido ("?")
+            var texto = variante switch
+            {
+                "fiel" => x.GetProperty("traducao").GetString()!,
+                "canonica" => $"Qual é {string.Join(" e ", pedidos.Select(a => AtributosMultiwoz[a]))} de {nome}?".Replace("Qual é se tem", "Diga se tem"),
+                _ => x.GetProperty("frase").GetString()!,
+            };
+            var registro = string.Join("; ", registros[nome].Select(k => $"{k.Key}: {k.Value}"));
+            perguntas.Add(new PerguntaTeste(perguntas.Count + 1, texto, $"{tipos[x.GetProperty("servico").GetString()!]}/{string.Join("+", pedidos)}", nome,
+                // O gabarito inclui o nome: o dado certo com o nome de outro estabelecimento é erro.
+                string.Join("+", pedidos), string.Join(" && ", pedidos.Select(a => registros[nome][a]).Append(nome)),
+                $"Dados do cadastro (consulta ao sistema) sobre {nome}: {registro}."));
+        }
+        return (perguntas, entidades.Values.ToList());
+    }
+
+    /// <summary>A análise com a entidade do contexto: quando a frase não traz a entidade, vale a que está em discussão.</summary>
+    public static AnaliseEstrutural AnalisarComContexto(string cenario, IReadOnlyList<PerguntaTeste> perguntas, ParserHeuristico parser, IFonteDeFatos fonte)
+    {
+        var chaves = perguntas.Select(p =>
+        {
+            var e = parser.ExtrairSemLlm(p.Pergunta);
+            return e.TemSlot ? e.Chave : fonte.PorNome(p.Entidade) is { } c ? $"{e.Chave} {{{c.Tipo}}}" : e.Chave;
+        }).ToList();
+        var grupos = chaves.GroupBy(k => k).ToList();
+        return new AnaliseEstrutural
+        {
+            Cenario = cenario, Perguntas = perguntas.Count, ComEntidade = perguntas.Count, ChavesDistintas = grupos.Count, ChavesComEntidade = grupos.Count,
+            ChavesAbstratasDistintas = chaves.Select(ChaveAbstrata).Distinct().Count(),
+            MaisFrequentes = grupos.Where(g => g.Count() > 1).OrderByDescending(g => g.Count()).ThenBy(g => g.Key, StringComparer.Ordinal).Take(10).Select(g => (g.Key, g.Count())).ToList(),
+            IntencoesMaisFrequentes = [],
+        };
+    }
+
     // ---- Estilos (cenário 7b) --------------------------------------------------------------------------
 
     /// <summary>

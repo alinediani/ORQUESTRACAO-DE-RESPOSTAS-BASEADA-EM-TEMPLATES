@@ -30,9 +30,15 @@ public static partial class Extrator
             var re = PalavraInteira(valor);
             // Valores de uma ou duas letras ("O", "Fe") não valem no começo da frase, onde seriam artigo ("O símbolo…").
             var curto = valor.Length <= 2;
+            // Um valor mais curto que o nome não é trocado dentro do nome ("hotel" em "ashley hotel"); o inverso vale
+            // ("Cidade do México", a capital, contém "México", a entidade).
+            var nomes = valor.Length < entidade.Nome.Length
+                ? new Regex($@"(?<![\p{{L}}\p{{N}}]){Regex.Escape(entidade.Nome)}(?![\p{{L}}\p{{N}}])", RegexOptions.IgnoreCase).Matches(t).Select(n => (n.Index, Fim: n.Index + n.Length)).ToList()
+                : [];
             t = re.Replace(t, m =>
             {
                 if (curto && EhComecoDeFrase(t, m.Index)) return m.Value;
+                if (nomes.Any(n => m.Index >= n.Index && m.Index + m.Length <= n.Fim)) return m.Value;
                 algum = true;
                 return $"{{{atributo}}}";
             });
@@ -40,6 +46,10 @@ public static partial class Extrator
         if (!algum) return null;
         foreach (var (texto, slot) in entidade.Formas().OrderByDescending(f => f.Texto.Length))
             t = PalavraInteira(texto).Replace(t, $"{{{slot}}}");
+        // O nome pode vir com outra caixa na resposta ("La Mimosa" para "la mimosa" na fonte): sem essa segunda passada, o
+        // nome da primeira entidade ficaria congelado no template e apareceria nas respostas de outras.
+        foreach (var (texto, slot) in entidade.Formas().Where(f => char.IsLower(f.Slot[0])).OrderByDescending(f => f.Texto.Length))
+            t = new Regex($@"(?<![\p{{L}}\p{{N}}]){Regex.Escape(texto)}(?![\p{{L}}\p{{N}}])", RegexOptions.IgnoreCase).Replace(t, $"{{{slot}}}");
         return t;
     }
 
