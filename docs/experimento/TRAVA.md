@@ -46,6 +46,19 @@ não pega tudo.
 | Quiz simplificado, sem trava | 14 × 30 | 16 | 21 × 15 | quase todas | −54% |
 | **Quiz simplificado, com trava** | 25 × 30 | 5 | 19 × 15 | **0** | −15% |
 
+## Normalizador e trava juntos
+
+| Experimento | Puro | Só trava | Só normalizador (Haiku) | Normalizador + trava |
+|---|---|---|---|---|
+| Controlado | −96% de custo, 33 erros de forma | −78%, 13 erros | −92%, 33 erros | **−75%, 13 erros** |
+| Saúde | −72%, 9 respostas erradas | +1%, nenhuma errada | −71%, 9 erradas | **+2%, nenhuma errada** |
+| Quiz fiel | −14% (17 × 15 corretas) | −4% (17 × 15) | −17% (18 × 15) | **−4% (18 × 15)** |
+| Quiz simplificado (formas canônicas) | −54% (21 × 15) | **−15% (19 × 15), sem erro** | — | — |
+
+Arquivos: `resultados-mcp-haiku-validador.*` nas pastas. O normalizador da linha "controlado" está em
+`normalizadas-haiku.tsv` (150 perguntas, Claude Haiku via subagente). Na combinação, a trava garante a segurança, mas o
+normalizador genérico acrescenta pouco. A melhor combinação foi a das formas canônicas por relação com a trava.
+
 ## Conclusões
 
 1. **A trava troca economia por segurança, e a troca é a certa nos cenários perigosos.** Na saúde, o protótipo passa a

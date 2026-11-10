@@ -1,0 +1,151 @@
+﻿id;a;b;familia;gabarito;caminho_prototipo
+1;linha_de_base;prototipo;capital;"Buenos Aires";llm
+2;prototipo;linha_de_base;capital;"Berlim";template
+3;prototipo;linha_de_base;idioma;"espanhol";llm
+4;prototipo;linha_de_base;simbolo;"O";llm
+5;linha_de_base;prototipo;capital;"Varsóvia";template
+6;linha_de_base;prototipo;continente;"América do Sul";llm
+7;prototipo;linha_de_base;simbolo;"Ag";template
+8;linha_de_base;prototipo;capital;"Hanói";template
+9;linha_de_base;prototipo;moeda;"naira";llm
+10;linha_de_base;prototipo;simbolo;"Au";template
+11;linha_de_base;prototipo;capital;"Roma";template
+12;prototipo;linha_de_base;numero;"16";llm
+13;prototipo;linha_de_base;simbolo;"H";template
+14;prototipo;linha_de_base;continente;"Ásia";template
+15;prototipo;linha_de_base;simbolo;"Au";template
+16;prototipo;linha_de_base;capital;"Cidade do México";template
+17;prototipo;linha_de_base;idioma;"mandarim";template
+18;prototipo;linha_de_base;numero;"16";template
+19;prototipo;linha_de_base;capital;"Cairo";template
+20;prototipo;linha_de_base;moeda;"dólar canadense";llm
+21;prototipo;linha_de_base;numero;"20";template
+22;prototipo;linha_de_base;capital;"Madri";template
+23;prototipo;linha_de_base;continente;"Europa";template
+24;prototipo;linha_de_base;idioma;"alemão";template
+25;linha_de_base;prototipo;continente;"América do Norte";template
+26;prototipo;linha_de_base;simbolo;"He";template
+27;linha_de_base;prototipo;capital;"Pequim";template
+28;prototipo;linha_de_base;simbolo;"Cl";template
+29;prototipo;linha_de_base;numero;"2";template
+30;prototipo;linha_de_base;simbolo;"Sn";template
+31;linha_de_base;prototipo;simbolo;"Au";template
+32;prototipo;linha_de_base;moeda;"yuan";llm
+33;linha_de_base;prototipo;capital;"Paris";template
+34;prototipo;linha_de_base;idioma;"coreano";template
+35;linha_de_base;prototipo;capital;"Bogotá";template
+36;linha_de_base;prototipo;simbolo;"U";template
+37;prototipo;linha_de_base;capital;"Washington, D.C.";template
+38;linha_de_base;prototipo;moeda;"sol";llm
+39;prototipo;linha_de_base;capital;"Brasília";template
+40;linha_de_base;prototipo;capital;"Rabat";template
+41;linha_de_base;prototipo;idioma;"inglês";template
+42;prototipo;linha_de_base;moeda;"euro";llm
+43;linha_de_base;prototipo;moeda;"dólar americano";llm
+44;linha_de_base;prototipo;idioma;"inglês e francês";template
+45;prototipo;linha_de_base;continente;"Europa";template
+46;prototipo;linha_de_base;capital;"Camberra";template
+47;prototipo;linha_de_base;capital;"Rabat";template
+48;linha_de_base;prototipo;capital;"Cairo";template
+49;linha_de_base;prototipo;simbolo;"Pb";template
+50;prototipo;linha_de_base;numero;"82";template
+51;prototipo;linha_de_base;capital;"Moscou";template
+52;prototipo;linha_de_base;moeda;"peso chileno";llm
+53;linha_de_base;prototipo;moeda;"euro";llm
+54;prototipo;linha_de_base;moeda;"yuan";llm
+55;linha_de_base;prototipo;capital;"Brasília";template
+56;linha_de_base;prototipo;moeda;"yuan";llm
+57;prototipo;linha_de_base;capital;"Tóquio";template
+58;linha_de_base;prototipo;idioma;"sueco";template
+59;prototipo;linha_de_base;simbolo;"Ne";template
+60;prototipo;linha_de_base;idioma;"norueguês";template
+61;linha_de_base;prototipo;numero;"26";template
+62;linha_de_base;prototipo;capital;"Dublin";template
+63;prototipo;linha_de_base;capital;"Pequim";template
+64;prototipo;linha_de_base;moeda;"euro";llm
+65;prototipo;linha_de_base;capital;"Hanói";template
+66;linha_de_base;prototipo;numero;"28";template
+67;linha_de_base;prototipo;continente;"Europa";template
+68;prototipo;linha_de_base;moeda;"won sul-coreano";llm
+69;prototipo;linha_de_base;numero;"6";template
+70;linha_de_base;prototipo;capital;"Seul";template
+71;linha_de_base;prototipo;numero;"30";template
+72;linha_de_base;prototipo;capital;"Cidade do México";template
+73;prototipo;linha_de_base;simbolo;"H";template
+74;linha_de_base;prototipo;simbolo;"Ca";template
+75;prototipo;linha_de_base;idioma;"árabe e berbere";template
+76;prototipo;linha_de_base;numero;"82";template
+77;prototipo;linha_de_base;idioma;"inglês";template
+78;prototipo;linha_de_base;capital;"Rabat";template
+79;prototipo;linha_de_base;moeda;"libra egípcia";llm
+80;linha_de_base;prototipo;numero;"47";template
+81;linha_de_base;prototipo;capital;"Abuja";template
+82;prototipo;linha_de_base;capital;"Hanói";template
+83;linha_de_base;prototipo;idioma;"espanhol e guarani";template
+84;prototipo;linha_de_base;capital;"Nairóbi";template
+85;prototipo;linha_de_base;idioma;"espanhol";template
+86;prototipo;linha_de_base;moeda;"coroa norueguesa";llm
+87;prototipo;linha_de_base;simbolo;"O";template
+88;prototipo;linha_de_base;moeda;"libra esterlina";llm
+89;linha_de_base;prototipo;simbolo;"Ni";template
+90;linha_de_base;prototipo;capital;"Paris";template
+91;linha_de_base;prototipo;simbolo;"O";template
+92;linha_de_base;prototipo;capital;"Abuja";template
+93;prototipo;linha_de_base;numero;"26";template
+94;linha_de_base;prototipo;moeda;"dirham marroquino";llm
+95;linha_de_base;prototipo;numero;"11";template
+96;prototipo;linha_de_base;moeda;"won sul-coreano";llm
+97;prototipo;linha_de_base;continente;"Ásia";template
+98;linha_de_base;prototipo;continente;"Europa";template
+99;linha_de_base;prototipo;capital;"Washington, D.C.";template
+100;linha_de_base;prototipo;simbolo;"Ne";template
+101;prototipo;linha_de_base;capital;"Abuja";template
+102;prototipo;linha_de_base;numero;"79";template
+103;prototipo;linha_de_base;idioma;"polonês";template
+104;prototipo;linha_de_base;simbolo;"S";template
+105;prototipo;linha_de_base;simbolo;"Ni";template
+106;linha_de_base;prototipo;numero;"28";template
+107;prototipo;linha_de_base;numero;"80";template
+108;prototipo;linha_de_base;capital;"Estocolmo";template
+109;prototipo;linha_de_base;simbolo;"Al";template
+110;linha_de_base;prototipo;moeda;"sol";llm
+111;prototipo;linha_de_base;moeda;"peso chileno";llm
+112;linha_de_base;prototipo;simbolo;"P";template
+113;linha_de_base;prototipo;capital;"Moscou";template
+114;prototipo;linha_de_base;capital;"Lima";template
+115;prototipo;linha_de_base;continente;"Ásia";template
+116;prototipo;linha_de_base;capital;"Dublin";template
+117;prototipo;linha_de_base;simbolo;"P";template
+118;linha_de_base;prototipo;continente;"Oceania";template
+119;prototipo;linha_de_base;numero;"26";template
+120;linha_de_base;prototipo;moeda;"xelim queniano";llm
+121;prototipo;linha_de_base;capital;"Oslo";template
+122;prototipo;linha_de_base;capital;"Brasília";template
+123;linha_de_base;prototipo;moeda;"peso colombiano";llm
+124;prototipo;linha_de_base;continente;"Europa";template
+125;linha_de_base;prototipo;numero;"16";template
+126;prototipo;linha_de_base;capital;"Roma";template
+127;prototipo;linha_de_base;idioma;"alemão";template
+128;prototipo;linha_de_base;capital;"Brasília";template
+129;linha_de_base;prototipo;capital;"Atenas";template
+130;prototipo;linha_de_base;moeda;"coroa sueca";llm
+131;prototipo;linha_de_base;capital;"Cidade do México";template
+132;linha_de_base;prototipo;continente;"Ásia";template
+133;linha_de_base;prototipo;capital;"Nova Délhi";template
+134;prototipo;linha_de_base;simbolo;"K";template
+135;prototipo;linha_de_base;moeda;"coroa norueguesa";llm
+136;linha_de_base;prototipo;idioma;"espanhol";template
+137;linha_de_base;prototipo;continente;"América do Sul";template
+138;prototipo;linha_de_base;capital;"Abuja";template
+139;prototipo;linha_de_base;capital;"Berlim";template
+140;prototipo;linha_de_base;capital;"Tóquio";template
+141;prototipo;linha_de_base;moeda;"iene";llm
+142;linha_de_base;prototipo;numero;"28";template
+143;prototipo;linha_de_base;moeda;"peso colombiano";llm
+144;linha_de_base;prototipo;capital;"Dublin";template
+145;linha_de_base;prototipo;continente;"Ásia";template
+146;linha_de_base;prototipo;capital;"Estocolmo";template
+147;linha_de_base;prototipo;capital;"Brasília";template
+148;prototipo;linha_de_base;continente;"Ásia";template
+149;linha_de_base;prototipo;moeda;"euro";llm
+150;prototipo;linha_de_base;capital;"Abuja";template

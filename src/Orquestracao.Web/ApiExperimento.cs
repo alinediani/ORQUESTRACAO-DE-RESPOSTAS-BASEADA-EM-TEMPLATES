@@ -105,11 +105,11 @@ public static class ApiExperimento
                     }
                     ILlm? normalizador = null;
                     var sufixo = "";
-                    if (comNormalizador && pastaCenario is not null)
+                    if (comNormalizador)
                     {
-                        var porN = File.ReadLines(Path.Combine(pastaCenario, "normalizadas-haiku.tsv")).Where(l => l.Contains('\t'))
+                        var porN = File.ReadLines(Path.Combine(pasta, "normalizadas-haiku.tsv")).Where(l => l.Contains('\t'))
                             .Select(l => l.Split('\t', 2)).ToDictionary(c => int.Parse(c[0], System.Globalization.CultureInfo.InvariantCulture), c => c[1].Trim());
-                        var porPergunta = conjunto.ToDictionary(q => q.Pergunta, q => porN[q.N]);
+                        var porPergunta = conjunto.GroupBy(q => q.Pergunta).ToDictionary(g => g.Key, g => porN[g.First().N]); // o conjunto pode repetir perguntas
                         // Preço do Claude Haiku 5.5 (US$ 0,10 / 0,50 por milhão), tokens estimados pelo tamanho do texto.
                         normalizador = new LlmComEstimativa(new LlmSimulado((_, q) => porPergunta[q], 0, 0), 0.1, 0.5);
                         sufixo = "-haiku";
