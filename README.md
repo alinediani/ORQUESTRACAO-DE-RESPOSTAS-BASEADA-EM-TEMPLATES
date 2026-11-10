@@ -25,7 +25,7 @@ flowchart TD
     feedback -->|"bom"| fim("Fim")
 ```
 
-O protótipo é construído sobre um editor de diagramas em que **cada retângulo é uma persona de IA** e **as setas dizem quem responde a quem** (vem do [mermaid-ai-draw](https://github.com/lucasisabelf/mermaid-draw), migrado de TypeScript para C#). O orquestrador do TCC entra como mais um **motor** de persona, ao lado do Claude Code (MCP), do Ollama e da API da Anthropic.
+O protótipo é construído sobre um editor de diagramas em que **cada retângulo é uma persona de IA** e **as setas dizem quem responde a quem** (vem do [mermaid-ai-draw](https://github.com/lucasisabelf/mermaid-ai-draw), licença MIT, migrado de TypeScript para C#). O orquestrador do TCC entra como mais um **motor** de persona, ao lado do Claude Code (MCP), do Ollama e da API da Anthropic.
 
 ## Como rodar
 
