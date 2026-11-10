@@ -13,6 +13,7 @@ passaram pelo mesmo protótipo e pela mesma linha de base. O LLM de geração fo
 | [Textos](squad/README.md) | SQuAD-pt (CC BY-SA 4.0) | 9.808 | 0,01% | 30 | 30 × 30 | 0 | — |
 | [Quiz, tradução fiel](quiz/README.md) | SimpleQuestions/Wikidata (CC BY 3.0) | 300 | 30,0% | 30 | 26 × 30 | 4 | Dado certo nas 4; corretas 17 × 15 |
 | [Quiz, simplificada](quiz/README.md) | idem, com normalizador | 300 | 79,3% | 30 | **14 × 30** (+30 do normalizador) | **16** | Dado certo nas 16; corretas **21 × 15**; erros de forma |
+| [Estilos (texto)](estilos/README.md) | fatos da base própria em 5 estilos | 50 | — | 50 | 10 × 50 (template inteiro); **2 × 50 + 50 Haiku (estilizador)** | 40; 48 | Template inteiro: 12 afirmações falsas congeladas; estilizador: nenhuma, −96% de custo |
 
 ¹ Perguntas com entidade da fonte cuja chave já tinha aparecido: o máximo que o template poderia responder.
 ² O melhor caso: todas as perguntas do corpus cuja chave se repete.
@@ -41,6 +42,15 @@ O cenário factual controlado atende às três, e por isso obtém 96% de reaprov
 prática, esse perfil é o de **atendimento com dados de sistema**: perguntas frequentes e repetitivas cuja resposta
 inteira é um dado de um cadastro ("Qual o horário da unidade X?", "Qual o status do pedido Y?", "Qual especialista trata
 Z?"). Fora desse perfil, o ganho é nulo (matemática, busca aberta, textos) ou perigoso (saúde).
+
+## Estilos e a extrapolação para imagens
+
+O cenário 7 ([estilos/README.md](estilos/README.md)) testa pedidos em estilo ("Responda como um pirata: …"). Congelar o
+estilo junto com a frase repete afirmações falsas da primeira resposta. Separar as camadas resolve: o núcleo factual sai
+do template com o dado da fonte, e um modelo pequeno aplica o estilo. É a base da proposta de extrapolação para a geração
+de imagens em ondas de estilo (fundo e estilo reaproveitáveis + pessoa estilizada por um modelo pequeno). Uma análise do
+WildChat (7a) mostrou que pedidos explícitos de estilo são raros e dispersos no texto, e que o que mais se repete são
+pedidos idênticos (12,6% a 15,8%), terreno do cache de respostas.
 
 ## Segundo fluxo: normalizador antes do parser (cenários "b")
 

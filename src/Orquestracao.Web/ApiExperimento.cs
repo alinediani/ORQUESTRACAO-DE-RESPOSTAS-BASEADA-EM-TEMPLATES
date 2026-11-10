@@ -71,6 +71,8 @@ public static class ApiExperimento
             var comNormalizador = Texto("normalizador", "") == "haiku";
             // A trava: "haiku" usa os vereditos do Claude Haiku gravados em validacao-haiku.tsv (template<TAB>SIM|NÃO<TAB>motivo).
             var comValidador = Texto("validador", "") == "haiku";
+            // O estilizador: "haiku" usa as reescritas do Claude Haiku gravadas em estilizadas-haiku.tsv (estilo<TAB>resposta do núcleo<TAB>texto).
+            var comEstilizador = Texto("estilizador", "") == "haiku";
             string? pastaCenario = null;
             if (cenario.Length > 0)
             {
@@ -127,12 +129,25 @@ public static class ApiExperimento
                         }, 0, 0), 0.1, 0.5);
                         sufixo += "-validador";
                     }
+                    ILlm? estilizador = null;
+                    if (comEstilizador)
+                    {
+                        var reescritas = File.ReadLines(Path.Combine(pasta, "estilizadas-haiku.tsv")).Where(l => !l.StartsWith('#') && l.Contains('\t'))
+                            .Select(l => l.Split('\t', 3)).GroupBy(c => (c[0].Trim(), c[1].Trim())).ToDictionary(g => g.Key, g => g.First()[2].Trim());
+                        estilizador = new LlmComEstimativa(new LlmSimulado((_, u) =>
+                        {
+                            var linhas = u.Split('\n', 2);
+                            var chave = (linhas[0]["Estilo pedido: ".Length..].Trim(), linhas[1]["Resposta: ".Length..].Trim());
+                            return reescritas.TryGetValue(chave, out var t) ? t : throw new InvalidOperationException($"sem reescrita gravada para {chave}");
+                        }, 0, 0), 0.1, 0.5);
+                        sufixo += "-estilizador";
+                    }
                     // A base do experimento (templates, perguntas e feedbacks do protótipo) fica gravada ao lado do relatório.
                     Directory.CreateDirectory(pasta);
                     var banco = Path.Combine(pasta, $"experimento-{llm}{sufixo}.db");
                     if (File.Exists(banco)) File.Delete(banco);
                     var r = await Experimento.Rodar(fonteUsada, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
-                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador, validador: validador);
+                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador, validador: validador, estilizador: estilizador);
                     if (pastaCenario is not null) r = r with { Cenario = cenario };
                     var opcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
                     {

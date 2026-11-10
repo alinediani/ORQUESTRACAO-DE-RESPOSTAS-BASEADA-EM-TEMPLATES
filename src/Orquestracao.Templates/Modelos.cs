@@ -60,6 +60,10 @@ public sealed record ResultadoOrquestrador
     /// <summary>A trava: chamada ao LLM validador (0 ou 1) e se ele recusou o template extraído.</summary>
     public int ChamadasValidador { get; init; }
     public bool TemplateRecusado { get; init; }
+    /// <summary>O estilizador: o pedido de estilo separado da pergunta, a resposta do núcleo (antes do estilo) e a chamada (0 ou 1).</summary>
+    public string? Estilo { get; init; }
+    public string? TextoNucleo { get; init; }
+    public int ChamadasEstilizador { get; init; }
     public long TokensEntrada { get; init; }
     public long TokensSaida { get; init; }
     public double Custo { get; init; }

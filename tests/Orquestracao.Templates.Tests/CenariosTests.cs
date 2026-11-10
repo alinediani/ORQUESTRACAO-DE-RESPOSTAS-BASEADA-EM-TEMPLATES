@@ -135,6 +135,23 @@ public class CenariosTests
         Assert.True(aceito.TemplateSalvo);
     }
 
+    [Fact]
+    public async Task Estilizador_SeparaOEstilo_ONucleoSaiDoTemplate_EOEstiloEAplicadoNoFim()
+    {
+        Assert.Equal(("Qual é a capital do Peru?", "Responda como um pirata"), Estilos.Separar("Responda como um pirata: qual é a capital do Peru?"));
+        Assert.Null(Estilos.Separar("Qual é a capital do Peru?"));
+        var orq = new Orquestrador(new ParserHeuristico(Fonte), new TemplateStoreMemoria(), Fonte);
+        var geracao = new LlmSimulado((_, q) => "A capital da França é Paris.");
+        var estilizador = new LlmSimulado((_, u) => "Arr! " + u.Split("Resposta: ")[1], 20, 10, 0.00001);
+        var r1 = await orq.Responder("Responda como um pirata: Qual é a capital da França?", geracao, estilizador: estilizador);
+        var r2 = await orq.Responder("Responda como um pirata: Qual é a capital do Peru?", geracao, estilizador: estilizador);
+        Assert.Equal((Caminho.Llm, Caminho.Template), (r1.Caminho, r2.Caminho));
+        // A chave é a do núcleo factual: o estilo não entra no template.
+        Assert.Equal("A capital {de_entidade} é {capital}.", r1.Template);
+        Assert.Equal(("Arr! A capital do Peru é Lima.", "A capital do Peru é Lima.", 1), (r2.Texto, r2.TextoNucleo, r2.ChamadasEstilizador));
+        Assert.Equal("Responda como um pirata: Qual é a capital do Peru?", r2.Pergunta);
+    }
+
     [Theory]
     [InlineData("James corre 540 metros por semana.", "540", true)]
     [InlineData("O total é de R$ 1.200,00.", "1200", true)]

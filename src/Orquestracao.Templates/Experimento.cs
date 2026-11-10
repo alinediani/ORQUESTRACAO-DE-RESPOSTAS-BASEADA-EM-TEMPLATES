@@ -9,7 +9,7 @@ public sealed record PerguntaTeste(int N, string Pergunta, string Familia, strin
 
 /// <summary>A resposta de uma estratégia (protótipo ou linha de base) para uma pergunta.</summary>
 public sealed record RespostaTeste(int N, string Texto, bool Correta, string Caminho, int ChamadasGeracao, int ChamadasParser, long Tokens, double Custo, double LatenciaMs,
-    int ChamadasNormalizador = 0, string? PerguntaNormalizada = null, string? Chave = null, int ChamadasValidador = 0, bool TemplateRecusado = false);
+    int ChamadasNormalizador = 0, string? PerguntaNormalizada = null, string? Chave = null, int ChamadasValidador = 0, bool TemplateRecusado = false, int ChamadasEstilizador = 0, string? TextoNucleo = null);
 
 /// <summary>As métricas de uma estratégia.</summary>
 public sealed record Metricas
@@ -27,6 +27,10 @@ public sealed record Metricas
     public int TemplatesRecusados { get; init; }
     public long TokensValidador { get; init; }
     public double CustoValidador { get; init; }
+    /// <summary>O estilizador: chamadas, tokens e custo.</summary>
+    public int ChamadasEstilizador { get; init; }
+    public long TokensEstilizador { get; init; }
+    public double CustoEstilizador { get; init; }
     public int AcertosTemplate { get; init; }
     public double TaxaAcertoTemplate => Perguntas == 0 ? 0 : (double)AcertosTemplate / Perguntas;
     public long Tokens { get; init; }
@@ -240,8 +244,9 @@ public static class Experimento
     public static async Task<ResultadoExperimento> Rodar(
         IFonteDeFatos fonte, List<PerguntaTeste> conjunto, ILlm llmPrototipo, ILlm llmLinhaDeBase, IJuiz juiz,
         string modo, int semente, double taxaErroLlm, double latenciaLlmMs, ConfiguracaoOrquestrador? cfg = null, IParser? parser = null, CancellationToken ct = default,
-        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null, ILlm? normalizador = null, ILlm? validador = null)
+        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null, ILlm? normalizador = null, ILlm? validador = null, ILlm? estilizador = null)
     {
+        var estil = estilizador is null ? null : new LlmMedido(estilizador);
         var valid = validador is null ? null : new LlmMedido(validador);
         // O normalizador é medido à parte (tokens e custo dele também entram no total do protótipo).
         var norm = normalizador is null ? null : new LlmMedido(normalizador);
@@ -251,7 +256,7 @@ public static class Experimento
         var chaves = new Dictionary<string, HashSet<string>>();
         foreach (var p in conjunto)
         {
-            var r = await orq.Responder(p.Pergunta, llmPrototipo, ct, normalizador: norm, validador: valid);
+            var r = await orq.Responder(p.Pergunta, llmPrototipo, ct, normalizador: norm, validador: valid, estilizador: estil);
             var correta = Correta(r.Texto, p.Gabarito);
             if (!chaves.TryGetValue(p.Familia, out var set)) chaves[p.Familia] = set = [];
             set.Add(r.Chave);
@@ -259,7 +264,7 @@ public static class Experimento
             // Sem gabarito não há como simular o feedback: o template fica como o usuário que não avalia o deixaria.
             if (p.Gabarito.Length > 0 && (r.Template is not null || r.Caminho == Caminho.Template)) orq.Feedback(r.Chave, correta);
             proto.Add(new RespostaTeste(p.N, r.Texto, correta, r.Caminho, r.ChamadasGeracao, r.ChamadasParser, r.TokensEntrada + r.TokensSaida, r.Custo,
-                r.LatenciaMs + (r.ChamadasGeracao + r.ChamadasParser + r.ChamadasNormalizador) * latenciaLlmMs, r.ChamadasNormalizador, r.PerguntaNormalizada, r.Chave, r.ChamadasValidador, r.TemplateRecusado));
+                r.LatenciaMs + (r.ChamadasGeracao + r.ChamadasParser + r.ChamadasNormalizador) * latenciaLlmMs, r.ChamadasNormalizador, r.PerguntaNormalizada, r.Chave, r.ChamadasValidador, r.TemplateRecusado, r.ChamadasEstilizador, r.TextoNucleo));
         }
 
         // A linha de base: o LLM responde todas. Com concorrência > 1, as perguntas vão juntas (no MCP, chegam
@@ -306,7 +311,7 @@ public static class Experimento
         return new ResultadoExperimento
         {
             Modo = modo, Semente = semente, TaxaErroLlm = taxaErroLlm, LatenciaLlmMs = latenciaLlmMs,
-            Prototipo = Medir((norm, valid) switch
+            Prototipo = Medir(estil is not null ? "Protótipo com estilizador" : (norm, valid) switch
                 {
                     (null, null) => "Protótipo (templates)", (_, null) => "Protótipo com normalizador", (null, _) => "Protótipo com validador", _ => "Protótipo com normalizador e validador",
                 }, proto) with
@@ -314,6 +319,7 @@ public static class Experimento
                 ChamadasNormalizador = proto.Sum(x => x.ChamadasNormalizador), TokensNormalizador = norm?.Tokens ?? 0, CustoNormalizador = norm?.Custo ?? 0,
                 ChamadasValidador = proto.Sum(x => x.ChamadasValidador), TemplatesRecusados = proto.Count(x => x.TemplateRecusado),
                 TokensValidador = valid?.Tokens ?? 0, CustoValidador = valid?.Custo ?? 0,
+                ChamadasEstilizador = proto.Sum(x => x.ChamadasEstilizador), TokensEstilizador = estil?.Tokens ?? 0, CustoEstilizador = estil?.Custo ?? 0,
             },
             LinhaDeBase = Medir("Linha de base (LLM puro)", baseLista),
             Comparacao = new ComparacaoCega(vp, vb, emp),
@@ -350,6 +356,11 @@ public static class Experimento
         {
             sb.AppendLine($"Gerado por `POST /api/experimento {{\"llm\": \"{r.Modo}\", \"cenario\": \"{r.Cenario}\"}}` · {p.Perguntas} perguntas da amostra `conjunto.json` (semente {r.Semente}; ver `analise.md` e `README.md`).");
             sb.AppendLine();
+            if (p.ChamadasEstilizador > 0)
+            {
+                sb.AppendLine("> **Com o estilizador.** O pedido de estilo foi separado da pergunta (`Estilos.Separar`): o núcleo factual seguiu o fluxo (template + fonte) e o estilo foi aplicado no fim por um LLM pequeno (`Orquestrador.SystemEstilizacao`). As saídas são as do Claude Haiku 5.5, gravadas em `estilizadas-haiku.tsv`; o custo usa o preço do Haiku 5.5.");
+                sb.AppendLine();
+            }
             if (p.ChamadasValidador > 0)
             {
                 sb.AppendLine("> **Com a trava (validador).** Cada template novo passou por um validador (`Orquestrador.SystemValidacao`) antes de ser salvo: os vereditos são os do Claude Haiku 5.5, gravados em `validacao-haiku.tsv`. Template recusado não é salvo, e as perguntas da chave vão ao LLM. O custo do validador usa o preço do Haiku 5.5 e entra no custo do protótipo.");
@@ -394,6 +405,8 @@ public static class Experimento
         sb.AppendLine($"| Chamadas ao LLM do parser | {p.ChamadasParser} | — | |");
         if (p.ChamadasNormalizador > 0)
             sb.AppendLine($"| Chamadas ao normalizador (Claude Haiku 5.5) | {p.ChamadasNormalizador} ({p.TokensNormalizador.ToString("N0", PtBr)} tokens, {Usd(p.CustoNormalizador)}) | — | |");
+        if (p.ChamadasEstilizador > 0)
+            sb.AppendLine($"| Chamadas ao estilizador (Claude Haiku 5.5) | {p.ChamadasEstilizador} ({p.TokensEstilizador.ToString("N0", PtBr)} tokens, {Usd(p.CustoEstilizador)}) | — | |");
         if (p.ChamadasValidador > 0)
             sb.AppendLine($"| Chamadas ao validador (Claude Haiku 5.5) | {p.ChamadasValidador} ({p.TemplatesRecusados} recusados; {p.TokensValidador.ToString("N0", PtBr)} tokens, {Usd(p.CustoValidador)}) | — | |");
         sb.AppendLine($"| Taxa de acerto de template | {Pct(p.TaxaAcertoTemplate)} ({p.AcertosTemplate}) | — | |");

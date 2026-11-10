@@ -1,0 +1,402 @@
+[
+  {
+    "n": 1,
+    "pergunta": "Responda como numa cena de novela: Qual é a capital da Itália?",
+    "familia": "novela/capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 2,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é a capital da França?",
+    "familia": "crianca/capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 3,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é o símbolo químico do ferro?",
+    "familia": "crianca/simbolo",
+    "entidade": "ferro",
+    "atributo": "simbolo",
+    "gabarito": "Fe"
+  },
+  {
+    "n": 4,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é o símbolo químico do sódio?",
+    "familia": "teleprompter/simbolo",
+    "entidade": "sódio",
+    "atributo": "simbolo",
+    "gabarito": "Na"
+  },
+  {
+    "n": 5,
+    "pergunta": "Responda como um pirata: Qual é o símbolo químico do ouro?",
+    "familia": "pirata/simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 6,
+    "pergunta": "Responda como numa cena de novela: Qual é a capital do Canadá?",
+    "familia": "novela/capital",
+    "entidade": "Canadá",
+    "atributo": "capital",
+    "gabarito": "Ottawa"
+  },
+  {
+    "n": 7,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é a capital do Canadá?",
+    "familia": "teleprompter/capital",
+    "entidade": "Canadá",
+    "atributo": "capital",
+    "gabarito": "Ottawa"
+  },
+  {
+    "n": 8,
+    "pergunta": "Responda como numa cena de novela: Qual é o símbolo químico do ferro?",
+    "familia": "novela/simbolo",
+    "entidade": "ferro",
+    "atributo": "simbolo",
+    "gabarito": "Fe"
+  },
+  {
+    "n": 9,
+    "pergunta": "Responda em forma de cordel: Qual é o símbolo químico do ferro?",
+    "familia": "cordel/simbolo",
+    "entidade": "ferro",
+    "atributo": "simbolo",
+    "gabarito": "Fe"
+  },
+  {
+    "n": 10,
+    "pergunta": "Responda como numa cena de novela: Qual é a capital do Japão?",
+    "familia": "novela/capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 11,
+    "pergunta": "Responda em forma de cordel: Qual é a capital do Canadá?",
+    "familia": "cordel/capital",
+    "entidade": "Canadá",
+    "atributo": "capital",
+    "gabarito": "Ottawa"
+  },
+  {
+    "n": 12,
+    "pergunta": "Responda como numa cena de novela: Qual é a capital da França?",
+    "familia": "novela/capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 13,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é o símbolo químico do sódio?",
+    "familia": "crianca/simbolo",
+    "entidade": "sódio",
+    "atributo": "simbolo",
+    "gabarito": "Na"
+  },
+  {
+    "n": 14,
+    "pergunta": "Responda como um pirata: Qual é a capital da França?",
+    "familia": "pirata/capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 15,
+    "pergunta": "Responda em forma de cordel: Qual é a capital do Japão?",
+    "familia": "cordel/capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 16,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é o símbolo químico do ferro?",
+    "familia": "teleprompter/simbolo",
+    "entidade": "ferro",
+    "atributo": "simbolo",
+    "gabarito": "Fe"
+  },
+  {
+    "n": 17,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é a capital do Canadá?",
+    "familia": "crianca/capital",
+    "entidade": "Canadá",
+    "atributo": "capital",
+    "gabarito": "Ottawa"
+  },
+  {
+    "n": 18,
+    "pergunta": "Responda como numa cena de novela: Qual é o símbolo químico da prata?",
+    "familia": "novela/simbolo",
+    "entidade": "prata",
+    "atributo": "simbolo",
+    "gabarito": "Ag"
+  },
+  {
+    "n": 19,
+    "pergunta": "Responda como um pirata: Qual é a capital do Japão?",
+    "familia": "pirata/capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 20,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é a capital da Itália?",
+    "familia": "teleprompter/capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 21,
+    "pergunta": "Responda como numa cena de novela: Qual é o símbolo químico do sódio?",
+    "familia": "novela/simbolo",
+    "entidade": "sódio",
+    "atributo": "simbolo",
+    "gabarito": "Na"
+  },
+  {
+    "n": 22,
+    "pergunta": "Responda em forma de cordel: Qual é o símbolo químico do ouro?",
+    "familia": "cordel/simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 23,
+    "pergunta": "Responda como numa cena de novela: Qual é o símbolo químico do cobre?",
+    "familia": "novela/simbolo",
+    "entidade": "cobre",
+    "atributo": "simbolo",
+    "gabarito": "Cu"
+  },
+  {
+    "n": 24,
+    "pergunta": "Responda como um pirata: Qual é o símbolo químico do cobre?",
+    "familia": "pirata/simbolo",
+    "entidade": "cobre",
+    "atributo": "simbolo",
+    "gabarito": "Cu"
+  },
+  {
+    "n": 25,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é a capital da Itália?",
+    "familia": "crianca/capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 26,
+    "pergunta": "Responda em forma de cordel: Qual é a capital da Itália?",
+    "familia": "cordel/capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 27,
+    "pergunta": "Responda em forma de cordel: Qual é a capital do Peru?",
+    "familia": "cordel/capital",
+    "entidade": "Peru",
+    "atributo": "capital",
+    "gabarito": "Lima"
+  },
+  {
+    "n": 28,
+    "pergunta": "Responda em forma de cordel: Qual é o símbolo químico da prata?",
+    "familia": "cordel/simbolo",
+    "entidade": "prata",
+    "atributo": "simbolo",
+    "gabarito": "Ag"
+  },
+  {
+    "n": 29,
+    "pergunta": "Responda em forma de cordel: Qual é o símbolo químico do sódio?",
+    "familia": "cordel/simbolo",
+    "entidade": "sódio",
+    "atributo": "simbolo",
+    "gabarito": "Na"
+  },
+  {
+    "n": 30,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é a capital do Peru?",
+    "familia": "teleprompter/capital",
+    "entidade": "Peru",
+    "atributo": "capital",
+    "gabarito": "Lima"
+  },
+  {
+    "n": 31,
+    "pergunta": "Responda como numa cena de novela: Qual é o símbolo químico do ouro?",
+    "familia": "novela/simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 32,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é a capital do Japão?",
+    "familia": "teleprompter/capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 33,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é o símbolo químico do ouro?",
+    "familia": "crianca/simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 34,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é o símbolo químico da prata?",
+    "familia": "teleprompter/simbolo",
+    "entidade": "prata",
+    "atributo": "simbolo",
+    "gabarito": "Ag"
+  },
+  {
+    "n": 35,
+    "pergunta": "Responda como um pirata: Qual é o símbolo químico do sódio?",
+    "familia": "pirata/simbolo",
+    "entidade": "sódio",
+    "atributo": "simbolo",
+    "gabarito": "Na"
+  },
+  {
+    "n": 36,
+    "pergunta": "Responda como um pirata: Qual é o símbolo químico da prata?",
+    "familia": "pirata/simbolo",
+    "entidade": "prata",
+    "atributo": "simbolo",
+    "gabarito": "Ag"
+  },
+  {
+    "n": 37,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é o símbolo químico do cobre?",
+    "familia": "crianca/simbolo",
+    "entidade": "cobre",
+    "atributo": "simbolo",
+    "gabarito": "Cu"
+  },
+  {
+    "n": 38,
+    "pergunta": "Responda como numa cena de novela: Qual é a capital do Peru?",
+    "familia": "novela/capital",
+    "entidade": "Peru",
+    "atributo": "capital",
+    "gabarito": "Lima"
+  },
+  {
+    "n": 39,
+    "pergunta": "Responda em forma de cordel: Qual é o símbolo químico do cobre?",
+    "familia": "cordel/simbolo",
+    "entidade": "cobre",
+    "atributo": "simbolo",
+    "gabarito": "Cu"
+  },
+  {
+    "n": 40,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é a capital do Peru?",
+    "familia": "crianca/capital",
+    "entidade": "Peru",
+    "atributo": "capital",
+    "gabarito": "Lima"
+  },
+  {
+    "n": 41,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é o símbolo químico da prata?",
+    "familia": "crianca/simbolo",
+    "entidade": "prata",
+    "atributo": "simbolo",
+    "gabarito": "Ag"
+  },
+  {
+    "n": 42,
+    "pergunta": "Responda como um pirata: Qual é o símbolo químico do ferro?",
+    "familia": "pirata/simbolo",
+    "entidade": "ferro",
+    "atributo": "simbolo",
+    "gabarito": "Fe"
+  },
+  {
+    "n": 43,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é a capital da França?",
+    "familia": "teleprompter/capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 44,
+    "pergunta": "Explique para uma criança de 5 anos: Qual é a capital do Japão?",
+    "familia": "crianca/capital",
+    "entidade": "Japão",
+    "atributo": "capital",
+    "gabarito": "Tóquio"
+  },
+  {
+    "n": 45,
+    "pergunta": "Responda em forma de cordel: Qual é a capital da França?",
+    "familia": "cordel/capital",
+    "entidade": "França",
+    "atributo": "capital",
+    "gabarito": "Paris"
+  },
+  {
+    "n": 46,
+    "pergunta": "Responda como um pirata: Qual é a capital do Canadá?",
+    "familia": "pirata/capital",
+    "entidade": "Canadá",
+    "atributo": "capital",
+    "gabarito": "Ottawa"
+  },
+  {
+    "n": 47,
+    "pergunta": "Responda como um pirata: Qual é a capital da Itália?",
+    "familia": "pirata/capital",
+    "entidade": "Itália",
+    "atributo": "capital",
+    "gabarito": "Roma"
+  },
+  {
+    "n": 48,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é o símbolo químico do ouro?",
+    "familia": "teleprompter/simbolo",
+    "entidade": "ouro",
+    "atributo": "simbolo",
+    "gabarito": "Au"
+  },
+  {
+    "n": 49,
+    "pergunta": "Responda como um pirata: Qual é a capital do Peru?",
+    "familia": "pirata/capital",
+    "entidade": "Peru",
+    "atributo": "capital",
+    "gabarito": "Lima"
+  },
+  {
+    "n": 50,
+    "pergunta": "Responda em estilo teleprompter, como um âncora de telejornal: Qual é o símbolo químico do cobre?",
+    "familia": "teleprompter/simbolo",
+    "entidade": "cobre",
+    "atributo": "simbolo",
+    "gabarito": "Cu"
+  }
+]

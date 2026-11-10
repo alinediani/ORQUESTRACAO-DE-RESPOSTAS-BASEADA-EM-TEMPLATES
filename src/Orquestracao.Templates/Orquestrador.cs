@@ -56,6 +56,13 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         "continuaria verdadeiro e adequado para qualquer outra entidade do mesmo tipo. Responda NÃO se algum trecho fixo afirma algo que só vale para a " +
         "entidade original (por exemplo, se tem cura, uma definição, um tipo de obra, um detalhe específico). Responda com SIM ou NÃO, seguido de um motivo curto.";
 
+    /// <summary>
+    /// O system prompt do estilizador: aplica o estilo pedido sobre a resposta do núcleo factual, sem mudar nenhum dado.
+    /// </summary>
+    public const string SystemEstilizacao =
+        "Reescreva a resposta no estilo pedido, em português do Brasil, em no máximo três frases curtas. Não mude, não acrescente e não omita " +
+        "nenhum dado da resposta (nomes, números, símbolos). Devolva só o texto reescrito.";
+
     /// <summary>As chaves cujo template o validador recusou: as perguntas delas vão sempre ao LLM.</summary>
     private readonly HashSet<string> _recusadas = [];
     private readonly Lock _travaRecusadas = new();
@@ -66,8 +73,20 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
     /// normalização só decide a rota (a chave), e o LLM de geração continua recebendo a pergunta original.
     /// </summary>
     public async Task<ResultadoOrquestrador> Responder(string pergunta, ILlm geracao, CancellationToken ct = default, bool forcarLlm = false, string? systemExtra = null,
-        ILlm? normalizador = null, ILlm? validador = null)
+        ILlm? normalizador = null, ILlm? validador = null, ILlm? estilizador = null)
     {
+        // O estilizador: o núcleo factual segue o fluxo (template + fonte) e só no fim o estilo é aplicado por um LLM pequeno.
+        if (estilizador is not null && Estilos.Separar(pergunta) is var (nucleo, estilo))
+        {
+            var rn = await Responder(nucleo, geracao, ct, forcarLlm, systemExtra, normalizador, validador);
+            var re = await estilizador.Completar(SystemEstilizacao, $"Estilo pedido: {estilo}\nResposta: {rn.Texto}", ct);
+            Etapa?.Invoke(new EtapaFluxo("entrega", "fim", "estilo: " + Curto(estilo)));
+            return rn with
+            {
+                Pergunta = pergunta, Texto = re.Texto.Trim(), Estilo = estilo, TextoNucleo = rn.Texto, ChamadasEstilizador = 1,
+                TokensEntrada = rn.TokensEntrada + re.Entrada, TokensSaida = rn.TokensSaida + re.Saida, Custo = rn.Custo + re.Custo,
+            };
+        }
         var relogio = Stopwatch.StartNew();
         var etapas = new List<EtapaFluxo>();
         void Passo(string de, string para, string? rotulo = null)

@@ -1,0 +1,51 @@
+# Reescritas do estilizador (Claude Haiku 5.5, via subagente do Claude Code): estilo pedido<TAB>resposta do núcleo<TAB>texto estilizado
+Explique para uma criança de 5 anos	A capital da França é Paris.	Quer saber um segredinho? A capital da França se chama Paris!
+Explique para uma criança de 5 anos	A capital da Itália é Roma.	Olha só! A capital da Itália é Roma, um nome bonito para guardar na memória.
+Explique para uma criança de 5 anos	A capital do Canadá é Ottawa.	Adivinha? A capital do Canadá é Ottawa. Repete comigo: Ottawa!
+Explique para uma criança de 5 anos	A capital do Japão é Tóquio.	Vamos lá! A capital do Japão é Tóquio. Tóquio, que nome gostoso de falar!
+Explique para uma criança de 5 anos	A capital do Peru é Lima.	Você conhece o Peru? A capital dele é Lima. Lima, falou!
+Explique para uma criança de 5 anos	O símbolo químico da prata é Ag.	Olha que legal: a prata tem um nome curtinho na ciência, Ag. Ag de prata!
+Explique para uma criança de 5 anos	O símbolo químico do cobre é Cu.	O símbolo químico do cobre é Cu, bem pequenininho!
+Explique para uma criança de 5 anos	O símbolo químico do ferro é Fe.	O ferro tem um nome curtinho na ciência: Fe. Fe de ferro!
+Explique para uma criança de 5 anos	O símbolo químico do ouro é Au.	O ouro, que brilha tanto, tem o símbolo Au na ciência.
+Explique para uma criança de 5 anos	O símbolo químico do sódio é Na.	O sódio, um elemento da química, tem o símbolo Na. Na de sódio!
+Responda como numa cena de novela	A capital da França é Paris.	Ai, meu Deus! Você não vai acreditar: a capital da França é Paris! Paris, meu amor!
+Responda como numa cena de novela	A capital da Itália é Roma.	Pois saiba que a capital da Itália é Roma! Roma, minha vida, e nada mais!
+Responda como numa cena de novela	A capital do Canadá é Ottawa.	Não me venha com mentiras! A capital do Canadá é Ottawa, e eu juro que é verdade!
+Responda como numa cena de novela	A capital do Japão é Tóquio.	Ah, o destino! A capital do Japão é Tóquio, e eu nunca mais serei a mesma!
+Responda como numa cena de novela	A capital do Peru é Lima.	Escuta bem, querida: a capital do Peru é Lima! Lima, a cidade do meu coração!
+Responda como numa cena de novela	O símbolo químico da prata é Ag.	Ai, que drama! O símbolo químico da prata é Ag, e não há nada que eu possa fazer!
+Responda como numa cena de novela	O símbolo químico do cobre é Cu.	Silêncio! O símbolo químico do cobre é Cu, e eu jamais esquecerei esse segredo!
+Responda como numa cena de novela	O símbolo químico do ferro é Fe.	Pois saiba que o símbolo químico do ferro é Fe, e você nunca mais será a mesma!
+Responda como numa cena de novela	O símbolo químico do ouro é Au.	Eu ouvi bem: o símbolo químico do ouro é Au, e ele brilha como a minha vingança!
+Responda como numa cena de novela	O símbolo químico do sódio é Na.	Ah, não aguento mais! O símbolo químico do sódio é Na, e tudo mudou para sempre!
+Responda como um pirata	A capital da França é Paris.	Arrr, marujo! A capital da França é Paris, e dela eu sei o caminho!
+Responda como um pirata	A capital da Itália é Roma.	Arrr! A capital da Itália é Roma, pode anotar no seu mapa de tesouro!
+Responda como um pirata	A capital do Canadá é Ottawa.	Ahoy, marujo! A capital do Canadá é Ottawa, e o mar me chamou para contar!
+Responda como um pirata	A capital do Japão é Tóquio.	Arrr! A capital do Japão é Tóquio, e eu juro pelo meu papagaio!
+Responda como um pirata	A capital do Peru é Lima.	Arrr, escuta bem! A capital do Peru é Lima, e o meu navio vai para lá!
+Responda como um pirata	O símbolo químico da prata é Ag.	Arrr! O símbolo químico da prata é Ag, marujo, anote no seu diário de bordo!
+Responda como um pirata	O símbolo químico do cobre é Cu.	Arrr! O símbolo químico do cobre é Cu, marujo, anote no mapa!
+Responda como um pirata	O símbolo químico do ferro é Fe.	Arrr! O símbolo químico do ferro é Fe, marujo, guarde no porão!
+Responda como um pirata	O símbolo químico do ouro é Au.	Arrr! O símbolo químico do ouro é Au, marujo, o melhor de todos os tesouros!
+Responda como um pirata	O símbolo químico do sódio é Na.	Arrr! O símbolo químico do sódio é Na, marujo, agora vai para o diário de bordo!
+Responda em estilo teleprompter, como um âncora de telejornal	A capital da França é Paris.	Boa noite. A capital da França é Paris. Repito: Paris.
+Responda em estilo teleprompter, como um âncora de telejornal	A capital da Itália é Roma.	Boa noite. A capital da Itália é Roma.
+Responda em estilo teleprompter, como um âncora de telejornal	A capital do Canadá é Ottawa.	Boa noite. A capital do Canadá é Ottawa.
+Responda em estilo teleprompter, como um âncora de telejornal	A capital do Japão é Tóquio.	Boa noite. A capital do Japão é Tóquio.
+Responda em estilo teleprompter, como um âncora de telejornal	A capital do Peru é Lima.	Boa noite. A capital do Peru é Lima.
+Responda em estilo teleprompter, como um âncora de telejornal	O símbolo químico da prata é Ag.	Atenção. O símbolo químico da prata é Ag.
+Responda em estilo teleprompter, como um âncora de telejornal	O símbolo químico do cobre é Cu.	Atenção. O símbolo químico do cobre é Cu.
+Responda em estilo teleprompter, como um âncora de telejornal	O símbolo químico do ferro é Fe.	Atenção. O símbolo químico do ferro é Fe.
+Responda em estilo teleprompter, como um âncora de telejornal	O símbolo químico do ouro é Au.	Atenção. O símbolo químico do ouro é Au.
+Responda em estilo teleprompter, como um âncora de telejornal	O símbolo químico do sódio é Na.	Atenção. O símbolo químico do sódio é Na.
+Responda em forma de cordel	A capital da França é Paris.	Escute, amigo, a verdade: / a capital da França é Paris, cidade / que o cordel canta sem falsidade.
+Responda em forma de cordel	A capital da Itália é Roma.	Venha ouvir, que não é mentira: / a capital da Itália é Roma, a cidade que inspira.
+Responda em forma de cordel	A capital do Canadá é Ottawa.	Prestem atenção, minha gente: / Ottawa é a capital do Canadá, de forma diferente.
+Responda em forma de cordel	A capital do Japão é Tóquio.	Ouçam, leitor, sem demora: / a capital do Japão é Tóquio, a toda hora.
+Responda em forma de cordel	A capital do Peru é Lima.	Chegue perto, ó viajante: / a capital do Peru é Lima, lá adiante.
+Responda em forma de cordel	O símbolo químico da prata é Ag.	Na química, a prata é Ag, / e com o cordel a gente se sente em paz.
+Responda em forma de cordel	O símbolo químico do cobre é Cu.	O cobre, no tubo ou no fio, / tem símbolo Cu, e aqui termina o desafio.
+Responda em forma de cordel	O símbolo químico do ferro é Fe.	O ferro é Fe, meu caro, / e o cordel termina sem reparo.
+Responda em forma de cordel	O símbolo químico do ouro é Au.	O ouro, de brilho sem igual, é Au, / e a história termina aqui, com o sol a brilhar.
+Responda em forma de cordel	O símbolo químico do sódio é Na.	O sódio é Na, e assim se encerra / a lição do cordel, que o povo encerra.

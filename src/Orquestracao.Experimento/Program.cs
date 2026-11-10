@@ -65,6 +65,7 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
         "mkqa" => Cenarios.LerMkqa(Path.Combine(pasta, "mkqa-pt.jsonl"), conferiveis),
         "saude" => Cenarios.LerSaude(Path.Combine(pasta, "saudebr-qa.csv")),
         _ when quiz is not null => quiz.Perguntas,
+        "estilos" => Cenarios.GerarEstilos(fonte, semente),
         "squad" => Cenarios.LerSquad(Path.Combine(pasta, "squad-pt-validation.jsonl"), comTexto: conferiveis),
         _ => throw new ArgumentException($"cenário desconhecido: {cenario}"),
     };
@@ -72,6 +73,15 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     {
         WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
     };
+    if (opcoes.ContainsKey("analisar") && cenario == "estilos")
+    {
+        // 7a: a demanda real por estilos no WildChat (português inteiro e uma amostra em inglês).
+        var rs = new[] { ("Português (as 2.300 primeiras conversas da base, abr.–mai. de 2023)", "wildchat-pt.jsonl"), ("Inglês (amostra de 100 blocos espalhados na base, abr.–jun. de 2023)", "wildchat-en-amostra.jsonl") }
+            .Where(x => File.Exists(Path.Combine(pasta, x.Item2))).Select(x => AnaliseEstilos.Analisar(x.Item1, AnaliseEstilos.Ler(Path.Combine(pasta, x.Item2)))).ToList();
+        File.WriteAllText(Path.Combine(pasta, "analise.md"), AnaliseEstilos.Relatorio(rs));
+        foreach (var ra in rs) Console.WriteLine($"{ra.Base}: {ra.Pedidos} pedidos, {ra.PedidosDeEstilo} de estilo, top10 {ra.ConcentracaoTop10:P1}, idênticos {ra.RepetidosIdenticos}");
+        return 0;
+    }
     if (opcoes.ContainsKey("analisar"))
     {
         var a = Cenarios.Analisar(cenario, Ler(false).Select(p => p.Pergunta).ToList(), new ParserHeuristico(fonteCenario));
@@ -95,7 +105,7 @@ if (opcoes.GetValueOrDefault("cenario") is { } cenario)
     {
         // Saúde: o melhor caso (as chaves que mais se repetem), para exercitar o caminho do template.
         // Quiz: 6 perguntas de cada uma das 5 relações mais frequentes (o perfil de um app de quiz).
-        var amostra = quiz is not null ? Cenarios.AmostraPorRelacao(Ler(true), 5, total / 5) : cenario == "saude"
+        var amostra = cenario == "estilos" ? Ler(true) : quiz is not null ? Cenarios.AmostraPorRelacao(Ler(true), 5, total / 5) : cenario == "saude"
             ? Cenarios.AmostraMelhorCaso(Ler(true), new ParserHeuristico(fonteCenario), total, semente)
             : Cenarios.Amostra(Ler(true), total, semente);
         File.WriteAllText(Path.Combine(pasta, "conjunto.json"), JsonSerializer.Serialize(amostra, jsonOpcoes) + "\n");

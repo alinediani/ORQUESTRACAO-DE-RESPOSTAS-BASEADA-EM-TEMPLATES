@@ -203,6 +203,31 @@ public static partial class Cenarios
         todas.GroupBy(p => p.Familia).OrderByDescending(g => g.Count()).ThenBy(g => g.Key, StringComparer.Ordinal).Take(relacoes)
             .SelectMany(g => g.Take(porRelacao)).OrderBy(p => p.N).Select((p, i) => p with { N = i + 1 }).ToList();
 
+    // ---- Estilos (cenário 7b) --------------------------------------------------------------------------
+
+    /// <summary>
+    /// O cenário 7b: 10 fatos da fonte padrão (5 capitais e 5 símbolos químicos) pedidos em cada um dos 5 estilos de
+    /// <see cref="Estilos.DoCenario"/>, 50 perguntas embaralhadas pela semente. A família é "estilo/atributo"; o gabarito, o dado.
+    /// </summary>
+    public static List<PerguntaTeste> GerarEstilos(IFonteDeFatos fonte, int semente)
+    {
+        (string Entidade, string Atributo, string Frase)[] fatos =
+        [
+            ("França", "capital", "Qual é a capital {de}?"), ("Japão", "capital", "Qual é a capital {de}?"), ("Itália", "capital", "Qual é a capital {de}?"),
+            ("Peru", "capital", "Qual é a capital {de}?"), ("Canadá", "capital", "Qual é a capital {de}?"),
+            ("ouro", "simbolo", "Qual é o símbolo químico {de}?"), ("prata", "simbolo", "Qual é o símbolo químico {de}?"), ("ferro", "simbolo", "Qual é o símbolo químico {de}?"),
+            ("sódio", "simbolo", "Qual é o símbolo químico {de}?"), ("cobre", "simbolo", "Qual é o símbolo químico {de}?"),
+        ];
+        var rnd = new Random(semente);
+        var lista = from est in Estilos.DoCenario
+                    from f in fatos
+                    let e = fonte.PorNome(f.Entidade) ?? throw new InvalidOperationException($"sem {f.Entidade} na fonte")
+                    select (Estilo: est, Fato: f, E: e);
+        return lista.OrderBy(_ => rnd.Next()).Select((x, i) => new PerguntaTeste(i + 1,
+            $"{x.Estilo.Instrucao}: {x.Fato.Frase.Replace("{de}", x.E.Forma("de_entidade"))}", $"{x.Estilo.Nome}/{x.Fato.Atributo}", x.E.Nome, x.Fato.Atributo,
+            x.E.Atributos[x.Fato.Atributo])).ToList();
+    }
+
     // ---- SQuAD-pt ----------------------------------------------------------------------------------------
 
     /// <summary>
