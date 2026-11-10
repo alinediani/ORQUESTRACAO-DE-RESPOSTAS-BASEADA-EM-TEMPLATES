@@ -1,0 +1,28 @@
+# Vereditos do validador (Claude Haiku 5.5, via subagente do Claude Code) para os templates candidatos: template<TAB>SIM|NÃO<TAB>motivo
+A capital {de_entidade} é {capital}.	SIM	"A capital" e "é" valem para qualquer país; capital está no slot.
+{Em_entidade} fala-se {idioma}.	SIM	"fala-se" é genérico; idioma está no slot.
+O símbolo químico {de_entidade} é {simbolo}.	SIM	Frase genérica para símbolo químico; elemento está no slot.
+{O_entidade} fica na {continente}.	SIM	"na" vale para todos os continentes, que são femininos.
+A moeda {de_entidade} é a {moeda}.	NÃO	Artigo fixo "a" só vale para moeda feminina como naira; falha com real, dólar ou euro.
+O número atômico {de_entidade} é {numero_atomico}.	SIM	Frase genérica para número atômico; valor está no slot.
+Sim, o {especialista} trata {entidade}, assim como o ortopedista, conforme o caso.	NÃO	"Sim" e "assim como o ortopedista" são específicos de artrose.
+{O_entidade} tem cura na maioria dos casos, com o tratamento da causa orientado por um {especialista}.	NÃO	Afirma que a labirintite tem cura na maioria dos casos.
+O melhor tratamento para {entidade} depende do tamanho, da localização e dos sintomas, e vai do acompanhamento a remédios ou cirurgia, definido com o {especialista}.	NÃO	Opções e critérios de tratamento são específicos do mioma.
+O tratamento da queda de cabelo depende da causa e pode incluir minoxidil, correção de deficiências nutricionais e outros remédios, sempre com a avaliação de um {especialista}.	NÃO	Minoxidil e causas nutricionais são específicos da queda de cabelo.
+Com a pressão alta, sente-se, repouse e meça de novo, e procure uma emergência se ela estiver muito alta ou houver dor no peito, falta de ar ou alteração na fala; para o controle contínuo, consulte um {especialista}.	NÃO	Orientações de emergência e tratamento são específicas da hipertensão.
+{O_entidade} é um erro de refração em que se enxerga mal de longe, porque a imagem se forma antes da retina, e é corrigida com óculos, lentes ou cirurgia indicados pelo {especialista}.	NÃO	A definição de miopia está fixa no texto.
+{entidade} (El rapto) é um filme do {p495}.	NÃO	O título "(El rapto)" fixo só vale para esta obra.
+{entidade} é um filme da {p495}.	NÃO	Artigo fixo "da" falha para países masculinos ou plurais, como México ou Estados Unidos.
+O país de origem {de_entidade} é os {p495}.	NÃO	"é os" fixo só vale para Estados Unidos.
+{entidade} é dos {p27}.	NÃO	"dos" fixo só vale para países plurais ou masculinos específicos.
+{entidade} é exibido nas {p495}.	NÃO	"nas" fixo só vale para Filipinas.
+{entidade} nasceu em {p19}.	SIM	"nasceu em" é genérico para cidade; lugar está no slot.
+{entidade} é do {p27}.	NÃO	Artigo fixo "do" falha para países femininos ou plurais.
+{entidade} é um {p136}.	NÃO	Artigo fixo "um" falha para gênero feminino, como comédia.
+O país de origem {de_entidade} é os {p495}.	NÃO	"os" fixo só vale para Estados Unidos.
+A nacionalidade {de_entidade} é alemã, da {p27}.	NÃO	"alemã, da" fixos só valem para esta nacionalidade.
+{entidade} é do {p27}.	NÃO	Artigo fixo "do" falha para países femininos ou plurais.
+{entidade} (El rapto) é um filme do {p495}.	NÃO	Título "(El rapto)" fixo e artigo "do" fixo só valem para esta obra.
+{entidade} é dos {p27}.	NÃO	"dos" fixo falha para outros países.
+{entidade} nasceu em {p19}.	SIM	Igual à linha 18: "nasceu em" é genérico para cidade.
+{entidade} é um {p136}.	NÃO	Artigo fixo "um" falha para romance feminino.

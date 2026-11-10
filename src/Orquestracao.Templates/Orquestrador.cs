@@ -46,12 +46,27 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         "Devolva só a pergunta reescrita, em uma linha.";
 
     /// <summary>
+    /// O system prompt do validador (a trava): antes de salvar um template novo, um LLM pequeno confere se ele pode ser
+    /// reaproveitado, isto é, se o que a pergunta pede está num slot e se nenhum trecho fixo depende da entidade.
+    /// </summary>
+    public const string SystemValidacao =
+        "Você valida templates de resposta que serão reaproveitados para outras entidades. Recebe a pergunta, a resposta original e o template, " +
+        "em que os trechos entre chaves (como {capital}, {especialista}, {p19}, {de_entidade}) serão preenchidos com dados de uma base para cada nova entidade. " +
+        "Responda SIM somente se: (1) o que a pergunta pede está num slot, e (2) nenhum trecho fixo do template depende da entidade, isto é, o texto fixo " +
+        "continuaria verdadeiro e adequado para qualquer outra entidade do mesmo tipo. Responda NÃO se algum trecho fixo afirma algo que só vale para a " +
+        "entidade original (por exemplo, se tem cura, uma definição, um tipo de obra, um detalhe específico). Responda com SIM ou NÃO, seguido de um motivo curto.";
+
+    /// <summary>As chaves cujo template o validador recusou: as perguntas delas vão sempre ao LLM.</summary>
+    private readonly HashSet<string> _recusadas = [];
+    private readonly Lock _travaRecusadas = new();
+
+    /// <summary>
     /// Responde uma pergunta. <paramref name="forcarLlm"/>: um feedback ruim manda a próxima resposta ao LLM.
     /// <paramref name="normalizador"/>: o segundo fluxo, em que a pergunta passa por um LLM normalizador antes do parser; a
     /// normalização só decide a rota (a chave), e o LLM de geração continua recebendo a pergunta original.
     /// </summary>
     public async Task<ResultadoOrquestrador> Responder(string pergunta, ILlm geracao, CancellationToken ct = default, bool forcarLlm = false, string? systemExtra = null,
-        ILlm? normalizador = null)
+        ILlm? normalizador = null, ILlm? validador = null)
     {
         var relogio = Stopwatch.StartNew();
         var etapas = new List<EtapaFluxo>();
@@ -80,7 +95,9 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
 
         string? motivo;
         var existente = store.Obter(estrutura.Chave);
+        bool Recusada() { lock (_travaRecusadas) return _recusadas.Contains(estrutura.Chave); }
         if (forcarLlm) motivo = "feedback ruim: a resposta volta ao LLM";
+        else if (validador is not null && Recusada()) motivo = "o validador recusou o template desta chave";
         else if (!estrutura.TemSlot) motivo = "sem entidade conhecida na pergunta";
         else if (existente is null) motivo = "chave nova";
         else if (existente.Peso < Configuracao.Limiar) motivo = "peso abaixo do limiar";
@@ -111,8 +128,23 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         var r = await geracao.Completar(system, pergunta, ct);
         var resposta = r.Texto.Trim();
         Passo("llm", "extrai");
-        string? template = estrutura.Entidade is null ? null : Extrator.ExtrairTemplate(resposta, estrutura.Entidade);
+        string? template = estrutura.Entidade is null || (validador is not null && Recusada()) ? null : Extrator.ExtrairTemplate(resposta, estrutura.Entidade);
         var salvo = false;
+        RespostaLlm? usoValidador = null;
+        var recusado = false;
+        if (template is not null && validador is not null && (existente is null || existente.Template != template))
+        {
+            // A trava: o template novo só é salvo se o validador confirmar que ele serve para outras entidades.
+            usoValidador = await validador.Completar(SystemValidacao, $"Pergunta: {pergunta}\nResposta: {resposta}\nTemplate: {template}", ct);
+            var veredito = Texto.Normalizar(usoValidador.Texto);
+            if (!veredito.StartsWith("sim", StringComparison.Ordinal))
+            {
+                recusado = true;
+                lock (_travaRecusadas) _recusadas.Add(estrutura.Chave);
+                Passo("extrai", "entrega", "recusado pelo validador");
+                template = null;
+            }
+        }
         double? peso = null;
         if (template is not null)
         {
@@ -128,14 +160,16 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
             }
             Passo("salva", "entrega");
         }
-        else
+        else if (!recusado)
         {
             Passo("extrai", "entrega", "não reutilizável");
         }
+        usoParser = Somar(usoParser, usoValidador);
         return Fechar(new ResultadoOrquestrador
         {
             Pergunta = pergunta, Texto = resposta, Caminho = Caminho.Llm, Chave = estrutura.Chave, Entidade = estrutura.Entidade?.Nome, Template = template, Peso = peso,
             TemplateSalvo = salvo, Motivo = motivo, ChamadasGeracao = 1, ChamadasParser = chamadasRota, ChamadasNormalizador = chamadasNorm, PerguntaNormalizada = usoNorm is null ? null : paraParser,
+            ChamadasValidador = usoValidador is null ? 0 : 1, TemplateRecusado = recusado,
             TokensEntrada = r.Entrada + (usoParser?.Entrada ?? 0), TokensSaida = r.Saida + (usoParser?.Saida ?? 0), Custo = r.Custo + (usoParser?.Custo ?? 0),
             Etapas = etapas,
         }, relogio);

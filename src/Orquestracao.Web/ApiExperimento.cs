@@ -69,6 +69,8 @@ public static class ApiExperimento
             var cenario = Texto("cenario", "");
             // O segundo fluxo: "haiku" usa as normalizações do Claude Haiku gravadas em normalizadas-haiku.tsv (pasta do cenário).
             var comNormalizador = Texto("normalizador", "") == "haiku";
+            // A trava: "haiku" usa os vereditos do Claude Haiku gravados em validacao-haiku.tsv (template<TAB>SIM|NÃO<TAB>motivo).
+            var comValidador = Texto("validador", "") == "haiku";
             string? pastaCenario = null;
             if (cenario.Length > 0)
             {
@@ -112,12 +114,25 @@ public static class ApiExperimento
                         normalizador = new LlmComEstimativa(new LlmSimulado((_, q) => porPergunta[q], 0, 0), 0.1, 0.5);
                         sufixo = "-haiku";
                     }
+                    ILlm? validador = null;
+                    if (comValidador)
+                    {
+                        var arquivo = Path.Combine(pasta, "validacao-haiku.tsv");
+                        var vereditos = File.ReadLines(arquivo).Where(l => l.Contains('\t')).Select(l => l.Split('\t'))
+                            .GroupBy(c => c[0]).ToDictionary(g => g.Key, g => $"{g.First()[1]} {g.First().ElementAtOrDefault(2)}");
+                        validador = new LlmComEstimativa(new LlmSimulado((_, u) =>
+                        {
+                            var t = u[(u.LastIndexOf("Template: ", StringComparison.Ordinal) + 10)..];
+                            return vereditos.TryGetValue(t, out var v) ? v : throw new InvalidOperationException($"sem veredito gravado para o template: {t}");
+                        }, 0, 0), 0.1, 0.5);
+                        sufixo += "-validador";
+                    }
                     // A base do experimento (templates, perguntas e feedbacks do protótipo) fica gravada ao lado do relatório.
                     Directory.CreateDirectory(pasta);
                     var banco = Path.Combine(pasta, $"experimento-{llm}{sufixo}.db");
                     if (File.Exists(banco)) File.Delete(banco);
                     var r = await Experimento.Rodar(fonteUsada, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
-                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador);
+                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador, validador: validador);
                     if (pastaCenario is not null) r = r with { Cenario = cenario };
                     var opcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
                     {

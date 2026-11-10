@@ -57,6 +57,9 @@ public sealed record ResultadoOrquestrador
     /// <summary>No segundo fluxo: a chamada ao LLM normalizador (0 ou 1) e a pergunta que ele devolveu ao parser.</summary>
     public int ChamadasNormalizador { get; init; }
     public string? PerguntaNormalizada { get; init; }
+    /// <summary>A trava: chamada ao LLM validador (0 ou 1) e se ele recusou o template extraído.</summary>
+    public int ChamadasValidador { get; init; }
+    public bool TemplateRecusado { get; init; }
     public long TokensEntrada { get; init; }
     public long TokensSaida { get; init; }
     public double Custo { get; init; }

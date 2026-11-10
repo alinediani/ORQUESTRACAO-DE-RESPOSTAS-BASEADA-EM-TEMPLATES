@@ -114,6 +114,27 @@ public class CenariosTests
         Assert.Contains(r2.Etapas, e => e.Rotulo?.StartsWith("normalizada:") == true);
     }
 
+    [Fact]
+    public async Task Trava_TemplateRecusadoPeloValidador_NaoESalvo_EAChaveVaiSempreAoLlm()
+    {
+        var store = new TemplateStoreMemoria();
+        var orq = new Orquestrador(new ParserHeuristico(Fonte), store, Fonte);
+        var geracao = new LlmSimulado((_, q) => q.Contains("Japão") ? "A moeda do Japão é o iene." : "A moeda da Nigéria é a naira.");
+        var vistos = new List<string>();
+        var validador = new LlmSimulado((_, u) => { vistos.Add(u); return u.Contains("é a {moeda}") ? "NÃO, o artigo fixo só vale para moeda feminina" : "SIM"; }, 40, 10, 0.00001);
+        var r1 = await orq.Responder("Qual é a moeda da Nigéria?", geracao, validador: validador);
+        var r2 = await orq.Responder("Qual é a moeda do Japão?", geracao, validador: validador);
+        Assert.Equal((true, 1, false), (r1.TemplateRecusado, r1.ChamadasValidador, r1.TemplateSalvo));
+        Assert.Null(store.Obter(r1.Chave));
+        // A chave recusada vai ao LLM sem validar de novo (uma chamada ao validador por chave).
+        Assert.Equal((Caminho.Llm, 0, "o validador recusou o template desta chave"), (r2.Caminho, r2.ChamadasValidador, r2.Motivo));
+        Assert.Single(vistos);
+        Assert.Contains("Template: A moeda {de_entidade} é a {moeda}.", vistos[0]);
+
+        var aceito = await orq.Responder("Qual é a capital da França?", new LlmSimulado((_, _) => "A capital da França é Paris."), validador: validador);
+        Assert.True(aceito.TemplateSalvo);
+    }
+
     [Theory]
     [InlineData("James corre 540 metros por semana.", "540", true)]
     [InlineData("O total é de R$ 1.200,00.", "1200", true)]
