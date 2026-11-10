@@ -35,8 +35,23 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         "Responda à pergunta em uma única frase completa e factual, em português do Brasil, retomando o assunto da pergunta " +
         "(por exemplo: \"A capital da França é Paris.\"). Não acrescente explicações nem comentários.";
 
-    /// <summary>Responde uma pergunta. <paramref name="forcarLlm"/>: um feedback ruim manda a próxima resposta ao LLM.</summary>
-    public async Task<ResultadoOrquestrador> Responder(string pergunta, ILlm geracao, CancellationToken ct = default, bool forcarLlm = false, string? systemExtra = null)
+    /// <summary>
+    /// O system prompt do normalizador (o segundo fluxo): um LLM pequeno reescreve a pergunta numa forma padronizada antes
+    /// do parser, para perguntas iguais escritas de jeitos diferentes caírem na mesma chave.
+    /// </summary>
+    public const string SystemNormalizacao =
+        "Reescreva a pergunta do usuário na forma mais simples e padronizada possível para o que ela pede, em português do Brasil: " +
+        "tire cumprimentos, histórias e detalhes que não mudam o que é pedido, mantenha os nomes próprios e os números, e use sempre " +
+        "a mesma redação para o mesmo tipo de pedido (por exemplo: \"Onde X nasceu?\", \"Qual é a capital de X?\", \"X tem cura?\"). " +
+        "Devolva só a pergunta reescrita, em uma linha.";
+
+    /// <summary>
+    /// Responde uma pergunta. <paramref name="forcarLlm"/>: um feedback ruim manda a próxima resposta ao LLM.
+    /// <paramref name="normalizador"/>: o segundo fluxo, em que a pergunta passa por um LLM normalizador antes do parser; a
+    /// normalização só decide a rota (a chave), e o LLM de geração continua recebendo a pergunta original.
+    /// </summary>
+    public async Task<ResultadoOrquestrador> Responder(string pergunta, ILlm geracao, CancellationToken ct = default, bool forcarLlm = false, string? systemExtra = null,
+        ILlm? normalizador = null)
     {
         var relogio = Stopwatch.StartNew();
         var etapas = new List<EtapaFluxo>();
@@ -47,8 +62,20 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
             Etapa?.Invoke(e);
         }
 
-        Passo("ui", "parser", Curto(pergunta));
-        var (estrutura, usoParser) = await parser.Extrair(pergunta, ct);
+        RespostaLlm? usoNorm = null;
+        var paraParser = pergunta;
+        if (normalizador is not null)
+        {
+            usoNorm = await normalizador.Completar(SystemNormalizacao, pergunta, ct);
+            paraParser = usoNorm.Texto.Trim() is { Length: > 0 } n ? n : pergunta;
+            Passo("ui", "parser", "normalizada: " + Curto(paraParser));
+        }
+        else Passo("ui", "parser", Curto(pergunta));
+        var (estrutura, usoParserBruto) = await parser.Extrair(paraParser, ct);
+        // O uso do normalizador entra junto com o do parser (os dois decidem a rota).
+        var usoParser = Somar(usoParserBruto, usoNorm);
+        var chamadasRota = (usoParserBruto is null ? 0 : 1);
+        var chamadasNorm = usoNorm is null ? 0 : 1;
         Passo("parser", "motor", estrutura.Chave);
 
         string? motivo;
@@ -71,7 +98,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
                 return Fechar(new ResultadoOrquestrador
                 {
                     Pergunta = pergunta, Texto = texto, Caminho = Caminho.Template, Chave = estrutura.Chave, Entidade = estrutura.Entidade.Nome,
-                    Template = existente.Template, Peso = existente.Peso, ChamadasParser = usoParser is null ? 0 : 1,
+                    Template = existente.Template, Peso = existente.Peso, ChamadasParser = chamadasRota, ChamadasNormalizador = chamadasNorm, PerguntaNormalizada = usoNorm is null ? null : paraParser,
                     TokensEntrada = usoParser?.Entrada ?? 0, TokensSaida = usoParser?.Saida ?? 0, Custo = usoParser?.Custo ?? 0, Etapas = etapas,
                 }, relogio);
             }
@@ -108,7 +135,7 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         return Fechar(new ResultadoOrquestrador
         {
             Pergunta = pergunta, Texto = resposta, Caminho = Caminho.Llm, Chave = estrutura.Chave, Entidade = estrutura.Entidade?.Nome, Template = template, Peso = peso,
-            TemplateSalvo = salvo, Motivo = motivo, ChamadasGeracao = 1, ChamadasParser = usoParser is null ? 0 : 1,
+            TemplateSalvo = salvo, Motivo = motivo, ChamadasGeracao = 1, ChamadasParser = chamadasRota, ChamadasNormalizador = chamadasNorm, PerguntaNormalizada = usoNorm is null ? null : paraParser,
             TokensEntrada = r.Entrada + (usoParser?.Entrada ?? 0), TokensSaida = r.Saida + (usoParser?.Saida ?? 0), Custo = r.Custo + (usoParser?.Custo ?? 0),
             Etapas = etapas,
         }, relogio);
@@ -154,6 +181,9 @@ public sealed class Orquestrador(IParser parser, ITemplateStore store, IFonteDeF
         Etapa?.Invoke(bom ? new EtapaFluxo("feedback", "fim", $"bom · peso {peso:0.00}") : new EtapaFluxo("feedback", "llm", $"ruim · peso {peso:0.00}"));
         return novo;
     }
+
+    private static RespostaLlm? Somar(RespostaLlm? a, RespostaLlm? b) =>
+        a is null ? b : b is null ? a : a with { Entrada = a.Entrada + b.Entrada, Saida = a.Saida + b.Saida, Custo = a.Custo + b.Custo };
 
     private static string Curto(string s) => s.Length <= 40 ? s : s[..39] + "…";
 }

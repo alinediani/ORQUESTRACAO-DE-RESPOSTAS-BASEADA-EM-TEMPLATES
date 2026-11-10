@@ -54,6 +54,9 @@ public sealed record ResultadoOrquestrador
     public string? Motivo { get; init; }
     public int ChamadasGeracao { get; init; }
     public int ChamadasParser { get; init; }
+    /// <summary>No segundo fluxo: a chamada ao LLM normalizador (0 ou 1) e a pergunta que ele devolveu ao parser.</summary>
+    public int ChamadasNormalizador { get; init; }
+    public string? PerguntaNormalizada { get; init; }
     public long TokensEntrada { get; init; }
     public long TokensSaida { get; init; }
     public double Custo { get; init; }

@@ -99,6 +99,21 @@ public class CenariosTests
         Assert.Equal(["p19"], Extrator.Atributos(t!));
     }
 
+    [Fact]
+    public async Task SegundoFluxo_ONormalizadorJuntaRedacoesDiferentesNaMesmaChave_EEContado()
+    {
+        var orq = new Orquestrador(new ParserHeuristico(Fonte), new TemplateStoreMemoria(), Fonte);
+        var geracao = new LlmSimulado((_, q) => q.Contains("Japão") ? "A capital do Japão é Tóquio." : "A capital da França é Paris.");
+        var norm = new LlmSimulado((_, q) => q.Contains("Japão") ? "Qual é a capital do Japão?" : "Qual é a capital da França?", 30, 8, 0.0001);
+        var r1 = await orq.Responder("Oi! Me conta qual é a capital da França, por favor?", geracao, normalizador: norm);
+        var r2 = await orq.Responder("E do Japão, sabe qual é a capital?", geracao, normalizador: norm);
+        Assert.Equal((Caminho.Llm, Caminho.Template), (r1.Caminho, r2.Caminho));
+        Assert.Equal("A capital do Japão é Tóquio.", r2.Texto);
+        Assert.Equal((1, 1, "Qual é a capital do Japão?"), (r1.ChamadasNormalizador, r2.ChamadasNormalizador, r2.PerguntaNormalizada));
+        Assert.Equal(0.0001, r2.Custo, 9);
+        Assert.Contains(r2.Etapas, e => e.Rotulo?.StartsWith("normalizada:") == true);
+    }
+
     [Theory]
     [InlineData("James corre 540 metros por semana.", "540", true)]
     [InlineData("O total é de R$ 1.200,00.", "1200", true)]

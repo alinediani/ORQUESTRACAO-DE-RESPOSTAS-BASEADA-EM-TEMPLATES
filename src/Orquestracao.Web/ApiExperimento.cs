@@ -67,12 +67,15 @@ public static class ApiExperimento
             var (total, semente) = (Numero("perguntas", 150), Numero("semente", 2026));
             // Um cenário com base pública: o conjunto (e, se houver, a fonte) vem de docs/experimento/cenarios/{cenario}/.
             var cenario = Texto("cenario", "");
+            // O segundo fluxo: "haiku" usa as normalizações do Claude Haiku gravadas em normalizadas-haiku.tsv (pasta do cenário).
+            var comNormalizador = Texto("normalizador", "") == "haiku";
             string? pastaCenario = null;
             if (cenario.Length > 0)
             {
                 if (!System.Text.RegularExpressions.Regex.IsMatch(cenario, "^[a-z0-9-]+$")) throw new OpError(400, "\"cenario\" inválido.");
                 pastaCenario = Path.Combine(saida, "cenarios", cenario);
                 if (!File.Exists(Path.Combine(pastaCenario, "conjunto.json"))) throw new OpError(404, $"Sem conjunto.json em {pastaCenario}.");
+                if (comNormalizador && !File.Exists(Path.Combine(pastaCenario, "normalizadas-haiku.tsv"))) throw new OpError(404, $"Sem normalizadas-haiku.tsv em {pastaCenario}.");
             }
             lock (Trava)
             {
@@ -98,12 +101,23 @@ public static class ApiExperimento
                             new JsonSerializerOptions(JsonSerializerDefaults.Web))!;
                         if (File.Exists(Path.Combine(pastaCenario, "fatos.json"))) fonteUsada = FonteDeFatosJson.Ler(Path.Combine(pastaCenario, "fatos.json"));
                     }
+                    ILlm? normalizador = null;
+                    var sufixo = "";
+                    if (comNormalizador && pastaCenario is not null)
+                    {
+                        var porN = File.ReadLines(Path.Combine(pastaCenario, "normalizadas-haiku.tsv")).Where(l => l.Contains('\t'))
+                            .Select(l => l.Split('\t', 2)).ToDictionary(c => int.Parse(c[0], System.Globalization.CultureInfo.InvariantCulture), c => c[1].Trim());
+                        var porPergunta = conjunto.ToDictionary(q => q.Pergunta, q => porN[q.N]);
+                        // Preço do Claude Haiku 5.5 (US$ 0,10 / 0,50 por milhão), tokens estimados pelo tamanho do texto.
+                        normalizador = new LlmComEstimativa(new LlmSimulado((_, q) => porPergunta[q], 0, 0), 0.1, 0.5);
+                        sufixo = "-haiku";
+                    }
                     // A base do experimento (templates, perguntas e feedbacks do protótipo) fica gravada ao lado do relatório.
                     Directory.CreateDirectory(pasta);
-                    var banco = Path.Combine(pasta, $"experimento-{llm}.db");
+                    var banco = Path.Combine(pasta, $"experimento-{llm}{sufixo}.db");
                     if (File.Exists(banco)) File.Delete(banco);
                     var r = await Experimento.Rodar(fonteUsada, conjunto, Novo(), Novo(), new JuizPorGabarito(), llm, semente, 0, 0,
-                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco));
+                        concorrenciaLinhaDeBase: conjunto.Count, store: new TemplateStoreSqlite(banco), normalizador: normalizador);
                     if (pastaCenario is not null) r = r with { Cenario = cenario };
                     var opcoes = new JsonSerializerOptions(JsonSerializerDefaults.Web)
                     {
@@ -112,8 +126,8 @@ public static class ApiExperimento
                     var (planilha, chave) = AvaliacaoHumana.Gerar(r, semente);
                     var arquivos = new Dictionary<string, string>
                     {
-                        [$"resultados-{llm}.md"] = Experimento.Relatorio(r),
-                        [$"resultados-{llm}.json"] = JsonSerializer.Serialize(new
+                        [$"resultados-{llm}{sufixo}.md"] = Experimento.Relatorio(r),
+                        [$"resultados-{llm}{sufixo}.json"] = JsonSerializer.Serialize(new
                         {
                             r.Modo, r.Cenario, r.Semente, r.Prototipo, r.LinhaDeBase, r.Comparacao, r.ChavesPorFamilia, r.TemplatesSalvos,
                             quadro2 = Experimento.Quadro2(r).Select(t => new { teste = t.Teste, obtido = t.Obtido, situacao = t.Ok ? "Aprovado" : "Reprovado" }),
@@ -123,14 +137,14 @@ public static class ApiExperimento
                                 prototipo = r.RespostasPrototipo[q.N - 1], linhaDeBase = r.RespostasLinhaDeBase[q.N - 1],
                             }),
                         }, opcoes) + "\n",
-                        ["avaliacao-humana.csv"] = planilha,
-                        ["avaliacao-humana-chave.csv"] = chave,
+                        [$"avaliacao-humana{sufixo}.csv"] = planilha,
+                        [$"avaliacao-humana{sufixo}-chave.csv"] = chave,
                     };
                     if (pastaCenario is not null)
                     {
                         // Num cenário, o Quadro 2 (do experimento factual) não se aplica.
-                        var json = arquivos[$"resultados-{llm}.json"];
-                        arquivos[$"resultados-{llm}.json"] = JsonSerializer.Serialize(JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json)!
+                        var json = arquivos[$"resultados-{llm}{sufixo}.json"];
+                        arquivos[$"resultados-{llm}{sufixo}.json"] = JsonSerializer.Serialize(JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json)!
                             .Where(k => k.Key != "quadro2").ToDictionary(), opcoes) + "\n";
                     }
                     foreach (var (nome, conteudo) in arquivos) File.WriteAllText(Path.Combine(pasta, nome), conteudo);

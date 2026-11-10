@@ -8,7 +8,8 @@ namespace Orquestracao.Templates;
 public sealed record PerguntaTeste(int N, string Pergunta, string Familia, string Entidade, string Atributo, string Gabarito);
 
 /// <summary>A resposta de uma estratégia (protótipo ou linha de base) para uma pergunta.</summary>
-public sealed record RespostaTeste(int N, string Texto, bool Correta, string Caminho, int ChamadasGeracao, int ChamadasParser, long Tokens, double Custo, double LatenciaMs);
+public sealed record RespostaTeste(int N, string Texto, bool Correta, string Caminho, int ChamadasGeracao, int ChamadasParser, long Tokens, double Custo, double LatenciaMs,
+    int ChamadasNormalizador = 0, string? PerguntaNormalizada = null, string? Chave = null);
 
 /// <summary>As métricas de uma estratégia.</summary>
 public sealed record Metricas
@@ -17,6 +18,10 @@ public sealed record Metricas
     public int Perguntas { get; init; }
     public int ChamadasGeracao { get; init; }
     public int ChamadasParser { get; init; }
+    /// <summary>Chamadas ao LLM normalizador (o segundo fluxo).</summary>
+    public int ChamadasNormalizador { get; init; }
+    public long TokensNormalizador { get; init; }
+    public double CustoNormalizador { get; init; }
     public int AcertosTemplate { get; init; }
     public double TaxaAcertoTemplate => Perguntas == 0 ? 0 : (double)AcertosTemplate / Perguntas;
     public long Tokens { get; init; }
@@ -230,15 +235,17 @@ public static class Experimento
     public static async Task<ResultadoExperimento> Rodar(
         IFonteDeFatos fonte, List<PerguntaTeste> conjunto, ILlm llmPrototipo, ILlm llmLinhaDeBase, IJuiz juiz,
         string modo, int semente, double taxaErroLlm, double latenciaLlmMs, ConfiguracaoOrquestrador? cfg = null, IParser? parser = null, CancellationToken ct = default,
-        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null)
+        int concorrenciaLinhaDeBase = 1, ITemplateStore? store = null, ILlm? normalizador = null)
     {
+        // O normalizador é medido à parte (tokens e custo dele também entram no total do protótipo).
+        var norm = normalizador is null ? null : new LlmMedido(normalizador);
         // Com uma base SQLite, as perguntas e os feedbacks do protótipo ficam gravados (a prova do experimento).
         var orq = new Orquestrador(parser ?? new ParserHeuristico(fonte), store ?? new TemplateStoreMemoria(), fonte, cfg);
         var proto = new List<RespostaTeste>();
         var chaves = new Dictionary<string, HashSet<string>>();
         foreach (var p in conjunto)
         {
-            var r = await orq.Responder(p.Pergunta, llmPrototipo, ct);
+            var r = await orq.Responder(p.Pergunta, llmPrototipo, ct, normalizador: norm);
             var correta = Correta(r.Texto, p.Gabarito);
             if (!chaves.TryGetValue(p.Familia, out var set)) chaves[p.Familia] = set = [];
             set.Add(r.Chave);
@@ -246,7 +253,7 @@ public static class Experimento
             // Sem gabarito não há como simular o feedback: o template fica como o usuário que não avalia o deixaria.
             if (p.Gabarito.Length > 0 && (r.Template is not null || r.Caminho == Caminho.Template)) orq.Feedback(r.Chave, correta);
             proto.Add(new RespostaTeste(p.N, r.Texto, correta, r.Caminho, r.ChamadasGeracao, r.ChamadasParser, r.TokensEntrada + r.TokensSaida, r.Custo,
-                r.LatenciaMs + (r.ChamadasGeracao + r.ChamadasParser) * latenciaLlmMs));
+                r.LatenciaMs + (r.ChamadasGeracao + r.ChamadasParser + r.ChamadasNormalizador) * latenciaLlmMs, r.ChamadasNormalizador, r.PerguntaNormalizada, r.Chave));
         }
 
         // A linha de base: o LLM responde todas. Com concorrência > 1, as perguntas vão juntas (no MCP, chegam
@@ -293,7 +300,11 @@ public static class Experimento
         return new ResultadoExperimento
         {
             Modo = modo, Semente = semente, TaxaErroLlm = taxaErroLlm, LatenciaLlmMs = latenciaLlmMs,
-            Prototipo = Medir("Protótipo (templates)", proto), LinhaDeBase = Medir("Linha de base (LLM puro)", baseLista),
+            Prototipo = Medir(norm is null ? "Protótipo (templates)" : "Protótipo com normalizador", proto) with
+            {
+                ChamadasNormalizador = proto.Sum(x => x.ChamadasNormalizador), TokensNormalizador = norm?.Tokens ?? 0, CustoNormalizador = norm?.Custo ?? 0,
+            },
+            LinhaDeBase = Medir("Linha de base (LLM puro)", baseLista),
             Comparacao = new ComparacaoCega(vp, vb, emp),
             ChavesPorFamilia = chaves.ToDictionary(k => k.Key, k => k.Value.Count),
             PorFamilia = conjunto.GroupBy(p => p.Familia).ToDictionary(g => g.Key, g => (g.Count(), g.Count(p => proto[p.N - 1].Caminho == Caminho.Template))),
@@ -328,6 +339,12 @@ public static class Experimento
         {
             sb.AppendLine($"Gerado por `POST /api/experimento {{\"llm\": \"{r.Modo}\", \"cenario\": \"{r.Cenario}\"}}` · {p.Perguntas} perguntas da amostra `conjunto.json` (semente {r.Semente}; ver `analise.md` e `README.md`).");
             sb.AppendLine();
+            if (p.ChamadasNormalizador > 0)
+            {
+                sb.AppendLine("> **Segundo fluxo, com normalizador.** Antes do parser, cada pergunta passou por um normalizador (`Orquestrador.SystemNormalizacao`): as saídas são as do Claude Haiku 5.5, gravadas em `normalizadas-haiku.tsv` (geradas por subagentes do Claude Code com o modelo Haiku, um por cenário, com as 30 perguntas no mesmo pedido). " +
+                              "A normalização só decide a rota; o LLM de geração recebe a pergunta original. O custo do normalizador usa o preço do Haiku 5.5 (US$ 0,10 / 0,50 por milhão de tokens) e entra no custo do protótipo.");
+                sb.AppendLine();
+            }
             if (r.Modo == "mcp")
             {
                 sb.AppendLine("> **LLM real via MCP.** O LLM de geração foi o Claude (Opus 5.5) conectado ao /mcp do protótipo; cada chamada virou um turno pendente respondido pela ferramenta `responder`, sem consultar o gabarito. " +
@@ -359,6 +376,8 @@ public static class Experimento
         sb.AppendLine("|---|---:|---:|---:|");
         sb.AppendLine($"| Chamadas ao LLM de geração | {p.ChamadasGeracao} | {b.ChamadasGeracao} | {Reducao(p.ChamadasGeracao, b.ChamadasGeracao)} |");
         sb.AppendLine($"| Chamadas ao LLM do parser | {p.ChamadasParser} | — | |");
+        if (p.ChamadasNormalizador > 0)
+            sb.AppendLine($"| Chamadas ao normalizador (Claude Haiku 5.5) | {p.ChamadasNormalizador} ({p.TokensNormalizador.ToString("N0", PtBr)} tokens, {Usd(p.CustoNormalizador)}) | — | |");
         sb.AppendLine($"| Taxa de acerto de template | {Pct(p.TaxaAcertoTemplate)} ({p.AcertosTemplate}) | — | |");
         sb.AppendLine($"| Tokens | {p.Tokens.ToString("N0", PtBr)} | {b.Tokens.ToString("N0", PtBr)} | {Reducao(p.Tokens, b.Tokens)} |");
         sb.AppendLine($"| Custo estimado | {Usd(p.Custo)} | {Usd(b.Custo)} | {Reducao(p.Custo, b.Custo)} |");
@@ -436,6 +455,23 @@ public static class Experimento
             ("T05", $"{p.ChamadasGeracao} chamadas ao LLM no protótipo contra {b.ChamadasGeracao} na linha de base (redução de {Reducao(p.ChamadasGeracao, b.ChamadasGeracao)})", p.ChamadasGeracao < b.ChamadasGeracao),
             ("T06", $"Comparação cega: protótipo melhor em {c.VitoriasPrototipo}, linha de base em {c.VitoriasLinhaDeBase}, empate em {c.Empates}; corretas: {Pct(p.TaxaCorretas)} × {Pct(b.TaxaCorretas)}", c.VitoriasPrototipo >= c.VitoriasLinhaDeBase && p.TaxaCorretas >= b.TaxaCorretas),
         ];
+    }
+}
+
+/// <summary>Conta os tokens e o custo de um LLM (para medir o normalizador à parte).</summary>
+public sealed class LlmMedido(ILlm llm) : ILlm
+{
+    private long _tokens;
+    private double _custo;
+    private readonly Lock _trava = new();
+    public long Tokens { get { lock (_trava) return _tokens; } }
+    public double Custo { get { lock (_trava) return _custo; } }
+
+    public async Task<RespostaLlm> Completar(string system, string usuario, CancellationToken ct = default)
+    {
+        var r = await llm.Completar(system, usuario, ct);
+        lock (_trava) { _tokens += r.Entrada + r.Saida; _custo += r.Custo; }
+        return r;
     }
 }
 

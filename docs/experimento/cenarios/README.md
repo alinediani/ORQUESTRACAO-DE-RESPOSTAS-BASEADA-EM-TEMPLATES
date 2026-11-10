@@ -42,6 +42,33 @@ prática, esse perfil é o de **atendimento com dados de sistema**: perguntas fr
 inteira é um dado de um cadastro ("Qual o horário da unidade X?", "Qual o status do pedido Y?", "Qual especialista trata
 Z?"). Fora desse perfil, o ganho é nulo (matemática, busca aberta, textos) ou perigoso (saúde).
 
+## Segundo fluxo: normalizador antes do parser (cenários "b")
+
+No segundo fluxo, cada pergunta passa por um LLM normalizador (`Orquestrador.SystemNormalizacao`) antes do parser. A
+normalização só decide a rota: a geração continua recebendo a pergunta original. O normalizador foi o **Claude Haiku**,
+por meio de subagentes do Claude Code com o modelo Haiku, um por cenário. As saídas estão gravadas em
+`normalizadas-haiku.tsv`, e o custo usa o preço do Haiku 5.5. Os resultados ficam em `resultados-mcp-haiku.md/.json` e
+`experimento-mcp-haiku.db`, na pasta de cada cenário.
+
+| Cenário | Geração (protótipo × base) | Normalizador | Pelo template | Corretas (protótipo × base) | Custo total do protótipo × base |
+|---|---:|---:|---:|---:|---:|
+| 1b GSM8K | 30 × 30 | 30 (US$ 0,0011) | 0 | 30 × 30 | +6% |
+| 2b MKQA | 30 × 30 | 30 (US$ 0,0005) | 0 | 20 × 20 | +3% |
+| 3b Saúde | 6 × 22 | 22 (US$ 0,0003) | 16 (os mesmos de antes) | — | −71% (com os mesmos 9 erros) |
+| 4b SQuAD | 30 × 30 | 30 (US$ 0,0011) | 0 | 29 × 29 | +3% |
+| 6c Quiz (fiel + Haiku) | 24 × 30 | 30 (US$ 0,0005) | 6 | 18 × 15 | **−17%** |
+
+Onde a estrutura não se repete, o normalizador só acrescenta custo. Na saúde, as chaves do melhor caso já coincidiam, e
+o resultado não mudou. No quiz, o Haiku com um prompt genérico padronizou bem menos que as formas canônicas por relação
+(6 contra 16 pelo template), mas ainda reduziu o custo em 17% e melhorou o acerto. **Um normalizador genérico ajuda pouco:
+o ganho vem de formas canônicas definidas para o domínio.**
+
+> Limitação: o subagente normalizou as 30 perguntas de cada cenário num único pedido, e não uma chamada por pergunta.
+
+```bash
+curl -X POST localhost:5190/api/experimento -d '{"llm":"mcp","cenario":"quiz-fiel","normalizador":"haiku"}'
+```
+
 ## Reprodução
 
 Cada pasta tem o arquivo da base, `analise.md` (análise estrutural sem LLM), `conjunto.json` (a amostra),

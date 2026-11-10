@@ -95,6 +95,15 @@ Simplificar é uma chamada ao LLM por pergunta. Pela estimativa de ≈ 4 caracte
 Preços por milhão de tokens (entrada/saída) da tabela do protótipo (`MotorApi`): Opus US$ 4/20, Sonnet US$ 2/10,
 Haiku US$ 0,10/0,50.
 
+## 6c — tradução fiel com o Claude Haiku como normalizador
+
+Com o segundo fluxo (`"normalizador": "haiku"`), as perguntas da tradução fiel passaram por um normalizador genérico,
+o Claude Haiku, com o prompt geral do protótipo e sem a tabela de formas canônicas. O resultado está em
+`../quiz-fiel/resultados-mcp-haiku.md`: 24 chamadas de geração contra 30, 6 respostas pelo template (todas com o dado
+certo), 18 corretas contra 15 e custo total 17% menor, já incluindo as 30 chamadas ao Haiku (US$ 0,0005). O Haiku
+padronizou pouco: corrigiu a pontuação, mas manteve redações como "De que país é X?" e "Qual é a nacionalidade de X?",
+que caem em chaves diferentes.
+
 ## Conclusões
 
 1. **É o cenário em que o protótipo funciona,** desde que as perguntas sejam padronizadas. Com a tradução fiel, o ganho é
